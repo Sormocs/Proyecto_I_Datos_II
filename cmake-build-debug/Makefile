@@ -143,6 +143,33 @@ Project/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/build
 .PHONY : Project/fast
 
+Button.o: Button.cpp.o
+
+.PHONY : Button.o
+
+# target to build an object file
+Button.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/Button.cpp.o
+.PHONY : Button.cpp.o
+
+Button.i: Button.cpp.i
+
+.PHONY : Button.i
+
+# target to preprocess a source file
+Button.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/Button.cpp.i
+.PHONY : Button.cpp.i
+
+Button.s: Button.cpp.s
+
+.PHONY : Button.s
+
+# target to generate assembly for a file
+Button.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/Button.cpp.s
+.PHONY : Button.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +206,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Project"
+	@echo "... Button.o"
+	@echo "... Button.i"
+	@echo "... Button.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -220,6 +220,12 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Value Computed by CMake
+C__BINARY_DIR:STATIC=/home/sormocs04/CLionProjects/Project/cmake-build-debug
+
+//Value Computed by CMake
+C__SOURCE_DIR:STATIC=/home/sormocs04/CLionProjects/Project
+
 //Path to a program.
 ProcessorCount_cmd_nproc:FILEPATH=/usr/bin/nproc
 
@@ -231,6 +237,15 @@ Project_BINARY_DIR:STATIC=/home/sormocs04/CLionProjects/Project/cmake-build-debu
 
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=/home/sormocs04/CLionProjects/Project
+
+//The directory containing a CMake configuration file for SFML.
+SFML_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SFML
+
+//Path to a file.
+SFML_DOC_DIR:PATH=SFML_DOC_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for nlohmann_json.
+nlohmann_json_DIR:PATH=nlohmann_json_DIR-NOTFOUND
 
 
 ########################
