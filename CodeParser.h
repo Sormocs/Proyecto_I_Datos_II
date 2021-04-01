@@ -21,6 +21,7 @@ private:
     int ToInt(char character);
     void ReverseStr(std::string& str);
     bool DotPos(std::string fragment, int& pos);
+    bool Contains(std::string fragment, char character, int& position);
 
 public:
     std::string AritmetricDetector(std::string codeFragment);

@@ -150,3 +150,13 @@ bool CodeParser::DotPos(std::string fragment, int& pos) {
     }
     return false;
 }
+
+bool CodeParser::Contains(std::string fragment, char character, int &position) {
+    for (int i = 0; i < fragment.length(); i++) {
+        if (fragment.at(i) == character) {
+            position = i;
+            return true;
+        }
+    }
+    return false;
+}
