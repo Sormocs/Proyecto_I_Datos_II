@@ -1,8 +1,26 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
+#include "CodeParser.h"
+
+void ParserTest();
+void Screen();
+
 int main()
 {
+
+
+    ParserTest();
+
+    return 0;
+}
+
+void ParserTest() {
+    CodeParser* codeParser = new CodeParser();
+    std::cout << codeParser->ExtractNumber(" 1.23765746; ") << std::endl;
+}
+
+void Screen(){
     sf::RenderWindow window(sf::VideoMode(800, 600), "Algo :v",sf::Style::Close);
     sf::RectangleShape shape(sf::Vector2f(120.f,50.f));
     shape.setPosition(300,100);
@@ -27,6 +45,4 @@ int main()
         window.draw(shape);
         window.display();
     }
-
-    return 0;
 }

@@ -90,6 +90,12 @@
 		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Button.h">
 			<Option target="Project"/>
 		</Unit>
+		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.h">
+			<Option target="Project"/>
+		</Unit>
 		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/main.cpp">
 			<Option target="Project"/>
 		</Unit>

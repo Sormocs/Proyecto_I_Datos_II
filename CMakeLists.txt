@@ -13,7 +13,7 @@ include_directories (${GTK2_INCLUDE_DIRS})
 link_directories (${GTK2_LIBRARY_DIRS})
 
 
-add_executable(Project main.cpp Button.cpp Button.h)
+add_executable(Project main.cpp Button.cpp Button.h CodeParser.cpp CodeParser.h)
 target_link_libraries(Project sfml-graphics sfml-window sfml-system)
 
 target_link_libraries(Project ${GTK2_LIBRARIES})

@@ -170,6 +170,33 @@ Button.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/Button.cpp.s
 .PHONY : Button.cpp.s
 
+CodeParser.o: CodeParser.cpp.o
+
+.PHONY : CodeParser.o
+
+# target to build an object file
+CodeParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/CodeParser.cpp.o
+.PHONY : CodeParser.cpp.o
+
+CodeParser.i: CodeParser.cpp.i
+
+.PHONY : CodeParser.i
+
+# target to preprocess a source file
+CodeParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/CodeParser.cpp.i
+.PHONY : CodeParser.cpp.i
+
+CodeParser.s: CodeParser.cpp.s
+
+.PHONY : CodeParser.s
+
+# target to generate assembly for a file
+CodeParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/CodeParser.cpp.s
+.PHONY : CodeParser.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -209,6 +236,9 @@ help:
 	@echo "... Button.o"
 	@echo "... Button.i"
 	@echo "... Button.s"
+	@echo "... CodeParser.o"
+	@echo "... CodeParser.i"
+	@echo "... CodeParser.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
