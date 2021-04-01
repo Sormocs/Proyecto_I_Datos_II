@@ -26,7 +26,9 @@ float CodeParser::AddSubtract(std::string codeFragment) {
         result = ExtractNumber(codeFragment.substr(0, signPos));
         std::cout << "En asignación." << std::endl;
 
-    } else return result;
+    } else {
+        result = ExtractNumber(codeFragment);
+    }
 
     std::cout << "Code fragment: " << codeFragment << std::endl;
 
@@ -47,7 +49,13 @@ float CodeParser::AddSubtract(std::string codeFragment) {
             std::cout << "En suma." << std::endl;
 
         }else if (Contains(tempStr, '-', signPos)) {
-            result -= ExtractNumber(tempStr.substr(0, signPos));
+            DelAddSubSign(codeFragment, minusPos, plusPos, signPos);
+
+            std::cout << "Code fragment: " << codeFragment << std::endl;
+
+            if (!GetAddSubSignPos(codeFragment, minusPos, plusPos, signPos)) result += ExtractNumber(codeFragment);
+
+            else result -= ExtractNumber(tempStr.substr(0, signPos));
             std::cout << "En resta." << std::endl;
 
         } else if (Contains(tempStr, '/', signPos) or Contains(tempStr, '*', signPos)) return NULL;
