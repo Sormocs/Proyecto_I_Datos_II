@@ -227,6 +227,12 @@ ProcessorCount_cmd_nproc:FILEPATH=/usr/bin/nproc
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
 
 //Value Computed by CMake
+Project-PLS1_BINARY_DIR:STATIC=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug
+
+//Value Computed by CMake
+Project-PLS1_SOURCE_DIR:STATIC=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II
+
+//Value Computed by CMake
 Project_BINARY_DIR:STATIC=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug
 
 //Value Computed by CMake

@@ -17,7 +17,8 @@ int main()
 
 void ParserTest() {
     CodeParser* codeParser = new CodeParser();
-    std::cout << codeParser->ExtractNumber(" 1.23765746; ") << std::endl;
+    //std::cout << codeParser->ExtractNumber(" 1.23765746; ") << std::endl;
+    std::cout << codeParser->AddSubtract(" 15 + 5 - 9;") << std::endl;
 }
 
 void Screen(){

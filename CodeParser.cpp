@@ -5,31 +5,58 @@
 #include "CodeParser.h"
 
 std::string CodeParser::AritmetricDetector(std::string codeFragment) {
-    return std::string();
+    std::string tempStr = codeFragment;
+    int charPos;
+    float number = 0;
 }
 
-float CodeParser::Add(std::string codeFragment) {
-    float plus = 0;
+float CodeParser::AddSubtract(std::string codeFragment) {
+
+    float result = 0;
     std::string tempStr = codeFragment;
     std::string numberStr;
-    size_t charPos;
+    int signPos = NOT_IN_STRING;
+    int plusPos = NOT_IN_STRING;
+    int minusPos = NOT_IN_STRING;
+
+    if (Contains(codeFragment, '+', plusPos) or Contains(codeFragment, '-', minusPos)) {
+
+        GetAddSubSignPos(codeFragment, minusPos, plusPos, signPos);
+
+        result = ExtractNumber(codeFragment.substr(0, signPos));
+        std::cout << "En asignación." << std::endl;
+
+    } else return result;
+
+    std::cout << "Code fragment: " << codeFragment << std::endl;
 
     while (true){
-        charPos = tempStr.find("+");
 
-        if (charPos == NOT_IN_STRING){
-            break;
+        std::cout << "En bucle de sumaResta. " << "Posición de + " << signPos << " tempStr: " << tempStr << std::endl;
 
-        } else{
-            plus += ExtractNumber(tempStr.substr(0 , charPos));
+        if (Contains(codeFragment, '+', plusPos)) {
 
-        }
+            DelAddSubSign(codeFragment, minusPos, plusPos, signPos);
+
+            std::cout << "Code fragment: " << codeFragment << std::endl;
+
+            if (!GetAddSubSignPos(codeFragment, minusPos, plusPos, signPos)) result += ExtractNumber(codeFragment);
+
+            else result += ExtractNumber(tempStr.substr(0, signPos));
+
+            std::cout << "En suma." << std::endl;
+
+        }else if (Contains(tempStr, '-', signPos)) {
+            result -= ExtractNumber(tempStr.substr(0, signPos));
+            std::cout << "En resta." << std::endl;
+
+        } else if (Contains(tempStr, '/', signPos) or Contains(tempStr, '*', signPos)) return NULL;
+
+        else break;
+
+        DelAddSubSign(codeFragment,minusPos, plusPos, signPos);
     }
-    return plus;
-}
-
-float CodeParser::Subtract(std::string codeFragment) {
-    return 0;
+    return result;
 }
 
 float CodeParser::Multiply(std::string codeFragment) {
@@ -131,7 +158,7 @@ bool CodeParser::DotPos(std::string fragment, int& pos) {
 }
 
 bool CodeParser::Contains(std::string fragment, char character, int &position) {
-    /* Checks if a string contains a character and saves the position by reference
+    /* Checks if a string contains a character and assigns the position by reference
      */
 
     for (int i = 0; i < fragment.length(); i++) {
@@ -140,6 +167,7 @@ bool CodeParser::Contains(std::string fragment, char character, int &position) {
             return true;
         }
     }
+    position = NOT_IN_STRING;
     return false;
 }
 
@@ -149,4 +177,25 @@ bool CodeParser::Contains(std::string fragment, char character) {
 
     for (char i : fragment) if (i == character) return true;
     return false;
+}
+
+void CodeParser::DelAddSubSign(std::string& codeFragment, int& minusPos, int& plusPos, int& signPos) {
+    if (GetAddSubSignPos(codeFragment, minusPos, plusPos, signPos)) codeFragment = codeFragment.substr(signPos+1);
+}
+
+bool CodeParser::GetAddSubSignPos(std::string &codeFragment, int &minusPos, int &plusPos, int &signPos) {
+    Contains(codeFragment, '-', minusPos);
+    Contains(codeFragment, '+', plusPos);
+
+    if (minusPos == plusPos) return false;
+
+    if (minusPos < plusPos){
+        if (minusPos == NOT_IN_STRING) signPos = plusPos;
+        else signPos = minusPos;
+    } else {
+        if (plusPos == NOT_IN_STRING) signPos = minusPos;
+        else signPos = plusPos;
+    }
+
+    return true;
 }
