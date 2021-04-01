@@ -46,25 +46,17 @@ float CodeParser::Power(std::string codeFragment) {
 
 float CodeParser::ExtractNumber(std::string numberStr) {
 
-    std::cout << "numberStr->" << numberStr << std::endl;
-
-    // if number is divided by , (comma), it won't work
-    //if (numberStr.find(',') == NOT_IN_STRING) return 25;// Syntax error: numbers use . (dot) not , (comma) as decimal divisor.
-
     int power = 0;
     int dotPos;
     float number = 0;
     bool isFloat = DotPos(numberStr, dotPos); // isFloat says if number is float or not
-    std::cout << "DotPos pos: " << dotPos << std::endl;
     std::string num;
 
     // extrae el número si es entero
     if (!isFloat) {
-        std::cout << "El número es entero." << std::endl;
         ReverseStr(numberStr);
 
         for (char i : numberStr){
-            std::cout << i << std::endl;
             if (isdigit(i)) {
                 number += ToInt(i)*pow(10, power);
                 power++;
@@ -76,8 +68,6 @@ float CodeParser::ExtractNumber(std::string numberStr) {
     // extrae unidades
     num = numberStr.substr(0, dotPos);
     ReverseStr(num);
-
-    std::cout << "El número es fraccional." << std::endl;
 
     for (char i : num){
         if (isdigit(i)) {
@@ -92,7 +82,6 @@ float CodeParser::ExtractNumber(std::string numberStr) {
 
     for (char i : num){
         if (isdigit(i)) {
-            std::cout << "caracter: " << i << " potencia: " << power << pow(10, power) << std::endl;
             number += ToInt(i)*pow(10, power);
             power--;
         }
@@ -116,17 +105,6 @@ float CodeParser::negPow(float num, float power) {
     if (power == -1) return num;
 
     else return num * negPow(num, power + 1);
-
-    //float initNum = num;
-
-    //if (power == 0) return 1;
-
-    //for (int i = 0; i < power - 1; i++){
-    //num *= initNum;
-    //}
-
-    //if (power < 0) return 1/num;
-    //return num;
 }
 
 int CodeParser::ToInt(char character) {
@@ -158,5 +136,10 @@ bool CodeParser::Contains(std::string fragment, char character, int &position) {
             return true;
         }
     }
+    return false;
+}
+
+bool CodeParser::Contains(std::string fragment, char character) {
+    for (char i : fragment) if (i == character) return true;
     return false;
 }
