@@ -27,9 +27,9 @@ public:
 
     float ExtractNumber(std::string numberStr);
 
-    float Plus(std::string codeFragment);
-    float Minus(std::string codeFragment);
-    float Times(std::string codeFragment);
+    float Add(std::string codeFragment);
+    float Subtract(std::string codeFragment);
+    float Multiply(std::string codeFragment);
     float Division(std::string codeFragment);
     float Power(std::string codeFragment);
 
