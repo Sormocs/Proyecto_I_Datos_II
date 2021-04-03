@@ -6,17 +6,13 @@
 
 #IncludeRegexTransform: 
 
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.cpp
+CodeParser.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.h
+
 /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.h
 string
 -
 iostream
 -
-
-/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/main.cpp
-iostream
--
-SFML/Graphics.hpp
--
-CodeParser.h
-/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.h
 

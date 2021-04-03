@@ -14,6 +14,7 @@ float CodeParser::AddSubtract(std::string codeFragment) {
 
     float result = 0;
     std::string numberStr;
+    char sign = ' ';
     float numToOperator = 0;
     int signPos = NOT_IN_STRING;
     int plusPos = NOT_IN_STRING;
@@ -38,9 +39,16 @@ float CodeParser::AddSubtract(std::string codeFragment) {
 
         std::cout << "En bucle. " << "code fragment: " << codeFragment << " result: " << result << std::endl;
 
-        if (Contains(codeFragment, '+', plusPos)) {
+        if (Contains(codeFragment, '/', signPos) or Contains(codeFragment, '*', signPos)) return NULL;
+        else if (Contains(codeFragment, '+', signPos) or Contains(codeFragment, '-', signPos)) {
 
-            std::cout << "En suma." << std::endl;
+            std::cout << "En operación." << std::endl;
+
+            GetAddSubSignPos(codeFragment, minusPos, plusPos, signPos);
+
+            sign = codeFragment.at(signPos);
+
+            std::cout << "Sign: " << sign << std::endl;
 
             DelAddSubSign(codeFragment, minusPos, plusPos, signPos);
 
@@ -53,25 +61,9 @@ float CodeParser::AddSubtract(std::string codeFragment) {
 
             std::cout << "Number to add: " << numToOperator << std::endl;
 
-            result += numToOperator;
-
-        }else if (Contains(codeFragment, '-', signPos)) {
-            std::cout << "En resta." << std::endl;
-
-            DelAddSubSign(codeFragment, minusPos, plusPos, signPos);
-
-            if (!GetAddSubSignPos(codeFragment, minusPos, plusPos, signPos)) signPos = -1;
-
-            std::cout << "Code fragment: " << codeFragment << std::endl;
-            std::cout << "StrNumber to subtract: " << codeFragment.substr(0, signPos) << std::endl;
-
-            numToOperator = ExtractNumber(codeFragment.substr(0, signPos));
-
-            std::cout << "Number to subtract: " << numToOperator << std::endl;
-
-            result -= numToOperator;
-
-        } else if (Contains(codeFragment, '/', signPos) or Contains(codeFragment, '*', signPos)) return NULL;
+            if (sign == '+') result += numToOperator;
+            else result -= numToOperator;
+        }
 
         else break;
 
