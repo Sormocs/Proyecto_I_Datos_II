@@ -8,7 +8,7 @@
 #include <string>
 #include <iostream>
 
-#define NOT_IN_STRING -8
+#define NOT_IN_STRING -101010101
 
 class CodeParser {
 
@@ -22,11 +22,13 @@ private:
     void ReverseStr(std::string& str);
     bool DotPos(std::string fragment, int& pos);
 
-    void DelAddSubSign(std::string& codeFragment, int& minusPos, int& plusPos, int& signPos);
+
     bool GetAddSubSignPos(std::string& codeFragment, int& minusPos, int& plusPos, int& signPos);
 
 public:
     std::string AritmetricDetector(std::string codeFragment);
+
+    void DelAddSubSign(std::string& codeFragment, int& minusPos, int& plusPos, int& signPos);
 
     float ExtractNumber(std::string numberStr);
 

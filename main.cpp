@@ -17,8 +17,17 @@ int main()
 
 void ParserTest() {
     CodeParser* codeParser = new CodeParser();
-    //std::cout << codeParser->ExtractNumber(" 1.23765746; ") << std::endl;
-    std::cout << codeParser->AddSubtract(" 15 - 12;") << std::endl;
+    int signPos = NOT_IN_STRING;
+    int plusPos = NOT_IN_STRING;
+    int minusPos = NOT_IN_STRING;
+    std::string ajua = "15 - 12;";
+
+    //codeParser->DelAddSubSign(ajua, minusPos, plusPos, signPos);
+
+    //std::cout << "Minus: " << minusPos << " Plus: " << plusPos << " Sign: " << signPos << " string " << ajua << std::endl;
+    //std::cout << ajua.substr(3,-1) << std::endl;
+    //std::cout << codeParser->ExtractNumber(" 12 ") << std::endl;
+    std::cout << codeParser->AddSubtract(" 11 - 12 - 45 + 12") << std::endl;
 }
 
 void Screen(){
