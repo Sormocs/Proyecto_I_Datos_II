@@ -6,13 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/sormocs04/CLionProjects/Project/Button.cpp
-Button.h
-/home/sormocs04/CLionProjects/Project/Button.h
+/home/sormocs04/CLionProjects/Project/GUI.cpp
+GUI.h
+/home/sormocs04/CLionProjects/Project/GUI.h
 
-/home/sormocs04/CLionProjects/Project/Button.h
+/home/sormocs04/CLionProjects/Project/GUI.h
 SFML/Graphics.hpp
--
-iostream
 -
 

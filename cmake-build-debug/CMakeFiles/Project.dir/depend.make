@@ -4,5 +4,9 @@
 CMakeFiles/Project.dir/Button.cpp.o: ../Button.cpp
 CMakeFiles/Project.dir/Button.cpp.o: ../Button.h
 
+CMakeFiles/Project.dir/GUI.cpp.o: ../GUI.cpp
+CMakeFiles/Project.dir/GUI.cpp.o: ../GUI.h
+
+CMakeFiles/Project.dir/main.cpp.o: ../GUI.h
 CMakeFiles/Project.dir/main.cpp.o: ../main.cpp
 

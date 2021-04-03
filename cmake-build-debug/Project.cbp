@@ -90,6 +90,12 @@
 		<Unit filename="/home/sormocs04/CLionProjects/Project/Button.h">
 			<Option target="Project"/>
 		</Unit>
+		<Unit filename="/home/sormocs04/CLionProjects/Project/GUI.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/sormocs04/CLionProjects/Project/GUI.h">
+			<Option target="Project"/>
+		</Unit>
 		<Unit filename="/home/sormocs04/CLionProjects/Project/main.cpp">
 			<Option target="Project"/>
 		</Unit>
