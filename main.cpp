@@ -9,7 +9,7 @@ void Screen();
 int main()
 {
 
-
+    //Screen();
     ParserTest();
 
     return 0;
@@ -27,7 +27,8 @@ void ParserTest() {
     //std::cout << "Minus: " << minusPos << " Plus: " << plusPos << " Sign: " << signPos << " string " << ajua << std::endl;
     //std::cout << ajua.substr(3,-1) << std::endl;
     //std::cout << codeParser->ExtractNumber(" 12 ") << std::endl;
-    std::cout << codeParser->AddSubtract(" 11 - 12 - 45 + 12") << std::endl;
+    //std::cout << codeParser->AddSubtract(" 2 + 2") << std::endl;
+    std::cout << codeParser->Multiply(" 2 * 2") << std::endl;
 }
 
 void Screen(){

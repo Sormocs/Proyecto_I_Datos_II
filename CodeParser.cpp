@@ -22,7 +22,7 @@ float CodeParser::AddSubtract(std::string codeFragment) {
 
     std::cout << "First code fragment: " << codeFragment << std::endl;
 
-    if (Contains(codeFragment, '+', plusPos) or Contains(codeFragment, '-', minusPos)) {
+    if (ContainsChar(codeFragment, '+', plusPos) or ContainsChar(codeFragment, '-', minusPos)) {
 
         GetAddSubSignPos(codeFragment, minusPos, plusPos, signPos);
 
@@ -39,8 +39,8 @@ float CodeParser::AddSubtract(std::string codeFragment) {
 
         std::cout << "En bucle. " << "code fragment: " << codeFragment << " result: " << result << std::endl;
 
-        if (Contains(codeFragment, '/', signPos) or Contains(codeFragment, '*', signPos)) return NULL;
-        else if (Contains(codeFragment, '+', signPos) or Contains(codeFragment, '-', signPos)) {
+        if (ContainsChar(codeFragment, '/', signPos) or ContainsChar(codeFragment, '*', signPos)) return NULL;
+        else if (ContainsChar(codeFragment, '+', signPos) or ContainsChar(codeFragment, '-', signPos)) {
 
             std::cout << "En operación." << std::endl;
 
@@ -77,7 +77,13 @@ float CodeParser::AddSubtract(std::string codeFragment) {
 }
 
 float CodeParser::Multiply(std::string codeFragment) {
-    return 0;
+    float result = 0;
+    std::string numberStr;
+    float numToOperator = 0;
+    int timesPos = NOT_IN_STRING;
+
+
+    return result;
 }
 
 float CodeParser::Division(std::string codeFragment) {
@@ -174,7 +180,7 @@ bool CodeParser::DotPos(std::string fragment, int& pos) {
     return false;
 }
 
-bool CodeParser::Contains(std::string fragment, char character, int &position) {
+bool CodeParser::ContainsChar(std::string& fragment, char character, int &position) {
     /* Checks if a string contains a character and assigns the position by reference
      */
 
@@ -188,7 +194,7 @@ bool CodeParser::Contains(std::string fragment, char character, int &position) {
     return false;
 }
 
-bool CodeParser::Contains(std::string fragment, char character) {
+bool CodeParser::ContainsChar(std::string& fragment, char character) {
     /* Checks if a string contains a character
      */
 
@@ -201,8 +207,8 @@ void CodeParser::DelAddSubSign(std::string& codeFragment, int& minusPos, int& pl
 }
 
 bool CodeParser::GetAddSubSignPos(std::string &codeFragment, int &minusPos, int &plusPos, int &signPos) {
-    Contains(codeFragment, '-', minusPos);
-    Contains(codeFragment, '+', plusPos);
+    ContainsChar(codeFragment, '-', minusPos);
+    ContainsChar(codeFragment, '+', plusPos);
 
     if (minusPos == plusPos) return false;
 
@@ -215,4 +221,8 @@ bool CodeParser::GetAddSubSignPos(std::string &codeFragment, int &minusPos, int 
     }
 
     return true;
+}
+
+bool CodeParser::GetMultSignPos(std::string& codeFragment, int &timesPos) {
+    return ContainsChar(codeFragment, '*', timesPos);
 }
