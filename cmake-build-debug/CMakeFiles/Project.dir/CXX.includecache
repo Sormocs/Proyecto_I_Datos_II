@@ -6,11 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/sormocs04/CLionProjects/Project/GUI.cpp
-GUI.h
-/home/sormocs04/CLionProjects/Project/GUI.h
+/home/sormocs04/CLionProjects/Project/TextBox.cpp
+TextBox.h
+/home/sormocs04/CLionProjects/Project/TextBox.h
 
-/home/sormocs04/CLionProjects/Project/GUI.h
+/home/sormocs04/CLionProjects/Project/TextBox.h
 SFML/Graphics.hpp
+-
+iostream
+-
+sstream
 -
 

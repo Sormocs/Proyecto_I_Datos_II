@@ -1,8 +1,15 @@
 #include <iostream>
 #include "GUI.h"
+#include <thread>
+
+void RunGUI(){
+    GUI::getInstance()->Run();
+}
 int main(){
 
-    GUI::getInstance()->Run();
+    std::thread GUI (RunGUI);
+
+    GUI.join();
 
     return 0;
 }

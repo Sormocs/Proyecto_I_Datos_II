@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sormocs04/CLionProjects/Project/Button.cpp" "/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles/Project.dir/Button.cpp.o"
   "/home/sormocs04/CLionProjects/Project/GUI.cpp" "/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles/Project.dir/GUI.cpp.o"
+  "/home/sormocs04/CLionProjects/Project/TextBox.cpp" "/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles/Project.dir/TextBox.cpp.o"
   "/home/sormocs04/CLionProjects/Project/main.cpp" "/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles/Project.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

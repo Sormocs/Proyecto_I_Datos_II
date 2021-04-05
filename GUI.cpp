@@ -1,4 +1,5 @@
 #include "GUI.h"
+#include "TextBox.h"
 
 GUI *GUI::instance = nullptr;
 
@@ -12,9 +13,14 @@ GUI* GUI::getInstance() {
 }
 
 void GUI::Run() {
-    sf::RenderWindow window(sf::VideoMode(1700, 800), "C! IDE",sf::Style::Close);
+    sf::RenderWindow window(sf::VideoMode(1700, 900), "C! IDE",sf::Style::Titlebar | sf::Style::Close);
+    sf::Vector2i centerwin((sf::VideoMode::getDesktopMode().width/2)-445,(sf::VideoMode::getDesktopMode().height/2)-480);
+    window.setPosition(centerwin);
     float mouse[2] = {};
     sf::RenderWindow* winptr = &window;
+
+    // (int fsize, sf::Color fontcolor, bool sel, int sizex, int sizey, int posx, int posy, sf::Color Bgcolor)
+    TextBox *codeA = new TextBox(18,sf::Color::White,true,1250,600,40,60,sf::Color(128,128,128,255));
 
     while (window.isOpen())
     {
@@ -26,11 +32,21 @@ void GUI::Run() {
             if (event.type == sf::Event::MouseButtonReleased){
                 mouse[0] = sf::Mouse::getPosition(window).x;
                 mouse[1] = sf::Mouse::getPosition(window).y;
+                std::cout << "Click" << std::endl;
+                codeA->CheckClick(mouse[0],mouse[1]);
+            }
+            if (event.type == event.TextEntered){
 
+                if (codeA->isSelected()) {
+                    char letter = static_cast<char>(event.text.unicode);
+                    std::cout << "Going in?" << std::endl;
+                    codeA->Write(letter);
+                }
             }
         }
         window.clear();
         Shapes(winptr);
+        codeA->Draw(winptr);
         window.display();
     }
 }
@@ -39,6 +55,11 @@ void GUI::Shapes(sf::RenderWindow* ptr) {
     sf::RectangleShape rect1(sf::Vector2f(1700.f,60.f));
     rect1.setPosition(0,0);
     rect1.setFillColor(sf::Color::Cyan);
+
+    sf::RectangleShape writeArea(sf::Vector2f(1250,600));
+    writeArea.setPosition(40,60);
+    writeArea.setFillColor(sf::Color(128,128,128,255));
+
     ptr->draw(rect1);
 }
 
