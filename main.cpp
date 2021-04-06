@@ -28,7 +28,9 @@ void ParserTest() {
     //std::cout << ajua.substr(3,-1) << std::endl;
     //std::cout << codeParser->ExtractNumber(" 12 ") << std::endl;
     //std::cout << codeParser->AddSubtract(" 2 + 2") << std::endl;
-    std::cout << codeParser->Multiply(" 2 * 2") << std::endl;
+    //std::cout << codeParser->Multiply("3.2 * 5.1 * 4.34534;") << std::endl;
+    //std::cout << codeParser->Division("3.34 / 2 / 400;") << std::endl;
+
 }
 
 void Screen(){

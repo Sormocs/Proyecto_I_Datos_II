@@ -9,6 +9,7 @@
 #include <iostream>
 
 #define NOT_IN_STRING -00100000
+#define NOT_VALID_OPERATION -90108020703060405
 
 class CodeParser {
 
@@ -27,6 +28,8 @@ private:
 
     bool GetMultSignPos(std::string& codeFragment, int& timesPos);
 
+    bool GetDivSignPos(std::string& codeFragment, int& divPos);
+
 public:
     std::string AritmetricDetector(std::string codeFragment);
 
@@ -35,7 +38,6 @@ public:
     float AddSubtract(std::string codeFragment);
     float Multiply(std::string codeFragment);
     float Division(std::string codeFragment);
-    float Power(std::string codeFragment);
 
     bool ContainsChar(std::string& fragment, char character, int& position);
     bool ContainsChar(std::string& fragment, char character);

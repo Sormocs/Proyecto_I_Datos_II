@@ -80,18 +80,106 @@ float CodeParser::Multiply(std::string codeFragment) {
     float result = 0;
     std::string numberStr;
     float numToOperator = 0;
-    int timesPos = NOT_IN_STRING;
+    int signPos = NOT_IN_STRING;
 
+    std::cout << "First code fragment: " << codeFragment << std::endl;
 
+    if (GetDivSignPos(codeFragment, signPos) or ContainsChar(codeFragment, '+', signPos) or ContainsChar(codeFragment, '-', signPos)) return NOT_VALID_OPERATION;
+
+    if (ContainsChar(codeFragment, '*', signPos)) {
+
+        numToOperator = ExtractNumber(codeFragment.substr(0, signPos));
+
+    } else {
+        numToOperator = ExtractNumber(codeFragment);
+    }
+
+    result = numToOperator;
+    if (GetMultSignPos(codeFragment, signPos)) codeFragment = codeFragment.substr(signPos-1);
+
+    while (true){
+
+        std::cout << "En bucle. " << "code fragment: " << codeFragment << " result: " << result << std::endl;
+
+        if (ContainsChar(codeFragment, '*', signPos)) {
+
+            std::cout << "En operación." << std::endl;
+
+            codeFragment = codeFragment.substr(signPos+1);
+
+            if (!GetMultSignPos(codeFragment, signPos)) signPos = -1;
+
+            std::cout << "Code fragment: " << codeFragment << std::endl;
+
+            std::cout << "StrNumber to add: " << codeFragment.substr(0, signPos) << std::endl;
+            numToOperator = ExtractNumber(codeFragment.substr(0, signPos));
+            std::cout << "Number to add: " << numToOperator << std::endl;
+
+            result *= ExtractNumber(codeFragment.substr(0, signPos));
+        }
+
+        else break;
+
+        if (GetMultSignPos(codeFragment, signPos)) {
+            std::cout << "Eliminación al final del while. Se eliminará: " << codeFragment.substr(0, signPos) << std::endl;
+            codeFragment = codeFragment.substr(signPos);
+        }
+        else break;
+    }
     return result;
 }
 
 float CodeParser::Division(std::string codeFragment) {
-    return 0;
-}
+    float result = 0;
+    std::string numberStr;
+    float numToOperator = 0;
+    int signPos = NOT_IN_STRING;
 
-float CodeParser::Power(std::string codeFragment) {
-    return 0;
+    std::cout << "First code fragment: " << codeFragment << std::endl;
+
+    if (GetMultSignPos(codeFragment, signPos) or ContainsChar(codeFragment, '+', signPos) or ContainsChar(codeFragment, '-', signPos)) return NOT_VALID_OPERATION;
+
+    if (GetDivSignPos(codeFragment, signPos)) {
+
+        numToOperator = ExtractNumber(codeFragment.substr(0, signPos));
+
+    } else {
+        numToOperator = ExtractNumber(codeFragment);
+    }
+
+    result = numToOperator;
+    if (GetMultSignPos(codeFragment, signPos)) codeFragment = codeFragment.substr(signPos-1);
+
+    while (true){
+
+        std::cout << "En bucle. " << "code fragment: " << codeFragment << " result: " << result << std::endl;
+
+        if (GetDivSignPos(codeFragment, signPos)) {
+
+            std::cout << "En operación." << std::endl;
+
+            codeFragment = codeFragment.substr(signPos+1);
+
+            if (!GetDivSignPos(codeFragment, signPos)) signPos = -1;
+
+            std::cout << "Code fragment: " << codeFragment << std::endl;
+
+            std::cout << "StrNumber to add: " << codeFragment.substr(0, signPos) << std::endl;
+            numToOperator = ExtractNumber(codeFragment.substr(0, signPos));
+            std::cout << "Number to add: " << numToOperator << std::endl;
+
+            result /= ExtractNumber(codeFragment.substr(0, signPos));
+        }
+
+        else break;
+
+        if (GetDivSignPos(codeFragment, signPos)) {
+            std::cout << "Eliminación al final del while. Se eliminará: " << codeFragment.substr(0, signPos) << std::endl;
+            codeFragment = codeFragment.substr(signPos);
+        }
+        else break;
+    }
+    return result;
 }
 
 float CodeParser::ExtractNumber(std::string numberStr) {
@@ -170,9 +258,8 @@ void CodeParser::ReverseStr(std::string& str) {
 
 bool CodeParser::DotPos(std::string fragment, int& pos) {
     for (int i = 0; i < fragment.length(); i++) {
-        if (fragment.at(i) == ',') return false; // should stop
 
-        if (fragment.at(i) == '.') {                // saves dot positions and returns true
+        if (fragment.at(i) == '.' or fragment.at(i) == ',') {                // saves dot positions and returns true
             pos = i;
             return true;
         }
@@ -225,4 +312,8 @@ bool CodeParser::GetAddSubSignPos(std::string &codeFragment, int &minusPos, int 
 
 bool CodeParser::GetMultSignPos(std::string& codeFragment, int &timesPos) {
     return ContainsChar(codeFragment, '*', timesPos);
+}
+
+bool CodeParser::GetDivSignPos(std::string &codeFragment, int &divPos) {
+    return ContainsChar(codeFragment, '/', divPos);
 }
