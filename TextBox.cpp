@@ -58,11 +58,11 @@ void TextBox::CheckClick(float x, float y) {
         selected = true;
         box.setOutlineColor(sf::Color::White);
         box.setOutlineThickness(4);
-        std::cout << "Clicked inside" << std::endl;
+
     } else{
         selected = false;
         box.setOutlineColor(sf::Color(255,255,255,0));
-        std::cout << "Clicked Outside" << std::endl;
+
     }
 }
 
@@ -82,5 +82,12 @@ void TextBox::NewLine() {
     if (text != ""){
         text += "\n";
     }
+}
+
+bool TextBox::isEmpty() {
+    if (text == ""){
+        return true;
+    }
+    return false;
 }
 

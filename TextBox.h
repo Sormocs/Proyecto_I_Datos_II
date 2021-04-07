@@ -27,6 +27,7 @@ public:
     void Write(char);
     void Delete();
     void NewLine();
+    bool isEmpty();
 };
 
 
