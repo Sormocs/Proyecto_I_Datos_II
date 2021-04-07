@@ -1,28 +1,27 @@
 #include "TextBox.h"
 
-TextBox::TextBox(int fsize, sf::Color fontcolor, bool sel, int Sizex, int Sizey, int Posx, int Posy, sf::Color Bgcolor) {
+TextBox::TextBox(int fsize, sf::Color fontColor, bool sel, int Sizex, int Sizey, int Posx, int Posy, sf::Color Bgcolor) {
 
+    fontsize = fsize;
     sizex = Sizex;
     sizey = Sizey;
     posx = Posx;
     posy = Posy;
     selected = sel;
     bgcolor = Bgcolor;
+    fontcolor = fontColor;
 
-    txtbox.setCharacterSize(fsize);
-    txtbox.setColor(fontcolor);
+    Build();
 
-    //sf::Font font;
-    //if (!font.loadFromFile("../Fonts//arial.ttf")){
-        //exit(500);
-    //}
-    //txtbox.setFont(font);
+}
+
+void TextBox::Build() {
 
     sf::RectangleShape box(sf::Vector2f(sizex,sizey));
     box.setPosition(posx,posy);
     box.setFillColor(sf::Color(bgcolor));
 
-    if (sel){
+    if (selected){
         box.setOutlineColor(sf::Color::White);
         box.setOutlineThickness(4);
     } else{
@@ -31,15 +30,22 @@ TextBox::TextBox(int fsize, sf::Color fontcolor, bool sel, int Sizex, int Sizey,
 
     this->box = box;
 
-    txtbox.setPosition(posx + 5,posy + 5);
+    //sf::Font font;
+    font.loadFromFile("../arial.ttf");
 
+    txtbox.setString(text);
+    txtbox.setFont(font);
+    txtbox.setString("");
+    txtbox.setCharacterSize(fontsize);
+    txtbox.setColor(fontcolor);
+    txtbox.setPosition(posx + 5,posy + 5);
 }
 
 void TextBox::Draw(sf::RenderWindow* win) {
 
-    txtbox.setString(text);
-
     win->draw(box);
+
+    txtbox.setString(text);
     win->draw(txtbox);
 }
 
@@ -61,9 +67,20 @@ void TextBox::CheckClick(float x, float y) {
 }
 
 void TextBox::Write(char val) {
-    std::cout << "is in" << std::endl;
     std::string character = std::string(1,val);
-    std::cout << "Still good" << std::endl;
     text += character;
     std::cout << text << std::endl;
 }
+
+void TextBox::Delete() {
+    if (text != "") {
+        text.erase(text.end()-1,text.end());
+    }
+}
+
+void TextBox::NewLine() {
+    if (text != ""){
+        text += "\n";
+    }
+}
+

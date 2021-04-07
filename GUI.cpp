@@ -13,14 +13,17 @@ GUI* GUI::getInstance() {
 }
 
 void GUI::Run() {
-    sf::RenderWindow window(sf::VideoMode(1700, 900), "C! IDE",sf::Style::Titlebar | sf::Style::Close);
+    sf::RenderWindow window(sf::VideoMode(1550, 850), "C! IDE",sf::Style::Titlebar | sf::Style::Close);
     sf::Vector2i centerwin((sf::VideoMode::getDesktopMode().width/2)-445,(sf::VideoMode::getDesktopMode().height/2)-480);
     window.setPosition(centerwin);
     float mouse[2] = {};
     sf::RenderWindow* winptr = &window;
 
     // (int fsize, sf::Color fontcolor, bool sel, int sizex, int sizey, int posx, int posy, sf::Color Bgcolor)
-    TextBox *codeA = new TextBox(18,sf::Color::White,true,1250,600,40,60,sf::Color(128,128,128,255));
+    TextBox *codeA = new TextBox(18,sf::Color::White,true,1150,550,40,60,sf::Color(128,128,128,255));
+
+    sf::Font font;
+    font.loadFromFile("../Fonts/comic-sans-ms.ttf");
 
     while (window.isOpen())
     {
@@ -35,12 +38,18 @@ void GUI::Run() {
                 std::cout << "Click" << std::endl;
                 codeA->CheckClick(mouse[0],mouse[1]);
             }
-            if (event.type == event.TextEntered){
 
+            if (event.type == event.TextEntered) {
                 if (codeA->isSelected()) {
-                    char letter = static_cast<char>(event.text.unicode);
-                    std::cout << "Going in?" << std::endl;
-                    codeA->Write(letter);
+                    if (event.text.unicode == 8) {
+                        codeA->Delete();
+                    } else if (event.text.unicode == 13) {
+                        codeA->NewLine();
+                    } else {
+                        std::cout << event.text.unicode << std::endl;
+                        char letter = static_cast<char>(event.text.unicode);
+                        codeA->Write(letter);
+                    }
                 }
             }
         }
