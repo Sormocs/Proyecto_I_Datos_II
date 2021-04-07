@@ -31,7 +31,7 @@ void TextBox::Build() {
     this->box = box;
 
     //sf::Font font;
-    font.loadFromFile("../arial.ttf");
+    font.loadFromFile("../Fonts/arial.ttf");
 
     txtbox.setString(text);
     txtbox.setFont(font);
