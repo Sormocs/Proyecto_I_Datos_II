@@ -2,15 +2,19 @@
 #include <SFML/Graphics.hpp>
 
 #include "CodeParser.h"
+#include "MemList.h"
+#include "MemoryManager.h"
 
 void ParserTest();
 void Screen();
+void MemoryTests();
 
 int main()
 {
 
     //Screen();
-    ParserTest();
+    //ParserTest();
+    MemoryTests();
 
     return 0;
 }
@@ -58,4 +62,25 @@ void Screen(){
         window.draw(shape);
         window.display();
     }
+}
+
+void MemoryTests(){
+    //void array[100];
+    void* p = malloc(1000);
+    int* pInt = (int*)p;
+    std::string* pString = (std::string*)p+8;
+
+    *pInt = 25;
+    *pString = "buenas";
+
+    std::cout << "p size->" << sizeof(p) << " and value is void" << " cell at " << p << std::endl;
+    std::cout << "pInt size->" << sizeof(pInt) << " and value is " << *pInt << " cell at " << pInt << std::endl;
+    std::cout << "pString size->" << sizeof(pString) << " and value is " << *pString << " cell at " << pString << std::endl;
+
+    //MemoryList* memList = new MemoryList();
+    auto* memoryManager = new MemoryManager();
+    Node* nodo = memoryManager->GetMemory();
+    nodo->referenceValue = malloc(sizeof(Node));
+    *(((Node*)(nodo->referenceValue))->charValue) = 'a';
+    std::cout << ((Node*)(nodo->referenceValue))->charValue;
 }

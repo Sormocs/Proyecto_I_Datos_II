@@ -96,6 +96,18 @@
 		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.h">
 			<Option target="Project"/>
 		</Unit>
+		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemList.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemList.h">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemoryManager.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemoryManager.h">
+			<Option target="Project"/>
+		</Unit>
 		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/main.cpp">
 			<Option target="Project"/>
 		</Unit>

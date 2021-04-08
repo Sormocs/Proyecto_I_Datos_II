@@ -197,6 +197,60 @@ CodeParser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/CodeParser.cpp.s
 .PHONY : CodeParser.cpp.s
 
+MemList.o: MemList.cpp.o
+
+.PHONY : MemList.o
+
+# target to build an object file
+MemList.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/MemList.cpp.o
+.PHONY : MemList.cpp.o
+
+MemList.i: MemList.cpp.i
+
+.PHONY : MemList.i
+
+# target to preprocess a source file
+MemList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/MemList.cpp.i
+.PHONY : MemList.cpp.i
+
+MemList.s: MemList.cpp.s
+
+.PHONY : MemList.s
+
+# target to generate assembly for a file
+MemList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/MemList.cpp.s
+.PHONY : MemList.cpp.s
+
+MemoryManager.o: MemoryManager.cpp.o
+
+.PHONY : MemoryManager.o
+
+# target to build an object file
+MemoryManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/MemoryManager.cpp.o
+.PHONY : MemoryManager.cpp.o
+
+MemoryManager.i: MemoryManager.cpp.i
+
+.PHONY : MemoryManager.i
+
+# target to preprocess a source file
+MemoryManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/MemoryManager.cpp.i
+.PHONY : MemoryManager.cpp.i
+
+MemoryManager.s: MemoryManager.cpp.s
+
+.PHONY : MemoryManager.s
+
+# target to generate assembly for a file
+MemoryManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/MemoryManager.cpp.s
+.PHONY : MemoryManager.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -239,6 +293,12 @@ help:
 	@echo "... CodeParser.o"
 	@echo "... CodeParser.i"
 	@echo "... CodeParser.s"
+	@echo "... MemList.o"
+	@echo "... MemList.i"
+	@echo "... MemList.s"
+	@echo "... MemoryManager.o"
+	@echo "... MemoryManager.i"
+	@echo "... MemoryManager.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

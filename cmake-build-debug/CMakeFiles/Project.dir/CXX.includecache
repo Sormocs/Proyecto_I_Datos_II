@@ -12,6 +12,14 @@ string
 iostream
 -
 
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemList.h
+string
+-
+
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemoryManager.h
+MemList.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemList.h
+
 /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/main.cpp
 iostream
 -
@@ -19,4 +27,8 @@ SFML/Graphics.hpp
 -
 CodeParser.h
 /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.h
+MemList.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemList.h
+MemoryManager.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemoryManager.h
 
