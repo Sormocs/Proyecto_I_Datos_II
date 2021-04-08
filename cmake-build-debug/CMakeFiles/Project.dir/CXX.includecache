@@ -6,13 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/sormocs04/CLionProjects/Project/Button.cpp
-Button.h
-/home/sormocs04/CLionProjects/Project/Button.h
-
-/home/sormocs04/CLionProjects/Project/Button.h
-SFML/Graphics.hpp
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.h
+string
 -
 iostream
 -
+
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/main.cpp
+iostream
+-
+SFML/Graphics.hpp
+-
+CodeParser.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.h
 

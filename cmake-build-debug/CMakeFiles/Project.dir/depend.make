@@ -4,5 +4,9 @@
 CMakeFiles/Project.dir/Button.cpp.o: ../Button.cpp
 CMakeFiles/Project.dir/Button.cpp.o: ../Button.h
 
+CMakeFiles/Project.dir/CodeParser.cpp.o: ../CodeParser.cpp
+CMakeFiles/Project.dir/CodeParser.cpp.o: ../CodeParser.h
+
+CMakeFiles/Project.dir/main.cpp.o: ../CodeParser.h
 CMakeFiles/Project.dir/main.cpp.o: ../main.cpp
 

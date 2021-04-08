@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/sormocs04/CLionProjects/Project/SFML_INCLUDE_DIR 
+CXX_INCLUDES = -I/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/SFML_INCLUDE_DIR 
 
