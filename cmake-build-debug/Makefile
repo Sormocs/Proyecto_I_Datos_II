@@ -197,32 +197,32 @@ CodeParser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/CodeParser.cpp.s
 .PHONY : CodeParser.cpp.s
 
-MemList.o: MemList.cpp.o
+MemoryList.o: MemoryList.cpp.o
 
-.PHONY : MemList.o
+.PHONY : MemoryList.o
 
 # target to build an object file
-MemList.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/MemList.cpp.o
-.PHONY : MemList.cpp.o
+MemoryList.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/MemoryList.cpp.o
+.PHONY : MemoryList.cpp.o
 
-MemList.i: MemList.cpp.i
+MemoryList.i: MemoryList.cpp.i
 
-.PHONY : MemList.i
+.PHONY : MemoryList.i
 
 # target to preprocess a source file
-MemList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/MemList.cpp.i
-.PHONY : MemList.cpp.i
+MemoryList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/MemoryList.cpp.i
+.PHONY : MemoryList.cpp.i
 
-MemList.s: MemList.cpp.s
+MemoryList.s: MemoryList.cpp.s
 
-.PHONY : MemList.s
+.PHONY : MemoryList.s
 
 # target to generate assembly for a file
-MemList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/MemList.cpp.s
-.PHONY : MemList.cpp.s
+MemoryList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/MemoryList.cpp.s
+.PHONY : MemoryList.cpp.s
 
 MemoryManager.o: MemoryManager.cpp.o
 
@@ -293,9 +293,9 @@ help:
 	@echo "... CodeParser.o"
 	@echo "... CodeParser.i"
 	@echo "... CodeParser.s"
-	@echo "... MemList.o"
-	@echo "... MemList.i"
-	@echo "... MemList.s"
+	@echo "... MemoryList.o"
+	@echo "... MemoryList.i"
+	@echo "... MemoryList.s"
 	@echo "... MemoryManager.o"
 	@echo "... MemoryManager.i"
 	@echo "... MemoryManager.s"

@@ -1,9 +1,10 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <stdio.h>
 
 #include "CodeParser.h"
-#include "MemList.h"
 #include "MemoryManager.h"
+#include "MemoryList.h"
 
 void ParserTest();
 void Screen();
@@ -77,10 +78,24 @@ void MemoryTests(){
     std::cout << "pInt size->" << sizeof(pInt) << " and value is " << *pInt << " cell at " << pInt << std::endl;
     std::cout << "pString size->" << sizeof(pString) << " and value is " << *pString << " cell at " << pString << std::endl;
 
-    //MemoryList* memList = new MemoryList();
-    auto* memoryManager = new MemoryManager();
-    Node* nodo = memoryManager->GetMemory();
-    nodo->referenceValue = malloc(sizeof(Node));
-    *(((Node*)(nodo->referenceValue))->charValue) = 'a';
-    std::cout << ((Node*)(nodo->referenceValue))->charValue;
+    MemoryManager memoryManager = MemoryManager();
+
+    MemoryList list = MemoryList();
+    Node *node = new Node(malloc(1024));
+    node->varName = "pedro";
+    *(int*)node->value = 123;
+    node->varType = "int";
+
+    list.AddBegin(new Node());
+    list.AddBegin(node);
+
+    std::cout << std::endl << std::endl;
+
+//    std::cout <<
+
+    std::cin >> node->varName;
+
+    //std::cout << *(int*)list.GetValOf("perro") << std::endl;
+
+    std::cout << std::endl << std::endl;
 }

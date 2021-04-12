@@ -96,10 +96,10 @@
 		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.h">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemList.cpp">
+		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemoryList.cpp">
 			<Option target="Project"/>
 		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemList.h">
+		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemoryList.h">
 			<Option target="Project"/>
 		</Unit>
 		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemoryManager.cpp">

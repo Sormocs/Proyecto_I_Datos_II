@@ -6,7 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Button.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/Project.dir/Button.cpp.o"
   "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/Project.dir/CodeParser.cpp.o"
-  "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemList.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/Project.dir/MemList.cpp.o"
+  "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemoryList.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/Project.dir/MemoryList.cpp.o"
   "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemoryManager.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/Project.dir/MemoryManager.cpp.o"
   "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/main.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/Project.dir/main.cpp.o"
   )

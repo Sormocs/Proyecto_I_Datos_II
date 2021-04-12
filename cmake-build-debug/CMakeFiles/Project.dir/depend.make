@@ -7,15 +7,15 @@ CMakeFiles/Project.dir/Button.cpp.o: ../Button.h
 CMakeFiles/Project.dir/CodeParser.cpp.o: ../CodeParser.cpp
 CMakeFiles/Project.dir/CodeParser.cpp.o: ../CodeParser.h
 
-CMakeFiles/Project.dir/MemList.cpp.o: ../MemList.cpp
-CMakeFiles/Project.dir/MemList.cpp.o: ../MemList.h
+CMakeFiles/Project.dir/MemoryList.cpp.o: ../MemoryList.cpp
+CMakeFiles/Project.dir/MemoryList.cpp.o: ../MemoryList.h
 
-CMakeFiles/Project.dir/MemoryManager.cpp.o: ../MemList.h
+CMakeFiles/Project.dir/MemoryManager.cpp.o: ../MemoryList.h
 CMakeFiles/Project.dir/MemoryManager.cpp.o: ../MemoryManager.cpp
 CMakeFiles/Project.dir/MemoryManager.cpp.o: ../MemoryManager.h
 
 CMakeFiles/Project.dir/main.cpp.o: ../CodeParser.h
-CMakeFiles/Project.dir/main.cpp.o: ../MemList.h
+CMakeFiles/Project.dir/main.cpp.o: ../MemoryList.h
 CMakeFiles/Project.dir/main.cpp.o: ../MemoryManager.h
 CMakeFiles/Project.dir/main.cpp.o: ../main.cpp
 

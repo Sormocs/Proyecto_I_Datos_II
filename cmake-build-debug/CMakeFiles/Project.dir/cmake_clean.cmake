@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Project.dir/Button.cpp.o"
   "CMakeFiles/Project.dir/CodeParser.cpp.o"
-  "CMakeFiles/Project.dir/MemList.cpp.o"
+  "CMakeFiles/Project.dir/MemoryList.cpp.o"
   "CMakeFiles/Project.dir/MemoryManager.cpp.o"
   "CMakeFiles/Project.dir/main.cpp.o"
   "Project"

@@ -116,22 +116,9 @@ CMakeFiles/Project.dir/CodeParser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/CodeParser.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.cpp -o CMakeFiles/Project.dir/CodeParser.cpp.s
 
-CMakeFiles/Project.dir/MemList.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/MemList.cpp.o: ../MemList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project.dir/MemList.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project.dir/MemList.cpp.o -c /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemList.cpp
-
-CMakeFiles/Project.dir/MemList.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/MemList.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemList.cpp > CMakeFiles/Project.dir/MemList.cpp.i
-
-CMakeFiles/Project.dir/MemList.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/MemList.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemList.cpp -o CMakeFiles/Project.dir/MemList.cpp.s
-
 CMakeFiles/Project.dir/MemoryManager.cpp.o: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/MemoryManager.cpp.o: ../MemoryManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project.dir/MemoryManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project.dir/MemoryManager.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project.dir/MemoryManager.cpp.o -c /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemoryManager.cpp
 
 CMakeFiles/Project.dir/MemoryManager.cpp.i: cmake_force
@@ -142,13 +129,26 @@ CMakeFiles/Project.dir/MemoryManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/MemoryManager.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemoryManager.cpp -o CMakeFiles/Project.dir/MemoryManager.cpp.s
 
+CMakeFiles/Project.dir/MemoryList.cpp.o: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/MemoryList.cpp.o: ../MemoryList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project.dir/MemoryList.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project.dir/MemoryList.cpp.o -c /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemoryList.cpp
+
+CMakeFiles/Project.dir/MemoryList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project.dir/MemoryList.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemoryList.cpp > CMakeFiles/Project.dir/MemoryList.cpp.i
+
+CMakeFiles/Project.dir/MemoryList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project.dir/MemoryList.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/MemoryList.cpp -o CMakeFiles/Project.dir/MemoryList.cpp.s
+
 # Object files for target Project
 Project_OBJECTS = \
 "CMakeFiles/Project.dir/main.cpp.o" \
 "CMakeFiles/Project.dir/Button.cpp.o" \
 "CMakeFiles/Project.dir/CodeParser.cpp.o" \
-"CMakeFiles/Project.dir/MemList.cpp.o" \
-"CMakeFiles/Project.dir/MemoryManager.cpp.o"
+"CMakeFiles/Project.dir/MemoryManager.cpp.o" \
+"CMakeFiles/Project.dir/MemoryList.cpp.o"
 
 # External object files for target Project
 Project_EXTERNAL_OBJECTS =
@@ -156,8 +156,8 @@ Project_EXTERNAL_OBJECTS =
 Project: CMakeFiles/Project.dir/main.cpp.o
 Project: CMakeFiles/Project.dir/Button.cpp.o
 Project: CMakeFiles/Project.dir/CodeParser.cpp.o
-Project: CMakeFiles/Project.dir/MemList.cpp.o
 Project: CMakeFiles/Project.dir/MemoryManager.cpp.o
+Project: CMakeFiles/Project.dir/MemoryList.cpp.o
 Project: CMakeFiles/Project.dir/build.make
 Project: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
 Project: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
