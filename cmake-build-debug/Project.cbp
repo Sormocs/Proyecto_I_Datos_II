@@ -90,6 +90,18 @@
 		<Unit filename="/home/sormocs04/CLionProjects/Project/Button.h">
 			<Option target="Project"/>
 		</Unit>
+		<Unit filename="/home/sormocs04/CLionProjects/Project/GUI.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/sormocs04/CLionProjects/Project/GUI.h">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/sormocs04/CLionProjects/Project/TextBox.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="/home/sormocs04/CLionProjects/Project/TextBox.h">
+			<Option target="Project"/>
+		</Unit>
 		<Unit filename="/home/sormocs04/CLionProjects/Project/CodeParser.cpp">
 			<Option target="Project"/>
 		</Unit>

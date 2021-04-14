@@ -169,6 +169,60 @@ Button.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/Button.cpp.s
 .PHONY : Button.cpp.s
 
+GUI.o: GUI.cpp.o
+
+.PHONY : GUI.o
+
+# target to build an object file
+GUI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/GUI.cpp.o
+.PHONY : GUI.cpp.o
+
+GUI.i: GUI.cpp.i
+
+.PHONY : GUI.i
+
+# target to preprocess a source file
+GUI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/GUI.cpp.i
+.PHONY : GUI.cpp.i
+
+GUI.s: GUI.cpp.s
+
+.PHONY : GUI.s
+
+# target to generate assembly for a file
+GUI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/GUI.cpp.s
+.PHONY : GUI.cpp.s
+
+TextBox.o: TextBox.cpp.o
+
+.PHONY : TextBox.o
+
+# target to build an object file
+TextBox.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/TextBox.cpp.o
+.PHONY : TextBox.cpp.o
+
+TextBox.i: TextBox.cpp.i
+
+.PHONY : TextBox.i
+
+# target to preprocess a source file
+TextBox.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/TextBox.cpp.i
+.PHONY : TextBox.cpp.i
+
+TextBox.s: TextBox.cpp.s
+
+.PHONY : TextBox.s
+
+# target to generate assembly for a file
+TextBox.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/TextBox.cpp.s
+.PHONY : TextBox.cpp.s
+
 CodeParser.o: CodeParser.cpp.o
 
 .PHONY : CodeParser.o
@@ -238,6 +292,12 @@ help:
 	@echo "... CodeParser.o"
 	@echo "... CodeParser.i"
 	@echo "... CodeParser.s"
+	@echo "... GUI.o"
+	@echo "... GUI.i"
+	@echo "... GUI.s"
+	@echo "... TextBox.o"
+	@echo "... TextBox.i"
+	@echo "... TextBox.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

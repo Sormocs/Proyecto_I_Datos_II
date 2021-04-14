@@ -8,5 +8,13 @@ CMakeFiles/Project.dir/CodeParser.cpp.o: ../CodeParser.cpp
 CMakeFiles/Project.dir/CodeParser.cpp.o: ../CodeParser.h
 
 CMakeFiles/Project.dir/main.cpp.o: ../CodeParser.h
+CMakeFiles/Project.dir/GUI.cpp.o: ../GUI.cpp
+CMakeFiles/Project.dir/GUI.cpp.o: ../GUI.h
+CMakeFiles/Project.dir/GUI.cpp.o: ../TextBox.h
+
+CMakeFiles/Project.dir/TextBox.cpp.o: ../TextBox.cpp
+CMakeFiles/Project.dir/TextBox.cpp.o: ../TextBox.h
+
+CMakeFiles/Project.dir/main.cpp.o: ../GUI.h
 CMakeFiles/Project.dir/main.cpp.o: ../main.cpp
 

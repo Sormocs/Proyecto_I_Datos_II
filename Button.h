@@ -4,7 +4,7 @@
 
 class Button {
 private:
-    sf::String text;
+
 
 public:
     Button(sf::String txt);
