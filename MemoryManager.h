@@ -7,14 +7,22 @@
 
 #include "MemoryList.h"
 
+
 class MemoryManager {
 private:
-    MemoryList* memoryList = new MemoryList();
-    AvaiList* XMB = new AvaiList();
+
+//    MemoryList* usedMem;
+    AvaiList* XMB;
 public:
+    MemoryList* usedMem;
+
     MemoryManager();
 
-    Node* GetMemory();
+    template <class T>
+    void AddVar(T value, std::string varName){
+        usedMem->AddBegin(XMB->GetDeleteFirst(), value, varName);
+    }
+    std::string GetAddress(std::string varName);
 };
 
 

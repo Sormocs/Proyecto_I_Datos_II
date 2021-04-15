@@ -17,15 +17,15 @@ public:
     Node* next;
     Node* previous;
 
-    Node(void* value);
+    template <class T>
+    Node(T* value, std::string varName);
     Node() = default;
 };
 
 
-
-
 class AvaiList{
 protected:
+
     Node* first;
     Node* last;
     int size;
@@ -47,18 +47,23 @@ public:
 
 class MemoryList : protected AvaiList {
 private:
-
     void* SearchForValByName(std::string valName, Node* node);
+    Node* SearchForNodeByName(std::string varName, Node* node);
 
 public:
 
-    Node* AddBegin(Node* newFirst);
-    Node* AddEnd(Node* newLast);
+    template <class T>
+    Node* AddBegin(Node* newFirst, T value, std::string varName) {
+        newFirst->value = (void*) new T(value);
+        newFirst->varName = varName;
+        newFirst->varType = (std::string)typeid(T).name();
+        return this->AddFirst(newFirst);
+    }
 
-    void ChangeValOf(int index);
-    void ChangeValOf(std::string valName);
+    template <class T>
+    void ChangeValOf(std::string valName, T newValue);
 
-    void* GetValOf(int index);
+    Node* GetNodeOf(std::string varName);
     void* GetValOf(std::string valName);
 };
 
