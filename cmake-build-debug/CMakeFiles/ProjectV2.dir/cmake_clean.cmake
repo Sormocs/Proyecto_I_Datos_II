@@ -1,0 +1,14 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/ProjectV2.dir/Client.cpp.o"
+  "CMakeFiles/ProjectV2.dir/CodeParser.cpp.o"
+  "CMakeFiles/ProjectV2.dir/GUI.cpp.o"
+  "CMakeFiles/ProjectV2.dir/TextBox.cpp.o"
+  "CMakeFiles/ProjectV2.dir/main.cpp.o"
+  "ProjectV2"
+  "ProjectV2.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/ProjectV2.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
