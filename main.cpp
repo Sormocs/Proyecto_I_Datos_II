@@ -22,8 +22,8 @@ int main()
     std::cout << std::endl << std::endl;
 
     std::cout << memoryManager.GetAddress("veinticinco") << std::endl;
-
-//    memoryManager.usedMem->GetNodeOf("veinticinco");
+    std::cout << memoryManager.GetAddress("uno") << std::endl;
+    std::cout << memoryManager.GetAddress("dos") << std::endl;
 
     std::cout << std::endl << std::endl;
     return 0;

@@ -14,6 +14,7 @@ public:
     void* value;
     std::string varName;
     std::string varType;
+    std::type_info varT;
     Node* next;
     Node* previous;
 
@@ -56,7 +57,6 @@ public:
     Node* AddBegin(Node* newFirst, T value, std::string varName) {
         newFirst->value = (void*) new T(value);
         newFirst->varName = varName;
-        newFirst->varType = (std::string)typeid(T).name();
         return this->AddFirst(newFirst);
     }
 

@@ -33,3 +33,7 @@ std::string MemoryManager::GetAddress(std::string varName) {
     address << usedMem->GetNodeOf(varName);
     return address.str();
 }
+
+std::string MemoryManager::GetType(std::string varName) {
+    return usedMem->GetNodeOf(varName)->varType;
+}

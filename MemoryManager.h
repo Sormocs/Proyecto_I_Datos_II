@@ -23,6 +23,12 @@ public:
         usedMem->AddBegin(XMB->GetDeleteFirst(), value, varName);
     }
     std::string GetAddress(std::string varName);
+    std::string GetType(std::string varName);
+
+    template <class T>
+    T GetValOf(std::string varName){
+        return usedMem->GetNodeOf(varName)->value;
+    }
 };
 
 

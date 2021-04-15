@@ -10,29 +10,16 @@
 template <class T>
 Node::Node(T *value, std::string varName) {
     this->varName = varName;
-//    switch (typeid(T).hash_code()) {
-//        case typeid(int):
-//            this->varType = "int";
-//            break;
-//        case typeid(long):
-//            this->varType = "long";
-//            break;
-//        case typeid(float):
-//            this->varType = "float";
-//            break;
-//        case typeid(double):
-//            this->varType = "double";
-//            break;
-//        case typeid(char):
-//            this->varType = "char";
-//            break;
-//        case typeid(std::string):
-//            this->varType = "string";
-//            break;
-//        case typeid(int):
-//            this->varType = "int";
-//            break;
-//    }
+
+    if (typeid(T) == typeid(int)) this->varType = "int";
+
+    else if (typeid(T) == typeid(long)) this->varType = "long";
+
+    else if (typeid(T) == typeid(float)) this->varType = "float";
+
+    else if (typeid(T) == typeid(double)) this->varType = "double";
+
+    else if (typeid(T) == typeid(char)) this->varType = "char";
 }
 
 
@@ -98,7 +85,7 @@ Node *AvaiList::GetDeleteFirst() {
 Node *MemoryList::GetNodeOf(std::string varName) {
     if (first == nullptr) throw ("List is empty.");
 
-    else return SearchForNodeByName(varName, first->next);
+    else return SearchForNodeByName(varName, first);
 }
 
 Node *MemoryList::SearchForNodeByName(std::string varName, Node *node) {
@@ -113,7 +100,7 @@ Node *MemoryList::SearchForNodeByName(std::string varName, Node *node) {
 void *MemoryList::GetValOf(std::string valName) {
     if (first == nullptr) throw ("List is empty.");
 
-    else return SearchForValByName(valName, first->next);
+    else return SearchForValByName(valName, first);
 }
 
 void *MemoryList::SearchForValByName(std::string valName, Node* node) {
