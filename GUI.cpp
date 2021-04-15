@@ -13,7 +13,7 @@ GUI* GUI::getInstance() {
 }
 
 void GUI::Run() {
-    sf::RenderWindow window(sf::VideoMode(1550, 850), "C! IDE",sf::Style::Titlebar | sf::Style::Close);
+    sf::RenderWindow window(sf::VideoMode(1550, 850), "AtomiC! IDE",sf::Style::Titlebar | sf::Style::Close);
     sf::Vector2i centerwin(0,0);
     window.setPosition(centerwin);
     float mouse[2] = {};
