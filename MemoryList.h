@@ -36,7 +36,7 @@ protected:
 public:
     AvaiList() = default;
 
-    Node* Get(int index);
+    Node* GetNode(int index);
     Node* AddFirst(Node* newFirst);
     Node* AddLast(Node* newLast);
 
@@ -63,6 +63,7 @@ public:
     template <class T>
     void ChangeValOf(std::string valName, T newValue);
 
+    Node* Get(int index);
     Node* GetNodeOf(std::string varName);
     void* GetValOf(std::string valName);
 };
