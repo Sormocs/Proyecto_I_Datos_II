@@ -19,8 +19,8 @@ public:
     MemoryManager();
 
     template <class T>
-    void AddVar(T value, std::string varName){
-        usedMem->AddBegin(XMB->GetDeleteFirst(), value, varName);
+    void AddVar(T value, std::string varName, std::string varType){
+        usedMem->AddBegin(XMB->GetDeleteFirst(), value, varName, varType);
     }
     std::string GetAddress(std::string varName);
     std::string GetType(std::string varName);

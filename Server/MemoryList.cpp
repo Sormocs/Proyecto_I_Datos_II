@@ -11,19 +11,7 @@ template <class T>
 Node::Node(T *value, std::string varName) {
     this->varName = varName;
 
-    //this->varT = typeid(value);
 
-    this->varType = typeid(value).name();
-
-    if (typeid(T) == typeid(int)) this->varType = "int";
-
-    else if (typeid(T) == typeid(long)) this->varType = "long";
-
-    else if (typeid(T) == typeid(float)) this->varType = "float";
-
-    else if (typeid(T) == typeid(double)) this->varType = "double";
-
-    else if (typeid(T) == typeid(char)) this->varType = "char";
 }
 
 

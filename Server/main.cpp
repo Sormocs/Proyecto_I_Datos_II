@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Server.h"
+#include "MemoryManager.h"
 #include <thread>
 
 void RunServer(){
@@ -9,11 +10,19 @@ void RunServer(){
 
 }
 
+void MemoryTests();
+
 int main() {
 
-    std::thread RunS (RunServer);
+    MemoryTests();
 
-    RunS.join();
+//    std::thread RunS (RunServer);
+
+//    RunS.join();
 
     return 0;
+}
+
+void MemoryTests(){
+    auto manager = MemoryManager();
 }

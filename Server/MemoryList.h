@@ -14,7 +14,6 @@ public:
     void* value;
     std::string varName;
     std::string varType;
-    std::type_info varT;
     Node* next;
     Node* previous;
 
@@ -54,9 +53,10 @@ private:
 public:
 
     template <class T>
-    void AddBegin(Node* newFirst, T value, std::string varName) {
+    void AddBegin(Node* newFirst, T value, std::string varName, std::string varType) {
         newFirst->value = (void*) new T(value);
         newFirst->varName = varName;
+        newFirst->varType = varType;
         this->AddFirst(newFirst);
     }
 
