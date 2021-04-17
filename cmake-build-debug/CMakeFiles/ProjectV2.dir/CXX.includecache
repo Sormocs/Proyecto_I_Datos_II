@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/sormocs04/CLionProjects/Project/Client.cpp
-Client.h
-/home/sormocs04/CLionProjects/Project/Client.h
-
 /home/sormocs04/CLionProjects/Project/Client.h
 iostream
 -
@@ -28,36 +24,8 @@ string.h
 string
 -
 
-/home/sormocs04/CLionProjects/Project/CodeParser.cpp
-CodeParser.h
-/home/sormocs04/CLionProjects/Project/CodeParser.h
-
-/home/sormocs04/CLionProjects/Project/CodeParser.h
-string
--
-iostream
--
-
-/home/sormocs04/CLionProjects/Project/GUI.cpp
-GUI.h
-/home/sormocs04/CLionProjects/Project/GUI.h
-TextBox.h
-/home/sormocs04/CLionProjects/Project/TextBox.h
-
 /home/sormocs04/CLionProjects/Project/GUI.h
 SFML/Graphics.hpp
--
-
-/home/sormocs04/CLionProjects/Project/TextBox.cpp
-TextBox.h
-/home/sormocs04/CLionProjects/Project/TextBox.h
-
-/home/sormocs04/CLionProjects/Project/TextBox.h
-SFML/Graphics.hpp
--
-iostream
--
-sstream
 -
 
 /home/sormocs04/CLionProjects/Project/main.cpp
