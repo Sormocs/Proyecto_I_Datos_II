@@ -10,8 +10,6 @@
 template <class T>
 Node::Node(T *value, std::string varName) {
     this->varName = varName;
-
-
 }
 
 

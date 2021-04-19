@@ -16,9 +16,9 @@ class CodeParser {
 private:
     std::string fullCode;
 
-    float ExtractNumber(std::string numberStr);
-    static float pow(float num, float power);
-    static float negPow(float num, float power);
+    double ExtractNumber(std::string numberStr);
+    static double pow(float num, float power);
+    static double negPow(float num, float power);
     int ToInt(char character);
     void ReverseStr(std::string& str);
     bool DotPos(std::string fragment, int& pos);
@@ -31,19 +31,25 @@ private:
     bool GetDivSignPos(std::string& codeFragment, int& divPos);
 
 public:
-    std::string AritmetricDetector(std::string codeFragment);
+    std::string AritmetricDetector(std::string& codeFragment);
 
 
 
-    float AddSubtract(std::string codeFragment);
-    float Multiply(std::string codeFragment);
-    float Division(std::string codeFragment);
+    double AddSubtract(std::string codeFragment);
+    double Multiply(std::string codeFragment);
+    double Division(std::string codeFragment);
 
     bool ContainsChar(std::string& fragment, char character, int& position);
     bool ContainsChar(std::string& fragment, char character);
 
     bool ContainsStr(std::string& text, std::string fragment, int& position, int& lenght);
     bool ContainsStr(std::string& text, std::string fragment);
+
+    bool Declaration(std::string& line);
+
+    bool Asignation(std::string asignation, std::string& type);
+
+    void GetFirstNumPos(std::string& codeBlock, int& position);
 };
 
 
