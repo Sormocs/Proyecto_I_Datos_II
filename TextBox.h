@@ -1,20 +1,18 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <sstream>
+#include "CodeTxT.h"
 #pragma once
-#define DELETE_KEY 8;
-#define ESCAPE_KEY 27;
 
 class TextBox {
 private:
-    int sizey, sizex, posy, posx, fontsize;
-    sf::Text txtbox;
+    int sizey, sizex, posy, posx, fontsize, indx, indy, currLine;
     sf::Color bgcolor, fontcolor;
     bool selected = false;
-    bool reachlimit = false;
-    int limit;
-    std::string text = "";
     sf::RectangleShape box;
+    sf::RectangleShape tInd;
+    CodeTxT *code;
+    Line *current;
 
     sf::Font font;
 
@@ -27,5 +25,4 @@ public:
     void Write(char);
     void Delete();
     void NewLine();
-    bool isEmpty();
 };

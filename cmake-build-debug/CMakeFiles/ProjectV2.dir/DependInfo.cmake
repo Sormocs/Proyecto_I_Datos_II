@@ -4,9 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/sormocs04/CLionProjects/Project/Button.cpp" "/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles/ProjectV2.dir/Button.cpp.o"
   "/home/sormocs04/CLionProjects/Project/Client.cpp" "/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles/ProjectV2.dir/Client.cpp.o"
   "/home/sormocs04/CLionProjects/Project/CodeParser.cpp" "/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles/ProjectV2.dir/CodeParser.cpp.o"
+  "/home/sormocs04/CLionProjects/Project/CodeTxT.cpp" "/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o"
   "/home/sormocs04/CLionProjects/Project/GUI.cpp" "/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles/ProjectV2.dir/GUI.cpp.o"
+  "/home/sormocs04/CLionProjects/Project/Json.cpp" "/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles/ProjectV2.dir/Json.cpp.o"
   "/home/sormocs04/CLionProjects/Project/TextBox.cpp" "/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles/ProjectV2.dir/TextBox.cpp.o"
   "/home/sormocs04/CLionProjects/Project/main.cpp" "/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles/ProjectV2.dir/main.cpp.o"
   )

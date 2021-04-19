@@ -142,6 +142,33 @@ ProjectV2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/build
 .PHONY : ProjectV2/fast
 
+Button.o: Button.cpp.o
+
+.PHONY : Button.o
+
+# target to build an object file
+Button.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/Button.cpp.o
+.PHONY : Button.cpp.o
+
+Button.i: Button.cpp.i
+
+.PHONY : Button.i
+
+# target to preprocess a source file
+Button.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/Button.cpp.i
+.PHONY : Button.cpp.i
+
+Button.s: Button.cpp.s
+
+.PHONY : Button.s
+
+# target to generate assembly for a file
+Button.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/Button.cpp.s
+.PHONY : Button.cpp.s
+
 Client.o: Client.cpp.o
 
 .PHONY : Client.o
@@ -196,6 +223,33 @@ CodeParser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/CodeParser.cpp.s
 .PHONY : CodeParser.cpp.s
 
+CodeTxT.o: CodeTxT.cpp.o
+
+.PHONY : CodeTxT.o
+
+# target to build an object file
+CodeTxT.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o
+.PHONY : CodeTxT.cpp.o
+
+CodeTxT.i: CodeTxT.cpp.i
+
+.PHONY : CodeTxT.i
+
+# target to preprocess a source file
+CodeTxT.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/CodeTxT.cpp.i
+.PHONY : CodeTxT.cpp.i
+
+CodeTxT.s: CodeTxT.cpp.s
+
+.PHONY : CodeTxT.s
+
+# target to generate assembly for a file
+CodeTxT.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/CodeTxT.cpp.s
+.PHONY : CodeTxT.cpp.s
+
 GUI.o: GUI.cpp.o
 
 .PHONY : GUI.o
@@ -222,6 +276,33 @@ GUI.s: GUI.cpp.s
 GUI.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/GUI.cpp.s
 .PHONY : GUI.cpp.s
+
+Json.o: Json.cpp.o
+
+.PHONY : Json.o
+
+# target to build an object file
+Json.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/Json.cpp.o
+.PHONY : Json.cpp.o
+
+Json.i: Json.cpp.i
+
+.PHONY : Json.i
+
+# target to preprocess a source file
+Json.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/Json.cpp.i
+.PHONY : Json.cpp.i
+
+Json.s: Json.cpp.s
+
+.PHONY : Json.s
+
+# target to generate assembly for a file
+Json.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/Json.cpp.s
+.PHONY : Json.cpp.s
 
 TextBox.o: TextBox.cpp.o
 
@@ -286,15 +367,24 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ProjectV2"
+	@echo "... Button.o"
+	@echo "... Button.i"
+	@echo "... Button.s"
 	@echo "... Client.o"
 	@echo "... Client.i"
 	@echo "... Client.s"
 	@echo "... CodeParser.o"
 	@echo "... CodeParser.i"
 	@echo "... CodeParser.s"
+	@echo "... CodeTxT.o"
+	@echo "... CodeTxT.i"
+	@echo "... CodeTxT.s"
 	@echo "... GUI.o"
 	@echo "... GUI.i"
 	@echo "... GUI.s"
+	@echo "... Json.o"
+	@echo "... Json.i"
+	@echo "... Json.s"
 	@echo "... TextBox.o"
 	@echo "... TextBox.i"
 	@echo "... TextBox.s"

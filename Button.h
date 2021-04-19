@@ -9,6 +9,8 @@ private:
     int posx, posy, width, height, fsize;
     sf::Color bgcolor;
     std::string text = "";
+    sf::Text sText;
+    sf::Font font;
     sf::RectangleShape area;
     sf::Color color;
 
@@ -19,6 +21,8 @@ public:
     bool Clicked(int, int);
     int getPosx();
     int getPosy();
+    void MouseOver(int, int);
+    void Draw(sf::RenderWindow*);
 
 
 };

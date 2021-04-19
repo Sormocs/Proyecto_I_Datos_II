@@ -1,5 +1,6 @@
 #include "GUI.h"
 #include "TextBox.h"
+#include "Button.h"
 
 GUI *GUI::instance = nullptr;
 
@@ -22,6 +23,9 @@ void GUI::Run() {
     // (int fsize, sf::Color fontcolor, bool sel, int sizex, int sizey, int posx, int posy, sf::Color Bgcolor)
     TextBox *codeA = new TextBox(18,sf::Color::White,true,1142,546,44,44,sf::Color(128,128,128,255));
 
+    //BUTTONS:
+    //Button(int Posx, int Posy, int Width, int Height,int Fsize ,std::string Text, sf::Color Color)
+    Button runBtn = Button(50,6,155,30,26,"Run C!ode",sf::Color(0,128,128,255));
 
     //SHAPES:
     sf::RectangleShape rect1(sf::Vector2f(1700.f,40.f));
@@ -60,7 +64,7 @@ void GUI::Run() {
     lines.setFont(font);
     lines.setCharacterSize(18);
     lines.setColor(sf::Color(255,255,255,255));
-    lines.setPosition(0,45);
+    lines.setPosition(40*0.333,45);
 
 
     while (window.isOpen())
@@ -76,19 +80,22 @@ void GUI::Run() {
                 codeA->CheckClick(mouse[0],mouse[1]);
             }
 
+            if (event.type == sf::Event::MouseMoved){
+                mouse[0] = sf::Mouse::getPosition(window).x;
+                mouse[1] = sf::Mouse::getPosition(window).y;
+                runBtn.MouseOver(mouse[0],mouse[1]);
+            }
+
             if (event.type == event.TextEntered) {
                 if (codeA->isSelected()) {
                     if (event.text.unicode == 8) {
                         codeA->Delete();
                     } else if (event.text.unicode == 13) {
                         codeA->NewLine();
-                        if (!codeA->isEmpty()) {
-                            lnumstr += "\n";
-                            lnum += 1;
-                            lnumstr += std::to_string(lnum);
-                        }
+                        lnumstr += "\n";
+                        lnum += 1;
+                        lnumstr += std::to_string(lnum);
                     } else {
-                        std::cout << event.text.unicode << std::endl;
                         char letter = static_cast<char>(event.text.unicode);
                         codeA->Write(letter);
                     }
@@ -101,9 +108,11 @@ void GUI::Run() {
         window.draw(rect1);
         window.draw(RAMViewer);
         window.draw(lineSpace);
+        runBtn.Draw(winptr);
         window.draw(lines);
         window.draw(ram);
         window.draw(num);
         window.display();
+        //codeA->Draw(winptr);
     }
 }

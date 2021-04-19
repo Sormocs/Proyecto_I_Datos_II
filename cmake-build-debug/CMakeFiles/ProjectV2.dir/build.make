@@ -141,13 +141,55 @@ CMakeFiles/ProjectV2.dir/Client.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/Client.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs04/CLionProjects/Project/Client.cpp -o CMakeFiles/ProjectV2.dir/Client.cpp.s
 
+CMakeFiles/ProjectV2.dir/Button.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
+CMakeFiles/ProjectV2.dir/Button.cpp.o: ../Button.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ProjectV2.dir/Button.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/Button.cpp.o -c /home/sormocs04/CLionProjects/Project/Button.cpp
+
+CMakeFiles/ProjectV2.dir/Button.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectV2.dir/Button.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs04/CLionProjects/Project/Button.cpp > CMakeFiles/ProjectV2.dir/Button.cpp.i
+
+CMakeFiles/ProjectV2.dir/Button.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/Button.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs04/CLionProjects/Project/Button.cpp -o CMakeFiles/ProjectV2.dir/Button.cpp.s
+
+CMakeFiles/ProjectV2.dir/Json.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
+CMakeFiles/ProjectV2.dir/Json.cpp.o: ../Json.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ProjectV2.dir/Json.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/Json.cpp.o -c /home/sormocs04/CLionProjects/Project/Json.cpp
+
+CMakeFiles/ProjectV2.dir/Json.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectV2.dir/Json.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs04/CLionProjects/Project/Json.cpp > CMakeFiles/ProjectV2.dir/Json.cpp.i
+
+CMakeFiles/ProjectV2.dir/Json.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/Json.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs04/CLionProjects/Project/Json.cpp -o CMakeFiles/ProjectV2.dir/Json.cpp.s
+
+CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
+CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: ../CodeTxT.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o -c /home/sormocs04/CLionProjects/Project/CodeTxT.cpp
+
+CMakeFiles/ProjectV2.dir/CodeTxT.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectV2.dir/CodeTxT.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs04/CLionProjects/Project/CodeTxT.cpp > CMakeFiles/ProjectV2.dir/CodeTxT.cpp.i
+
+CMakeFiles/ProjectV2.dir/CodeTxT.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/CodeTxT.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs04/CLionProjects/Project/CodeTxT.cpp -o CMakeFiles/ProjectV2.dir/CodeTxT.cpp.s
+
 # Object files for target ProjectV2
 ProjectV2_OBJECTS = \
 "CMakeFiles/ProjectV2.dir/main.cpp.o" \
 "CMakeFiles/ProjectV2.dir/TextBox.cpp.o" \
 "CMakeFiles/ProjectV2.dir/GUI.cpp.o" \
 "CMakeFiles/ProjectV2.dir/CodeParser.cpp.o" \
-"CMakeFiles/ProjectV2.dir/Client.cpp.o"
+"CMakeFiles/ProjectV2.dir/Client.cpp.o" \
+"CMakeFiles/ProjectV2.dir/Button.cpp.o" \
+"CMakeFiles/ProjectV2.dir/Json.cpp.o" \
+"CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o"
 
 # External object files for target ProjectV2
 ProjectV2_EXTERNAL_OBJECTS =
@@ -157,12 +199,15 @@ ProjectV2: CMakeFiles/ProjectV2.dir/TextBox.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/GUI.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/CodeParser.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/Client.cpp.o
+ProjectV2: CMakeFiles/ProjectV2.dir/Button.cpp.o
+ProjectV2: CMakeFiles/ProjectV2.dir/Json.cpp.o
+ProjectV2: CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/build.make
 ProjectV2: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
 ProjectV2: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 ProjectV2: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 ProjectV2: CMakeFiles/ProjectV2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ProjectV2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sormocs04/CLionProjects/Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ProjectV2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ProjectV2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
