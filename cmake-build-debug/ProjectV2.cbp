@@ -96,12 +96,6 @@
 		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Client.h">
 			<Option target="ProjectV2"/>
 		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.cpp">
-			<Option target="ProjectV2"/>
-		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.h">
-			<Option target="ProjectV2"/>
-		</Unit>
 		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeTxT.cpp">
 			<Option target="ProjectV2"/>
 		</Unit>

@@ -31,7 +31,7 @@ private:
     bool GetDivSignPos(std::string& codeFragment, int& divPos);
 
 public:
-    std::string AritmetricDetector(std::string& codeFragment);
+    double AritmetricDetector(std::string& codeFragment);
 
 
 
@@ -50,6 +50,10 @@ public:
     bool Asignation(std::string asignation, std::string& type);
 
     void GetFirstNumPos(std::string& codeBlock, int& position);
+
+    void* AsignNum(double num);
+
+    void DeleteSpaces(std::string& text);
 };
 
 

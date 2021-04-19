@@ -115,22 +115,9 @@ CMakeFiles/ProjectV2.dir/GUI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/GUI.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/GUI.cpp -o CMakeFiles/ProjectV2.dir/GUI.cpp.s
 
-CMakeFiles/ProjectV2.dir/CodeParser.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
-CMakeFiles/ProjectV2.dir/CodeParser.cpp.o: ../CodeParser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ProjectV2.dir/CodeParser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/CodeParser.cpp.o -c /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.cpp
-
-CMakeFiles/ProjectV2.dir/CodeParser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectV2.dir/CodeParser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.cpp > CMakeFiles/ProjectV2.dir/CodeParser.cpp.i
-
-CMakeFiles/ProjectV2.dir/CodeParser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/CodeParser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.cpp -o CMakeFiles/ProjectV2.dir/CodeParser.cpp.s
-
 CMakeFiles/ProjectV2.dir/Client.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
 CMakeFiles/ProjectV2.dir/Client.cpp.o: ../Client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ProjectV2.dir/Client.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ProjectV2.dir/Client.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/Client.cpp.o -c /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Client.cpp
 
 CMakeFiles/ProjectV2.dir/Client.cpp.i: cmake_force
@@ -143,7 +130,7 @@ CMakeFiles/ProjectV2.dir/Client.cpp.s: cmake_force
 
 CMakeFiles/ProjectV2.dir/Button.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
 CMakeFiles/ProjectV2.dir/Button.cpp.o: ../Button.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ProjectV2.dir/Button.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ProjectV2.dir/Button.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/Button.cpp.o -c /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Button.cpp
 
 CMakeFiles/ProjectV2.dir/Button.cpp.i: cmake_force
@@ -156,7 +143,7 @@ CMakeFiles/ProjectV2.dir/Button.cpp.s: cmake_force
 
 CMakeFiles/ProjectV2.dir/Json.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
 CMakeFiles/ProjectV2.dir/Json.cpp.o: ../Json.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ProjectV2.dir/Json.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ProjectV2.dir/Json.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/Json.cpp.o -c /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Json.cpp
 
 CMakeFiles/ProjectV2.dir/Json.cpp.i: cmake_force
@@ -169,7 +156,7 @@ CMakeFiles/ProjectV2.dir/Json.cpp.s: cmake_force
 
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: ../CodeTxT.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o -c /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeTxT.cpp
 
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.i: cmake_force
@@ -185,7 +172,6 @@ ProjectV2_OBJECTS = \
 "CMakeFiles/ProjectV2.dir/main.cpp.o" \
 "CMakeFiles/ProjectV2.dir/TextBox.cpp.o" \
 "CMakeFiles/ProjectV2.dir/GUI.cpp.o" \
-"CMakeFiles/ProjectV2.dir/CodeParser.cpp.o" \
 "CMakeFiles/ProjectV2.dir/Client.cpp.o" \
 "CMakeFiles/ProjectV2.dir/Button.cpp.o" \
 "CMakeFiles/ProjectV2.dir/Json.cpp.o" \
@@ -197,7 +183,6 @@ ProjectV2_EXTERNAL_OBJECTS =
 ProjectV2: CMakeFiles/ProjectV2.dir/main.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/TextBox.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/GUI.cpp.o
-ProjectV2: CMakeFiles/ProjectV2.dir/CodeParser.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/Client.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/Button.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/Json.cpp.o
@@ -207,7 +192,7 @@ ProjectV2: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
 ProjectV2: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 ProjectV2: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 ProjectV2: CMakeFiles/ProjectV2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ProjectV2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable ProjectV2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ProjectV2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

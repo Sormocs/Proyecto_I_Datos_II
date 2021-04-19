@@ -4,14 +4,21 @@
 
 #include "CodeParser.h"
 
-std::string CodeParser::AritmetricDetector(std::string& codeFragment) {
+double CodeParser::AritmetricDetector(std::string& codeFragment) {
     double number = 0;
 
+    if (ContainsChar(codeFragment, '+') or ContainsChar(codeFragment, '-')){
+        number = AddSubtract(codeFragment);
+    } else if (ContainsChar(codeFragment, '*')) number = Multiply(codeFragment);
+    else if (ContainsChar(codeFragment,'/')) number = Division(codeFragment);
+    else number = ExtractNumber(codeFragment);
+
+    return number;
 }
 
 double CodeParser::AddSubtract(std::string codeFragment) {
 
-    duble result = 0;
+    double result = 0;
     std::string numberStr;
     char sign = ' ';
     double numToOperator = 0;
@@ -181,7 +188,7 @@ double CodeParser::Division(std::string codeFragment) {
     return result;
 }
 
-float CodeParser::ExtractNumber(std::string numberStr) {
+double CodeParser::ExtractNumber(std::string numberStr) {
 
     int power = 0;                                  // power for number positions
     int dotPos;                                     // position of the dot char
@@ -363,10 +370,19 @@ bool CodeParser::Declaration(std::string& line) {
 
 bool CodeParser::Asignation(std::string asignation, std::string& type) {
     int position = NOT_IN_STRING;
+    std::string varName;
     if (ContainsChar(asignation, '=', position)) {      // revisa que '=' esté en la cadena. Si no esta, no es una asignacion.
 
         if (type == "int" or type == "long" or type == "float" or type == "double") {
-            AritmetricDetector(asignation.substr(position + 1));
+
+            varName = asignation.substr(0,position);
+            DeleteSpaces(varName);
+
+            std::string strToDetectAritmetricOperatorsXD = asignation.substr(position + 1);
+
+            void* value = AsignNum(AritmetricDetector(strToDetectAritmetricOperatorsXD));
+
+
         } else if (type == "char"){
             // asign char
         }
@@ -386,4 +402,12 @@ void CodeParser::GetFirstNumPos(std::string &codeBlock, int &position) {
             return;
         }
     }
+}
+
+void* CodeParser::AsignNum(double num) {
+
+}
+
+void CodeParser::DeleteSpaces(std::string &text) {
+
 }

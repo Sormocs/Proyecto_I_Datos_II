@@ -6,7 +6,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Button.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/Button.cpp.o"
   "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Client.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/Client.cpp.o"
-  "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/CodeParser.cpp.o"
   "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeTxT.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o"
   "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/GUI.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/GUI.cpp.o"
   "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Json.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/Json.cpp.o"

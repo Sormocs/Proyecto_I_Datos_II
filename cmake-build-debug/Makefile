@@ -196,33 +196,6 @@ Client.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/Client.cpp.s
 .PHONY : Client.cpp.s
 
-CodeParser.o: CodeParser.cpp.o
-
-.PHONY : CodeParser.o
-
-# target to build an object file
-CodeParser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/CodeParser.cpp.o
-.PHONY : CodeParser.cpp.o
-
-CodeParser.i: CodeParser.cpp.i
-
-.PHONY : CodeParser.i
-
-# target to preprocess a source file
-CodeParser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/CodeParser.cpp.i
-.PHONY : CodeParser.cpp.i
-
-CodeParser.s: CodeParser.cpp.s
-
-.PHONY : CodeParser.s
-
-# target to generate assembly for a file
-CodeParser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/CodeParser.cpp.s
-.PHONY : CodeParser.cpp.s
-
 CodeTxT.o: CodeTxT.cpp.o
 
 .PHONY : CodeTxT.o
@@ -373,9 +346,6 @@ help:
 	@echo "... Client.o"
 	@echo "... Client.i"
 	@echo "... Client.s"
-	@echo "... CodeParser.o"
-	@echo "... CodeParser.i"
-	@echo "... CodeParser.s"
 	@echo "... CodeTxT.o"
 	@echo "... CodeTxT.i"
 	@echo "... CodeTxT.s"

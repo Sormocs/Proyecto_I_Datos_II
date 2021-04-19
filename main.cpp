@@ -2,7 +2,7 @@
 #include "GUI.h"
 #include <thread>
 #include "Client.h"
-#include "CodeParser.h"
+#include "Server/CodeParser.h"
 
 void TestParser(){
     CodeParser codeParser = CodeParser();
