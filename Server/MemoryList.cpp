@@ -78,6 +78,12 @@ Node *MemoryList::GetNodeOf(std::string varName) {
     else return SearchForNodeByName(varName, first);
 }
 
+Node *MemoryList::GetNodeOfRef(std::string &varName) {
+    if (first == nullptr) throw ("List is empty.");
+
+    else return SearchForNodeByName(varName, first);
+}
+
 Node *MemoryList::SearchForNodeByName(std::string varName, Node *node) {
     if (node == nullptr) throw ("Val is not in list.");
 

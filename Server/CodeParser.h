@@ -47,6 +47,8 @@ private:
 
     void DeleteSpaces(std::string& text);
 
+    void SkipSpaces(std::string& text, int& position);
+
 public:
     CodeParser();
 

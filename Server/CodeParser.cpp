@@ -397,9 +397,13 @@ bool CodeParser::Asignation(std::string asignation, std::string& type) {
 
             std::string str = asignation.substr(position + 1);
             memMan->Add(AsignChar(str), varName, "char");
+
         }
 
         return true;
+
+    } else if (ContainsChar(asignation,  '{', position)){
+        if (type == "struct")
 
     } else return false;
 }
@@ -446,4 +450,15 @@ void *CodeParser::AsignChar(std::string fragment) {
     if (fragment.length() != 1); // CALLS DEBUGGER
 
     return (void*) new char ((char)fragment.at(0));
+}
+
+void CodeParser::SkipSpaces(std::string &text, int &position) {
+    position = 0;
+
+    for (char ch : text){
+
+        if (ch == ' ') position++;
+        else return;
+    }
+    position = NOT_IN_STRING;
 }

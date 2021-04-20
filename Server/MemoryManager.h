@@ -31,9 +31,7 @@ public:
     std::string GetType(std::string varName);
 
 
-    void* GetValOf(std::string varName){
-        return usedMem->GetNodeOf(varName)->value;
-    }
+    void* GetValOf(std::string varName);
 };
 
 #endif //SERVER_MEMORYMANAGER_H

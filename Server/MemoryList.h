@@ -67,6 +67,7 @@ public:
 
     Node* Get(int index);
     Node* GetNodeOf(std::string varName);
+    Node* GetNodeOfRef(std::string& varName);
     void* GetValOf(std::string valName);
 };
 
