@@ -29,13 +29,15 @@ int main() {
 void ParseTest(){
     CodeParser codeParser = CodeParser();
 
-    std::string buenas = "int patricio = 78;";
+    std::string buenas = "char patricio = 'a';";
 
     codeParser.Declaration(buenas);
 
-    int data = *(int*)MemoryManager::Instance()->GetValOf("patricio");
+    char data = *(char*)MemoryManager::Instance()->GetValOf("patricio");
 
-    std::cout << data << std::endl;
+    std::cout << data << " " << std::endl;
+    //printf("Tamaño de Node: %lu\n", sizeof(void*));
+
 
 }
 

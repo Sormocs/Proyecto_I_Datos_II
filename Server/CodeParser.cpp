@@ -356,13 +356,13 @@ bool CodeParser::ContainsStr(std::string &text, std::string fragment) {
     return ContainsStr(text, fragment, position, lenght);
 }
 
-bool CodeParser::Declaration(std::string& line) {
+bool CodeParser::Declaration(std::string& line, char reference) {
     std::string types[] = {"int", "long", "float", "double", "char"};
     std::string asignation;
     int position = NOT_IN_STRING;
     int lenght = NOT_IN_STRING;
 
-    for (std::string type : types) {            // esto no incluye struct ni reference
+    for (std::string type : types) {                    // esto no incluye struct ni reference
 
         if (ContainsStr(line, type, position, lenght)) {
 
@@ -370,6 +370,10 @@ bool CodeParser::Declaration(std::string& line) {
         }
     }
     return false;
+}
+
+bool CodeParser::Declaration(std::string line) {
+    return Declaration(line, 2);
 }
 
 bool CodeParser::Asignation(std::string asignation, std::string& type) {
@@ -388,7 +392,11 @@ bool CodeParser::Asignation(std::string asignation, std::string& type) {
 
 
         } else if (type == "char"){
-            // asign char
+            varName = asignation.substr(0, position);
+            DeleteSpaces(varName);
+
+            std::string str = asignation.substr(position + 1);
+            memMan->Add(AsignChar(str), varName, "char");
         }
 
         return true;
@@ -423,4 +431,19 @@ void CodeParser::DeleteSpaces(std::string &text) {
         newText += character;
     }
     text = newText;
+}
+
+void *CodeParser::AsignChar(std::string fragment) {
+
+    int position = NOT_IN_STRING;
+
+    ContainsChar(fragment, '\'', position);
+    fragment = fragment.substr(position + 1);
+    ContainsChar(fragment, '\'', position);
+    printf("El caracter es %s y la posición es %d\n", fragment.substr(0,1).c_str(), position);
+    fragment = fragment.substr(0, position);
+
+    if (fragment.length() != 1); // CALLS DEBUGGER
+
+    return (void*) new char ((char)fragment.at(0));
 }

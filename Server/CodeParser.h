@@ -43,13 +43,12 @@ private:
     void GetFirstNumPos(std::string& codeBlock, int& position);
 
     void* AsignNum(double num, std::string type);
+    void* AsignChar(std::string fragment);
 
     void DeleteSpaces(std::string& text);
 
 public:
     CodeParser();
-
-
 
     bool ContainsChar(std::string& fragment, char character, int& position);
     bool ContainsChar(std::string& fragment, char character);
@@ -57,7 +56,8 @@ public:
     bool ContainsStr(std::string& text, std::string fragment, int& position, int& lenght);
     bool ContainsStr(std::string& text, std::string fragment);
 
-    bool Declaration(std::string& line);
+    bool Declaration(std::string& line, char reference);
+    bool Declaration(std::string line);
 };
 
 
