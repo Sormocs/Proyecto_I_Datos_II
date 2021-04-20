@@ -105,16 +105,18 @@ void TextBox::Delete() {
 
     if (current->getVal()->getString() == "" && current->getPrev() != nullptr ){
 
-        Line *temp = current;
+        code->SetPosY(code->GetY()-24);
         current = current->getPrev();
-        currLine = current->getLine();
-        code->Delete(temp);
+        code->Delete(currLine);
+        currLine --;
 
         indy -= 24;
         indx = posx + 14 + current->getVal()->getLocalBounds().width -2;
 
     } else if (current->getVal()->getString() != ""){
+        std::cout << "what" << std::endl;
         std::string text = current->getVal()->getString();
+        std::cout << "entered here" << std::endl;
         text.erase(text.end() - 1, text.end());
         current->getVal()->setString(text);
         indx = posx + 14 + current->getVal()->getLocalBounds().width -2;
@@ -140,8 +142,10 @@ void TextBox::NewLine() {
 
     code->SetPosY(code->GetY() + 24);
     code->Insert("");
-    current = code->GetEnd();
-    currLine = current->getLine();
+    //current = current->getNext();
+    currLine++;
+    current = GetCurrent();
+    std::cout << "currLine: " << currLine <<std::endl;
     indx = posx + 7;
     indy += 24;
 
@@ -151,6 +155,21 @@ void TextBox::NewLine() {
 //        indy += 24;
 //        indx = posx + 10;
 //    }
+}
+
+Line* TextBox::GetCurrent() {
+    Line *temp = code->GetStart();
+    while (temp != nullptr){
+        if (temp->getLine() == currLine){
+            break;
+        }
+        temp = temp->getNext();
+    }
+    return temp;
+}
+
+CodeTxT* TextBox::GetCode() {
+    return code;
 }
 
 

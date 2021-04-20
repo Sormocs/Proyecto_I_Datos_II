@@ -47,9 +47,10 @@ void Button::MouseOver(int x, int y) {
 
         area.setOutlineColor(sf::Color(255,255,255,255));
 
+
     } else {
 
-        area.setOutlineColor(sf::Color(255,255,255,0));
+        area.setOutlineColor(sf::Color(0,0,0,255));
 
     }
 }

@@ -78,6 +78,12 @@ void GUI::Run() {
                 mouse[0] = sf::Mouse::getPosition(window).x;
                 mouse[1] = sf::Mouse::getPosition(window).y;
                 codeA->CheckClick(mouse[0],mouse[1]);
+                if (runBtn.Clicked(mouse[0],mouse[1])){
+
+                    //CODE FOR THE RUN BUTTON
+                    codeA->GetCode()->CoutCode();
+
+                }
             }
 
             if (event.type == sf::Event::MouseMoved){

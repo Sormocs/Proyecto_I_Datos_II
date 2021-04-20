@@ -25,4 +25,6 @@ public:
     void Write(char);
     void Delete();
     void NewLine();
+    Line* GetCurrent();
+    CodeTxT* GetCode();
 };

@@ -36,7 +36,7 @@ public:
     CodeTxT();
     ~CodeTxT();
     void Insert(std::string);
-    void Delete(Line *);
+    void Delete(int);
     void SetPosX(int);
     void SetPosY(int);
     int GetY();
@@ -44,6 +44,7 @@ public:
     Line* GetStart();
     Line* GetEnd();
     void CoutLineNum();
+    void CoutCode();
 
 };
 

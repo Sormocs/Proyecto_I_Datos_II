@@ -68,6 +68,8 @@ void CodeTxT::Insert(std::string str) {
     txt->setPosition(posx,posy);
 
     if (start == nullptr){
+
+        std::cout << "creating first node" << std::endl;
         Line *temp = new Line();
         temp->SetVal(txt);
         temp->SetNext(nullptr);
@@ -78,29 +80,43 @@ void CodeTxT::Insert(std::string str) {
         std::cout << "Insert lnum: " << lineNum << std::endl;
         lineNum ++;
         CoutLineNum();
+
     } else{
+
+        std::cout << "creating another node" << std::endl;
         Line *temp = new Line();
         temp->SetVal(txt);
         temp->SetLine(lineNum);
-        temp->SetPrev(end);
+//        temp->SetPrev(end);
+//        temp->SetNext(nullptr);
+//        end = temp;
+        end->SetNext(temp);
         temp->SetNext(nullptr);
         end = temp;
         std::cout << "Insert lnum: " << lineNum << std::endl;
         lineNum ++;
         CoutLineNum();
+
     }
 }
 
-void CodeTxT::Delete(Line *delme) {
+void CodeTxT::Delete(int lnum) {
 
     Line *temp = start;
     while (temp != nullptr){
-        if (temp == delme) {
-            std::cout << "is in" << std::endl;
-            temp->getPrev()->SetNext(temp->getNext());
+        if (temp->getLine() == lnum) {
+
+            std::cout << "Line is: " << temp->getLine() << std::endl;
+            //temp->getPrev()->SetNext(temp->getNext());
+            Line *tprev = temp->getPrev();
+            Line *tnext = temp->getNext();
+            tprev->SetNext(tnext);
             std::cout << "first done" << std::endl;
-            temp->getNext()->SetPrev(temp->getPrev());
+
+            //temp->getNext()->SetPrev(temp->getPrev());
+            tnext->SetPrev(tprev);
             std::cout << "second done" << std::endl;
+
             delete(temp);
             std::cout << "deleted" << std::endl;
             CoutLineNum();
@@ -143,5 +159,14 @@ void CodeTxT::CoutLineNum() {
         num++;
         temp = temp->getNext();
     }
-    std::cout << num << std::endl;
+    std::cout << "Current amount of lines: " << num << std::endl;
+}
+
+void CodeTxT::CoutCode() {
+    Line *temp = start;
+    while(temp != nullptr){
+        std::string gotten = temp->getVal()->getString();
+        std::cout << gotten << std::endl;
+        temp = temp->getNext();
+    }
 }
