@@ -7,9 +7,6 @@ CMakeFiles/ProjectV2.dir/Button.cpp.o: ../Button.h
 CMakeFiles/ProjectV2.dir/Client.cpp.o: ../Client.cpp
 CMakeFiles/ProjectV2.dir/Client.cpp.o: ../Client.h
 
-CMakeFiles/ProjectV2.dir/CodeParser.cpp.o: ../CodeParser.cpp
-CMakeFiles/ProjectV2.dir/CodeParser.cpp.o: ../CodeParser.h
-
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: ../Button.h
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: ../CodeTxT.cpp
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: ../CodeTxT.h
@@ -30,7 +27,6 @@ CMakeFiles/ProjectV2.dir/TextBox.cpp.o: ../TextBox.cpp
 CMakeFiles/ProjectV2.dir/TextBox.cpp.o: ../TextBox.h
 
 CMakeFiles/ProjectV2.dir/main.cpp.o: ../Client.h
-CMakeFiles/ProjectV2.dir/main.cpp.o: ../CodeParser.h
 CMakeFiles/ProjectV2.dir/main.cpp.o: ../GUI.h
 CMakeFiles/ProjectV2.dir/main.cpp.o: ../main.cpp
 

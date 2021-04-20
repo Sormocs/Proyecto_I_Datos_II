@@ -4,6 +4,10 @@
 
 #include "CodeParser.h"
 
+CodeParser::CodeParser() {
+    memMan = MemoryManager::Instance();
+}
+
 double CodeParser::AritmetricDetector(std::string& codeFragment) {
     double number = 0;
 
@@ -375,12 +379,12 @@ bool CodeParser::Asignation(std::string asignation, std::string& type) {
 
         if (type == "int" or type == "long" or type == "float" or type == "double") {
 
-            varName = asignation.substr(0,position);
+            varName = asignation.substr(0, position);
             DeleteSpaces(varName);
 
             std::string strToDetectAritmetricOperatorsXD = asignation.substr(position + 1);
 
-            void* value = AsignNum(AritmetricDetector(strToDetectAritmetricOperatorsXD));
+            memMan->Add(AsignNum(AritmetricDetector(strToDetectAritmetricOperatorsXD), type), varName, type);
 
 
         } else if (type == "char"){
@@ -404,10 +408,19 @@ void CodeParser::GetFirstNumPos(std::string &codeBlock, int &position) {
     }
 }
 
-void* CodeParser::AsignNum(double num) {
-
+void* CodeParser::AsignNum(double num, std::string type) {
+    if (type == "int") return (void*) new int ((int) num);
+    else if (type == "long") return (void*) new long ((long) num);
+    else if (type == "float") return (void*) new float ((float) num);
+    else if (type == "double") return (void*) new double ((double) num);
 }
 
 void CodeParser::DeleteSpaces(std::string &text) {
+    std::string newText = "";
 
+    for (char character : text){
+        if (character == ' ') continue;
+        newText += character;
+    }
+    text = newText;
 }

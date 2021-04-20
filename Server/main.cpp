@@ -2,6 +2,7 @@
 #include "Server.h"
 #include "MemoryManager.h"
 #include <thread>
+#include "CodeParser.h"
 
 void RunServer(){
 
@@ -12,15 +13,30 @@ void RunServer(){
 
 void MemoryTests();
 
+void ParseTest();
+
 int main() {
 
-    MemoryTests();
+    ParseTest();
 
 //    std::thread RunS (RunServer);
 
 //    RunS.join();
 
     return 0;
+}
+
+void ParseTest(){
+    CodeParser codeParser = CodeParser();
+
+    std::string buenas = "int patricio = 78;";
+
+    codeParser.Declaration(buenas);
+
+    int data = *(int*)MemoryManager::Instance()->GetValOf("patricio");
+
+    std::cout << data << std::endl;
+
 }
 
 void MemoryTests(){

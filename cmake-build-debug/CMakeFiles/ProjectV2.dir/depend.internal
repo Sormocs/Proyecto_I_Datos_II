@@ -7,9 +7,6 @@ CMakeFiles/ProjectV2.dir/Button.cpp.o
 CMakeFiles/ProjectV2.dir/Client.cpp.o
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Client.cpp
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Client.h
-CMakeFiles/ProjectV2.dir/CodeParser.cpp.o
- /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.cpp
- /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.h
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Button.h
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeTxT.cpp
@@ -31,6 +28,5 @@ CMakeFiles/ProjectV2.dir/TextBox.cpp.o
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/TextBox.h
 CMakeFiles/ProjectV2.dir/main.cpp.o
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Client.h
- /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.h
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/GUI.h
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/main.cpp

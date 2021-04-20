@@ -101,6 +101,13 @@ void *MemoryList::SearchForValByName(std::string valName, Node* node) {
     else return SearchForValByName(valName, node->next);
 }
 
+void MemoryList::AddFront(Node *newFirst, void *value, std::string& varName, std::string& varType) {
+    newFirst->value = value;
+    newFirst->varName = varName;
+    newFirst->varType = varType;
+    this->AddFirst(newFirst);
+}
+
 //template <class T>
 //Node *MemoryList::AddBegin(Node *newFirst, T value, std::string varName) {
 //    newFirst->value = (void*) new T(value);

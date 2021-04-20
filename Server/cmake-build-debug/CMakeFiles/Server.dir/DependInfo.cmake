@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/CodeParser.cpp.o"
   "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/MemoryList.cpp.o"
   "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/MemoryManager.cpp.o"
   "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.cpp" "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/Server.cpp.o"

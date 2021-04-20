@@ -24,12 +24,6 @@ string.h
 string
 -
 
-/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.h
-string
--
-iostream
--
-
 /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/GUI.h
 SFML/Graphics.hpp
 -
@@ -43,6 +37,4 @@ thread
 -
 Client.h
 /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Client.h
-CodeParser.h
-/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/CodeParser.h
 

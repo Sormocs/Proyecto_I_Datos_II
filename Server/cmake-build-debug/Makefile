@@ -142,6 +142,33 @@ Server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/build
 .PHONY : Server/fast
 
+CodeParser.o: CodeParser.cpp.o
+
+.PHONY : CodeParser.o
+
+# target to build an object file
+CodeParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/CodeParser.cpp.o
+.PHONY : CodeParser.cpp.o
+
+CodeParser.i: CodeParser.cpp.i
+
+.PHONY : CodeParser.i
+
+# target to preprocess a source file
+CodeParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/CodeParser.cpp.i
+.PHONY : CodeParser.cpp.i
+
+CodeParser.s: CodeParser.cpp.s
+
+.PHONY : CodeParser.s
+
+# target to generate assembly for a file
+CodeParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/CodeParser.cpp.s
+.PHONY : CodeParser.cpp.s
+
 MemoryList.o: MemoryList.cpp.o
 
 .PHONY : MemoryList.o
@@ -259,6 +286,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Server"
+	@echo "... CodeParser.o"
+	@echo "... CodeParser.i"
+	@echo "... CodeParser.s"
 	@echo "... MemoryList.o"
 	@echo "... MemoryList.i"
 	@echo "... MemoryList.s"

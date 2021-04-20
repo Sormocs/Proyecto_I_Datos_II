@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h">
+			<Option target="Server"/>
+		</Unit>
 		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.cpp">
 			<Option target="Server"/>
 		</Unit>

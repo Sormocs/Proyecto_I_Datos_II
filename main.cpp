@@ -2,13 +2,7 @@
 #include "GUI.h"
 #include <thread>
 #include "Client.h"
-#include "Server/CodeParser.h"
 
-void TestParser(){
-    CodeParser codeParser = CodeParser();
-    std::string ejemplo = "int entero = 25;";
-//    std::cout << codeParser.ContainsStr(ejemplo, "entero");
-}
 
 void RunGUI(){
     GUI::getInstance()->Run();
@@ -22,13 +16,12 @@ void RunClient(){
 
 int main(){
 
-//    std::thread GUI (RunGUI);
-//    //std::thread RunC (RunClient);
-//
-//    //RunC.join();
-//    GUI.join();
+    std::thread GUI (RunGUI);
+    //std::thread RunC (RunClient);
 
-    TestParser();
+    //RunC.join();
+    GUI.join();
+
 
     return 0;
 }
