@@ -7,8 +7,8 @@ class Line{
 private:
     int x,y,lnum;
     sf::Text *val;
-    Line *next;
-    Line *prev;
+    Line* next = nullptr;
+    Line* prev = nullptr;
 
 public:
     Line();
@@ -36,7 +36,6 @@ public:
     CodeTxT();
     ~CodeTxT();
     void Insert(std::string);
-    void Delete(int);
     void SetPosX(int);
     void SetPosY(int);
     int GetY();
@@ -45,6 +44,7 @@ public:
     Line* GetEnd();
     void CoutLineNum();
     void CoutCode();
+    void Move(std::string);
 
 };
 

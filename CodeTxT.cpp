@@ -8,11 +8,11 @@ Line::~Line() {
     delete(this);
 }
 
-void Line::SetNext(Line *Next) {
+void Line::SetNext(Line* Next) {
     next = Next;
 }
 
-void Line::SetPrev(Line *Prev) {
+void Line::SetPrev(Line* Prev) {
     prev = Prev;
 }
 
@@ -69,7 +69,6 @@ void CodeTxT::Insert(std::string str) {
 
     if (start == nullptr){
 
-        std::cout << "creating first node" << std::endl;
         Line *temp = new Line();
         temp->SetVal(txt);
         temp->SetNext(nullptr);
@@ -77,56 +76,23 @@ void CodeTxT::Insert(std::string str) {
         temp->SetLine(lineNum);
         start = temp;
         end = start;
-        std::cout << "Insert lnum: " << lineNum << std::endl;
         lineNum ++;
         CoutLineNum();
 
     } else{
 
-        std::cout << "creating another node" << std::endl;
         Line *temp = new Line();
         temp->SetVal(txt);
         temp->SetLine(lineNum);
-//        temp->SetPrev(end);
-//        temp->SetNext(nullptr);
-//        end = temp;
         end->SetNext(temp);
         temp->SetNext(nullptr);
         end = temp;
-        std::cout << "Insert lnum: " << lineNum << std::endl;
         lineNum ++;
         CoutLineNum();
 
     }
 }
 
-void CodeTxT::Delete(int lnum) {
-
-    Line *temp = start;
-    while (temp != nullptr){
-        if (temp->getLine() == lnum) {
-
-            std::cout << "Line is: " << temp->getLine() << std::endl;
-            //temp->getPrev()->SetNext(temp->getNext());
-            Line *tprev = temp->getPrev();
-            Line *tnext = temp->getNext();
-            tprev->SetNext(tnext);
-            std::cout << "first done" << std::endl;
-
-            //temp->getNext()->SetPrev(temp->getPrev());
-            tnext->SetPrev(tprev);
-            std::cout << "second done" << std::endl;
-
-            delete(temp);
-            std::cout << "deleted" << std::endl;
-            CoutLineNum();
-            break;
-        }
-        else{
-            temp = temp->getNext();
-        }
-    }
-}
 
 void CodeTxT::SetPosX(int X) {
     posx = X;
@@ -168,5 +134,20 @@ void CodeTxT::CoutCode() {
         std::string gotten = temp->getVal()->getString();
         std::cout << gotten << std::endl;
         temp = temp->getNext();
+    }
+}
+
+void CodeTxT::Move(std::string dir) {
+    Line* temp = start;
+    if (dir == "up"){
+        while (temp != nullptr){
+            temp->getVal()->setPosition(posx,temp->getVal()->getPosition().y-24);
+            temp = temp->getNext();
+        }
+    } else {
+        while (temp != nullptr){
+            temp->getVal()->setPosition(posx,temp->getVal()->getPosition().y+24);
+            temp = temp->getNext();
+        }
     }
 }

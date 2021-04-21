@@ -6,7 +6,7 @@
 
 class TextBox {
 private:
-    int sizey, sizex, posy, posx, fontsize, indx, indy, currLine;
+    int sizey, sizex, posy, posx, fontsize, indx, indy, currLine, xlimit, ylimit;
     sf::Color bgcolor, fontcolor;
     bool selected = false;
     sf::RectangleShape box;

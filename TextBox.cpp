@@ -14,6 +14,8 @@ TextBox::TextBox(int fsize, sf::Color fontColor, bool sel, int Sizex, int Sizey,
 
     indx = posx + 7;
     indy = posy + 10;
+    xlimit = posx + sizex;
+    ylimit = posy + sizey;
 
     Build();
 
@@ -94,29 +96,34 @@ void TextBox::CheckClick(float x, float y) {
 }
 
 void TextBox::Write(char val) {
-    std::string character = std::string(1,val);
-    std::string valstr = current->getVal()->getString();
-    valstr += character;
-    current->SetStr(valstr);
-    indx = posx + 14 + current->getVal()->getLocalBounds().width -2;
+    if (posx + current->getVal()->getLocalBounds().width <= xlimit) {
+        std::string character = std::string(1, val);
+        std::string valstr = current->getVal()->getString();
+        valstr += character;
+        current->SetStr(valstr);
+        indx = posx + 14 + current->getVal()->getLocalBounds().width - 2;
+    } else{
+        NewLine();
+    }
 }
 
 void TextBox::Delete() {
 
-    if (current->getVal()->getString() == "" && current->getPrev() != nullptr ){
+    if (current->getVal()->getString() == "" && current != code->GetStart()){
 
-        code->SetPosY(code->GetY()-24);
-        current = current->getPrev();
-        code->Delete(currLine);
-        currLine --;
-
-        indy -= 24;
+        if (code->GetStart()->getVal()->getPosition().y > posy) {
+            currLine--;
+            current = GetCurrent();
+            indy -= 24;
+        } else {
+            code->Move("down");
+            currLine--;
+            current = GetCurrent();
+        }
         indx = posx + 14 + current->getVal()->getLocalBounds().width -2;
 
     } else if (current->getVal()->getString() != ""){
-        std::cout << "what" << std::endl;
         std::string text = current->getVal()->getString();
-        std::cout << "entered here" << std::endl;
         text.erase(text.end() - 1, text.end());
         current->getVal()->setString(text);
         indx = posx + 14 + current->getVal()->getLocalBounds().width -2;
@@ -140,14 +147,26 @@ void TextBox::Delete() {
 
 void TextBox::NewLine() {
 
-    code->SetPosY(code->GetY() + 24);
-    code->Insert("");
-    //current = current->getNext();
-    currLine++;
-    current = GetCurrent();
-    std::cout << "currLine: " << currLine <<std::endl;
+    if (current->getNext() == nullptr && code->GetY()+48 < ylimit) {
+        code->SetPosY(code->GetY() + 24);
+        code->Insert("");
+        currLine++;
+        current = GetCurrent();
+        indy += 24;
+        std::cout << "currLine: " << currLine << std::endl;
+    } else if (current->getNext() == nullptr && code->GetY()+48 > ylimit){
+        code->Move("up");
+        code->Insert("");
+        currLine++;
+        current = GetCurrent();
+        std::cout << "currLine: " << currLine << std::endl;
+    } else {
+        currLine++;
+        current = GetCurrent();
+        indy += 24;
+    }
     indx = posx + 7;
-    indy += 24;
+
 
 //    if (text != ""){
 //        text += "\n";
