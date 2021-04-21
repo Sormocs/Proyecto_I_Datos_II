@@ -1,5 +1,6 @@
 #include "Button.h"
 #include "SFML/Graphics.hpp"
+#include "Client.h"
 #include <iostream>
 #pragma once
 
@@ -45,6 +46,7 @@ public:
     void CoutLineNum();
     void CoutCode();
     void Move(std::string);
+    void SendTxT();
 
 };
 

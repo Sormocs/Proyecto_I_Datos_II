@@ -1,6 +1,7 @@
 #include "GUI.h"
 #include "TextBox.h"
 #include "Button.h"
+#include "LogCons.h"
 
 GUI *GUI::instance = nullptr;
 
@@ -27,6 +28,9 @@ void GUI::Run() {
     //Button(int Posx, int Posy, int Width, int Height,int Fsize ,std::string Text, sf::Color Color)
     Button runBtn = Button(50,6,155,30,26,"Run C!ode",sf::Color(0,128,128,255));
 
+    //LOG&CONSOLE:
+    LogCons lc = LogCons(0,580,1550,270,22);
+
     //SHAPES:
     sf::RectangleShape rect1(sf::Vector2f(1700.f,40.f));
     rect1.setPosition(0,0);
@@ -42,7 +46,7 @@ void GUI::Run() {
 
     //TEXTS:
     sf::Font font;
-    font.loadFromFile("../Fonts/comic-sans-ms.ttf");
+    font.loadFromFile("../Fonts/consolas.ttf");
 
     sf::Text ram;
     ram.setString("RAM Live Viewer");
@@ -82,6 +86,9 @@ void GUI::Run() {
 
                     //CODE FOR THE RUN BUTTON
                     codeA->GetCode()->CoutCode();
+                    if (codeA->GetCode()->GetStart()->getVal()->getString() != ""){
+                        codeA->GetCode()->SendTxT();
+                    }
 
                 }
             }
@@ -118,6 +125,8 @@ void GUI::Run() {
         window.draw(lines);
         window.draw(ram);
         window.draw(num);
+        lc.Draw(winptr);
+
         window.display();
         //codeA->Draw(winptr);
     }

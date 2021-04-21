@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o"
   "CMakeFiles/ProjectV2.dir/GUI.cpp.o"
   "CMakeFiles/ProjectV2.dir/Json.cpp.o"
+  "CMakeFiles/ProjectV2.dir/LogCons.cpp.o"
   "CMakeFiles/ProjectV2.dir/TextBox.cpp.o"
   "CMakeFiles/ProjectV2.dir/main.cpp.o"
   "ProjectV2"

@@ -151,3 +151,16 @@ void CodeTxT::Move(std::string dir) {
         }
     }
 }
+
+void CodeTxT::SendTxT() {
+    Line* temp = start;
+    while(temp!= nullptr){
+        std::string send = temp->getVal()->getString();
+        char* tosend = strcpy(new char[send.length()],send.c_str());
+//        std::string *tosend = new std::string ;
+//        *tosend = send;
+        Client::getInstance()->Send(tosend);
+        temp = temp->getNext();
+    }
+    std::cout << "Sent" << std::endl;
+}

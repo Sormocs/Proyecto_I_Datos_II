@@ -23,6 +23,6 @@ private:
 public:
     static Client* getInstance();
     void Start();
-    void Send(char *);
+    void Send(char*);
 
 };

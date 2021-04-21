@@ -14,11 +14,11 @@ void MemoryTests();
 
 int main() {
 
-    MemoryTests();
+    //MemoryTests();
 
-//    std::thread RunS (RunServer);
+    std::thread RunS (RunServer);
 
-//    RunS.join();
+    RunS.join();
 
     return 0;
 }

@@ -11,20 +11,27 @@ CMakeFiles/ProjectV2.dir/CodeParser.cpp.o: ../CodeParser.cpp
 CMakeFiles/ProjectV2.dir/CodeParser.cpp.o: ../CodeParser.h
 
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: ../Button.h
+CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: ../Client.h
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: ../CodeTxT.cpp
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: ../CodeTxT.h
 
 CMakeFiles/ProjectV2.dir/GUI.cpp.o: ../Button.h
+CMakeFiles/ProjectV2.dir/GUI.cpp.o: ../Client.h
 CMakeFiles/ProjectV2.dir/GUI.cpp.o: ../CodeTxT.h
 CMakeFiles/ProjectV2.dir/GUI.cpp.o: ../GUI.cpp
 CMakeFiles/ProjectV2.dir/GUI.cpp.o: ../GUI.h
+CMakeFiles/ProjectV2.dir/GUI.cpp.o: ../LogCons.h
 CMakeFiles/ProjectV2.dir/GUI.cpp.o: ../TextBox.h
 
 CMakeFiles/ProjectV2.dir/Json.cpp.o: ../Json.cpp
 CMakeFiles/ProjectV2.dir/Json.cpp.o: ../Json.h
 CMakeFiles/ProjectV2.dir/Json.cpp.o: ../json.hpp
 
+CMakeFiles/ProjectV2.dir/LogCons.cpp.o: ../LogCons.cpp
+CMakeFiles/ProjectV2.dir/LogCons.cpp.o: ../LogCons.h
+
 CMakeFiles/ProjectV2.dir/TextBox.cpp.o: ../Button.h
+CMakeFiles/ProjectV2.dir/TextBox.cpp.o: ../Client.h
 CMakeFiles/ProjectV2.dir/TextBox.cpp.o: ../CodeTxT.h
 CMakeFiles/ProjectV2.dir/TextBox.cpp.o: ../TextBox.cpp
 CMakeFiles/ProjectV2.dir/TextBox.cpp.o: ../TextBox.h

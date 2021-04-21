@@ -6,35 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/sormocs04/CLionProjects/Project/Server/MemoryList.cpp
-MemoryList.h
-/home/sormocs04/CLionProjects/Project/Server/MemoryList.h
-
 /home/sormocs04/CLionProjects/Project/Server/MemoryList.h
 string
 -
 
-/home/sormocs04/CLionProjects/Project/Server/MemoryManager.cpp
-sstream
--
-iostream
--
-MemoryManager.h
-/home/sormocs04/CLionProjects/Project/Server/MemoryManager.h
-
 /home/sormocs04/CLionProjects/Project/Server/MemoryManager.h
 MemoryList.h
 /home/sormocs04/CLionProjects/Project/Server/MemoryList.h
-
-/home/sormocs04/CLionProjects/Project/Server/Server.cpp
-iostream
--
-string
-/home/sormocs04/CLionProjects/Project/Server/string
-Server.h
-/home/sormocs04/CLionProjects/Project/Server/Server.h
-stdio.h
-/home/sormocs04/CLionProjects/Project/Server/stdio.h
 
 /home/sormocs04/CLionProjects/Project/Server/Server.h
 iostream

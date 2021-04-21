@@ -304,6 +304,33 @@ Json.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/Json.cpp.s
 .PHONY : Json.cpp.s
 
+LogCons.o: LogCons.cpp.o
+
+.PHONY : LogCons.o
+
+# target to build an object file
+LogCons.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/LogCons.cpp.o
+.PHONY : LogCons.cpp.o
+
+LogCons.i: LogCons.cpp.i
+
+.PHONY : LogCons.i
+
+# target to preprocess a source file
+LogCons.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/LogCons.cpp.i
+.PHONY : LogCons.cpp.i
+
+LogCons.s: LogCons.cpp.s
+
+.PHONY : LogCons.s
+
+# target to generate assembly for a file
+LogCons.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/LogCons.cpp.s
+.PHONY : LogCons.cpp.s
+
 TextBox.o: TextBox.cpp.o
 
 .PHONY : TextBox.o
@@ -385,6 +412,9 @@ help:
 	@echo "... Json.o"
 	@echo "... Json.i"
 	@echo "... Json.s"
+	@echo "... LogCons.o"
+	@echo "... LogCons.i"
+	@echo "... LogCons.s"
 	@echo "... TextBox.o"
 	@echo "... TextBox.i"
 	@echo "... TextBox.s"

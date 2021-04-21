@@ -120,6 +120,12 @@
 		<Unit filename="/home/sormocs04/CLionProjects/Project/Json.h">
 			<Option target="ProjectV2"/>
 		</Unit>
+		<Unit filename="/home/sormocs04/CLionProjects/Project/LogCons.cpp">
+			<Option target="ProjectV2"/>
+		</Unit>
+		<Unit filename="/home/sormocs04/CLionProjects/Project/LogCons.h">
+			<Option target="ProjectV2"/>
+		</Unit>
 		<Unit filename="/home/sormocs04/CLionProjects/Project/TextBox.cpp">
 			<Option target="ProjectV2"/>
 		</Unit>
