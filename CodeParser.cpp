@@ -4,18 +4,28 @@
 
 #include "CodeParser.h"
 
-std::string CodeParser::AritmetricDetector(std::string codeFragment) {
-    std::string tempStr = codeFragment;
-    int charPos;
-    float number = 0;
+CodeParser::CodeParser() {
+    memMan = MemoryManager::Instance();
 }
 
-float CodeParser::AddSubtract(std::string codeFragment) {
+double CodeParser::AritmetricDetector(std::string& codeFragment) {
+    double number = 0;
 
-    float result = 0;
+    if (ContainsChar(codeFragment, '+') or ContainsChar(codeFragment, '-')){
+        number = AddSubtract(codeFragment);
+    } else if (ContainsChar(codeFragment, '*')) number = Multiply(codeFragment);
+    else if (ContainsChar(codeFragment,'/')) number = Division(codeFragment);
+    else number = ExtractNumber(codeFragment);
+
+    return number;
+}
+
+double CodeParser::AddSubtract(std::string codeFragment) {
+
+    double result = 0;
     std::string numberStr;
     char sign = ' ';
-    float numToOperator = 0;
+    double numToOperator = 0;
     int signPos = NOT_IN_STRING;
     int plusPos = NOT_IN_STRING;
     int minusPos = NOT_IN_STRING;
@@ -76,10 +86,10 @@ float CodeParser::AddSubtract(std::string codeFragment) {
     return result;
 }
 
-float CodeParser::Multiply(std::string codeFragment) {
-    float result = 0;
+double CodeParser::Multiply(std::string codeFragment) {
+    double result = 0;
     std::string numberStr;
-    float numToOperator = 0;
+    double numToOperator = 0;
     int signPos = NOT_IN_STRING;
 
     std::cout << "First code fragment: " << codeFragment << std::endl;
@@ -129,10 +139,10 @@ float CodeParser::Multiply(std::string codeFragment) {
     return result;
 }
 
-float CodeParser::Division(std::string codeFragment) {
-    float result = 0;
+double CodeParser::Division(std::string codeFragment) {
+    double result = 0;
     std::string numberStr;
-    float numToOperator = 0;
+    double numToOperator = 0;
     int signPos = NOT_IN_STRING;
 
     std::cout << "First code fragment: " << codeFragment << std::endl;
@@ -182,11 +192,11 @@ float CodeParser::Division(std::string codeFragment) {
     return result;
 }
 
-float CodeParser::ExtractNumber(std::string numberStr) {
+double CodeParser::ExtractNumber(std::string numberStr) {
 
     int power = 0;                                  // power for number positions
     int dotPos;                                     // position of the dot char
-    float number = 0;                               // the number converted on float type
+    double number = 0;                               // the number converted on float type
     bool isFloat = DotPos(numberStr, dotPos);    // isFloat says if number is float or not
     std::string num;
 
@@ -228,7 +238,7 @@ float CodeParser::ExtractNumber(std::string numberStr) {
     return number;
 }
 
-float CodeParser::pow(float num, float power) {
+double CodeParser::pow(float num, float power) {
 
     if (power < 0) return 1/negPow(num, power);     // calls the negative power function and gives the fraction of 1/power
 
@@ -239,7 +249,7 @@ float CodeParser::pow(float num, float power) {
     else return num * pow(num, power - 1);   // gives power by recursion
 }
 
-float CodeParser::negPow(float num, float power) {
+double CodeParser::negPow(float num, float power) {
     if (power == -1) return num;                    // when power is -1, the negative power ended
 
     else return num * negPow(num, power + 1); // gives power by recursion
@@ -316,4 +326,139 @@ bool CodeParser::GetMultSignPos(std::string& codeFragment, int &timesPos) {
 
 bool CodeParser::GetDivSignPos(std::string &codeFragment, int &divPos) {
     return ContainsChar(codeFragment, '/', divPos);
+}
+
+bool CodeParser::ContainsStr(std::string &text, std::string fragment, int &position, int &lenght) {
+
+    int fragIter = 0;                        // initializes fragment iterator
+    lenght = fragment.length();             // asigns length to fragment lenght
+    for (int i = 0; i < text.length(); i++){
+
+        if (text.at(i) == fragment.at(fragIter)){
+
+            if (fragIter == 0) position = i;
+
+            fragIter++;
+
+        } else { position = NOT_IN_STRING; fragIter = 0; }
+
+        if (fragIter == lenght) return true;
+    }
+
+    lenght = NOT_IN_STRING;
+    return false;
+}
+
+bool CodeParser::ContainsStr(std::string &text, std::string fragment) {
+    int lenght = NOT_IN_STRING;
+    int position = NOT_IN_STRING;
+
+    return ContainsStr(text, fragment, position, lenght);
+}
+
+bool CodeParser::Declaration(std::string& line, char reference) {
+    std::string types[] = {"int", "long", "float", "double", "char"};
+    std::string asignation;
+    int position = NOT_IN_STRING;
+    int lenght = NOT_IN_STRING;
+
+    for (std::string type : types) {                    // esto no incluye struct ni reference
+
+        if (ContainsStr(line, type, position, lenght)) {
+
+            if (Asignation(line.substr(position + lenght), type)) return true;
+        }
+    }
+    return false;
+}
+
+bool CodeParser::Declaration(std::string line) {
+    return Declaration(line, 2);
+}
+
+bool CodeParser::Asignation(std::string asignation, std::string& type) {
+    int position = NOT_IN_STRING;
+    std::string varName;
+    if (ContainsChar(asignation, '=', position)) {      // revisa que '=' esté en la cadena. Si no esta, no es una asignacion.
+
+        if (type == "int" or type == "long" or type == "float" or type == "double") {
+
+            varName = asignation.substr(0, position);
+            DeleteSpaces(varName);
+
+            std::string strToDetectAritmetricOperatorsXD = asignation.substr(position + 1);
+
+            memMan->Add(AsignNum(AritmetricDetector(strToDetectAritmetricOperatorsXD), type), varName, type);
+
+
+        } else if (type == "char"){
+            varName = asignation.substr(0, position);
+            DeleteSpaces(varName);
+
+            std::string str = asignation.substr(position + 1);
+            memMan->Add(AsignChar(str), varName, "char");
+
+        }
+
+        return true;
+
+    } else if (ContainsChar(asignation,  '{', position)){
+        if (type == "struct")
+
+    } else return false;
+}
+
+void CodeParser::GetFirstNumPos(std::string &codeBlock, int &position) {
+
+    for (int i = 0; i < codeBlock.length(); ++i) {
+
+        if (isdigit(codeBlock.at(i))) {
+
+            position = i;
+            return;
+        }
+    }
+}
+
+void* CodeParser::AsignNum(double num, std::string type) {
+    if (type == "int") return (void*) new int ((int) num);
+    else if (type == "long") return (void*) new long ((long) num);
+    else if (type == "float") return (void*) new float ((float) num);
+    else if (type == "double") return (void*) new double ((double) num);
+}
+
+void CodeParser::DeleteSpaces(std::string &text) {
+    std::string newText = "";
+
+    for (char character : text){
+        if (character == ' ') continue;
+        newText += character;
+    }
+    text = newText;
+}
+
+void *CodeParser::AsignChar(std::string fragment) {
+
+    int position = NOT_IN_STRING;
+
+    ContainsChar(fragment, '\'', position);
+    fragment = fragment.substr(position + 1);
+    ContainsChar(fragment, '\'', position);
+    printf("El caracter es %s y la posición es %d\n", fragment.substr(0,1).c_str(), position);
+    fragment = fragment.substr(0, position);
+
+    if (fragment.length() != 1); // CALLS DEBUGGER
+
+    return (void*) new char ((char)fragment.at(0));
+}
+
+void CodeParser::SkipSpaces(std::string &text, int &position) {
+    position = 0;
+
+    for (char ch : text){
+
+        if (ch == ' ') position++;
+        else return;
+    }
+    position = NOT_IN_STRING;
 }
