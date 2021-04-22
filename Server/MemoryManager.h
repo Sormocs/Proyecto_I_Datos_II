@@ -21,7 +21,7 @@ public:
 
     MemoryManager();
 
-    void Add(void* value, std::string varName, std::string varType);
+    void Add(void* value, std::string varName, std::string varType, std::string& parentClass);
 
     template <class T>
     void AddVar(T value, std::string varName, std::string varType){
@@ -32,6 +32,7 @@ public:
 
 
     void* GetValOf(std::string varName);
+
 };
 
 #endif //SERVER_MEMORYMANAGER_H

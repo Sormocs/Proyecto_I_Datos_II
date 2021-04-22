@@ -44,10 +44,12 @@ MemoryManager* MemoryManager::Instance() {
     return instance;
 }
 
-void MemoryManager::Add(void *value, std::string varName, std::string varType) {
-    usedMem->AddFront(XMB->GetDeleteFirst(), value, varName, varType);
+void MemoryManager::Add(void *value, std::string varName, std::string varType, std::string& parentClass) {
+    usedMem->AddFront(XMB->GetDeleteFirst(), value, varName, varType, parentClass);
 }
 
 void *MemoryManager::GetValOf(std::string varName) {
     return usedMem->GetNodeOfRef(varName)->value;
 }
+
+

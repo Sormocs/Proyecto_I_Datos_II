@@ -1,4 +1,4 @@
-/snap/clion/149/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/sormocs04/CLionProjects/Project/Server
+/home/tiquillo/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.6693.114/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server
 -- The C compiler identification is GNU 9.3.0
 -- The CXX compiler identification is GNU 9.3.0
 -- Detecting C compiler ABI info
@@ -13,4 +13,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/sormocs04/CLionProjects/Project/Server/cmake-build-debug
+-- Build files have been written to: /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug

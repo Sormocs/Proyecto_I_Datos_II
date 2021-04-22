@@ -38,7 +38,7 @@ private:
     double Multiply(std::string codeFragment);
     double Division(std::string codeFragment);
 
-    bool Asignation(std::string asignation, std::string& type);
+    bool Asignation(std::string asignation, std::string& type, std::string parentClass = "Main");
 
     void GetFirstNumPos(std::string& codeBlock, int& position);
 
@@ -48,6 +48,9 @@ private:
     void DeleteSpaces(std::string& text);
 
     void SkipSpaces(std::string& text, int& position);
+
+    std::string GetFullStruct(std::string& fullStruct);
+    std::string GetStructName(std::string& fullStruct);
 
 public:
     CodeParser();

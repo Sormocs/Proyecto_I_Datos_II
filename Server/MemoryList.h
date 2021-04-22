@@ -14,6 +14,7 @@ public:
     void* value;
     std::string varName;
     std::string varType;
+    std::string parentClass;
     Node* next;
     Node* previous;
 
@@ -52,7 +53,7 @@ private:
 
 public:
 
-    void AddFront(Node* newFirst, void* value, std::string& varName, std::string& varType);
+    void AddFront(Node* newFirst, void* value, std::string& varName, std::string& varType, std::string& parentClas);
 
     template <class T>
     void AddBegin(Node* newFirst, T value, std::string& varName, std::string& varType) {

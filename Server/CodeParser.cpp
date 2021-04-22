@@ -376,7 +376,7 @@ bool CodeParser::Declaration(std::string line) {
     return Declaration(line, 2);
 }
 
-bool CodeParser::Asignation(std::string asignation, std::string& type) {
+bool CodeParser::Asignation(std::string asignation, std::string& type, std::string parentClass) {
     int position = NOT_IN_STRING;
     std::string varName;
     if (ContainsChar(asignation, '=', position)) {      // revisa que '=' esté en la cadena. Si no esta, no es una asignacion.
@@ -388,7 +388,7 @@ bool CodeParser::Asignation(std::string asignation, std::string& type) {
 
             std::string strToDetectAritmetricOperatorsXD = asignation.substr(position + 1);
 
-            memMan->Add(AsignNum(AritmetricDetector(strToDetectAritmetricOperatorsXD), type), varName, type);
+            memMan->Add(AsignNum(AritmetricDetector(strToDetectAritmetricOperatorsXD), type), varName, type, parentClass);
 
 
         } else if (type == "char"){
@@ -396,7 +396,7 @@ bool CodeParser::Asignation(std::string asignation, std::string& type) {
             DeleteSpaces(varName);
 
             std::string str = asignation.substr(position + 1);
-            memMan->Add(AsignChar(str), varName, "char");
+            memMan->Add(AsignChar(str), varName, "char", parentClass);
 
         }
 
@@ -404,7 +404,11 @@ bool CodeParser::Asignation(std::string asignation, std::string& type) {
 
     } else if (ContainsChar(asignation,  '{', position)){
         if (type == "struct"){
-            return false;
+            if (parentClass != "Main"); // llamar al debugger
+            std::string fullStruct;
+            GetFullStruct(fullStruct);
+
+            memMan->Add(NULL, GetStructName(fullStruct), "struct");
         }
 
     } else return false;
