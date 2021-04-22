@@ -7,9 +7,6 @@ CMakeFiles/ProjectV2.dir/Button.cpp.o: ../Button.h
 CMakeFiles/ProjectV2.dir/Client.cpp.o: ../Client.cpp
 CMakeFiles/ProjectV2.dir/Client.cpp.o: ../Client.h
 
-CMakeFiles/ProjectV2.dir/CodeParser.cpp.o: ../CodeParser.cpp
-CMakeFiles/ProjectV2.dir/CodeParser.cpp.o: ../CodeParser.h
-
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: ../Button.h
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: ../Client.h
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: ../CodeTxT.cpp

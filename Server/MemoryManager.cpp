@@ -6,6 +6,7 @@
 #include <iostream>
 #include "MemoryManager.h"
 
+MemoryManager* MemoryManager::instance = nullptr;
 
 MemoryManager::MemoryManager() {
     /*
@@ -36,4 +37,17 @@ std::string MemoryManager::GetAddress(std::string varName) {
 
 std::string MemoryManager::GetType(std::string varName) {
     return usedMem->GetNodeOf(varName)->varType;
+}
+
+MemoryManager* MemoryManager::Instance() {
+    if (instance == nullptr) instance = new MemoryManager();
+    return instance;
+}
+
+void MemoryManager::Add(void *value, std::string varName, std::string varType) {
+    usedMem->AddFront(XMB->GetDeleteFirst(), value, varName, varType);
+}
+
+void *MemoryManager::GetValOf(std::string varName) {
+    return usedMem->GetNodeOfRef(varName)->value;
 }

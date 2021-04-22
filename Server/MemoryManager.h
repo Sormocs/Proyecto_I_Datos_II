@@ -7,16 +7,21 @@
 
 #include "MemoryList.h"
 
-
 class MemoryManager {
 private:
-
-//    MemoryList* usedMem;
-    AvaiList* XMB;
-public:
     MemoryList* usedMem;
+    AvaiList* XMB;
+
+protected:
+    static MemoryManager* instance;
+
+public:
+
+    static MemoryManager* Instance();
 
     MemoryManager();
+
+    void Add(void* value, std::string varName, std::string varType);
 
     template <class T>
     void AddVar(T value, std::string varName, std::string varType){
@@ -25,11 +30,8 @@ public:
     std::string GetAddress(std::string varName);
     std::string GetType(std::string varName);
 
-    template <class T>
-    T GetValOf(std::string varName){
-        return usedMem->GetNodeOf(varName)->value;
-    }
-};
 
+    void* GetValOf(std::string varName);
+};
 
 #endif //SERVER_MEMORYMANAGER_H

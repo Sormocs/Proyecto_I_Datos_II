@@ -52,8 +52,10 @@ private:
 
 public:
 
+    void AddFront(Node* newFirst, void* value, std::string& varName, std::string& varType);
+
     template <class T>
-    void AddBegin(Node* newFirst, T value, std::string varName, std::string varType) {
+    void AddBegin(Node* newFirst, T value, std::string& varName, std::string& varType) {
         newFirst->value = (void*) new T(value);
         newFirst->varName = varName;
         newFirst->varType = varType;
@@ -65,6 +67,7 @@ public:
 
     Node* Get(int index);
     Node* GetNodeOf(std::string varName);
+    Node* GetNodeOfRef(std::string& varName);
     void* GetValOf(std::string valName);
 };
 

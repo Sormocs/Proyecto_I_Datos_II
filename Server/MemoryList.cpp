@@ -10,8 +10,6 @@
 template <class T>
 Node::Node(T *value, std::string varName) {
     this->varName = varName;
-
-
 }
 
 
@@ -80,6 +78,12 @@ Node *MemoryList::GetNodeOf(std::string varName) {
     else return SearchForNodeByName(varName, first);
 }
 
+Node *MemoryList::GetNodeOfRef(std::string &varName) {
+    if (first == nullptr) throw ("List is empty.");
+
+    else return SearchForNodeByName(varName, first);
+}
+
 Node *MemoryList::SearchForNodeByName(std::string varName, Node *node) {
     if (node == nullptr) throw ("Val is not in list.");
 
@@ -101,6 +105,13 @@ void *MemoryList::SearchForValByName(std::string valName, Node* node) {
     else if (node->varName == valName) return node->value;
 
     else return SearchForValByName(valName, node->next);
+}
+
+void MemoryList::AddFront(Node *newFirst, void *value, std::string& varName, std::string& varType) {
+    newFirst->value = value;
+    newFirst->varName = varName;
+    newFirst->varType = varType;
+    this->AddFirst(newFirst);
 }
 
 //template <class T>

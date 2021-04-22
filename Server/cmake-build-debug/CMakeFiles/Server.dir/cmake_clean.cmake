@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Server.dir/CodeParser.cpp.o"
   "CMakeFiles/Server.dir/MemoryList.cpp.o"
   "CMakeFiles/Server.dir/MemoryManager.cpp.o"
   "CMakeFiles/Server.dir/Server.cpp.o"

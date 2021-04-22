@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ProjectV2.dir/Button.cpp.o"
   "CMakeFiles/ProjectV2.dir/Client.cpp.o"
-  "CMakeFiles/ProjectV2.dir/CodeParser.cpp.o"
   "CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o"
   "CMakeFiles/ProjectV2.dir/GUI.cpp.o"
   "CMakeFiles/ProjectV2.dir/Json.cpp.o"

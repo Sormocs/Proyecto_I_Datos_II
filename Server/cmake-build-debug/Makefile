@@ -58,19 +58,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/149/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/tiquillo/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.6693.114/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/149/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/tiquillo/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.6693.114/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sormocs04/CLionProjects/Project/Server
+CMAKE_SOURCE_DIR = /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sormocs04/CLionProjects/Project/Server/cmake-build-debug
+CMAKE_BINARY_DIR = /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = /home/sormocs04/CLionProjects/Project/Server/cmake-build-debu
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/149/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/tiquillo/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.6693.114/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -89,7 +89,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/149/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/tiquillo/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.6693.114/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sormocs04/CLionProjects/Project/Server/cmake-build-debug/CMakeFiles /home/sormocs04/CLionProjects/Project/Server/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sormocs04/CLionProjects/Project/Server/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -141,6 +141,33 @@ Server: cmake_check_build_system
 Server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/build
 .PHONY : Server/fast
+
+CodeParser.o: CodeParser.cpp.o
+
+.PHONY : CodeParser.o
+
+# target to build an object file
+CodeParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/CodeParser.cpp.o
+.PHONY : CodeParser.cpp.o
+
+CodeParser.i: CodeParser.cpp.i
+
+.PHONY : CodeParser.i
+
+# target to preprocess a source file
+CodeParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/CodeParser.cpp.i
+.PHONY : CodeParser.cpp.i
+
+CodeParser.s: CodeParser.cpp.s
+
+.PHONY : CodeParser.s
+
+# target to generate assembly for a file
+CodeParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/CodeParser.cpp.s
+.PHONY : CodeParser.cpp.s
 
 MemoryList.o: MemoryList.cpp.o
 
@@ -259,6 +286,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Server"
+	@echo "... CodeParser.o"
+	@echo "... CodeParser.i"
+	@echo "... CodeParser.s"
 	@echo "... MemoryList.o"
 	@echo "... MemoryList.i"
 	@echo "... MemoryList.s"

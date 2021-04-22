@@ -6,15 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/sormocs04/CLionProjects/Project/Server/MemoryList.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
+string
+-
+iostream
+-
+MemoryManager.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
+
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
 string
 -
 
-/home/sormocs04/CLionProjects/Project/Server/MemoryManager.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
 MemoryList.h
-/home/sormocs04/CLionProjects/Project/Server/MemoryList.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
 
-/home/sormocs04/CLionProjects/Project/Server/Server.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.h
 iostream
 -
 sys/types.h
@@ -32,13 +40,15 @@ string.h
 string
 -
 
-/home/sormocs04/CLionProjects/Project/Server/main.cpp
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/main.cpp
 iostream
 -
 Server.h
-/home/sormocs04/CLionProjects/Project/Server/Server.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.h
 MemoryManager.h
-/home/sormocs04/CLionProjects/Project/Server/MemoryManager.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
 thread
 -
+CodeParser.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
 

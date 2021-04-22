@@ -403,7 +403,9 @@ bool CodeParser::Asignation(std::string asignation, std::string& type) {
         return true;
 
     } else if (ContainsChar(asignation,  '{', position)){
-        if (type == "struct")
+        if (type == "struct"){
+            return false;
+        }
 
     } else return false;
 }
@@ -444,7 +446,6 @@ void *CodeParser::AsignChar(std::string fragment) {
     ContainsChar(fragment, '\'', position);
     fragment = fragment.substr(position + 1);
     ContainsChar(fragment, '\'', position);
-    printf("El caracter es %s y la posición es %d\n", fragment.substr(0,1).c_str(), position);
     fragment = fragment.substr(0, position);
 
     if (fragment.length() != 1); // CALLS DEBUGGER
