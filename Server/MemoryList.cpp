@@ -115,8 +115,6 @@ void MemoryList::AddFront(Node *newFirst, void *value, std::string& varName, std
     this->AddFirst(newFirst);
 }
 
-//template <class T>
-//Node *MemoryList::AddBegin(Node *newFirst, T value, std::string varName) {
-//    newFirst->value = (void*) new T(value);
-//    return this->AddFirst(newFirst);
-//}
+void MemoryList::ChangeValOf(std::string valName, void *newValue) {
+    GetNodeOfRef(valName)->value = newValue;
+}

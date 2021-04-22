@@ -106,6 +106,12 @@
 		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.h">
 			<Option target="Server"/>
 		</Unit>
+		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/TextList.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/TextList.h">
+			<Option target="Server"/>
+		</Unit>
 		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/main.cpp">
 			<Option target="Server"/>
 		</Unit>

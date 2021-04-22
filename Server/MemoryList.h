@@ -63,8 +63,7 @@ public:
         this->AddFirst(newFirst);
     }
 
-    template <class T>
-    void ChangeValOf(std::string valName, T newValue);
+    void ChangeValOf(std::string valName, void* newValue);
 
     Node* Get(int index);
     Node* GetNodeOf(std::string varName);

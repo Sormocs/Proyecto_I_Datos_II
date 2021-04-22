@@ -52,4 +52,28 @@ void *MemoryManager::GetValOf(std::string varName) {
     return usedMem->GetNodeOfRef(varName)->value;
 }
 
+int MemoryManager::GetValOfInt(std::string varName) {
+    return *(int*) GetValOf(varName);
+}
+
+long MemoryManager::GetValOfLong(std::string varName) {
+    return *(long*) GetValOf(varName);
+}
+
+float MemoryManager::GetValOfFloat(std::string varName) {
+    return *(float*) GetValOf(varName);
+}
+
+double MemoryManager::GetValOfDouble(std::string varName) {
+    return *(double*) GetValOf(varName);
+}
+
+char MemoryManager::GetValOfChar(std::string varName) {
+    return *(char*) GetValOf(varName);
+}
+
+std::string MemoryManager::GetValOfStruct(std::string varName) {
+    return *(std::string*) GetValOf(varName);
+}
+
 

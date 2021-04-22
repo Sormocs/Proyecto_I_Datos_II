@@ -18,42 +18,58 @@ class CodeParser {
 private:
     MemoryManager* memMan;
 
-    double ExtractNumber(std::string numberStr);
-    static double pow(float num, float power);
-    static double negPow(float num, float power);
-    int ToInt(char character);
-    void ReverseStr(std::string& str);
-    bool DotPos(std::string fragment, int& pos);
 
-    void DelAddSubSign(std::string& codeFragment, int& minusPos, int& plusPos, int& signPos);
-    bool GetAddSubSignPos(std::string& codeFragment, int& minusPos, int& plusPos, int& signPos);
-
-    bool GetMultSignPos(std::string& codeFragment, int& timesPos);
-
-    bool GetDivSignPos(std::string& codeFragment, int& divPos);
-
-    double AritmetricDetector(std::string& codeFragment);
+    // arithmetic operations
 
     double AddSubtract(std::string codeFragment);
     double Multiply(std::string codeFragment);
     double Division(std::string codeFragment);
 
-    bool Asignation(std::string asignation, std::string& type, std::string parentClass = "Main");
+    // arithmetic logic
 
+    double AritmetricDetector(std::string& codeFragment);
+    double ExtractNumber(std::string numberStr);
+    bool DotPos(std::string fragment, int& pos);
+    static double pow(float num, float power);
+    static double negPow(float num, float power);
+    int ToInt(char character);
     void GetFirstNumPos(std::string& codeBlock, int& position);
 
-    void* AsignNum(double num, std::string type);
-    void* AsignChar(std::string fragment);
+    // arithmetic sign
+    void DelAddSubSign(std::string& codeFragment, int& minusPos, int& plusPos, int& signPos);
+    bool GetAddSubSignPos(std::string& codeFragment, int& minusPos, int& plusPos, int& signPos);
+    bool GetMultSignPos(std::string& codeFragment, int& timesPos);
+    bool GetDivSignPos(std::string& codeFragment, int& divPos);
 
+
+    // Code recognition
+    void CodePartition(std::string);
+
+    // variable declaration and value assignation
+    bool Assignation(std::string assignation, std::string& type, std::string parentClass = "Main");
+    void* AssignNum(double num, std::string type);
+    void* AssignChar(std::string fragment);
+
+
+    // text manipulation
     void DeleteSpaces(std::string& text);
-
+    void ReverseStr(std::string& str);
     void SkipSpaces(std::string& text, int& position);
 
+    // struct type detection, manipulation and declaration
     std::string GetFullStruct(std::string& fullStruct);
     std::string GetStructName(std::string& fullStruct);
 
+protected:
+    static CodeParser* instance;
+    CodeParser(MemoryManager* memoryManager);
+
 public:
-    CodeParser();
+    CodeParser() = delete;
+
+
+
+    static CodeParser* Instance();
 
     bool ContainsChar(std::string& fragment, char character, int& position);
     bool ContainsChar(std::string& fragment, char character);

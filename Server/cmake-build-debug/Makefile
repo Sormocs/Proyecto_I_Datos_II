@@ -250,6 +250,33 @@ Server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/Server.cpp.s
 .PHONY : Server.cpp.s
 
+TextList.o: TextList.cpp.o
+
+.PHONY : TextList.o
+
+# target to build an object file
+TextList.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/TextList.cpp.o
+.PHONY : TextList.cpp.o
+
+TextList.i: TextList.cpp.i
+
+.PHONY : TextList.i
+
+# target to preprocess a source file
+TextList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/TextList.cpp.i
+.PHONY : TextList.cpp.i
+
+TextList.s: TextList.cpp.s
+
+.PHONY : TextList.s
+
+# target to generate assembly for a file
+TextList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Server.dir/build.make CMakeFiles/Server.dir/TextList.cpp.s
+.PHONY : TextList.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -298,6 +325,9 @@ help:
 	@echo "... Server.o"
 	@echo "... Server.i"
 	@echo "... Server.s"
+	@echo "... TextList.o"
+	@echo "... TextList.i"
+	@echo "... TextList.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

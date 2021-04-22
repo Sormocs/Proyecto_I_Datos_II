@@ -4,8 +4,10 @@
 
 #include "CodeParser.h"
 
-CodeParser::CodeParser() {
-    memMan = MemoryManager::Instance();
+CodeParser* CodeParser::instance = nullptr;
+
+CodeParser::CodeParser(MemoryManager* memoryManager) {
+    this->memMan = memoryManager;
 }
 
 double CodeParser::AritmetricDetector(std::string& codeFragment) {
@@ -357,7 +359,7 @@ bool CodeParser::ContainsStr(std::string &text, std::string fragment) {
 }
 
 bool CodeParser::Declaration(std::string& line, char reference) {
-    std::string types[] = {"int", "long", "float", "double", "char"};
+    std::string types[] = {"int", "long", "float", "double", "char", "struct"};
     std::string asignation;
     int position = NOT_IN_STRING;
     int lenght = NOT_IN_STRING;
@@ -366,7 +368,7 @@ bool CodeParser::Declaration(std::string& line, char reference) {
 
         if (ContainsStr(line, type, position, lenght)) {
 
-            if (Asignation(line.substr(position + lenght), type)) return true;
+            if (Assignation(line.substr(position + lenght), type)) return true;
         }
     }
     return false;
@@ -376,39 +378,39 @@ bool CodeParser::Declaration(std::string line) {
     return Declaration(line, 2);
 }
 
-bool CodeParser::Asignation(std::string asignation, std::string& type, std::string parentClass) {
+bool CodeParser::Assignation(std::string assignation, std::string& type, std::string parentClass) {
     int position = NOT_IN_STRING;
     std::string varName;
-    if (ContainsChar(asignation, '=', position)) {      // revisa que '=' esté en la cadena. Si no esta, no es una asignacion.
+    if (ContainsChar(assignation, '=', position)) {      // revisa que '=' esté en la cadena. Si no esta, no es una asignacion.
 
         if (type == "int" or type == "long" or type == "float" or type == "double") {
 
-            varName = asignation.substr(0, position);
+            varName = assignation.substr(0, position);
             DeleteSpaces(varName);
 
-            std::string strToDetectAritmetricOperatorsXD = asignation.substr(position + 1);
+            std::string strToDetectAritmetricOperators = assignation.substr(position + 1);
 
-            memMan->Add(AsignNum(AritmetricDetector(strToDetectAritmetricOperatorsXD), type), varName, type, parentClass);
+            memMan->Add(AssignNum(AritmetricDetector(strToDetectAritmetricOperators), type), varName, type, parentClass);
 
 
         } else if (type == "char"){
-            varName = asignation.substr(0, position);
+            varName = assignation.substr(0, position);
             DeleteSpaces(varName);
 
-            std::string str = asignation.substr(position + 1);
-            memMan->Add(AsignChar(str), varName, "char", parentClass);
+            std::string str = assignation.substr(position + 1);
+            memMan->Add(AssignChar(str), varName, "char", parentClass);
 
         }
 
         return true;
 
-    } else if (ContainsChar(asignation,  '{', position)){
+    } else if (ContainsChar(assignation, '{', position)){
         if (type == "struct"){
             if (parentClass != "Main"); // llamar al debugger
             std::string fullStruct;
             GetFullStruct(fullStruct);
 
-            memMan->Add(NULL, GetStructName(fullStruct), "struct");
+            memMan->Add((void*) new std::string("<" + GetStructName(fullStruct) + " struct type>"), GetStructName(fullStruct), "struct", parentClass);
         }
 
     } else return false;
@@ -426,7 +428,7 @@ void CodeParser::GetFirstNumPos(std::string &codeBlock, int &position) {
     }
 }
 
-void* CodeParser::AsignNum(double num, std::string type) {
+void* CodeParser::AssignNum(double num, std::string type) {
     if (type == "int") return (void*) new int ((int) num);
     else if (type == "long") return (void*) new long ((long) num);
     else if (type == "float") return (void*) new float ((float) num);
@@ -443,7 +445,7 @@ void CodeParser::DeleteSpaces(std::string &text) {
     text = newText;
 }
 
-void *CodeParser::AsignChar(std::string fragment) {
+void *CodeParser::AssignChar(std::string fragment) {
 
     int position = NOT_IN_STRING;
 
@@ -466,4 +468,21 @@ void CodeParser::SkipSpaces(std::string &text, int &position) {
         else return;
     }
     position = NOT_IN_STRING;
+}
+
+CodeParser* CodeParser::Instance() {
+    if (instance == nullptr) instance = new CodeParser(MemoryManager::Instance());
+    return instance;
+}
+
+std::string CodeParser::GetFullStruct(std::string &fullStruct) {
+    return std::string();
+}
+
+std::string CodeParser::GetStructName(std::string &fullStruct) {
+    return std::string();
+}
+
+void CodeParser::CodePartition(std::string) {
+
 }

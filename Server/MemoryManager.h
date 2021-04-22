@@ -17,22 +17,22 @@ protected:
 
 public:
 
-    static MemoryManager* Instance();
-
     MemoryManager();
+    static MemoryManager* Instance();
 
     void Add(void* value, std::string varName, std::string varType, std::string& parentClass);
 
-    template <class T>
-    void AddVar(T value, std::string varName, std::string varType){
-        usedMem->AddBegin(XMB->GetDeleteFirst(), value, varName, varType);
-    }
     std::string GetAddress(std::string varName);
     std::string GetType(std::string varName);
 
-
+    // value getters
     void* GetValOf(std::string varName);
-
+    int GetValOfInt(std::string varName);
+    long GetValOfLong(std::string varName);
+    float GetValOfFloat(std::string varName);
+    double GetValOfDouble(std::string varName);
+    char GetValOfChar(std::string varName);
+    std::string GetValOfStruct(std::string varName);
 };
 
 #endif //SERVER_MEMORYMANAGER_H
