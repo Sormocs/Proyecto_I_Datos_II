@@ -12,6 +12,7 @@ private:
     sf::RectangleShape box;
     sf::RectangleShape tInd;
     CodeTxT *code;
+    CodeTxT *lineC;
     Line *current;
 
     sf::Font font;
@@ -21,6 +22,7 @@ public:
     void Build();
     void CheckClick(float ,float);
     void Draw(sf::RenderWindow*);
+    void DrawLines(sf::RenderWindow*);
     bool isSelected();
     void Write(char);
     void Delete();

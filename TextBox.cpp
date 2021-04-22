@@ -58,6 +58,13 @@ void TextBox::Build() {
     code->Insert("");
     current = code->GetStart();
     currLine = current->getLine();
+
+    CodeTxT *count = new CodeTxT();
+    lineC = count;
+    lineC->SetPosY(posy + 5);
+    lineC->SetPosX(40*0.333);
+    lineC->Insert(std::to_string(currLine));
+
 }
 
 void TextBox::Draw(sf::RenderWindow* win) {
@@ -76,6 +83,17 @@ void TextBox::Draw(sf::RenderWindow* win) {
     }
 //    txtbox.setString(text);
 //    win->draw(txtbox);
+}
+
+void TextBox::DrawLines(sf::RenderWindow *win) {
+
+    Line *current = lineC->GetStart();
+    while (current != nullptr){
+        sf::Text *todraw = current->getVal();
+        win->draw(*todraw);
+        current = current->getNext();
+    }
+
 }
 
 bool TextBox::isSelected() {
@@ -116,6 +134,7 @@ void TextBox::Delete() {
             current = GetCurrent();
             indy -= 24;
         } else {
+            lineC->Move("down");
             code->Move("down");
             currLine--;
             current = GetCurrent();
@@ -128,36 +147,24 @@ void TextBox::Delete() {
         current->getVal()->setString(text);
         indx = posx + 14 + current->getVal()->getLocalBounds().width -2;
     }
-
-//    if (text != "") {
-//        std::string c = "\n";
-//        if (&text[text.length()-1] == c){
-//            text.erase(text.end()-1,text.end());
-//            txtbox.setString(text);
-//            //indy = posy + 12 - txtbox.getLocalBounds().height + 3;
-//            indy -= 24;
-//            indx = posx + 14 + txtbox.getLocalBounds().width - 3;
-//        } else {
-//            text.erase(text.end() - 1, text.end());
-//            txtbox.setString(text);
-//            indx = posx + 14 + txtbox.getLocalBounds().width - 3;
-//        }
-//    }
 }
 
 void TextBox::NewLine() {
 
     if (current->getNext() == nullptr && code->GetY()+48 < ylimit) {
         code->SetPosY(code->GetY() + 24);
+        lineC->SetPosY(lineC->GetY()+24);
         code->Insert("");
         currLine++;
+        lineC->Insert(std::to_string(currLine));
         current = GetCurrent();
         indy += 24;
-        std::cout << "currLine: " << currLine << std::endl;
     } else if (current->getNext() == nullptr && code->GetY()+48 > ylimit){
         code->Move("up");
+        lineC->Move("up");
         code->Insert("");
         currLine++;
+        lineC->Insert(std::to_string(currLine));
         current = GetCurrent();
         std::cout << "currLine: " << currLine << std::endl;
     } else {

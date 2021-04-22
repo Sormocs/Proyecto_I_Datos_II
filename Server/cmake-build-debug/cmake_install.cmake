@@ -1,4 +1,4 @@
-# Install script for directory: /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server
+# Install script for directory: /home/sormocs04/CLionProjects/Project/Server
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/sormocs04/CLionProjects/Project/Server/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

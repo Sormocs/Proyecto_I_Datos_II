@@ -62,13 +62,13 @@ void GUI::Run() {
     num.setColor(sf::Color(255,255,255,255));
     num.setPosition(40*0.333,6);
 
-    sf::Text lines;
-    int lnum = 1;
-    lines.setString(std::string(std::to_string(lnum)));
-    lines.setFont(font);
-    lines.setCharacterSize(18);
-    lines.setColor(sf::Color(255,255,255,255));
-    lines.setPosition(40*0.333,45);
+//    sf::Text lines;
+//    int lnum = 1;
+//    lines.setString(std::string(std::to_string(lnum)));
+//    lines.setFont(font);
+//    lines.setCharacterSize(18);
+//    lines.setColor(sf::Color(255,255,255,255));
+//    lines.setPosition(40*0.333,45);
 
 
     while (window.isOpen())
@@ -105,9 +105,9 @@ void GUI::Run() {
                         codeA->Delete();
                     } else if (event.text.unicode == 13) {
                         codeA->NewLine();
-                        lnumstr += "\n";
-                        lnum += 1;
-                        lnumstr += std::to_string(lnum);
+                        //lnumstr += "\n";
+                        //lnum += 1;
+                        //lnumstr += std::to_string(lnum);
                     } else {
                         char letter = static_cast<char>(event.text.unicode);
                         codeA->Write(letter);
@@ -115,14 +115,15 @@ void GUI::Run() {
                 }
             }
         }
-        lines.setString(lnumstr);
+        //lines.setString(lnumstr);
         window.clear();
         codeA->Draw(winptr);
         window.draw(rect1);
         window.draw(RAMViewer);
         window.draw(lineSpace);
         runBtn.Draw(winptr);
-        window.draw(lines);
+        codeA->DrawLines(winptr);
+        //window.draw(lines);
         window.draw(ram);
         window.draw(num);
         lc.Draw(winptr);

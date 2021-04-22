@@ -53,19 +53,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/tiquillo/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.6693.114/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/149/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/tiquillo/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.6693.114/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/149/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server
+CMAKE_SOURCE_DIR = /home/sormocs04/CLionProjects/Project/Server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug
+CMAKE_BINARY_DIR = /home/sormocs04/CLionProjects/Project/Server/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Server.dir/depend.make
@@ -78,68 +78,68 @@ include CMakeFiles/Server.dir/flags.make
 
 CMakeFiles/Server.dir/main.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Server.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/main.cpp.o -c /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs04/CLionProjects/Project/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Server.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/main.cpp.o -c /home/sormocs04/CLionProjects/Project/Server/main.cpp
 
 CMakeFiles/Server.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/main.cpp > CMakeFiles/Server.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs04/CLionProjects/Project/Server/main.cpp > CMakeFiles/Server.dir/main.cpp.i
 
 CMakeFiles/Server.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/main.cpp -o CMakeFiles/Server.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs04/CLionProjects/Project/Server/main.cpp -o CMakeFiles/Server.dir/main.cpp.s
 
 CMakeFiles/Server.dir/Server.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/Server.cpp.o: ../Server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Server.dir/Server.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Server.cpp.o -c /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs04/CLionProjects/Project/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Server.dir/Server.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/Server.cpp.o -c /home/sormocs04/CLionProjects/Project/Server/Server.cpp
 
 CMakeFiles/Server.dir/Server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/Server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.cpp > CMakeFiles/Server.dir/Server.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs04/CLionProjects/Project/Server/Server.cpp > CMakeFiles/Server.dir/Server.cpp.i
 
 CMakeFiles/Server.dir/Server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/Server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.cpp -o CMakeFiles/Server.dir/Server.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs04/CLionProjects/Project/Server/Server.cpp -o CMakeFiles/Server.dir/Server.cpp.s
 
 CMakeFiles/Server.dir/MemoryList.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/MemoryList.cpp.o: ../MemoryList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Server.dir/MemoryList.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/MemoryList.cpp.o -c /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs04/CLionProjects/Project/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Server.dir/MemoryList.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/MemoryList.cpp.o -c /home/sormocs04/CLionProjects/Project/Server/MemoryList.cpp
 
 CMakeFiles/Server.dir/MemoryList.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/MemoryList.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.cpp > CMakeFiles/Server.dir/MemoryList.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs04/CLionProjects/Project/Server/MemoryList.cpp > CMakeFiles/Server.dir/MemoryList.cpp.i
 
 CMakeFiles/Server.dir/MemoryList.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/MemoryList.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.cpp -o CMakeFiles/Server.dir/MemoryList.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs04/CLionProjects/Project/Server/MemoryList.cpp -o CMakeFiles/Server.dir/MemoryList.cpp.s
 
 CMakeFiles/Server.dir/MemoryManager.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/MemoryManager.cpp.o: ../MemoryManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Server.dir/MemoryManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/MemoryManager.cpp.o -c /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs04/CLionProjects/Project/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Server.dir/MemoryManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/MemoryManager.cpp.o -c /home/sormocs04/CLionProjects/Project/Server/MemoryManager.cpp
 
 CMakeFiles/Server.dir/MemoryManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/MemoryManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.cpp > CMakeFiles/Server.dir/MemoryManager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs04/CLionProjects/Project/Server/MemoryManager.cpp > CMakeFiles/Server.dir/MemoryManager.cpp.i
 
 CMakeFiles/Server.dir/MemoryManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/MemoryManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.cpp -o CMakeFiles/Server.dir/MemoryManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs04/CLionProjects/Project/Server/MemoryManager.cpp -o CMakeFiles/Server.dir/MemoryManager.cpp.s
 
 CMakeFiles/Server.dir/CodeParser.cpp.o: CMakeFiles/Server.dir/flags.make
 CMakeFiles/Server.dir/CodeParser.cpp.o: ../CodeParser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Server.dir/CodeParser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/CodeParser.cpp.o -c /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs04/CLionProjects/Project/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Server.dir/CodeParser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Server.dir/CodeParser.cpp.o -c /home/sormocs04/CLionProjects/Project/Server/CodeParser.cpp
 
 CMakeFiles/Server.dir/CodeParser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/CodeParser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.cpp > CMakeFiles/Server.dir/CodeParser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs04/CLionProjects/Project/Server/CodeParser.cpp > CMakeFiles/Server.dir/CodeParser.cpp.i
 
 CMakeFiles/Server.dir/CodeParser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/CodeParser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.cpp -o CMakeFiles/Server.dir/CodeParser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs04/CLionProjects/Project/Server/CodeParser.cpp -o CMakeFiles/Server.dir/CodeParser.cpp.s
 
 # Object files for target Server
 Server_OBJECTS = \
@@ -159,7 +159,7 @@ Server: CMakeFiles/Server.dir/MemoryManager.cpp.o
 Server: CMakeFiles/Server.dir/CodeParser.cpp.o
 Server: CMakeFiles/Server.dir/build.make
 Server: CMakeFiles/Server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sormocs04/CLionProjects/Project/Server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -172,6 +172,6 @@ CMakeFiles/Server.dir/clean:
 .PHONY : CMakeFiles/Server.dir/clean
 
 CMakeFiles/Server.dir/depend:
-	cd /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sormocs04/CLionProjects/Project/Server/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sormocs04/CLionProjects/Project/Server /home/sormocs04/CLionProjects/Project/Server /home/sormocs04/CLionProjects/Project/Server/cmake-build-debug /home/sormocs04/CLionProjects/Project/Server/cmake-build-debug /home/sormocs04/CLionProjects/Project/Server/cmake-build-debug/CMakeFiles/Server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Server.dir/depend
 
