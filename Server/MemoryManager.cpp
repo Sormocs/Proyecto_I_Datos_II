@@ -15,13 +15,10 @@ MemoryManager::MemoryManager() {
 
     usedMem = new MemoryList();
     XMB = new AvaiList();
-    std::cout << "Listas creadas." << std::endl;
 
     for (int i = 0; i < 10240; i++){
         XMB->AddFirst((Node*)malloc(1024));
-        std::cout << "Nodo añadido #" << i << std::endl;
     }
-    std::cout << "Nodos añadidos." << std::endl;
 }
 
 //template<class T>
@@ -44,7 +41,7 @@ MemoryManager* MemoryManager::Instance() {
     return instance;
 }
 
-void MemoryManager::Add(void *value, std::string varName, std::string varType, std::string& parentClass) {
+void MemoryManager::Add(void *value, std::string varName, std::string varType, std::string& parentClass, std::string& structCode) {
     usedMem->AddFront(XMB->GetDeleteFirst(), value, varName, varType, parentClass);
 }
 

@@ -20,7 +20,7 @@ public:
     MemoryManager();
     static MemoryManager* Instance();
 
-    void Add(void* value, std::string varName, std::string varType, std::string& parentClass);
+    void Add(void* value, std::string varName, std::string varType, std::string& parentClass, std::string& structCode);
 
     std::string GetAddress(std::string varName);
     std::string GetType(std::string varName);

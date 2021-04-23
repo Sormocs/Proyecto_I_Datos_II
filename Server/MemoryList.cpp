@@ -4,16 +4,6 @@
 
 #include "MemoryList.h"
 
-
-// Node methods
-
-template <class T>
-Node::Node(T *value, std::string varName) {
-    this->varName = varName;
-}
-
-
-
 // AvaiList methods
 
 Node *AvaiList::GetNode(int index) {
@@ -42,17 +32,24 @@ void AvaiList::AddFirst(Node* newFirst) {
     if (first == nullptr) {
         first = newFirst;
         last = newFirst;
+    } else{
+        first->previous = newFirst;
+        newFirst->next = first;
+        first = newFirst;
     }
-    first->previous = newFirst;
-    newFirst->next = first;
-    first = newFirst;
+    size++;
 }
 
 void AvaiList::AddLast(Node *newLast) {
-    if (first == nullptr) first = newLast;
-    last->next = newLast;
-    newLast->previous = last;
-    last = newLast;
+    if (first == nullptr) {
+        first = newLast;
+        last = first;
+    } else {
+        last->next = newLast;
+        newLast->previous = last;
+        last = newLast;
+    }
+    size++;
 }
 
 Node *AvaiList::GetDeleteFirst() {
@@ -64,6 +61,7 @@ Node *AvaiList::GetDeleteFirst() {
     temp->next = nullptr;
 
     if (first != nullptr) first->previous = nullptr;
+    size--;
     return temp;
 
 }
@@ -84,37 +82,34 @@ Node *MemoryList::GetNodeOfRef(std::string &varName) {
     else return SearchForNodeByName(varName, first);
 }
 
-Node *MemoryList::SearchForNodeByName(std::string varName, Node *node) {
-    if (node == nullptr) throw ("Val is not in list.");
+Node *MemoryList::SearchForNodeByName(std::string& varName, Node *node, int index) {
+    if (index == size) return NULL; // calls debugger that var is not declared
 
     else if (node->varName == varName) return node;
 
-    else return SearchForNodeByName(varName, node->next);
+    else return SearchForNodeByName(varName, node->next, index + 1);
 }
 
 
-void *MemoryList::GetValOf(std::string valName) {
+void *MemoryList::GetValOf(std::string varName) {
     if (first == nullptr) throw ("List is empty.");
 
-    else return SearchForValByName(valName, first);
+    else return SearchForNodeByName(varName, first)->value;
 }
 
-void *MemoryList::SearchForValByName(std::string valName, Node* node) {
-    if (node == nullptr) throw ("Val is not in list.");
-
-    else if (node->varName == valName) return node->value;
-
-    else return SearchForValByName(valName, node->next);
-}
-
-void MemoryList::AddFront(Node *newFirst, void *value, std::string& varName, std::string& varType, std::string& parentClass) {
+void MemoryList::AddFront(Node *newFirst, void *value, std::string& varName, std::string& varType, std::string& parentClass, std::string& structCode) {
     newFirst->value = value;
     newFirst->varName = varName;
     newFirst->varType = varType;
     newFirst->parentClass = parentClass;
+    newFirst->structCode = structCode;
     this->AddFirst(newFirst);
 }
 
 void MemoryList::ChangeValOf(std::string valName, void *newValue) {
     GetNodeOfRef(valName)->value = newValue;
+}
+
+Node *MemoryList::Get(int index) {
+    return this->GetNode(index);
 }

@@ -6,6 +6,7 @@ CMakeFiles/Server.dir/CodeParser.cpp.o
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
+ /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/TextList.h
 CMakeFiles/Server.dir/MemoryList.cpp.o
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.cpp
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
@@ -16,9 +17,13 @@ CMakeFiles/Server.dir/MemoryManager.cpp.o
 CMakeFiles/Server.dir/Server.cpp.o
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.cpp
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.h
+CMakeFiles/Server.dir/TextList.cpp.o
+ /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/TextList.cpp
+ /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/TextList.h
 CMakeFiles/Server.dir/main.cpp.o
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.h
+ /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/TextList.h
  /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/main.cpp

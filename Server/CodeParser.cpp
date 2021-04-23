@@ -4,6 +4,8 @@
 
 #include "CodeParser.h"
 
+#include <utility>
+
 CodeParser* CodeParser::instance = nullptr;
 
 CodeParser::CodeParser(MemoryManager* memoryManager) {
@@ -355,16 +357,21 @@ bool CodeParser::ContainsStr(std::string &text, std::string fragment) {
     int lenght = NOT_IN_STRING;
     int position = NOT_IN_STRING;
 
-    return ContainsStr(text, fragment, position, lenght);
+    return ContainsStr(text, std::move(fragment), position, lenght);
 }
 
-bool CodeParser::Declaration(std::string& line, char reference) {
+bool CodeParser::ContainsStr(std::string &text, std::string fragment, int &position) {
+    int lenght = NOT_IN_STRING;
+    return ContainsStr(text, std::move(fragment), position, lenght);
+}
+
+bool CodeParser::Declaration(std::string line) {
     std::string types[] = {"int", "long", "float", "double", "char", "struct"};
     std::string asignation;
     int position = NOT_IN_STRING;
     int lenght = NOT_IN_STRING;
 
-    for (std::string type : types) {                    // esto no incluye struct ni reference
+    for (std::string type : types) {                    // esto no incluye reference
 
         if (ContainsStr(line, type, position, lenght)) {
 
@@ -374,14 +381,11 @@ bool CodeParser::Declaration(std::string& line, char reference) {
     return false;
 }
 
-bool CodeParser::Declaration(std::string line) {
-    return Declaration(line, 2);
-}
 
-bool CodeParser::Assignation(std::string assignation, std::string& type, std::string parentClass) {
+bool CodeParser::Assignation(std::string assignation, std::string& type, std::string parentClass, std::string structCode) {
     int position = NOT_IN_STRING;
     std::string varName;
-    if (ContainsChar(assignation, '=', position)) {      // revisa que '=' esté en la cadena. Si no esta, no es una asignacion.
+    if (ContainsChar(assignation, '=', position)) {      // revisa que '=' esté en la cadena. Si no esta, no es una asignacion numérica o de char.
 
         if (type == "int" or type == "long" or type == "float" or type == "double") {
 
@@ -390,7 +394,7 @@ bool CodeParser::Assignation(std::string assignation, std::string& type, std::st
 
             std::string strToDetectAritmetricOperators = assignation.substr(position + 1);
 
-            memMan->Add(AssignNum(AritmetricDetector(strToDetectAritmetricOperators), type), varName, type, parentClass);
+            memMan->Add(AssignNum(AritmetricDetector(strToDetectAritmetricOperators), type), varName, type, parentClass, structCode);
 
 
         } else if (type == "char"){
@@ -406,8 +410,13 @@ bool CodeParser::Assignation(std::string assignation, std::string& type, std::st
 
     } else if (ContainsChar(assignation, '{', position)){
         if (type == "struct"){
-            if (parentClass != "Main"); // llamar al debugger
+            if (parentClass != "Main"); // call debugger because of chain struct declaration
             std::string fullStruct;
+
+
+            ContainsStr(fullCode, assignation);
+
+            AssignStruct(type + assignation);
             GetFullStruct(fullStruct);
 
             memMan->Add((void*) new std::string("<" + GetStructName(fullStruct) + " struct type>"), GetStructName(fullStruct), "struct", parentClass);
@@ -459,6 +468,25 @@ void *CodeParser::AssignChar(std::string fragment) {
     return (void*) new char ((char)fragment.at(0));
 }
 
+Node *CodeParser::AssignStruct(std::string fragment) {
+    int position = NOT_IN_STRING;
+    int lenght = NOT_IN_STRING;
+    std::string varName;
+
+    if (ContainsStr(fullCode, fragment, position)){
+
+        fragment = fullCode.substr(position);
+        if (ContainsChar(fragment, '}', position)){
+            varName = fragment.substr(position + 1);
+
+            if (!ContainsChar(varName, ';', position)) Debug("There is no \';\' in this line."); // call debugger cause there is no ; in this line.
+
+            varName = varName.substr(0,position);
+        } else Debug("Uknown error in line no se cual la verda")
+
+    } else; //call debugger cause definition of struct is not concise
+}
+
 void CodeParser::SkipSpaces(std::string &text, int &position) {
     position = 0;
 
@@ -483,6 +511,27 @@ std::string CodeParser::GetStructName(std::string &fullStruct) {
     return std::string();
 }
 
-void CodeParser::CodePartition(std::string) {
+void CodeParser::CodePartition(std::string code) {
+    int position;
+    ContainsChar(code, '\n', position);
+    std::string line = code.substr(0, position);
+
+}
+
+bool CodeParser::CheckSemicolon(std::string& line) {
+    if (!ContainsChar(line, ';')){
+        if (!PartOfStruct(line)); // calls debugger
+    }
+}
+
+bool CodeParser::PartOfStruct(std::string& line) {
+    return false;
+}
+
+void CodeParser::SetFullCode(std::string fullCode) {
+    this->fullCode = std::move(fullCode);
+}
+
+void CodeParser::Debug(std::string) {
 
 }

@@ -9,6 +9,7 @@
 #include <iostream>
 
 #include "MemoryManager.h"
+#include "TextList.h"
 
 #define NOT_IN_STRING -00100000
 #define NOT_VALID_OPERATION -90108020703060405
@@ -17,16 +18,14 @@ class CodeParser {
 
 private:
     MemoryManager* memMan;
-
+    std::string fullCode;
 
     // arithmetic operations
-
     double AddSubtract(std::string codeFragment);
     double Multiply(std::string codeFragment);
     double Division(std::string codeFragment);
 
     // arithmetic logic
-
     double AritmetricDetector(std::string& codeFragment);
     double ExtractNumber(std::string numberStr);
     bool DotPos(std::string fragment, int& pos);
@@ -43,10 +42,14 @@ private:
 
 
     // Code recognition
-    void CodePartition(std::string);
+    void CodePartition(std::string code);
+
+    // syntax checker
+    bool CheckSemicolon(std::string& line);
+    bool PartOfStruct(std::string& line);
 
     // variable declaration and value assignation
-    bool Assignation(std::string assignation, std::string& type, std::string parentClass = "Main");
+    bool Assignation(std::string assignation, std::string& type, std::string parentClass = "Main", std::string structCode = "");
     void* AssignNum(double num, std::string type);
     void* AssignChar(std::string fragment);
 
@@ -59,25 +62,29 @@ private:
     // struct type detection, manipulation and declaration
     std::string GetFullStruct(std::string& fullStruct);
     std::string GetStructName(std::string& fullStruct);
+    Node* AssignStruct(std::string fragment);
+
+    // debugger Call
+    void Debug(std::string);
 
 protected:
     static CodeParser* instance;
-    CodeParser(MemoryManager* memoryManager);
+    explicit CodeParser(MemoryManager* memoryManager);
 
 public:
     CodeParser() = delete;
 
-
-
     static CodeParser* Instance();
+
+    void SetFullCode(std::string fullCode);
 
     bool ContainsChar(std::string& fragment, char character, int& position);
     bool ContainsChar(std::string& fragment, char character);
 
     bool ContainsStr(std::string& text, std::string fragment, int& position, int& lenght);
+    bool ContainsStr(std::string& text, std::string fragment, int& position);
     bool ContainsStr(std::string& text, std::string fragment);
 
-    bool Declaration(std::string& line, char reference);
     bool Declaration(std::string line);
 };
 

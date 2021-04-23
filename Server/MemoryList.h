@@ -15,11 +15,10 @@ public:
     std::string varName;
     std::string varType;
     std::string parentClass;
+    std::string structCode;
     Node* next;
     Node* previous;
 
-    template <class T>
-    Node(T* value, std::string varName);
     Node() = default;
 };
 
@@ -48,27 +47,18 @@ public:
 
 class MemoryList : protected AvaiList {
 private:
-    void* SearchForValByName(std::string valName, Node* node);
-    Node* SearchForNodeByName(std::string varName, Node* node);
+    Node* SearchForNodeByName(std::string& varName, Node* node, int index = 0);
 
 public:
 
-    void AddFront(Node* newFirst, void* value, std::string& varName, std::string& varType, std::string& parentClas);
-
-    template <class T>
-    void AddBegin(Node* newFirst, T value, std::string& varName, std::string& varType) {
-        newFirst->value = (void*) new T(value);
-        newFirst->varName = varName;
-        newFirst->varType = varType;
-        this->AddFirst(newFirst);
-    }
+    void AddFront(Node* newFirst, void* value, std::string& varName, std::string& varType, std::string& parentClass, std::string& structCode);
 
     void ChangeValOf(std::string valName, void* newValue);
 
     Node* Get(int index);
     Node* GetNodeOf(std::string varName);
     Node* GetNodeOfRef(std::string& varName);
-    void* GetValOf(std::string valName);
+    void* GetValOf(std::string varName);
 };
 
 
