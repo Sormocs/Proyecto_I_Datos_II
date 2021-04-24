@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/sormocs04/CLionProjects/Project/Button.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Button.h
 SFML/Graphics.hpp
 -
 
-/home/sormocs04/CLionProjects/Project/Client.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Client.h
 iostream
 -
 sys/types.h
@@ -28,23 +28,43 @@ string.h
 string
 -
 
-/home/sormocs04/CLionProjects/Project/CodeTxT.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.h
 Button.h
-/home/sormocs04/CLionProjects/Project/Button.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Button.h
 SFML/Graphics.hpp
-/home/sormocs04/CLionProjects/Project/SFML/Graphics.hpp
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/SFML/Graphics.hpp
 Client.h
-/home/sormocs04/CLionProjects/Project/Client.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Client.h
 iostream
 -
 
-/home/sormocs04/CLionProjects/Project/TextBox.cpp
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/GUI.cpp
+GUI.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/GUI.h
 TextBox.h
-/home/sormocs04/CLionProjects/Project/TextBox.h
-CodeTxT.h
-/home/sormocs04/CLionProjects/Project/CodeTxT.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/TextBox.h
+Button.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Button.h
+LogCons.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/LogCons.h
 
-/home/sormocs04/CLionProjects/Project/TextBox.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/GUI.h
+SFML/Graphics.hpp
+-
+
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/LogCons.h
+SFML/Graphics.hpp
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/SFML/Graphics.hpp
+iostream
+-
+
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/TextBox.cpp
+TextBox.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/TextBox.h
+CodeTxT.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.h
+
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/TextBox.h
 SFML/Graphics.hpp
 -
 iostream
@@ -52,5 +72,5 @@ iostream
 sstream
 -
 CodeTxT.h
-/home/sormocs04/CLionProjects/Project/CodeTxT.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.h
 
