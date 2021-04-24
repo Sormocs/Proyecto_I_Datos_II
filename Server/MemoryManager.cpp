@@ -42,7 +42,7 @@ MemoryManager* MemoryManager::Instance() {
 }
 
 void MemoryManager::Add(void *value, std::string varName, std::string varType, std::string& parentClass, std::string& structCode) {
-    usedMem->AddFront(XMB->GetDeleteFirst(), value, varName, varType, parentClass);
+    usedMem->AddFront(XMB->GetDeleteFirst(), value, varName, varType, parentClass, structCode);
 }
 
 void *MemoryManager::GetValOf(std::string varName) {

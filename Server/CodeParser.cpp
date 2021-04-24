@@ -402,7 +402,7 @@ bool CodeParser::Assignation(std::string assignation, std::string& type, std::st
             DeleteSpaces(varName);
 
             std::string str = assignation.substr(position + 1);
-            memMan->Add(AssignChar(str), varName, "char", parentClass);
+            memMan->Add(AssignChar(str), varName, "char", parentClass, structCode);
 
         }
 
@@ -419,7 +419,7 @@ bool CodeParser::Assignation(std::string assignation, std::string& type, std::st
             AssignStruct(type + assignation);
             GetFullStruct(fullStruct);
 
-            memMan->Add((void*) new std::string("<" + GetStructName(fullStruct) + " struct type>"), GetStructName(fullStruct), "struct", parentClass);
+            memMan->Add((void*) new std::string("<" + GetStructName(fullStruct) + " struct type>"), GetStructName(fullStruct), "struct", parentClass, structCode);
         }
 
     } else return false;
@@ -442,6 +442,7 @@ void* CodeParser::AssignNum(double num, std::string type) {
     else if (type == "long") return (void*) new long ((long) num);
     else if (type == "float") return (void*) new float ((float) num);
     else if (type == "double") return (void*) new double ((double) num);
+    else return new void*();
 }
 
 void CodeParser::DeleteSpaces(std::string &text) {
@@ -482,7 +483,7 @@ Node *CodeParser::AssignStruct(std::string fragment) {
             if (!ContainsChar(varName, ';', position)) Debug("There is no \';\' in this line."); // call debugger cause there is no ; in this line.
 
             varName = varName.substr(0,position);
-        } else Debug("Uknown error in line no se cual la verda")
+        } else Debug("Uknown error in line no se cual la verda");
 
     } else; //call debugger cause definition of struct is not concise
 }

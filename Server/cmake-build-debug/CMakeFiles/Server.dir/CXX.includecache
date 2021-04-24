@@ -6,11 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.cpp
-MemoryList.h
-/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.cpp
+CodeParser.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
+utility
+-
+
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
+string
+-
+iostream
+-
+MemoryManager.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
+TextList.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/TextList.h
 
 /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
 string
 -
+
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
+MemoryList.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
+
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/TextList.h
+string
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/string
 
