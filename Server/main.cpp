@@ -30,5 +30,5 @@ void MemoryTests(){
     std::cout << MemoryManager::Instance()->GetValOfInt("linea") << std::endl;
     codeParser->Declaration("double fg = 256.478;");
     std::cout << MemoryManager::Instance()->GetValOfDouble("fg") << std::endl;
-    
+
 }
