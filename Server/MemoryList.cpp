@@ -4,6 +4,15 @@
 
 #include "MemoryList.h"
 
+Node::Node() {
+    varName = "";
+    varType = "";
+    parentClass = "";
+    structCode = "";
+    next = nullptr;
+    previous = nullptr;
+}
+
 // AvaiList methods
 
 Node *AvaiList::GetNode(int index) {

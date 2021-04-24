@@ -49,7 +49,7 @@ private:
     bool PartOfStruct(std::string& line);
 
     // variable declaration and value assignation
-    bool Assignation(std::string assignation, std::string& type, std::string parentClass = "Main", std::string structCode = "");
+    bool Assignation(std::string assignation, std::string& type, std::string parentClass = "Main", std::string structCode = " ");
     void* AssignNum(double num, std::string type);
     void* AssignChar(std::string fragment);
 

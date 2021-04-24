@@ -19,7 +19,7 @@ public:
     Node* next;
     Node* previous;
 
-    Node() = default;
+    Node();
 };
 
 

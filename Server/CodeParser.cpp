@@ -378,6 +378,11 @@ bool CodeParser::Declaration(std::string line) {
             if (Assignation(line.substr(position + lenght), type)) return true;
         }
     }
+    if (position == NOT_IN_STRING) {
+        Debug("Introduced type does not match any");
+        return false;
+    }
+
     return false;
 }
 
