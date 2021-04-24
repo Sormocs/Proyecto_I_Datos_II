@@ -27,9 +27,11 @@ void GUI::Run() {
     //BUTTONS:
     //Button(int Posx, int Posy, int Width, int Height,int Fsize ,std::string Text, sf::Color Color)
     Button runBtn = Button(50,6,155,30,26,"Run C!ode",sf::Color(0,128,128,255));
+    Button console = Button(1392,624,155,30,26,"Console",sf::Color(0,128,128,255));
+    Button log = Button(1392,661,155,30,26,"Open Log",sf::Color(0,128,128,255));
 
     //LOG&CONSOLE:
-    LogCons lc = LogCons(0,580,1550,270,22);
+    LogCons lc = LogCons(0,580,1550,270);
 
     //SHAPES:
     sf::RectangleShape rect1(sf::Vector2f(1700.f,40.f));
@@ -62,14 +64,6 @@ void GUI::Run() {
     num.setColor(sf::Color(255,255,255,255));
     num.setPosition(40*0.333,6);
 
-//    sf::Text lines;
-//    int lnum = 1;
-//    lines.setString(std::string(std::to_string(lnum)));
-//    lines.setFont(font);
-//    lines.setCharacterSize(18);
-//    lines.setColor(sf::Color(255,255,255,255));
-//    lines.setPosition(40*0.333,45);
-
 
     while (window.isOpen())
     {
@@ -89,7 +83,8 @@ void GUI::Run() {
                     if (codeA->GetCode()->GetStart()->getVal()->getString() != ""){
                         codeA->GetCode()->SendTxT();
                     }
-
+                } else if (console.Clicked(mouse[0],mouse[1]) or log.Clicked(mouse[0],mouse[1])) {
+                    lc.Switch();
                 }
             }
 
@@ -97,6 +92,8 @@ void GUI::Run() {
                 mouse[0] = sf::Mouse::getPosition(window).x;
                 mouse[1] = sf::Mouse::getPosition(window).y;
                 runBtn.MouseOver(mouse[0],mouse[1]);
+                console.MouseOver(mouse[0],mouse[1]);
+                log.MouseOver(mouse[0],mouse[1]);
             }
 
             if (event.type == event.TextEntered) {
@@ -127,6 +124,8 @@ void GUI::Run() {
         window.draw(ram);
         window.draw(num);
         lc.Draw(winptr);
+        console.Draw(winptr);
+        log.Draw(winptr);
 
         window.display();
         //codeA->Draw(winptr);

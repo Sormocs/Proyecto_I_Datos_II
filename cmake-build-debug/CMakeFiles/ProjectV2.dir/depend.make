@@ -24,6 +24,9 @@ CMakeFiles/ProjectV2.dir/Json.cpp.o: ../Json.cpp
 CMakeFiles/ProjectV2.dir/Json.cpp.o: ../Json.h
 CMakeFiles/ProjectV2.dir/Json.cpp.o: ../json.hpp
 
+CMakeFiles/ProjectV2.dir/LogCons.cpp.o: ../Button.h
+CMakeFiles/ProjectV2.dir/LogCons.cpp.o: ../Client.h
+CMakeFiles/ProjectV2.dir/LogCons.cpp.o: ../CodeTxT.h
 CMakeFiles/ProjectV2.dir/LogCons.cpp.o: ../LogCons.cpp
 CMakeFiles/ProjectV2.dir/LogCons.cpp.o: ../LogCons.h
 
