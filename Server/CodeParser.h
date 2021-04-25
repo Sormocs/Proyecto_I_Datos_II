@@ -60,7 +60,7 @@ private:
     void SkipSpaces(std::string& text, int& position);
 
     // struct type detection, manipulation and declaration
-    std::string GetFullStruct(const std::string& structLine);
+    std::string GetFullStruct(const std::string& structLine, const std::string& structName);
     std::string GetStructName(std::string& fullStruct);
     Node* AssignStruct(std::string fragment);
 

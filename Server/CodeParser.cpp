@@ -422,9 +422,9 @@ bool CodeParser::Assignation(std::string assignation, std::string& type, std::st
             ContainsStr(fullCode, assignation);
 
             AssignStruct(type + assignation);
-            structCode = GetFullStruct(fullStruct);
+            structCode = GetFullStruct(fullStruct, GetStructName(assignation));
 
-            memMan->Add((void*) new std::string("<" + GetStructName(fullStruct) + " struct type>"), GetStructName(fullStruct), "struct", parentClass, structCode);
+            memMan->Add((void*) new std::string("<" + GetStructName(assignation) + " struct type>"), GetStructName(fullStruct), "struct", parentClass, structCode);
         }
 
     } else return false;
@@ -509,7 +509,7 @@ CodeParser* CodeParser::Instance() {
     return instance;
 }
 
-std::string CodeParser::GetFullStruct(const std::string& structLine, const std::string& ) {
+std::string CodeParser::GetFullStruct(const std::string& structLine, const std::string& structName) {
     std::string fullStruct = fullCode;
     int position = NOT_IN_STRING;
     bool searching = true;

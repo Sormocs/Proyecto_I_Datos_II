@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.cpp
+CodeParser.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
+utility
+-
+
 /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
 string
 -
@@ -24,37 +30,7 @@ string
 MemoryList.h
 /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
 
-/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.h
-iostream
--
-sys/types.h
--
-unistd.h
--
-sys/socket.h
--
-netdb.h
--
-arpa/inet.h
--
-string.h
--
-string
--
-
 /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/TextList.h
 string
 /home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/string
-
-/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/main.cpp
-iostream
--
-Server.h
-/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.h
-MemoryManager.h
-/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
-thread
--
-CodeParser.h
-/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
 
