@@ -365,7 +365,7 @@ bool CodeParser::ContainsStr(std::string &text, std::string fragment, int &posit
     return ContainsStr(text, std::move(fragment), position, lenght);
 }
 
-bool CodeParser::Declaration(std::string line) {
+bool CodeParser::Declaration(std::string line, std::string parentClass) {
     std::string types[] = {"int", "long", "float", "double", "char", "struct"};
     std::string asignation;
     int position = NOT_IN_STRING;
@@ -375,7 +375,7 @@ bool CodeParser::Declaration(std::string line) {
 
         if (ContainsStr(line, type, position, lenght)) {
 
-            if (Assignation(line.substr(position + lenght), type)) return true;
+            if (Assignation(line.substr(position + lenght), type, parentClass)) return true;
         }
     }
     if (position == NOT_IN_STRING) {
@@ -414,15 +414,15 @@ bool CodeParser::Assignation(std::string assignation, std::string& type, std::st
         return true;
 
     } else if (ContainsChar(assignation, '{', position)){
-        if (type == "struct"){
-            if (parentClass != "Main"); // call debugger because of chain struct declaration
+        if (type == "struct") {
+            if (parentClass != "Main") Debug("Cascade struct declaration is not allowed."); // call debugger because of chain struct declaration
             std::string fullStruct;
 
 
             ContainsStr(fullCode, assignation);
 
             AssignStruct(type + assignation);
-            GetFullStruct(fullStruct);
+            structCode = GetFullStruct(fullStruct);
 
             memMan->Add((void*) new std::string("<" + GetStructName(fullStruct) + " struct type>"), GetStructName(fullStruct), "struct", parentClass, structCode);
         }
@@ -469,7 +469,7 @@ void *CodeParser::AssignChar(std::string fragment) {
     ContainsChar(fragment, '\'', position);
     fragment = fragment.substr(0, position);
 
-    if (fragment.length() != 1); // CALLS DEBUGGER
+    if (fragment.length() != 1) Debug("Char is a character, it is not a chain of characters."); // CALLS DEBUGGER
 
     return (void*) new char ((char)fragment.at(0));
 }
@@ -485,7 +485,7 @@ Node *CodeParser::AssignStruct(std::string fragment) {
         if (ContainsChar(fragment, '}', position)){
             varName = fragment.substr(position + 1);
 
-            if (!ContainsChar(varName, ';', position)) Debug("There is no \';\' in this line."); // call debugger cause there is no ; in this line.
+            if (!ContainsChar(varName, ';', position)) Debug("There is no \';\' in line no sé cual."); // call debugger cause there is no ; in this line.
 
             varName = varName.substr(0,position);
         } else Debug("Uknown error in line no se cual la verda");
@@ -509,8 +509,18 @@ CodeParser* CodeParser::Instance() {
     return instance;
 }
 
-std::string CodeParser::GetFullStruct(std::string &fullStruct) {
-    return std::string();
+std::string CodeParser::GetFullStruct(const std::string& structLine, const std::string& ) {
+    std::string fullStruct = fullCode;
+    int position = NOT_IN_STRING;
+    bool searching = true;
+
+    do {                // search for declaration of this struct
+        if (ContainsChar(fullStruct, '\n', position)){
+            if (ContainsStr(fullStruct, structLine)) searching = false;
+        }
+    } while (searching);
+
+
 }
 
 std::string CodeParser::GetStructName(std::string &fullStruct) {

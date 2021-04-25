@@ -16,6 +16,7 @@ public:
     std::string varType;
     std::string parentClass;
     std::string structCode;
+    int references = 1;
     Node* next;
     Node* previous;
 

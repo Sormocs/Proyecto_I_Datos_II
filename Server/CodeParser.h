@@ -49,7 +49,7 @@ private:
     bool PartOfStruct(std::string& line);
 
     // variable declaration and value assignation
-    bool Assignation(std::string assignation, std::string& type, std::string parentClass = "Main", std::string structCode = " ");
+    bool Assignation(std::string assignation, std::string& type, std::string parentClass, std::string structCode = " ");
     void* AssignNum(double num, std::string type);
     void* AssignChar(std::string fragment);
 
@@ -60,7 +60,7 @@ private:
     void SkipSpaces(std::string& text, int& position);
 
     // struct type detection, manipulation and declaration
-    std::string GetFullStruct(std::string& fullStruct);
+    std::string GetFullStruct(const std::string& structLine);
     std::string GetStructName(std::string& fullStruct);
     Node* AssignStruct(std::string fragment);
 
@@ -85,7 +85,7 @@ public:
     bool ContainsStr(std::string& text, std::string fragment, int& position);
     bool ContainsStr(std::string& text, std::string fragment);
 
-    bool Declaration(std::string line);
+    bool Declaration(std::string line, std::string parentClass = "Main");
 };
 
 

@@ -94,7 +94,10 @@ Node *MemoryList::GetNodeOfRef(std::string &varName) {
 Node *MemoryList::SearchForNodeByName(std::string& varName, Node *node, int index) {
     if (index == size) return NULL; // calls debugger that var is not declared
 
-    else if (node->varName == varName) return node;
+    else if (node->varName == varName) {
+        node->references++;
+        return node;
+    }
 
     else return SearchForNodeByName(varName, node->next, index + 1);
 }
@@ -117,6 +120,7 @@ void MemoryList::AddFront(Node *newFirst, void *value, std::string& varName, std
 
 void MemoryList::ChangeValOf(std::string valName, void *newValue) {
     GetNodeOfRef(valName)->value = newValue;
+
 }
 
 Node *MemoryList::Get(int index) {
