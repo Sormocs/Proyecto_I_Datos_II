@@ -141,18 +141,18 @@ CMakeFiles/ProjectV2.dir/Button.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/Button.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs/CLionProjects/Proyecto_I_Datos_II/Button.cpp -o CMakeFiles/ProjectV2.dir/Button.cpp.s
 
-CMakeFiles/ProjectV2.dir/Json.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
-CMakeFiles/ProjectV2.dir/Json.cpp.o: ../Json.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ProjectV2.dir/Json.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/Json.cpp.o -c /home/sormocs/CLionProjects/Proyecto_I_Datos_II/Json.cpp
+CMakeFiles/ProjectV2.dir/RemV.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
+CMakeFiles/ProjectV2.dir/RemV.cpp.o: ../RemV.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ProjectV2.dir/RemV.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/RemV.cpp.o -c /home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.cpp
 
-CMakeFiles/ProjectV2.dir/Json.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectV2.dir/Json.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs/CLionProjects/Proyecto_I_Datos_II/Json.cpp > CMakeFiles/ProjectV2.dir/Json.cpp.i
+CMakeFiles/ProjectV2.dir/RemV.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectV2.dir/RemV.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.cpp > CMakeFiles/ProjectV2.dir/RemV.cpp.i
 
-CMakeFiles/ProjectV2.dir/Json.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/Json.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs/CLionProjects/Proyecto_I_Datos_II/Json.cpp -o CMakeFiles/ProjectV2.dir/Json.cpp.s
+CMakeFiles/ProjectV2.dir/RemV.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/RemV.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.cpp -o CMakeFiles/ProjectV2.dir/RemV.cpp.s
 
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: ../CodeTxT.cpp
@@ -187,7 +187,7 @@ ProjectV2_OBJECTS = \
 "CMakeFiles/ProjectV2.dir/GUI.cpp.o" \
 "CMakeFiles/ProjectV2.dir/Client.cpp.o" \
 "CMakeFiles/ProjectV2.dir/Button.cpp.o" \
-"CMakeFiles/ProjectV2.dir/Json.cpp.o" \
+"CMakeFiles/ProjectV2.dir/RemV.cpp.o" \
 "CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o" \
 "CMakeFiles/ProjectV2.dir/LogCons.cpp.o"
 
@@ -199,7 +199,7 @@ ProjectV2: CMakeFiles/ProjectV2.dir/TextBox.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/GUI.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/Client.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/Button.cpp.o
-ProjectV2: CMakeFiles/ProjectV2.dir/Json.cpp.o
+ProjectV2: CMakeFiles/ProjectV2.dir/RemV.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/LogCons.cpp.o
 ProjectV2: CMakeFiles/ProjectV2.dir/build.make

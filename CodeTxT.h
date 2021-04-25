@@ -1,6 +1,7 @@
 #include "Button.h"
 #include "SFML/Graphics.hpp"
 #include "Client.h"
+#include <thread>
 #include <iostream>
 #pragma once
 

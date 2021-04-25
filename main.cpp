@@ -1,8 +1,7 @@
 #include <iostream>
-#include "GUI.h"
 #include <thread>
-#include <SFML/Graphics.hpp>
 #include "Client.h"
+#include "GUI.h"
 
 void RunGUI(){
     GUI::getInstance()->Run();
@@ -16,11 +15,11 @@ void RunClient(){
 
 int main(){
 
-    std::thread GUI (RunGUI);
-    //std::thread RunC (RunClient);
+    std::thread RunG (RunGUI);
+    std::thread RunC (RunClient);
 
-    //RunC.join();
-    GUI.join();
+    RunC.join();
+    RunG.join();
 
 
     return 0;

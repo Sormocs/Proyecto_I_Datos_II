@@ -5,9 +5,11 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <string.h>
-#include <string>
+#include "json.hpp"
 
 #pragma once
+
+using json = nlohmann::json;
 
 class Client {
 private:
@@ -18,7 +20,7 @@ private:
     std::string ipAddress = "127.0.0.1";
     char buf[4092];
     static Client *instance;
-    Client();
+    Client() = default;
 
 public:
     static Client* getInstance();

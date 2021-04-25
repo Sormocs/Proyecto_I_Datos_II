@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
+				<Option working_dir="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
+				<Option working_dir="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
+				<Option working_dir="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Server">
-				<Option output="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
+				<Option output="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 Server"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 Server"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Server/fast">
-				<Option output="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
+				<Option output="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,47 +75,53 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 Server/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 Server/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.cpp">
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h">
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.cpp">
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h">
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.cpp">
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h">
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.cpp">
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Server.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.h">
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Server.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/TextList.cpp">
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Sjson.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/TextList.h">
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Sjson.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/main.cpp">
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/TextList.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CMakeLists.txt">
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/TextList.h">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/main.cpp">
+			<Option target="Server"/>
+		</Unit>
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

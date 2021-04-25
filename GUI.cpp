@@ -22,7 +22,7 @@ void GUI::Run() {
     sf::RenderWindow* winptr = &window;
 
     // (int fsize, sf::Color fontcolor, bool sel, int sizex, int sizey, int posx, int posy, sf::Color Bgcolor)
-    TextBox *codeA = new TextBox(18,sf::Color::White,true,1142,546,44,44,sf::Color(128,128,128,255));
+    TextBox *codeA = new TextBox(18,sf::Color::White,true,1002,546,44,44,sf::Color(128,128,128,255));
 
     //BUTTONS:
     //Button(int Posx, int Posy, int Width, int Height,int Fsize ,std::string Text, sf::Color Color)
@@ -33,14 +33,19 @@ void GUI::Run() {
     //LOG&CONSOLE:
     LogCons lc = LogCons(0,580,1550,270);
 
+    //RAMVIEWER:
+    RemV *remv = new RemV(1050,40,540,550, sf::Color(0,102,102,255));
+
+    ramView = remv;
+
     //SHAPES:
     sf::RectangleShape rect1(sf::Vector2f(1700.f,40.f));
     rect1.setPosition(0,0);
     rect1.setFillColor(sf::Color(96,96,96,255));
 
-    sf::RectangleShape RAMViewer(sf::Vector2f(400, 550));
-    RAMViewer.setPosition(1190, 40);
-    RAMViewer.setFillColor(sf::Color(0, 102, 102, 255));
+//    sf::RectangleShape RAMViewer(sf::Vector2f(400, 550));
+//    RAMViewer.setPosition(1190, 40);
+//    RAMViewer.setFillColor(sf::Color(0, 102, 102, 255));
 
     sf::RectangleShape lineSpace(sf::Vector2f(40,550));
     lineSpace.setPosition(0,40);
@@ -55,7 +60,7 @@ void GUI::Run() {
     ram.setFont(font);
     ram.setCharacterSize(24);
     ram.setColor(sf::Color(255,255,255,255));
-    ram.setPosition(1150+400*0.333,6);
+    ram.setPosition(1010+540*0.333,6);
 
     sf::Text num;
     num.setString("#");
@@ -81,7 +86,11 @@ void GUI::Run() {
                     //CODE FOR THE RUN BUTTON
                     codeA->GetCode()->CoutCode();
                     if (codeA->GetCode()->GetStart()->getVal()->getString() != ""){
+                        lc.Reset();
+                        lc.AddLog("Sending...");
                         codeA->GetCode()->SendTxT();
+                        lc.AddLog("Sent");
+                        lc.Switch();
                     }
                 } else if (console.Clicked(mouse[0],mouse[1]) or log.Clicked(mouse[0],mouse[1])) {
                     lc.Switch();
@@ -102,9 +111,7 @@ void GUI::Run() {
                         codeA->Delete();
                     } else if (event.text.unicode == 13) {
                         codeA->NewLine();
-                        //lnumstr += "\n";
-                        //lnum += 1;
-                        //lnumstr += std::to_string(lnum);
+
                     } else {
                         char letter = static_cast<char>(event.text.unicode);
                         codeA->Write(letter);
@@ -112,11 +119,12 @@ void GUI::Run() {
                 }
             }
         }
-        //lines.setString(lnumstr);
+
         window.clear();
         codeA->Draw(winptr);
         window.draw(rect1);
-        window.draw(RAMViewer);
+//        window.draw(RAMViewer);
+        ramView->Draw(winptr);
         window.draw(lineSpace);
         runBtn.Draw(winptr);
         codeA->DrawLines(winptr);
@@ -128,6 +136,12 @@ void GUI::Run() {
         log.Draw(winptr);
 
         window.display();
-        //codeA->Draw(winptr);
     }
+    exit(0);
+}
+
+RemV *GUI::GetRamV() {
+
+    return ramView;
+
 }

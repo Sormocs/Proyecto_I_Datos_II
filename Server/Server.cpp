@@ -67,7 +67,15 @@ void Server::Start() {
             break;
         }
 
-        std::cout << std::string(buf, 0, bytesReceived) << std::endl;
+        std::string received = std::string(buf,bytesReceived);
+        if (received == "FINISHED"){
+            Sjson::getInstance()->ObtainVals();
+            std::string jstr = "JSON"+Sjson::getInstance()->GetObj().dump();
+            this->Send(jstr.c_str());
+        } else {
+            CodeParser::Instance()->Declaration(std::string(buf, 0, bytesReceived));
+            std::cout << std::string(buf, 0, bytesReceived) << std::endl;
+        }
 
         // Echo message back to client
         //send(clientSocket, buf, bytesReceived - 1 , 0);
@@ -77,6 +85,6 @@ void Server::Start() {
     close(clientSocket);
 }
 
-void Server::Send(char *msg) {
-    send(clientSocket, msg, strlen(msg) , 0);
+void Server::Send(std::string msg) {
+    send(clientSocket, msg.c_str(), strlen(msg.c_str()) , 0);
 }

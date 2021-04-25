@@ -6,6 +6,8 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <string>
+#include "CodeParser.h"
+#include "Sjson.h"
 
 
 #pragma once
@@ -28,6 +30,6 @@ private:
 public:
     Server();
     void Start();
-    void Send(char *);
+    void Send(std::string);
     static Server* getInstance();
 };

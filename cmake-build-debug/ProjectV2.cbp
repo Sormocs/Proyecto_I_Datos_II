@@ -108,16 +108,16 @@
 		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/GUI.h">
 			<Option target="ProjectV2"/>
 		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Json.cpp">
-			<Option target="ProjectV2"/>
-		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Json.h">
-			<Option target="ProjectV2"/>
-		</Unit>
 		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/LogCons.cpp">
 			<Option target="ProjectV2"/>
 		</Unit>
 		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/LogCons.h">
+			<Option target="ProjectV2"/>
+		</Unit>
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.cpp">
+			<Option target="ProjectV2"/>
+		</Unit>
+		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.h">
 			<Option target="ProjectV2"/>
 		</Unit>
 		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/TextBox.cpp">

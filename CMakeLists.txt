@@ -9,5 +9,5 @@ include_directories(SFML_INCLUDE_DIR)
 
 find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
 
-add_executable(ProjectV2 main.cpp TextBox.cpp TextBox.h GUI.cpp GUI.h Client.cpp Client.h Button.cpp Button.h Json.cpp Json.h CodeTxT.cpp CodeTxT.h LogCons.cpp LogCons.h)
+add_executable(ProjectV2 main.cpp TextBox.cpp TextBox.h GUI.cpp GUI.h Client.cpp Client.h Button.cpp Button.h RemV.cpp RemV.h CodeTxT.cpp CodeTxT.h LogCons.cpp LogCons.h)
 target_link_libraries(ProjectV2 sfml-graphics sfml-window sfml-system)

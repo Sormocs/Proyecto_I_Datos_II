@@ -73,4 +73,8 @@ std::string MemoryManager::GetValOfStruct(std::string varName) {
     return *(std::string*) GetValOf(varName);
 }
 
+MemoryList *MemoryManager::GetList() {
+    return usedMem;
+}
+
 

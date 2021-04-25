@@ -5,7 +5,7 @@
 #ifndef SERVER_MEMORYLIST_H
 #define SERVER_MEMORYLIST_H
 
-
+#include <sstream>
 #include <string>
 
 
@@ -19,6 +19,7 @@ public:
     int references = 1;
     Node* next;
     Node* previous;
+    std::string GetAddress();
 
     Node();
 };
@@ -41,6 +42,8 @@ public:
     void AddLast(Node* newLast);
 
     Node* GetDeleteFirst();
+
+    int GetSize();
 };
 
 
@@ -60,6 +63,7 @@ public:
     Node* GetNodeOf(std::string varName);
     Node* GetNodeOfRef(std::string& varName);
     void* GetValOf(std::string varName);
+    int Size();
 };
 
 

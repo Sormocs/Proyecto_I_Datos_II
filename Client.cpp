@@ -1,6 +1,5 @@
 #include "Client.h"
-
-Client::Client() {}
+#include "GUI.h"
 
 Client *Client::instance = nullptr;
 
@@ -40,6 +39,20 @@ void Client::Start() {
         else {
 
             //		Display response
+            std::string received = std::string(buf, bytesReceived);
+            std::string jstring = "JSON";
+            if (received.substr(0,jstring.length()) == "JSON" ){
+
+                std::cout << "Entered condition" << std::endl;
+
+                std::string toparse = received.substr(jstring.length(),received.length()-jstring.length());
+                json js = json::parse(toparse);
+                GUI* gui = GUI::getInstance();
+                std::cout << "From Server:" << std::string(buf, bytesReceived) << std::endl;
+                gui->GetRamV()->SetJson(js);
+
+            }
+
             std::cout << "From Server:" << std::string(buf, bytesReceived) << std::endl;
         }
     }
@@ -53,3 +66,4 @@ void Client::Send(char *msg) {
         std::cout << "Send message failed" << std::endl;
     }
 }
+

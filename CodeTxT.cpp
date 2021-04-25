@@ -77,7 +77,6 @@ void CodeTxT::Insert(std::string str) {
         start = temp;
         end = start;
         lineNum ++;
-        CoutLineNum();
 
     } else{
 
@@ -88,7 +87,6 @@ void CodeTxT::Insert(std::string str) {
         temp->SetNext(nullptr);
         end = temp;
         lineNum ++;
-        CoutLineNum();
 
     }
 }
@@ -151,7 +149,7 @@ void CodeTxT::Move(std::string dir) {
         }
     }
 }
-
+using namespace std::literals::chrono_literals;
 void CodeTxT::SendTxT() {
     Line* temp = start;
     while(temp!= nullptr){
@@ -161,6 +159,8 @@ void CodeTxT::SendTxT() {
 //        *tosend = send;
         Client::getInstance()->Send(tosend);
         temp = temp->getNext();
+        std::this_thread::sleep_for(0.15s);
     }
+    Client::getInstance()->Send("FINISHED");
     std::cout << "Sent" << std::endl;
 }

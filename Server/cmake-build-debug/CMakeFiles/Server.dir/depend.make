@@ -14,8 +14,20 @@ CMakeFiles/Server.dir/MemoryManager.cpp.o: ../MemoryList.h
 CMakeFiles/Server.dir/MemoryManager.cpp.o: ../MemoryManager.cpp
 CMakeFiles/Server.dir/MemoryManager.cpp.o: ../MemoryManager.h
 
+CMakeFiles/Server.dir/Server.cpp.o: ../CodeParser.h
+CMakeFiles/Server.dir/Server.cpp.o: ../MemoryList.h
+CMakeFiles/Server.dir/Server.cpp.o: ../MemoryManager.h
 CMakeFiles/Server.dir/Server.cpp.o: ../Server.cpp
 CMakeFiles/Server.dir/Server.cpp.o: ../Server.h
+CMakeFiles/Server.dir/Server.cpp.o: ../Sjson.h
+CMakeFiles/Server.dir/Server.cpp.o: ../TextList.h
+CMakeFiles/Server.dir/Server.cpp.o: ../json.hpp
+
+CMakeFiles/Server.dir/Sjson.cpp.o: ../MemoryList.h
+CMakeFiles/Server.dir/Sjson.cpp.o: ../MemoryManager.h
+CMakeFiles/Server.dir/Sjson.cpp.o: ../Sjson.cpp
+CMakeFiles/Server.dir/Sjson.cpp.o: ../Sjson.h
+CMakeFiles/Server.dir/Sjson.cpp.o: ../json.hpp
 
 CMakeFiles/Server.dir/TextList.cpp.o: ../TextList.cpp
 CMakeFiles/Server.dir/TextList.cpp.o: ../TextList.h
@@ -24,6 +36,8 @@ CMakeFiles/Server.dir/main.cpp.o: ../CodeParser.h
 CMakeFiles/Server.dir/main.cpp.o: ../MemoryList.h
 CMakeFiles/Server.dir/main.cpp.o: ../MemoryManager.h
 CMakeFiles/Server.dir/main.cpp.o: ../Server.h
+CMakeFiles/Server.dir/main.cpp.o: ../Sjson.h
 CMakeFiles/Server.dir/main.cpp.o: ../TextList.h
+CMakeFiles/Server.dir/main.cpp.o: ../json.hpp
 CMakeFiles/Server.dir/main.cpp.o: ../main.cpp
 

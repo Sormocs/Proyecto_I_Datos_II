@@ -47,7 +47,9 @@ void LogCons::Build() {
 
     CodeTxT *tempcons = new CodeTxT;
     consTxT = tempcons;
-    consTxT->Insert("");
+    consTxT->SetPosX(15);
+    consTxT->SetPosY(posy + 45);
+    consTxT->Insert("Console Output:");
 
 //    logTxt.setFont(font);
 //    logTxt.setCharacterSize(20);
@@ -95,3 +97,37 @@ void LogCons::Switch() {
     }
 }
 
+void LogCons::AddCons(std::string msg) {
+
+    cons = msg;
+    cons += "\n";
+    consTxT->Insert(cons);
+
+}
+
+void LogCons::AddLog(std::string msg) {
+
+    log = msg;
+    log += "\n";
+    logTxT->SetPosY(logTxT->GetY()+24);
+    logTxT->Insert(log);
+
+}
+
+void LogCons::Reset(){
+
+    CodeTxT *templog = new CodeTxT;
+    logTxT = templog;
+    logTxT->SetPosX(15);
+    logTxT->SetPosY(posy + 45);
+    logTxT->Insert("Run C!");
+
+    current = logTxT;
+
+    CodeTxT *tempcons = new CodeTxT;
+    consTxT = tempcons;
+    consTxT->SetPosX(15);
+    consTxT->SetPosY(posy + 45);
+    consTxT->Insert("Console Output:");
+
+}

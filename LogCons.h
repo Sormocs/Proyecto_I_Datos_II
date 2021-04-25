@@ -27,6 +27,7 @@ public:
     void Build();
     void Draw(sf::RenderWindow*);
     void Switch();
-    void AddCons();
-    void AddLog();
+    void AddCons(std::string);
+    void AddLog(std::string);
+    void Reset();
 };

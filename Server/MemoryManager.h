@@ -33,6 +33,8 @@ public:
     double GetValOfDouble(std::string varName);
     char GetValOfChar(std::string varName);
     std::string GetValOfStruct(std::string varName);
+
+    MemoryList* GetList();
 };
 
 #endif //SERVER_MEMORYMANAGER_H

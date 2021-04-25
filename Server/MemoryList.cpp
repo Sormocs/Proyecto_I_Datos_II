@@ -13,6 +13,12 @@ Node::Node() {
     previous = nullptr;
 }
 
+std::string Node::GetAddress() {
+    std::ostringstream address;
+    address << this->value;
+    return address.str();
+}
+
 // AvaiList methods
 
 Node *AvaiList::GetNode(int index) {
@@ -75,6 +81,10 @@ Node *AvaiList::GetDeleteFirst() {
 
 }
 
+int AvaiList::GetSize() {
+    return size;
+}
+
 
 
 // MemoryList methods
@@ -125,4 +135,8 @@ void MemoryList::ChangeValOf(std::string valName, void *newValue) {
 
 Node *MemoryList::Get(int index) {
     return this->GetNode(index);
+}
+
+int MemoryList::Size() {
+    return this->GetSize();
 }

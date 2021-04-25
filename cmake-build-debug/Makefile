@@ -250,33 +250,6 @@ GUI.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/GUI.cpp.s
 .PHONY : GUI.cpp.s
 
-Json.o: Json.cpp.o
-
-.PHONY : Json.o
-
-# target to build an object file
-Json.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/Json.cpp.o
-.PHONY : Json.cpp.o
-
-Json.i: Json.cpp.i
-
-.PHONY : Json.i
-
-# target to preprocess a source file
-Json.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/Json.cpp.i
-.PHONY : Json.cpp.i
-
-Json.s: Json.cpp.s
-
-.PHONY : Json.s
-
-# target to generate assembly for a file
-Json.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/Json.cpp.s
-.PHONY : Json.cpp.s
-
 LogCons.o: LogCons.cpp.o
 
 .PHONY : LogCons.o
@@ -303,6 +276,33 @@ LogCons.s: LogCons.cpp.s
 LogCons.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/LogCons.cpp.s
 .PHONY : LogCons.cpp.s
+
+RemV.o: RemV.cpp.o
+
+.PHONY : RemV.o
+
+# target to build an object file
+RemV.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/RemV.cpp.o
+.PHONY : RemV.cpp.o
+
+RemV.i: RemV.cpp.i
+
+.PHONY : RemV.i
+
+# target to preprocess a source file
+RemV.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/RemV.cpp.i
+.PHONY : RemV.cpp.i
+
+RemV.s: RemV.cpp.s
+
+.PHONY : RemV.s
+
+# target to generate assembly for a file
+RemV.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProjectV2.dir/build.make CMakeFiles/ProjectV2.dir/RemV.cpp.s
+.PHONY : RemV.cpp.s
 
 TextBox.o: TextBox.cpp.o
 
@@ -379,12 +379,12 @@ help:
 	@echo "... GUI.o"
 	@echo "... GUI.i"
 	@echo "... GUI.s"
-	@echo "... Json.o"
-	@echo "... Json.i"
-	@echo "... Json.s"
 	@echo "... LogCons.o"
 	@echo "... LogCons.i"
 	@echo "... LogCons.s"
+	@echo "... RemV.o"
+	@echo "... RemV.i"
+	@echo "... RemV.s"
 	@echo "... TextBox.o"
 	@echo "... TextBox.i"
 	@echo "... TextBox.s"
