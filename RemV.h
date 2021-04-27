@@ -30,6 +30,8 @@ public:
     void Draw(sf::RenderWindow*);
     void BuildText();
     void SetJson(json js);
+    void Reset();
+    void SetDrawt(bool flag);
 
 };
 

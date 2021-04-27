@@ -43,13 +43,14 @@ void Client::Start() {
             std::string jstring = "JSON";
             if (received.substr(0,jstring.length()) == "JSON" ){
 
-                std::cout << "Entered condition" << std::endl;
-
                 std::string toparse = received.substr(jstring.length(),received.length()-jstring.length());
                 json js = json::parse(toparse);
                 GUI* gui = GUI::getInstance();
                 std::cout << "From Server:" << std::string(buf, bytesReceived) << std::endl;
+                gui->GetRamV()->SetDrawt(false);
+                gui->GetRamV()->Reset();
                 gui->GetRamV()->SetJson(js);
+                gui->GetRamV()->SetDrawt(true);
 
             }
 

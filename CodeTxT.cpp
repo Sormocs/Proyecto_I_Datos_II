@@ -51,6 +51,7 @@ CodeTxT::CodeTxT() {
     posx = 0;
     posy = 0;
     lineNum = 1;
+    fsize = 20;
     font.loadFromFile("../Fonts/consolas.ttf");
 
 }
@@ -64,7 +65,7 @@ void CodeTxT::Insert(std::string str) {
     txt->setString(str);
     txt->setFont(font);
     txt->setColor(sf::Color(255,255,255,255));
-    txt->setCharacterSize(20);
+    txt->setCharacterSize(fsize);
     txt->setPosition(posx,posy);
 
     if (start == nullptr){
@@ -163,4 +164,33 @@ void CodeTxT::SendTxT() {
     }
     Client::getInstance()->Send("FINISHED");
     std::cout << "Sent" << std::endl;
+}
+
+void CodeTxT::SetFsize(int fsize) {
+
+    this->fsize = fsize;
+
+}
+
+void CodeTxT::Reset() {
+    if (start == nullptr){
+
+    } else if (start->getNext() == nullptr) {
+        std::cout << "In here" << std::endl;
+        Line *temp = start;
+        start = nullptr;
+        free(temp);
+
+    } else {
+        std::cout << "In the big one" << std::endl;
+        Line *temp = this->start->getNext();
+        while (temp != nullptr) {
+            free(temp->getPrev());
+            temp = temp->getNext();
+        }
+        free(end);
+        start = nullptr;
+        end = nullptr;
+    }
+
 }

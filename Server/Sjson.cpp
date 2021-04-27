@@ -26,7 +26,7 @@ void Sjson::ObtainVals() {
     MemoryList* memL = MemoryManager::Instance()->GetList();
     int i = memL->Size()-1;
 
-    for (i; i != 0; i--){
+    for (i; i != -1; i--){
 
         std::string name = memL->Get(i)->varName;
         std::string addr = memL->Get(i)->GetAddress();
