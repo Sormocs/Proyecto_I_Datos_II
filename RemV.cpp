@@ -26,11 +26,11 @@ void RemV::Build() {
     col1.setFillColor(sf::Color(128,128,128,255));
 
     col2 = tempL;
-    col2.setPosition(posx+ width -2*( (width*0.25)) -20,posy);
+    col2.setPosition(posx+ width -2*( (width*0.25)) -25,posy);
     col2.setFillColor(sf::Color(128,128,128,255));
 
     col3 = tempL;
-    col3.setPosition(posx+ width -( (width*0.25)) -20,posy);
+    col3.setPosition(posx+ width -( (width*0.25)) -15,posy);
     col3.setFillColor(sf::Color(128,128,128,255));
 
     sf::RectangleShape rtmp(sf::Vector2f(width,5));
@@ -46,17 +46,18 @@ void RemV::Build() {
 
     CodeTxT *tempV2 = new CodeTxT;
     val = tempV2;
-    val->SetPosX(col1.getPosition().x + 4);
+    val->SetPosX(col1.getPosition().x + 5);
     val->SetPosY(posy + 29);
 
     CodeTxT *tempV3 = new CodeTxT;
     addr = tempV3;
-    addr->SetPosX(col2.getPosition().x + 4);
-    addr->SetPosY(posy + 29);
+    addr->SetPosX(col2.getPosition().x + 5);
+    addr->SetPosY(posy + 32);
+    addr->SetFsize(16);
 
     CodeTxT *tempV4 = new CodeTxT;
     refs = tempV4;
-    refs->SetPosX(col3.getPosition().x + 4);
+    refs->SetPosX(col3.getPosition().x + 5);
     refs->SetPosY(posy + 29);
 
     font.loadFromFile("../Fonts/consolas.ttf");
@@ -65,7 +66,7 @@ void RemV::Build() {
     rtitles.setCharacterSize(20);
     rtitles.setColor(sf::Color::White);
     rtitles.setPosition(posx+5,posy+5);
-    rtitles.setString("   Type       Value      Address      Refs");
+    rtitles.setString("   Name      Value       Address      Refs");
 
 }
 
@@ -119,7 +120,6 @@ void RemV::SetJson(json js) {
 
 void RemV::BuildText() {
 
-    std::cout << "Im here" << std::endl;
     int num = 0;
     while (num != j.size()){
         std::string jtype = j["num"+std::to_string(num)]["type"];
@@ -139,5 +139,32 @@ void RemV::BuildText() {
         num++;
     }
     drawt = true;
+
+}
+
+void RemV::Reset() {
+
+    type->Reset();
+    val->Reset();
+    addr->Reset();
+    refs->Reset();
+
+    type->SetPosX(posx + 5);
+    type->SetPosY(posy + 29);
+    val->SetPosX(col1.getPosition().x + 5);
+    val->SetPosY(posy + 29);
+
+    addr->SetPosX(col2.getPosition().x + 5);
+    addr->SetPosY(posy + 30);
+
+    refs->SetPosX(col3.getPosition().x + 5);
+    refs->SetPosY(posy + 29);
+
+
+}
+
+void RemV::SetDrawt(bool flag) {
+
+    drawt = flag;
 
 }
