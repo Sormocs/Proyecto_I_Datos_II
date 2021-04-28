@@ -29,7 +29,7 @@ public:
 class CodeTxT {
 
 private:
-    int lineNum, posx, posy, fsize;
+    int lineNum, posx, posy, fsize,lineTosend;
     Line *start = nullptr;
     Line *end = nullptr;
     sf::Font font;
@@ -47,7 +47,7 @@ public:
     void CoutLineNum();
     void CoutCode();
     void Move(std::string);
-    void SendTxT();
+    bool SendTxT();
     void SetFsize(int fsize);
     void Reset();
 

@@ -66,8 +66,8 @@ void Client::Start() {
     exit(0);
 }
 
-void Client::Send(char *msg) {
-    int sendRes = send(sock, msg, strlen(msg), 0);
+void Client::Send(std::string msg) {
+    int sendRes = send(sock, msg.c_str(), msg.length(), 0);
     if (sendRes == -1) {
         std::cout << "Send message failed" << std::endl;
     }

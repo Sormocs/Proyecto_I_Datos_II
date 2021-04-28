@@ -52,6 +52,7 @@ CodeTxT::CodeTxT() {
     posy = 0;
     lineNum = 1;
     fsize = 20;
+    lineTosend = 1;
     font.loadFromFile("../Fonts/consolas.ttf");
 
 }
@@ -151,19 +152,35 @@ void CodeTxT::Move(std::string dir) {
     }
 }
 using namespace std::literals::chrono_literals;
-void CodeTxT::SendTxT() {
-    Line* temp = start;
-    while(temp!= nullptr){
-        std::string send = temp->getVal()->getString();
-        char* tosend = strcpy(new char[send.length()],send.c_str());
-//        std::string *tosend = new std::string ;
-//        *tosend = send;
-        Client::getInstance()->Send(tosend);
-        temp = temp->getNext();
-        std::this_thread::sleep_for(0.15s);
+bool CodeTxT::SendTxT() {
+    if (lineTosend+1 == lineNum){
+        Client::getInstance()->Send(end->getVal()->getString());
+        lineTosend = 1;
+        return false;
+    } else {
+        Line* temp = start;
+        while (temp->getLine() != lineTosend) {
+            temp = temp->getNext();
+            lineTosend++;
+        }
+        Client::getInstance()->Send(temp->getVal()->getString());
+        std::string wtf = temp->getVal()->getString();
+        std::cout << wtf << std::endl;
+        std::cout << "lineNum = " <<lineNum << " & linetosend = " << lineTosend <<std::endl;
+        lineTosend++;
+        return true;
     }
-    Client::getInstance()->Send("FINISHED");
-    std::cout << "Sent" << std::endl;
+
+
+//    while(temp!= nullptr){
+//        std::string send = temp->getVal()->getString();
+//        char* tosend = strcpy(new char[send.length()],send.c_str());
+//        Client::getInstance()->Send(tosend);
+//        temp = temp->getNext();
+//        std::this_thread::sleep_for(0.15s);
+//    }
+//    Client::getInstance()->Send("FINISHED");
+//    std::cout << "Sent" << std::endl;
 }
 
 void CodeTxT::SetFsize(int fsize) {

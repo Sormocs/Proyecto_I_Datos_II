@@ -19,6 +19,7 @@ class CodeParser {
 private:
     MemoryManager* memMan;
     std::string fullCode;
+    std::string debug = std::string();
     int lines = 0;
     int lineNum = 0;
 
@@ -89,10 +90,10 @@ public:
     bool ContainsStr(std::string& text, std::string fragment);
 
     bool Declaration(std::string line, const std::string& parentClass = "Main");
-
     void CheckLine(const std::string& line);
-
     void Parse();
+
+    std::string GetDebug();
 };
 
 

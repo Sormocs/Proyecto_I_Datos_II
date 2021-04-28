@@ -561,7 +561,9 @@ void CodeParser::AddLine(const std::string& line) {
     this->fullCode += line;
 }
 
-void CodeParser::Debug(std::string) {
+void CodeParser::Debug(std::string msg) {
+
+    debug += msg + "\n";
 
 }
 
@@ -595,4 +597,8 @@ bool CodeParser::NumType(std::string &type) {
         if (numType == type) return true;
     }
     return false;
+}
+
+std::string CodeParser::GetDebug() {
+    return debug;
 }

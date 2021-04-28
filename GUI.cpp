@@ -100,11 +100,15 @@ void GUI::Run() {
                         stop.SetEnabled(true);
                         clearlog.SetEnabled(false);
 
-//                        lc->Reset();
-//                        lc->AddLog("Sending...");
-//                        codeA->GetCode()->SendTxT();
-//                        lc->AddLog("Sent");
-//                        lc->Switch();
+                        lc->Reset();
+                        lc->AddLog("Sending...");
+                        if (!codeA->GetCode()->SendTxT()){
+                            next.SetEnabled(false);
+                            stop.SetEnabled(false);
+                            clearlog.SetEnabled(true);
+                        }
+                        lc->AddLog("Sent");
+                        lc->Switch();
                     }
                 } else if (console.Clicked(mouse[0],mouse[1]) or log.Clicked(mouse[0],mouse[1])) {
                     lc->Switch();

@@ -74,7 +74,9 @@ void Server::Start() {
             this->Send(jstr.c_str());
             MemoryManager::Instance()->Restart();
         } else {
-            CodeParser::Instance()->Declaration(std::string(buf, 0, bytesReceived));
+            std::cout << received << std::endl;
+            CodeParser::Instance()->CheckLine(received);
+            if (CodeParser::Instance()->GetDebug() != "") Send("ERROR"+CodeParser::Instance()->GetDebug());
             std::cout << std::string(buf, 0, bytesReceived) << std::endl;
         }
 
