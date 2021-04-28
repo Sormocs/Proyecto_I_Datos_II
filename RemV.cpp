@@ -144,10 +144,10 @@ void RemV::BuildText() {
 
 void RemV::Reset() {
 
-    type->Reset();
-    val->Reset();
-    addr->Reset();
-    refs->Reset();
+    type->SetStart(nullptr);
+    val->SetStart(nullptr);
+    addr->SetStart(nullptr);
+    refs->SetStart(nullptr);
 
     type->SetPosX(posx + 5);
     type->SetPosY(posy + 29);

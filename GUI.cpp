@@ -99,6 +99,7 @@ void GUI::Run() {
                         next.SetEnabled(true);
                         stop.SetEnabled(true);
                         clearlog.SetEnabled(false);
+                        runBtn.SetEnabled(false);
 
                         lc->Reset();
                         lc->AddLog("Sending...");
@@ -106,6 +107,8 @@ void GUI::Run() {
                             next.SetEnabled(false);
                             stop.SetEnabled(false);
                             clearlog.SetEnabled(true);
+                            runBtn.SetEnabled(true);
+                            lc->AddLog("Finished");
                         }
                         lc->AddLog("Sent");
                         lc->Switch();
@@ -118,6 +121,16 @@ void GUI::Run() {
                     next.SetEnabled(false);
                     stop.SetEnabled(false);
                     clearlog.SetEnabled(true);
+                    runBtn.SetEnabled(true);
+                } else if (next.Clicked(mouse[0],mouse[1])){
+                    if (!codeA->GetCode()->SendTxT()){
+                        next.SetEnabled(false);
+                        stop.SetEnabled(false);
+                        clearlog.SetEnabled(true);
+                        runBtn.SetEnabled(true);
+                        lc->AddLog("Finished");
+                    }
+                    lc->AddLog("Sent");
                 }
             }
 

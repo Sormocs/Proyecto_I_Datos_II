@@ -51,7 +51,6 @@ void Client::Start() {
 
                 std::string toparse = received.substr(strlen("JSON"),received.length()-strlen("JSON"));
                 json js = json::parse(toparse);
-                std::cout << "From Server:" << std::string(buf, bytesReceived) << std::endl;
                 gui->GetRamV()->SetDrawt(false);
                 gui->GetRamV()->Reset();
                 gui->GetRamV()->SetJson(js);

@@ -69,22 +69,20 @@ void Server::Start() {
 
         std::string received = std::string(buf,bytesReceived);
         if (received == "FINISHED"){
-            Sjson::getInstance()->ObtainVals();
-            std::string jstr = "JSON"+Sjson::getInstance()->GetObj().dump();
-            this->Send(jstr.c_str());
+            std::cout << "Finish received" << std::endl;
+            Sjson::getInstance()->Reset();
             MemoryManager::Instance()->Restart();
         } else {
             std::cout << received << std::endl;
             CodeParser::Instance()->CheckLine(received);
             if (CodeParser::Instance()->GetDebug() != "") Send("ERROR"+CodeParser::Instance()->GetDebug());
-            std::cout << std::string(buf, 0, bytesReceived) << std::endl;
+            Sjson::getInstance()->ObtainVals();
+            std::string jstr = "JSON"+Sjson::getInstance()->GetObj().dump();
+            this->Send(jstr.c_str());
+            std::cout << "Json sent?" << std::endl;
         }
-
-        // Echo message back to client
-        //send(clientSocket, buf, bytesReceived - 1 , 0);
     }
 
-    // Close the socket
     close(clientSocket);
 }
 

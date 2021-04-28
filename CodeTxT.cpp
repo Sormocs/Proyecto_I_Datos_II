@@ -52,7 +52,6 @@ CodeTxT::CodeTxT() {
     posy = 0;
     lineNum = 1;
     fsize = 20;
-    lineTosend = 1;
     font.loadFromFile("../Fonts/consolas.ttf");
 
 }
@@ -77,6 +76,7 @@ void CodeTxT::Insert(std::string str) {
         temp->SetPrev(nullptr);
         temp->SetLine(lineNum);
         start = temp;
+        tosend = start;
         end = start;
         lineNum ++;
 
@@ -153,34 +153,20 @@ void CodeTxT::Move(std::string dir) {
 }
 using namespace std::literals::chrono_literals;
 bool CodeTxT::SendTxT() {
-    if (lineTosend+1 == lineNum){
-        Client::getInstance()->Send(end->getVal()->getString());
-        lineTosend = 1;
+
+    if (tosend == end){
+        std::string tosendstr = tosend->getVal()->getString();
+        Client::getInstance()->Send(tosendstr);
+        std::this_thread::sleep_for(0.5s);
+        Client::getInstance()->Send("FINISHED");
+        tosend = start;
         return false;
     } else {
-        Line* temp = start;
-        while (temp->getLine() != lineTosend) {
-            temp = temp->getNext();
-            lineTosend++;
-        }
-        Client::getInstance()->Send(temp->getVal()->getString());
-        std::string wtf = temp->getVal()->getString();
-        std::cout << wtf << std::endl;
-        std::cout << "lineNum = " <<lineNum << " & linetosend = " << lineTosend <<std::endl;
-        lineTosend++;
+        std::string tosendstr = tosend->getVal()->getString();
+        Client::getInstance()->Send(tosendstr);
+        tosend = tosend->getNext();
         return true;
     }
-
-
-//    while(temp!= nullptr){
-//        std::string send = temp->getVal()->getString();
-//        char* tosend = strcpy(new char[send.length()],send.c_str());
-//        Client::getInstance()->Send(tosend);
-//        temp = temp->getNext();
-//        std::this_thread::sleep_for(0.15s);
-//    }
-//    Client::getInstance()->Send("FINISHED");
-//    std::cout << "Sent" << std::endl;
 }
 
 void CodeTxT::SetFsize(int fsize) {
@@ -189,25 +175,7 @@ void CodeTxT::SetFsize(int fsize) {
 
 }
 
-void CodeTxT::Reset() {
-    if (start == nullptr){
 
-    } else if (start->getNext() == nullptr) {
-        std::cout << "In here" << std::endl;
-        Line *temp = start;
-        start = nullptr;
-        free(temp);
-
-    } else {
-        std::cout << "In the big one" << std::endl;
-        Line *temp = this->start->getNext();
-        while (temp != nullptr) {
-            free(temp->getPrev());
-            temp = temp->getNext();
-        }
-        free(end);
-        start = nullptr;
-        end = nullptr;
-    }
-
+void CodeTxT::SetStart(Line* newstart) {
+    start = newstart;
 }
