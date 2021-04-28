@@ -29,9 +29,9 @@ int main() {
 
 void MemoryTests(){
     CodeParser* codeParser = CodeParser::Instance();
-    codeParser->Declaration("int linea = 123;");
+    codeParser->CheckLine("int linea = 123;");
     std::cout << MemoryManager::Instance()->GetValOfInt("linea") << std::endl;
-    codeParser->Declaration("double fg = 256.478;");
+    codeParser->CheckLine("double fg = 256.478;");
     std::cout << MemoryManager::Instance()->GetValOfDouble("fg") << std::endl;
 
 }

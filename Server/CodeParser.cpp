@@ -45,44 +45,30 @@ double CodeParser::AddSubtract(std::string codeFragment) {
     } else {
         numToOperator = ExtractNumber(codeFragment);
     }
-
     result += numToOperator;GetAddSubSignPos(codeFragment, minusPos, plusPos, signPos);
     codeFragment = codeFragment.substr(signPos-1);
 
     while (true){
 
-        std::cout << "En bucle. " << "code fragment: " << codeFragment << " result: " << result << std::endl;
-
         if (ContainsChar(codeFragment, '/', signPos) or ContainsChar(codeFragment, '*', signPos)) return NULL;
         else if (ContainsChar(codeFragment, '+', signPos) or ContainsChar(codeFragment, '-', signPos)) {
-
-            std::cout << "En operación." << std::endl;
 
             GetAddSubSignPos(codeFragment, minusPos, plusPos, signPos);
 
             sign = codeFragment.at(signPos);
 
-            std::cout << "Sign: " << sign << std::endl;
-
             DelAddSubSign(codeFragment, minusPos, plusPos, signPos);
 
             if (!GetAddSubSignPos(codeFragment, minusPos, plusPos, signPos)) signPos = -1;
 
-            std::cout << "Code fragment: " << codeFragment << std::endl;
-            std::cout << "StrNumber to add: " << codeFragment.substr(0, signPos) << std::endl;
-
             numToOperator = ExtractNumber(codeFragment.substr(0, signPos));
-
-            std::cout << "Number to add: " << numToOperator << std::endl;
 
             if (sign == '+') result += numToOperator;
             else result -= numToOperator;
         }
-
         else break;
 
         if (GetAddSubSignPos(codeFragment,minusPos, plusPos, signPos)) {
-            std::cout << "Eliminación al final del while. Se eliminará: " << codeFragment.substr(0, signPos) << std::endl;
             codeFragment = codeFragment.substr(signPos);
         }
         else break;
@@ -96,8 +82,6 @@ double CodeParser::Multiply(std::string codeFragment) {
     double numToOperator = 0;
     int signPos = NOT_STRING_POS_OR_LENGHT;
 
-    std::cout << "First code fragment: " << codeFragment << std::endl;
-
     if (GetDivSignPos(codeFragment, signPos) or ContainsChar(codeFragment, '+', signPos) or ContainsChar(codeFragment, '-', signPos)) return NOT_VALID_OPERATION;
 
     if (ContainsChar(codeFragment, '*', signPos)) {
@@ -107,35 +91,24 @@ double CodeParser::Multiply(std::string codeFragment) {
     } else {
         numToOperator = ExtractNumber(codeFragment);
     }
-
     result = numToOperator;
     if (GetMultSignPos(codeFragment, signPos)) codeFragment = codeFragment.substr(signPos-1);
 
     while (true){
 
-        std::cout << "En bucle. " << "code fragment: " << codeFragment << " result: " << result << std::endl;
-
         if (ContainsChar(codeFragment, '*', signPos)) {
-
-            std::cout << "En operación." << std::endl;
 
             codeFragment = codeFragment.substr(signPos+1);
 
             if (!GetMultSignPos(codeFragment, signPos)) signPos = -1;
 
-            std::cout << "Code fragment: " << codeFragment << std::endl;
-
-            std::cout << "StrNumber to add: " << codeFragment.substr(0, signPos) << std::endl;
             numToOperator = ExtractNumber(codeFragment.substr(0, signPos));
-            std::cout << "Number to add: " << numToOperator << std::endl;
 
             result *= ExtractNumber(codeFragment.substr(0, signPos));
         }
-
         else break;
 
         if (GetMultSignPos(codeFragment, signPos)) {
-            std::cout << "Eliminación al final del while. Se eliminará: " << codeFragment.substr(0, signPos) << std::endl;
             codeFragment = codeFragment.substr(signPos);
         }
         else break;
@@ -149,8 +122,6 @@ double CodeParser::Division(std::string codeFragment) {
     double numToOperator = 0;
     int signPos = NOT_STRING_POS_OR_LENGHT;
 
-    std::cout << "First code fragment: " << codeFragment << std::endl;
-
     if (GetMultSignPos(codeFragment, signPos) or ContainsChar(codeFragment, '+', signPos) or ContainsChar(codeFragment, '-', signPos)) return NOT_VALID_OPERATION;
 
     if (GetDivSignPos(codeFragment, signPos)) {
@@ -160,35 +131,24 @@ double CodeParser::Division(std::string codeFragment) {
     } else {
         numToOperator = ExtractNumber(codeFragment);
     }
-
     result = numToOperator;
     if (GetMultSignPos(codeFragment, signPos)) codeFragment = codeFragment.substr(signPos-1);
 
     while (true){
 
-        std::cout << "En bucle. " << "code fragment: " << codeFragment << " result: " << result << std::endl;
-
         if (GetDivSignPos(codeFragment, signPos)) {
-
-            std::cout << "En operación." << std::endl;
 
             codeFragment = codeFragment.substr(signPos+1);
 
             if (!GetDivSignPos(codeFragment, signPos)) signPos = -1;
 
-            std::cout << "Code fragment: " << codeFragment << std::endl;
-
-            std::cout << "StrNumber to add: " << codeFragment.substr(0, signPos) << std::endl;
             numToOperator = ExtractNumber(codeFragment.substr(0, signPos));
-            std::cout << "Number to add: " << numToOperator << std::endl;
 
             result /= ExtractNumber(codeFragment.substr(0, signPos));
         }
-
         else break;
 
         if (GetDivSignPos(codeFragment, signPos)) {
-            std::cout << "Eliminación al final del while. Se eliminará: " << codeFragment.substr(0, signPos) << std::endl;
             codeFragment = codeFragment.substr(signPos);
         }
         else break;
@@ -376,7 +336,7 @@ bool CodeParser::ContainsStr(std::string &text, std::string fragment, int &posit
     return ContainsStr(text, std::move(fragment), position, lenght);
 }
 
-bool CodeParser::Declaration(std::string line, const std::string& parentClass) {
+bool CodeParser::Declaration(std::string& line, std::string& parentClass) {
     std::string types[] = {"int", "long", "float", "double", "char", "struct"};
     std::string asignation;
     int position = NOT_STRING_POS_OR_LENGHT;
@@ -390,7 +350,7 @@ bool CodeParser::Declaration(std::string line, const std::string& parentClass) {
         }
     }
     if (position == NOT_STRING_POS_OR_LENGHT) {
-        Debug("Introduced type does not match any");
+        Debug("Introduced type in line " + std::to_string(lineNum) + " does not match any");
         return false;
     }
 
@@ -426,16 +386,14 @@ bool CodeParser::Assignation(std::string assignation, std::string& type, std::st
 
     } else if (ContainsChar(assignation, '{', position)){
         if (type == "struct") {
-            if (parentClass != "Main") Debug("Cascade struct declaration is not allowed."); // call debugger because of chain struct declaration
-            std::string fullStruct;
+            if (parentClass != "Main") {
+                Debug("Cascade struct declaration is not allowed."); // call debugger because of chain struct declaration
+                return false;
+            }
 
+            //AssignStruct(type + assignation); // tal vez no se necesite.
 
-            ContainsStr(fullCode, assignation);
-
-            AssignStruct(type + assignation);
-            structCode = GetFullStruct(fullStruct, GetStructName(assignation));
-
-            memMan->Add((void*) new std::string("<" + GetStructName(assignation) + " struct type>"), GetStructName(fullStruct), "struct", parentClass, structCode);
+            memMan->Add((void*) new std::string("<" + GetStructName() + " struct type>"), GetStructName(), "struct", parentClass, structCode);
         }
 
     } else return false;
@@ -534,15 +492,45 @@ std::string CodeParser::GetFullStruct(const std::string& structLine, const std::
 
 }
 
-std::string CodeParser::GetStructName(std::string &fullStruct) {
-    return std::string();
-}
+std::string CodeParser::GetStructName() {
+    std::string tempStr = fullCode;
+    int line = 0;
+    int pos = NOT_STRING_POS_OR_LENGHT;
+    while (line != lineNum){
+        if (ContainsChar(tempStr, '\n', pos)){
+            tempStr = tempStr.substr(pos);
+            line++;
+        } else {
+            Debug("You declared a struct with no name. Struct begins at line" + std::to_string(lineNum) + ".");
+            return std::string();
+        }
+    }
+    bool exit = false;
+    while (!exit){
+        if (ContainsChar(tempStr, '}', pos)){
+            tempStr = tempStr.substr(pos);
+            if (ContainsChar(tempStr, '\n', pos)) {
+                tempStr = tempStr.substr(0, pos);
+                if (ContainsChar(tempStr, ';', pos)){
+                    tempStr = tempStr.substr(0, pos);
+                    exit = true;
+                } else {
+                    Debug("A line with struct name does not have ';'.");
+                    exit = true;
+                }
+            } else if (ContainsChar(tempStr, ';', pos)) {
+                tempStr = tempStr.substr(0, pos);
+                exit = true;
 
-void CodeParser::CodePartition(std::string code) {
-    int position;
-    ContainsChar(code, '\n', position);
-    std::string line = code.substr(0, position);
+            } else {
+                Debug("A line with struct name does not have ';' or  there is an unknown problem.");
+                exit = true;
+            }
+        }
+    }
 
+    if (pos == NOT_STRING_POS_OR_LENGHT) return std::string ();
+    else return tempStr;
 }
 
 bool CodeParser::CheckSemicolon(std::string line) {
@@ -567,15 +555,15 @@ void CodeParser::Debug(std::string msg) {
 
 }
 
-void CodeParser::CheckLine(const std::string& line) {
+void CodeParser::CheckLine(std::string line, std::string parentClass) {
     lineNum++;
     if (!CheckSemicolon(line)) {
         Debug("Add a ';' to line " + std::to_string(lineNum) + ".");
         return;
     }
-    else if (Declaration(line)) return;
+    else if (Declaration(line, parentClass)) return;
     else {
-        Debug("Unknown error in line " + std::to_string(lineNum) + ".");
+        Debug("Error in line " + std::to_string(lineNum) + ". If not described before, its unknown");
         return;
     }
 }
@@ -602,3 +590,4 @@ bool CodeParser::NumType(std::string &type) {
 std::string CodeParser::GetDebug() {
     return debug;
 }
+

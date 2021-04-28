@@ -17,11 +17,15 @@
 class CodeParser {
 
 private:
+    // normal attributtes
     MemoryManager* memMan;
     std::string fullCode;
     std::string debug = std::string();
     int lines = 0;
     int lineNum = 0;
+
+    // struct attributes
+    MemoryList tempMem = MemoryList();
 
     // arithmetic operations
     double AddSubtract(std::string codeFragment);
@@ -44,10 +48,6 @@ private:
     bool GetMultSignPos(std::string& codeFragment, int& timesPos);
     bool GetDivSignPos(std::string& codeFragment, int& divPos);
 
-
-    // Code recognition
-    void CodePartition(std::string code);
-
     // syntax checker
     bool CheckSemicolon(std::string line);
     bool PartOfStruct(std::string& line);
@@ -65,10 +65,10 @@ private:
 
     // struct type detection, manipulation and declaration
     std::string GetFullStruct(const std::string& structLine, const std::string& structName);
-    std::string GetStructName(std::string& fullStruct);
+    std::string GetStructName();
     Node* AssignStruct(std::string fragment);
 
-    // debugger Call
+    // debugger call
     void Debug(std::string);
 
 protected:
@@ -89,8 +89,8 @@ public:
     bool ContainsStr(std::string& text, std::string fragment, int& position);
     bool ContainsStr(std::string& text, std::string fragment);
 
-    bool Declaration(std::string line, const std::string& parentClass = "Main");
-    void CheckLine(const std::string& line);
+    bool Declaration(std::string& line, std::string& parentClass);
+    void CheckLine(std::string line, std::string parentClass = "Main");
     void Parse();
 
     std::string GetDebug();

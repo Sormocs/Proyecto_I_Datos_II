@@ -6,37 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
 string
 -
 iostream
 -
 MemoryManager.h
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
 TextList.h
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/TextList.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/TextList.h
 
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
 sstream
 -
 string
 -
 
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
 MemoryList.h
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
 
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Server.cpp
-iostream
--
-string
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/string
-Server.h
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Server.h
-stdio.h
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/stdio.h
-
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Server.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.h
 iostream
 -
 sys/types.h
@@ -54,21 +44,21 @@ string.h
 string
 -
 CodeParser.h
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
 Sjson.h
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Sjson.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Sjson.h
 
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Sjson.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Sjson.h
 json.hpp
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/json.hpp
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/json.hpp
 MemoryManager.h
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
 
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/TextList.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/TextList.h
 string
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/string
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/string
 
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/json.hpp
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/json.hpp
 algorithm
 -
 cstddef
@@ -391,4 +381,18 @@ utility
 -
 vector
 -
+
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/main.cpp
+iostream
+-
+Server.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.h
+MemoryManager.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
+thread
+-
+CodeParser.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
+Sjson.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Sjson.h
 
