@@ -73,13 +73,17 @@ void Server::Start() {
             Sjson::getInstance()->Reset();
             MemoryManager::Instance()->Restart();
         } else {
-            std::cout << received << std::endl;
+            //std::cout << received << std::endl;
             CodeParser::Instance()->CheckLine(received);
             if (CodeParser::Instance()->GetDebug() != "") Send("ERROR"+CodeParser::Instance()->GetDebug());
-            Sjson::getInstance()->ObtainVals();
-            std::string jstr = "JSON"+Sjson::getInstance()->GetObj().dump();
-            this->Send(jstr.c_str());
-            std::cout << "Json sent?" << std::endl;
+            else {
+                std::cout << "entered?" << std::endl;
+                Sjson::getInstance()->ObtainVals();
+                std::string jstr = "JSON" + Sjson::getInstance()->GetObj().dump();
+                this->Send(jstr.c_str());
+                Sjson::getInstance()->Reset();
+                std::cout << "Json sent?" << std::endl;
+            }
         }
     }
 

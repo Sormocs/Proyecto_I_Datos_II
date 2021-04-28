@@ -55,5 +55,6 @@ Sjson *Sjson::getInstance() {
 }
 
 void Sjson::Reset() {
-    obj = nullptr;
+    obj.empty();
+    num = 0;
 }
