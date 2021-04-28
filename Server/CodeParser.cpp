@@ -167,10 +167,10 @@ double CodeParser::ExtractNumber(std::string numberStr) {
     if (MemoryManager::Instance()->IsVariable(numberStr)) {
         Node* temp = MemoryManager::Instance()->GetList()->GetNodeOfRef(numberStr);
         temp->references--;
-        if (temp->varType == "int") return (double) MemoryManager::Instance()->GetValOfInt(numberStr);
-        else if (temp->varType == "long") return (double) MemoryManager::Instance()->GetValOfLong(numberStr);
-        else if (temp->varType == "float") return (double) MemoryManager::Instance()->GetValOfFloat(numberStr);
-        else if (temp->varType == "double") return MemoryManager::Instance()->GetValOfDouble(numberStr);
+        if (temp->varType == INT) return (double) MemoryManager::Instance()->GetValOfInt(numberStr);
+        else if (temp->varType == LONG) return (double) MemoryManager::Instance()->GetValOfLong(numberStr);
+        else if (temp->varType == FLOAT) return (double) MemoryManager::Instance()->GetValOfFloat(numberStr);
+        else if (temp->varType == DOUBLE) return MemoryManager::Instance()->GetValOfDouble(numberStr);
         else Debug("Error in line " + std::to_string(lineNum) + ". You cannot add " + temp->varType + " to a number.");
 
     }
@@ -337,12 +337,12 @@ bool CodeParser::ContainsStr(std::string &text, std::string fragment, int &posit
 }
 
 bool CodeParser::Declaration(std::string& line, std::string& parentClass) {
-    std::string types[] = {"int", "long", "float", "double", "char", "struct"};
+//    std::string types[] = {INT, LONG, FLOAT, DOUBLE, CHAR, STRUCT};
     std::string asignation;
     int position = NOT_STRING_POS_OR_LENGHT;
     int lenght = NOT_STRING_POS_OR_LENGHT;
 
-    for (std::string type : types) {                    // esto no incluye reference
+    for (std::string type : VAR_TYPES) {                    // esto no incluye reference
 
         if (ContainsStr(line, type, position, lenght)) {
 
@@ -363,7 +363,7 @@ bool CodeParser::Assignation(std::string assignation, std::string& type, std::st
     std::string varName;
     if (ContainsChar(assignation, '=', position)) {      // revisa que '=' esté en la cadena. Si no esta, no es una asignacion numérica o de char.
 
-        if (type == "int" or type == "long" or type == "float" or type == "double") {
+        if (type == INT or type == LONG or type == FLOAT or type == DOUBLE) {
 
             varName = assignation.substr(0, position);
             DeleteSpaces(varName);
@@ -372,28 +372,25 @@ bool CodeParser::Assignation(std::string assignation, std::string& type, std::st
 
             memMan->Add(AssignNum(AritmetricDetector(strToDetectAritmetricOperators), type), varName, type, parentClass, structCode);
 
-
-        } else if (type == "char"){
+        } else if (type == CHAR){
             varName = assignation.substr(0, position);
             DeleteSpaces(varName);
 
             std::string str = assignation.substr(position + 1);
-            memMan->Add(AssignChar(str), varName, "char", parentClass, structCode);
+            memMan->Add(AssignChar(str), varName, CHAR, parentClass, structCode);
 
         }
 
         return true;
 
     } else if (ContainsChar(assignation, '{', position)){
-        if (type == "struct") {
-            if (parentClass != "Main") {
+        if (type == STRUCT) {
+            if (parentClass != MAIN_CLASS) {
                 Debug("Cascade struct declaration is not allowed."); // call debugger because of chain struct declaration
                 return false;
             }
-
-            //AssignStruct(type + assignation); // tal vez no se necesite.
-
-            memMan->Add((void*) new std::string("<" + GetStructName() + " struct type>"), GetStructName(), "struct", parentClass, structCode);
+            memMan->Add((void*) new std::string("<" + StructName() + " struct type>"), StructName(), STRUCT, parentClass, structCode);
+            currentClass = StructName();
         }
 
     } else return false;
@@ -412,10 +409,10 @@ void CodeParser::GetFirstNumPos(std::string &codeBlock, int &position) {
 }
 
 void* CodeParser::AssignNum(double num, std::string type) {
-    if (type == "int") return (void*) new int ((int) num);
-    else if (type == "long") return (void*) new long ((long) num);
-    else if (type == "float") return (void*) new float ((float) num);
-    else if (type == "double") return (void*) new double ((double) num);
+    if (type == INT) return (void*) new int ((int) num);
+    else if (type == LONG) return (void*) new long ((long) num);
+    else if (type == FLOAT) return (void*) new float ((float) num);
+    else if (type == DOUBLE) return (void*) new double ((double) num);
     else return new void*();
 }
 
@@ -492,7 +489,7 @@ std::string CodeParser::GetFullStruct(const std::string& structLine, const std::
 
 }
 
-std::string CodeParser::GetStructName() {
+std::string CodeParser::StructName() {
     std::string tempStr = fullCode;
     int line = 0;
     int pos = NOT_STRING_POS_OR_LENGHT;
@@ -536,8 +533,8 @@ std::string CodeParser::GetStructName() {
 bool CodeParser::CheckSemicolon(std::string line) {
     DeleteSpaces(line);
     if (line.empty()) return true;
-    else if (line.at(-1) == ';') return true;
-    else if (line.at(-1) == '{') return true;
+    else if (line.at(line.length()-1) == ';') return true;
+    else if (line.at(line.length()-1) == '{') return true;
     else return false;
 }
 
@@ -580,7 +577,7 @@ void CodeParser::Parse() {
 }
 
 bool CodeParser::NumType(std::string &type) {
-    std::string numTypes[] = {"int", "long", "float", "double"};
+    std::string numTypes[] = {INT, LONG, FLOAT, DOUBLE};
     for (std::string numType : numTypes) {
         if (numType == type) return true;
     }
@@ -589,5 +586,11 @@ bool CodeParser::NumType(std::string &type) {
 
 std::string CodeParser::GetDebug() {
     return debug;
+}
+
+bool CodeParser::CheckEndOfStruct(std::string& line) {
+    if (ContainsChar(line, '}')) {
+        currentClass = MAIN_CLASS;
+    }
 }
 

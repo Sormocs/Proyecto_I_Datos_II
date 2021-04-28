@@ -5,14 +5,24 @@
 #ifndef PROYECTO_I_DATOS_II_CODEPARSER_H
 #define PROYECTO_I_DATOS_II_CODEPARSER_H
 
+#define MAIN_CLASS "MAIN_CLASS"
+#define EMPTY_STRING " "
+#define INT "int"
+#define LONG "long"
+#define FLOAT "float"
+#define DOUBLE "double"
+#define CHAR "char"
+#define STRUCT "struct"
+#define VAR_TYPES {INT, LONG, FLOAT, DOUBLE, CHAR, STRUCT}
+
 #include <string>
 #include <iostream>
 
 #include "MemoryManager.h"
 #include "TextList.h"
 
-#define NOT_STRING_POS_OR_LENGHT -00100000
-#define NOT_VALID_OPERATION -90108020703060405
+#define NOT_STRING_POS_OR_LENGHT (-00100000)
+#define NOT_VALID_OPERATION (-90108020703060405)
 
 class CodeParser {
 
@@ -24,8 +34,8 @@ private:
     int lines = 0;
     int lineNum = 0;
 
-    // struct attributes
-    MemoryList tempMem = MemoryList();
+    // struct-related
+    std::string currentClass = MAIN_CLASS;
 
     // arithmetic operations
     double AddSubtract(std::string codeFragment);
@@ -51,9 +61,10 @@ private:
     // syntax checker
     bool CheckSemicolon(std::string line);
     bool PartOfStruct(std::string& line);
+    bool CheckEndOfStruct(std::string& line);
 
     // variable declaration and value assignation
-    bool Assignation(std::string assignation, std::string& type, std::string parentClass, std::string structCode = " ");
+    bool Assignation(std::string assignation, std::string& type, std::string parentClass, std::string structCode = EMPTY_STRING);
     void* AssignNum(double num, std::string type);
     void* AssignChar(std::string fragment);
 
@@ -65,7 +76,7 @@ private:
 
     // struct type detection, manipulation and declaration
     std::string GetFullStruct(const std::string& structLine, const std::string& structName);
-    std::string GetStructName();
+    std::string StructName();
     Node* AssignStruct(std::string fragment);
 
     // debugger call
@@ -90,7 +101,7 @@ public:
     bool ContainsStr(std::string& text, std::string fragment);
 
     bool Declaration(std::string& line, std::string& parentClass);
-    void CheckLine(std::string line, std::string parentClass = "Main");
+    void CheckLine(std::string line, std::string parentClass = MAIN_CLASS);
     void Parse();
 
     std::string GetDebug();
