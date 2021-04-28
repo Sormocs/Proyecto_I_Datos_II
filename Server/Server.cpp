@@ -72,6 +72,7 @@ void Server::Start() {
             Sjson::getInstance()->ObtainVals();
             std::string jstr = "JSON"+Sjson::getInstance()->GetObj().dump();
             this->Send(jstr.c_str());
+            MemoryManager::Instance()->Restart();
         } else {
             CodeParser::Instance()->Declaration(std::string(buf, 0, bytesReceived));
             std::cout << std::string(buf, 0, bytesReceived) << std::endl;

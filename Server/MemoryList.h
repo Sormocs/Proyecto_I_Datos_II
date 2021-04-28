@@ -53,7 +53,10 @@ class MemoryList : protected AvaiList {
 private:
     Node* SearchForNodeByName(std::string& varName, Node* node, int index = 0);
 
+
 public:
+
+    Node* GetDelFirst();
 
     void AddFront(Node* newFirst, void* value, std::string& varName, std::string& varType, std::string& parentClass, std::string& structCode);
 

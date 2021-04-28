@@ -11,7 +11,7 @@
 #include "MemoryManager.h"
 #include "TextList.h"
 
-#define NOT_IN_STRING -00100000
+#define NOT_STRING_POS_OR_LENGHT -00100000
 #define NOT_VALID_OPERATION -90108020703060405
 
 class CodeParser {
@@ -19,6 +19,8 @@ class CodeParser {
 private:
     MemoryManager* memMan;
     std::string fullCode;
+    int lines = 0;
+    int lineNum = 0;
 
     // arithmetic operations
     double AddSubtract(std::string codeFragment);
@@ -33,6 +35,7 @@ private:
     static double negPow(float num, float power);
     int ToInt(char character);
     void GetFirstNumPos(std::string& codeBlock, int& position);
+    bool NumType(std::string& type);
 
     // arithmetic sign
     void DelAddSubSign(std::string& codeFragment, int& minusPos, int& plusPos, int& signPos);
@@ -45,7 +48,7 @@ private:
     void CodePartition(std::string code);
 
     // syntax checker
-    bool CheckSemicolon(std::string& line);
+    bool CheckSemicolon(std::string line);
     bool PartOfStruct(std::string& line);
 
     // variable declaration and value assignation
@@ -76,7 +79,7 @@ public:
 
     static CodeParser* Instance();
 
-    void SetFullCode(std::string fullCode);
+    void AddLine(const std::string& line);
 
     bool ContainsChar(std::string& fragment, char character, int& position);
     bool ContainsChar(std::string& fragment, char character);
@@ -85,7 +88,11 @@ public:
     bool ContainsStr(std::string& text, std::string fragment, int& position);
     bool ContainsStr(std::string& text, std::string fragment);
 
-    bool Declaration(std::string line, std::string parentClass = "Main");
+    bool Declaration(std::string line, const std::string& parentClass = "Main");
+
+    void CheckLine(const std::string& line);
+
+    void Parse();
 };
 
 

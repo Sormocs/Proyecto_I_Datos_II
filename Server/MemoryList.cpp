@@ -140,3 +140,7 @@ Node *MemoryList::Get(int index) {
 int MemoryList::Size() {
     return this->GetSize();
 }
+
+Node *MemoryList::GetDelFirst() {
+    return this->GetDeleteFirst();
+}

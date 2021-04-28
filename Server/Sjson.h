@@ -16,6 +16,7 @@ public:
     void AddVar(std::string, std::string, std::string, std::string);
     void ObtainVals();
     json GetObj();
+    void Reset();
 
 };
 

@@ -50,31 +50,45 @@ void *MemoryManager::GetValOf(std::string varName) {
 }
 
 int MemoryManager::GetValOfInt(std::string varName) {
-    return *(int*) GetValOf(varName);
+    return *(int*) GetValOf(std::move(varName));
 }
 
 long MemoryManager::GetValOfLong(std::string varName) {
-    return *(long*) GetValOf(varName);
+    return *(long*) GetValOf(std::move(varName));
 }
 
 float MemoryManager::GetValOfFloat(std::string varName) {
-    return *(float*) GetValOf(varName);
+    return *(float*) GetValOf(std::move(varName));
 }
 
 double MemoryManager::GetValOfDouble(std::string varName) {
-    return *(double*) GetValOf(varName);
+    return *(double*) GetValOf(std::move(varName));
 }
 
 char MemoryManager::GetValOfChar(std::string varName) {
-    return *(char*) GetValOf(varName);
+    return *(char*) GetValOf(std::move(varName));
 }
 
 std::string MemoryManager::GetValOfStruct(std::string varName) {
-    return *(std::string*) GetValOf(varName);
+    return *(std::string*) GetValOf(std::move(varName));
 }
 
 MemoryList *MemoryManager::GetList() {
     return usedMem;
 }
+
+void MemoryManager::Restart() {
+    while(usedMem->Size()){
+        delete usedMem->GetDelFirst();
+    }
+}
+
+bool MemoryManager::IsVariable(std::string name) {
+    for (int i = 0; i < usedMem->Size(); ++i) {
+        if (usedMem->Get(i)->varName == name) return true;
+    }
+}
+
+
 
 

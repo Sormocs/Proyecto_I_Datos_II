@@ -53,3 +53,7 @@ Sjson *Sjson::getInstance() {
     }
     return instance;
 }
+
+void Sjson::Reset() {
+    obj = nullptr;
+}

@@ -30,9 +30,9 @@ double CodeParser::AddSubtract(std::string codeFragment) {
     std::string numberStr;
     char sign = ' ';
     double numToOperator = 0;
-    int signPos = NOT_IN_STRING;
-    int plusPos = NOT_IN_STRING;
-    int minusPos = NOT_IN_STRING;
+    int signPos = NOT_STRING_POS_OR_LENGHT;
+    int plusPos = NOT_STRING_POS_OR_LENGHT;
+    int minusPos = NOT_STRING_POS_OR_LENGHT;
 
     std::cout << "First code fragment: " << codeFragment << std::endl;
 
@@ -94,7 +94,7 @@ double CodeParser::Multiply(std::string codeFragment) {
     double result = 0;
     std::string numberStr;
     double numToOperator = 0;
-    int signPos = NOT_IN_STRING;
+    int signPos = NOT_STRING_POS_OR_LENGHT;
 
     std::cout << "First code fragment: " << codeFragment << std::endl;
 
@@ -147,7 +147,7 @@ double CodeParser::Division(std::string codeFragment) {
     double result = 0;
     std::string numberStr;
     double numToOperator = 0;
-    int signPos = NOT_IN_STRING;
+    int signPos = NOT_STRING_POS_OR_LENGHT;
 
     std::cout << "First code fragment: " << codeFragment << std::endl;
 
@@ -204,6 +204,17 @@ double CodeParser::ExtractNumber(std::string numberStr) {
     bool isFloat = DotPos(numberStr, dotPos);    // isFloat says if number is float or not
     std::string num;
 
+    if (MemoryManager::Instance()->IsVariable(numberStr)) {
+        Node* temp = MemoryManager::Instance()->GetList()->GetNodeOfRef(numberStr);
+        temp->references--;
+        if (temp->varType == "int") return (double) MemoryManager::Instance()->GetValOfInt(numberStr);
+        else if (temp->varType == "long") return (double) MemoryManager::Instance()->GetValOfLong(numberStr);
+        else if (temp->varType == "float") return (double) MemoryManager::Instance()->GetValOfFloat(numberStr);
+        else if (temp->varType == "double") return MemoryManager::Instance()->GetValOfDouble(numberStr);
+        else Debug("Error in line " + std::to_string(lineNum) + ". You cannot add " + temp->varType + " to a number.");
+
+    }
+
     // extrae el número si es entero
     if (!isFloat) {
         ReverseStr(numberStr);                   // Reverses the number for correct conversion
@@ -215,7 +226,7 @@ double CodeParser::ExtractNumber(std::string numberStr) {
             }
         }
         return number;
-    }
+    } else Debug("Error in line " + std::to_string(lineNum) + ". " + numberStr + " does not match any value or variable.");
 
     // extrae unidades
     num = numberStr.substr(0, dotPos);          // Saves a temp with string before the dot
@@ -291,7 +302,7 @@ bool CodeParser::ContainsChar(std::string& fragment, char character, int &positi
             return true;
         }
     }
-    position = NOT_IN_STRING;
+    position = NOT_STRING_POS_OR_LENGHT;
     return false;
 }
 
@@ -314,10 +325,10 @@ bool CodeParser::GetAddSubSignPos(std::string &codeFragment, int &minusPos, int 
     if (minusPos == plusPos) return false;
 
     if (minusPos < plusPos){
-        if (minusPos == NOT_IN_STRING) signPos = plusPos;
+        if (minusPos == NOT_STRING_POS_OR_LENGHT) signPos = plusPos;
         else signPos = minusPos;
     } else {
-        if (plusPos == NOT_IN_STRING) signPos = minusPos;
+        if (plusPos == NOT_STRING_POS_OR_LENGHT) signPos = minusPos;
         else signPos = plusPos;
     }
 
@@ -344,32 +355,32 @@ bool CodeParser::ContainsStr(std::string &text, std::string fragment, int &posit
 
             fragIter++;
 
-        } else { position = NOT_IN_STRING; fragIter = 0; }
+        } else { position = NOT_STRING_POS_OR_LENGHT; fragIter = 0; }
 
         if (fragIter == lenght) return true;
     }
 
-    lenght = NOT_IN_STRING;
+    lenght = NOT_STRING_POS_OR_LENGHT;
     return false;
 }
 
 bool CodeParser::ContainsStr(std::string &text, std::string fragment) {
-    int lenght = NOT_IN_STRING;
-    int position = NOT_IN_STRING;
+    int lenght = NOT_STRING_POS_OR_LENGHT;
+    int position = NOT_STRING_POS_OR_LENGHT;
 
     return ContainsStr(text, std::move(fragment), position, lenght);
 }
 
 bool CodeParser::ContainsStr(std::string &text, std::string fragment, int &position) {
-    int lenght = NOT_IN_STRING;
+    int lenght = NOT_STRING_POS_OR_LENGHT;
     return ContainsStr(text, std::move(fragment), position, lenght);
 }
 
-bool CodeParser::Declaration(std::string line, std::string parentClass) {
+bool CodeParser::Declaration(std::string line, const std::string& parentClass) {
     std::string types[] = {"int", "long", "float", "double", "char", "struct"};
     std::string asignation;
-    int position = NOT_IN_STRING;
-    int lenght = NOT_IN_STRING;
+    int position = NOT_STRING_POS_OR_LENGHT;
+    int lenght = NOT_STRING_POS_OR_LENGHT;
 
     for (std::string type : types) {                    // esto no incluye reference
 
@@ -378,7 +389,7 @@ bool CodeParser::Declaration(std::string line, std::string parentClass) {
             if (Assignation(line.substr(position + lenght), type, parentClass)) return true;
         }
     }
-    if (position == NOT_IN_STRING) {
+    if (position == NOT_STRING_POS_OR_LENGHT) {
         Debug("Introduced type does not match any");
         return false;
     }
@@ -388,7 +399,7 @@ bool CodeParser::Declaration(std::string line, std::string parentClass) {
 
 
 bool CodeParser::Assignation(std::string assignation, std::string& type, std::string parentClass, std::string structCode) {
-    int position = NOT_IN_STRING;
+    int position = NOT_STRING_POS_OR_LENGHT;
     std::string varName;
     if (ContainsChar(assignation, '=', position)) {      // revisa que '=' esté en la cadena. Si no esta, no es una asignacion numérica o de char.
 
@@ -451,10 +462,10 @@ void* CodeParser::AssignNum(double num, std::string type) {
 }
 
 void CodeParser::DeleteSpaces(std::string &text) {
-    std::string newText = "";
+    std::string newText = std::string();
 
     for (char character : text){
-        if (character == ' ') continue;
+        if (character == ' ' or character == '\n') continue;
         newText += character;
     }
     text = newText;
@@ -462,7 +473,7 @@ void CodeParser::DeleteSpaces(std::string &text) {
 
 void *CodeParser::AssignChar(std::string fragment) {
 
-    int position = NOT_IN_STRING;
+    int position = NOT_STRING_POS_OR_LENGHT;
 
     ContainsChar(fragment, '\'', position);
     fragment = fragment.substr(position + 1);
@@ -475,8 +486,8 @@ void *CodeParser::AssignChar(std::string fragment) {
 }
 
 Node *CodeParser::AssignStruct(std::string fragment) {
-    int position = NOT_IN_STRING;
-    int lenght = NOT_IN_STRING;
+    int position = NOT_STRING_POS_OR_LENGHT;
+    int lenght = NOT_STRING_POS_OR_LENGHT;
     std::string varName;
 
     if (ContainsStr(fullCode, fragment, position)){
@@ -501,7 +512,7 @@ void CodeParser::SkipSpaces(std::string &text, int &position) {
         if (ch == ' ') position++;
         else return;
     }
-    position = NOT_IN_STRING;
+    position = NOT_STRING_POS_OR_LENGHT;
 }
 
 CodeParser* CodeParser::Instance() {
@@ -511,7 +522,7 @@ CodeParser* CodeParser::Instance() {
 
 std::string CodeParser::GetFullStruct(const std::string& structLine, const std::string& structName) {
     std::string fullStruct = fullCode;
-    int position = NOT_IN_STRING;
+    int position = NOT_STRING_POS_OR_LENGHT;
     bool searching = true;
 
     do {                // search for declaration of this struct
@@ -534,20 +545,54 @@ void CodeParser::CodePartition(std::string code) {
 
 }
 
-bool CodeParser::CheckSemicolon(std::string& line) {
-    if (!ContainsChar(line, ';')){
-        if (!PartOfStruct(line)); // calls debugger
-    }
+bool CodeParser::CheckSemicolon(std::string line) {
+    DeleteSpaces(line);
+    if (line.empty()) return true;
+    else if (line.at(-1) == ';') return true;
+    else if (line.at(-1) == '{') return true;
+    else return false;
 }
 
 bool CodeParser::PartOfStruct(std::string& line) {
     return false;
 }
 
-void CodeParser::SetFullCode(std::string fullCode) {
-    this->fullCode = std::move(fullCode);
+void CodeParser::AddLine(const std::string& line) {
+    this->fullCode += line;
 }
 
 void CodeParser::Debug(std::string) {
 
+}
+
+void CodeParser::CheckLine(const std::string& line) {
+    lineNum++;
+    if (!CheckSemicolon(line)) {
+        Debug("Add a ';' to line " + std::to_string(lineNum) + ".");
+        return;
+    }
+    else if (Declaration(line)) return;
+    else {
+        Debug("Unknown error in line " + std::to_string(lineNum) + ".");
+        return;
+    }
+}
+
+void CodeParser::Parse() {
+    std::string tempCode = fullCode;
+    int position = NOT_STRING_POS_OR_LENGHT;
+    for (int i = 0; i < lines; ++i) {
+        if (ContainsChar(tempCode, '\n', position)) {
+            CheckLine(tempCode.substr(0, position));
+            tempCode = tempCode.substr(position);
+        }
+    }
+}
+
+bool CodeParser::NumType(std::string &type) {
+    std::string numTypes[] = {"int", "long", "float", "double"};
+    for (std::string numType : numTypes) {
+        if (numType == type) return true;
+    }
+    return false;
 }
