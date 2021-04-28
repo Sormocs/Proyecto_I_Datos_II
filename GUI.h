@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "RemV.h"
+#include "LogCons.h"
 #pragma once
 
 class GUI {
@@ -8,12 +9,12 @@ private:
     GUI();
     static GUI *instance;
     RemV* ramView;
+    LogCons* lc;
 
 public:
     static GUI* getInstance();
     void Run();
-    void Shapes(sf::RenderWindow*);
-    void Texts(sf::RenderWindow*);
     RemV* GetRamV();
+    LogCons* GetLogCons();
 
 };

@@ -34,24 +34,28 @@ void Button::Build() {
 }
 
 bool Button::Clicked(int x, int y) {
-    if (posx < x && x < posx + width && posy < y && y < posy + height){
-        return true;
+    if(enabled) {
+        if (posx < x && x < posx + width && posy < y && y < posy + height) {
+            return true;
 
-    } else {
-        return false;
+        } else {
+            return false;
+        }
     }
 }
 
 void Button::MouseOver(int x, int y) {
-    if (posx < x && x < posx + width && posy < y && y < posy + height){
+    if(enabled) {
+        if (posx < x && x < posx + width && posy < y && y < posy + height) {
 
-        area.setOutlineColor(sf::Color(255,255,255,255));
+            area.setOutlineColor(sf::Color(255, 255, 255, 255));
 
 
-    } else {
+        } else {
 
-        area.setOutlineColor(sf::Color(0,0,0,255));
+            area.setOutlineColor(sf::Color(0, 0, 0, 255));
 
+        }
     }
 }
 
@@ -61,3 +65,17 @@ void Button::Draw(sf::RenderWindow *win) {
     win->draw(sText);
 
 }
+
+bool Button::isEnabled() {
+    return enabled;
+}
+
+void Button::SetEnabled(bool flag) {
+
+    if (flag) area.setFillColor(color);
+    else area.setFillColor(sf::Color(128,128,128,255));
+    enabled = flag;
+
+}
+
+

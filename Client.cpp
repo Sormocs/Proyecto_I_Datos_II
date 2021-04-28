@@ -40,12 +40,17 @@ void Client::Start() {
 
             //		Display response
             std::string received = std::string(buf, bytesReceived);
-            std::string jstring = "JSON";
-            if (received.substr(0,jstring.length()) == "JSON" ){
+            GUI* gui = GUI::getInstance();
 
-                std::string toparse = received.substr(jstring.length(),received.length()-jstring.length());
+            if (received.substr(0, strlen("ERROR")) == "ERROR"){
+
+                std::string error = received.substr(strlen("ERROR"),received.length()-strlen("ERROR"));
+                gui->GetLogCons()->AddLog(error);
+
+            } else if (received.substr(0, strlen("JSON")) == "JSON" ){
+
+                std::string toparse = received.substr(strlen("JSON"),received.length()-strlen("JSON"));
                 json js = json::parse(toparse);
-                GUI* gui = GUI::getInstance();
                 std::cout << "From Server:" << std::string(buf, bytesReceived) << std::endl;
                 gui->GetRamV()->SetDrawt(false);
                 gui->GetRamV()->Reset();

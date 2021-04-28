@@ -9,6 +9,7 @@ CMakeFiles/ProjectV2.dir/Client.cpp.o: ../Client.cpp
 CMakeFiles/ProjectV2.dir/Client.cpp.o: ../Client.h
 CMakeFiles/ProjectV2.dir/Client.cpp.o: ../CodeTxT.h
 CMakeFiles/ProjectV2.dir/Client.cpp.o: ../GUI.h
+CMakeFiles/ProjectV2.dir/Client.cpp.o: ../LogCons.h
 CMakeFiles/ProjectV2.dir/Client.cpp.o: ../RemV.h
 CMakeFiles/ProjectV2.dir/Client.cpp.o: ../json.hpp
 
@@ -53,6 +54,7 @@ CMakeFiles/ProjectV2.dir/main.cpp.o: ../Button.h
 CMakeFiles/ProjectV2.dir/main.cpp.o: ../Client.h
 CMakeFiles/ProjectV2.dir/main.cpp.o: ../CodeTxT.h
 CMakeFiles/ProjectV2.dir/main.cpp.o: ../GUI.h
+CMakeFiles/ProjectV2.dir/main.cpp.o: ../LogCons.h
 CMakeFiles/ProjectV2.dir/main.cpp.o: ../RemV.h
 CMakeFiles/ProjectV2.dir/main.cpp.o: ../json.hpp
 CMakeFiles/ProjectV2.dir/main.cpp.o: ../main.cpp

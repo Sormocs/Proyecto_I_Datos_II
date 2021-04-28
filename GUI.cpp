@@ -1,7 +1,6 @@
 #include "GUI.h"
 #include "TextBox.h"
 #include "Button.h"
-#include "LogCons.h"
 
 GUI *GUI::instance = nullptr;
 
@@ -27,11 +26,21 @@ void GUI::Run() {
     //BUTTONS:
     //Button(int Posx, int Posy, int Width, int Height,int Fsize ,std::string Text, sf::Color Color)
     Button runBtn = Button(50,6,155,30,26,"Run C!ode",sf::Color(0,128,128,255));
+
     Button console = Button(1392,624,155,30,26,"Console",sf::Color(0,128,128,255));
+
+    Button clearlog = Button(1392,587,155,30,26,"Clear",sf::Color(0,128,128,255));
+
     Button log = Button(1392,661,155,30,26,"Open Log",sf::Color(0,128,128,255));
 
+    Button next = Button(210,6,155,30,26,"Next",sf::Color(0,128,128,255));
+    next.SetEnabled(false);
+    Button stop = Button(370,6,155,30,26,"Stop",sf::Color(0,128,128,255));
+    stop.SetEnabled(false);
+
     //LOG&CONSOLE:
-    LogCons lc = LogCons(0,580,1550,270);
+    LogCons *tlc = new LogCons(0,580,1550,270);
+    lc = tlc;
 
     //RAMVIEWER:
     RemV *remv = new RemV(1050,40,540,550, sf::Color(0,102,102,255));
@@ -86,14 +95,25 @@ void GUI::Run() {
                     //CODE FOR THE RUN BUTTON
                     codeA->GetCode()->CoutCode();
                     if (codeA->GetCode()->GetStart()->getVal()->getString() != ""){
-                        lc.Reset();
-                        lc.AddLog("Sending...");
-                        codeA->GetCode()->SendTxT();
-                        lc.AddLog("Sent");
-                        lc.Switch();
+
+                        next.SetEnabled(true);
+                        stop.SetEnabled(true);
+                        clearlog.SetEnabled(false);
+
+//                        lc->Reset();
+//                        lc->AddLog("Sending...");
+//                        codeA->GetCode()->SendTxT();
+//                        lc->AddLog("Sent");
+//                        lc->Switch();
                     }
                 } else if (console.Clicked(mouse[0],mouse[1]) or log.Clicked(mouse[0],mouse[1])) {
-                    lc.Switch();
+                    lc->Switch();
+                } else if (clearlog.Clicked(mouse[0],mouse[1])){
+                    lc->Reset();
+                } else if (stop.Clicked(mouse[0],mouse[1])){
+                    next.SetEnabled(false);
+                    stop.SetEnabled(false);
+                    clearlog.SetEnabled(true);
                 }
             }
 
@@ -101,8 +121,11 @@ void GUI::Run() {
                 mouse[0] = sf::Mouse::getPosition(window).x;
                 mouse[1] = sf::Mouse::getPosition(window).y;
                 runBtn.MouseOver(mouse[0],mouse[1]);
+                next.MouseOver(mouse[0],mouse[1]);
+                stop.MouseOver(mouse[0],mouse[1]);
                 console.MouseOver(mouse[0],mouse[1]);
                 log.MouseOver(mouse[0],mouse[1]);
+                clearlog.MouseOver(mouse[0],mouse[1]);
             }
 
             if (event.type == event.TextEntered) {
@@ -123,17 +146,18 @@ void GUI::Run() {
         window.clear();
         codeA->Draw(winptr);
         window.draw(rect1);
-//        window.draw(RAMViewer);
         ramView->Draw(winptr);
         window.draw(lineSpace);
         runBtn.Draw(winptr);
+        next.Draw(winptr);
+        stop.Draw(winptr);
         codeA->DrawLines(winptr);
-        //window.draw(lines);
         window.draw(ram);
         window.draw(num);
-        lc.Draw(winptr);
+        lc->Draw(winptr);
         console.Draw(winptr);
         log.Draw(winptr);
+        clearlog.Draw(winptr);
 
         window.display();
     }
@@ -144,4 +168,8 @@ RemV *GUI::GetRamV() {
 
     return ramView;
 
+}
+
+LogCons *GUI::GetLogCons() {
+    return lc;
 }

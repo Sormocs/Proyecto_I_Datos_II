@@ -28,14 +28,6 @@ string.h
 json.hpp
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/json.hpp
 
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.cpp
-cstring
--
-SFML/Graphics.hpp
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/SFML/Graphics.hpp
-CodeTxT.h
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.h
-
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.h
 Button.h
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/Button.h
@@ -48,9 +40,21 @@ thread
 iostream
 -
 
-/home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.cpp
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/GUI.h
+SFML/Graphics.hpp
+-
 RemV.h
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.h
+LogCons.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/LogCons.h
+
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/LogCons.h
+SFML/Graphics.hpp
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/SFML/Graphics.hpp
+CodeTxT.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.h
+iostream
+-
 
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.h
 json.hpp
@@ -383,4 +387,14 @@ utility
 -
 vector
 -
+
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/main.cpp
+iostream
+-
+thread
+-
+Client.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Client.h
+GUI.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/GUI.h
 

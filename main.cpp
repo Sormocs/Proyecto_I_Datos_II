@@ -16,9 +16,9 @@ void RunClient(){
 int main(){
 
     std::thread RunG (RunGUI);
-    std::thread RunC (RunClient);
-
-    RunC.join();
+//    std::thread RunC (RunClient);
+//
+//    RunC.join();
     RunG.join();
 
 

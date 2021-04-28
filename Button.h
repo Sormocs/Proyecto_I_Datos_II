@@ -13,16 +13,17 @@ private:
     sf::Font font;
     sf::RectangleShape area;
     sf::Color color;
+    bool enabled = true;
 
 public:
 
     Button(int, int, int, int, int, std::string, sf::Color);
     void Build();
     bool Clicked(int, int);
-    int getPosx();
-    int getPosy();
     void MouseOver(int, int);
     void Draw(sf::RenderWindow*);
+    bool isEnabled();
+    void SetEnabled(bool flag);
 
 
 };
