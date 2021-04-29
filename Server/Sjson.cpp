@@ -22,6 +22,7 @@ Sjson::Sjson() {
  * @param address
  * @param refs
  */
+
 void Sjson::AddVar(std::string type, std::string val, std::string address, std::string refs) {
 
     obj["num"+std::to_string(num)]["type"] = type;
