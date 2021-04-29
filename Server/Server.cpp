@@ -1,3 +1,9 @@
+/**
+ * @file Server.h
+ * @author Sergio MB
+ * @brief Definicion de metodos de la clase Server.
+ */
+
 #include <iostream>
 #include "string"
 #include "Server.h"
@@ -5,8 +11,15 @@
 
 Server *Server::instance = nullptr;
 
+/**
+ * @brief Constructor para evitar instanciacion.
+ */
 Server::Server() {}
 
+/**
+ * @brief Metodo para obtener la instancia del server, ya que solamente puede haber un server.
+ * @return
+ */
 Server* Server::getInstance() {
     if (instance == nullptr){
         instance = new Server;
@@ -14,6 +27,10 @@ Server* Server::getInstance() {
     return instance;
 }
 
+/**
+ * @brief Metodo start que se encarga de iniciar el server y lo mantiene abierto y a la escucha de cualquier mensaje del server,
+ * solamente actua cuando recibe mensajes por parte del IDE.
+ */
 void Server::Start() {
     listening = socket(AF_INET, SOCK_STREAM,0);
     if (listening == -1)
@@ -90,6 +107,10 @@ void Server::Start() {
     close(clientSocket);
 }
 
+/**
+ * @brief Envia el parametro que recibe como mensaje al cliente por medio de los sockets.
+ * @param msg
+ */
 void Server::Send(std::string msg) {
     send(clientSocket, msg.c_str(), strlen(msg.c_str()) , 0);
 }

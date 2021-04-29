@@ -1,5 +1,19 @@
+/**
+ * @file RemV.H
+ * @author Sergio MB
+ * @brief Declaracion de las clases
+ */
+
 #include "RemV.h"
 
+/**
+ * @brief Constructor de la clase RemV que le asigna todos sus valores iniciales.
+ * @param Posx
+ * @param Posy
+ * @param Width
+ * @param Height
+ * @param Color
+ */
 RemV::RemV(int Posx, int Posy, int Width, int Height, sf::Color Color) {
 
     posx = Posx;
@@ -12,6 +26,9 @@ RemV::RemV(int Posx, int Posy, int Width, int Height, sf::Color Color) {
 
 }
 
+/**
+ * @brief Metodo build que construye las figuras que requiere la clase, textos y listas de texto para que funcione correctamente.
+ */
 void RemV::Build() {
 
     sf::RectangleShape tempR(sf::Vector2f(width, height));
@@ -70,6 +87,11 @@ void RemV::Build() {
 
 }
 
+/**
+ * @brief Metodo Draw que se encarga de colocar en pantalla los componentes del log y consola. Recibe el puntero a la
+ * ventana del GUI.
+ * @param win
+ */
 void RemV::Draw(sf::RenderWindow *win) {
 
     win->draw(area);
@@ -111,6 +133,10 @@ void RemV::Draw(sf::RenderWindow *win) {
 
 }
 
+/**
+ * @brief Asigna el json del cual debe colocar los valores en las listas de texto para que se actualicen en pantalla.
+ * @param js
+ */
 void RemV::SetJson(json js) {
 
     j = js;
@@ -118,6 +144,9 @@ void RemV::SetJson(json js) {
 
 }
 
+/**
+ * @brief Agrega a todas las listas de texto lo que se solicita segun el json.
+ */
 void RemV::BuildText() {
 
     int num = 0;
@@ -142,6 +171,9 @@ void RemV::BuildText() {
 
 }
 
+/**
+ * @brief Devuelve las listas de texto a nullptr para que se reinicien los valores.
+ */
 void RemV::Reset() {
 
     type->SetStart(nullptr);
@@ -163,6 +195,10 @@ void RemV::Reset() {
 
 }
 
+/**
+ * @brief Asigna true o false para dibujar el texto o no, para evitar errores cuando la lista es nullptr.
+ * @param flag
+ */
 void RemV::SetDrawt(bool flag) {
 
     drawt = flag;

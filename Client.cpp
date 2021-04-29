@@ -1,8 +1,18 @@
+/**
+ * @file Client.h
+ * @author Sergio MB
+ * @brief Declaracion de los metodos de la clase cliente.
+ */
+
 #include "Client.h"
 #include "GUI.h"
 
 Client *Client::instance = nullptr;
 
+/**
+ * @brief Metodo para obtener la insrtancia de la clase Client, ya que es un singleton.
+ * @return
+ */
 Client* Client::getInstance() {
     if (instance == nullptr){
         instance = new Client;
@@ -10,6 +20,10 @@ Client* Client::getInstance() {
     return instance;
 }
 
+/**
+ * @brief Metodo para empezar a correr el cliente y se mantiene corriendo constantemente recibiendo lo que provenga del server.
+ * Realiza procesos segun lo recibido, conecta con GUI para acceder a todas sus funciones.
+ */
 void Client::Start() {
 
     sock = socket(AF_INET, SOCK_STREAM, 0);
@@ -65,6 +79,10 @@ void Client::Start() {
     exit(0);
 }
 
+/**
+ * @brief Metodo para enviar mensajes al servidor. Recibe un string que es el mensaje que se desea enviar.
+ * @param msg
+ */
 void Client::Send(std::string msg) {
     int sendRes = send(sock, msg.c_str(), msg.length(), 0);
     if (sendRes == -1) {

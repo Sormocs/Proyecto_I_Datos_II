@@ -34,6 +34,14 @@ string.h
 json.hpp
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/json.hpp
 
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.cpp
+cstring
+-
+SFML/Graphics.hpp
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/SFML/Graphics.hpp
+CodeTxT.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.h
+
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.h
 Button.h
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/Button.h
@@ -46,11 +54,23 @@ thread
 iostream
 -
 
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/GUI.cpp
+GUI.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/GUI.h
+TextBox.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/TextBox.h
+Button.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Button.h
+
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/GUI.h
 SFML/Graphics.hpp
 -
 RemV.h
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.h
+LogCons.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/LogCons.h
+
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/LogCons.cpp
 LogCons.h
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/LogCons.h
 
@@ -62,11 +82,31 @@ CodeTxT.h
 iostream
 -
 
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.cpp
+RemV.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.h
+
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.h
 json.hpp
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/json.hpp
 SFML/Graphics.hpp
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/SFML/Graphics.hpp
+CodeTxT.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.h
+
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/TextBox.cpp
+TextBox.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/TextBox.h
+CodeTxT.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.h
+
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/TextBox.h
+SFML/Graphics.hpp
+-
+iostream
+-
+sstream
+-
 CodeTxT.h
 /home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.h
 
@@ -393,4 +433,14 @@ utility
 -
 vector
 -
+
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/main.cpp
+iostream
+-
+thread
+-
+Client.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Client.h
+GUI.h
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/GUI.h
 

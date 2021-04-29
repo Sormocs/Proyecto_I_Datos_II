@@ -1,6 +1,17 @@
-
+/**
+ * @file LogCons.h
+ * @author Sergio MB
+ * @brief Definicion de metodos de la clase LogCons
+ */
 #include "LogCons.h"
 
+/**
+ * @brief Constructor de la clase que asigna posicion y valores segun lo recibido.
+ * @param Posx
+ * @param Posy
+ * @param Width
+ * @param Height
+ */
 LogCons::LogCons(int Posx, int Posy, int Width, int Height) {
 
     posx = Posx;
@@ -13,7 +24,9 @@ LogCons::LogCons(int Posx, int Posy, int Width, int Height) {
     Build();
 
 }
-
+/**
+ * @brief Metodo que construye los objetos que utiliza la clase y les asigna sus valores iniciales.
+ */
 void LogCons::Build() {
 
     sf::RectangleShape tempS(sf::Vector2f(width,height));
@@ -51,19 +64,11 @@ void LogCons::Build() {
     consTxT->SetPosY(posy + 45);
     consTxT->Insert("Console Output:");
 
-//    logTxt.setFont(font);
-//    logTxt.setCharacterSize(20);
-//    logTxt.setColor(sf::Color(255,255,255,255));
-//    logTxt.setString(log);
-//    logTxt.setPosition(posx + 5, posy + 30);
-//
-//    consTxt.setFont(font);
-//    consTxt.setCharacterSize(20);
-//    consTxt.setColor(sf::Color(255,255,255,255));
-//    consTxt.setString(cons);
-//    consTxt.setPosition(posx + 5, posy + 30);
 }
-
+/**
+ * @brief Metodo draw que se encarga de dibujar los componentes en la interfaz, recibe un puntero a la ventana para dibujar en ella.
+ * @param win
+ */
 void LogCons::Draw(sf::RenderWindow *win) {
 
     win->draw(box);
@@ -83,6 +88,9 @@ void LogCons::Draw(sf::RenderWindow *win) {
     }
 }
 
+/**
+ * @brief Metodo switch que se encarga de cambiar entre log y consola.
+ */
 void LogCons::Switch() {
     if (isCons){
         title = "Log";
@@ -97,6 +105,10 @@ void LogCons::Switch() {
     }
 }
 
+/**
+ * @brief Agrega el texto que recibe a la consola
+ * @param msg
+ */
 void LogCons::AddCons(std::string msg) {
 
     cons = msg;
@@ -105,6 +117,10 @@ void LogCons::AddCons(std::string msg) {
 
 }
 
+/**
+ * @brief Agrega el texto que recibe al log.
+ * @param msg
+ */
 void LogCons::AddLog(std::string msg) {
 
     log = msg;
@@ -114,6 +130,9 @@ void LogCons::AddLog(std::string msg) {
 
 }
 
+/**
+ * @brief Resetea la consola y el log a sus valores iniciales.
+ */
 void LogCons::Reset(){
 
     CodeTxT *templog = new CodeTxT;

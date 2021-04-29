@@ -45,8 +45,6 @@ public:
     int GetX();
     Line* GetStart();
     Line* GetEnd();
-    void CoutLineNum();
-    void CoutCode();
     void Move(std::string);
     bool SendTxT();
     void SetFsize(int fsize);

@@ -1,11 +1,27 @@
+/**
+ * @file Sjson.h
+ * @author Sergio MB
+ * @brief Definicion de metodos de la clase Sjson.
+ */
+
 #include "Sjson.h"
 
 Sjson* Sjson::instance = nullptr;
 
+/**
+ * @brief Constructor de la clase, asigna a num un 0 como valor inicial.
+ */
 Sjson::Sjson() {
     num = 0;
 }
 
+/**
+ * @brief Agrega al objeto json una variable nueva con sus respectivos valores, y finalmente aumenta el numero de variable.
+ * @param type
+ * @param val
+ * @param address
+ * @param refs
+ */
 void Sjson::AddVar(std::string type, std::string val, std::string address, std::string refs) {
 
     obj["num"+std::to_string(num)]["type"] = type;
@@ -16,11 +32,18 @@ void Sjson::AddVar(std::string type, std::string val, std::string address, std::
 
 }
 
+/**
+ * @brief Retorna el objeto json
+ * @return
+ */
 json Sjson::GetObj() {
 
     return obj;
 }
 
+/**
+ * @brief Obtiene los valores de la lista de memoria meterlos en el objeto json y llenar el AddVar.
+ */
 void Sjson::ObtainVals() {
 
     MemoryList* memL = MemoryManager::Instance()->GetList();
@@ -47,6 +70,10 @@ void Sjson::ObtainVals() {
 
 }
 
+/**
+ * @brief Obtiene la instancia de la clase ya que es un singleton.
+ * @return
+ */
 Sjson *Sjson::getInstance() {
     if (instance == nullptr){
         instance = new Sjson;
@@ -54,6 +81,9 @@ Sjson *Sjson::getInstance() {
     return instance;
 }
 
+/**
+ * @brief Vacia el objeto json y resetea la cuenta del numero.
+ */
 void Sjson::Reset() {
     obj.empty();
     num = 0;

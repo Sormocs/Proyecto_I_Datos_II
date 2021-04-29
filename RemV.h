@@ -1,9 +1,19 @@
+/**
+ * @file RemV.H
+ * @author Sergio MB
+ * @brief File que cotiene la clase para el RAM viewer
+ */
+
 #include "json.hpp"
 #include "SFML/Graphics.hpp"
 #include "CodeTxT.h"
 using json = nlohmann::json;
 #pragma once
 
+
+/**
+ * Clase RemV que funciona para el RAM viewer.
+ */
 class RemV {
 private:
 

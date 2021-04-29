@@ -1,3 +1,0 @@
-/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/tests/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/tests/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/tests/cmake-build-debug/CMakeFiles/tests.dir

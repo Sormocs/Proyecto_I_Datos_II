@@ -118,24 +118,6 @@ int CodeTxT::GetY() {
     return posy;
 }
 
-void CodeTxT::CoutLineNum() {
-    Line *temp = start;
-    int num = 0;
-    while(temp != nullptr){
-        num++;
-        temp = temp->getNext();
-    }
-    std::cout << "Current amount of lines: " << num << std::endl;
-}
-
-void CodeTxT::CoutCode() {
-    Line *temp = start;
-    while(temp != nullptr){
-        std::string gotten = temp->getVal()->getString();
-        std::cout << gotten << std::endl;
-        temp = temp->getNext();
-    }
-}
 
 void CodeTxT::Move(std::string dir) {
     Line* temp = start;

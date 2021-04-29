@@ -16,15 +16,13 @@
 class TextBox {
 private:
     int sizey, sizex, posy, posx, fontsize, indx, indy, currLine, xlimit, ylimit;
-    sf::Color bgcolor, fontcolor;
+    sf::Color bgcolor;
     bool selected = false;
     sf::RectangleShape box;
     sf::RectangleShape tInd;
     CodeTxT *code;
     CodeTxT *lineC;
     Line *current;
-
-    sf::Font font;
 
 public:
     TextBox(int, sf::Color, bool, int, int, int, int, sf::Color);

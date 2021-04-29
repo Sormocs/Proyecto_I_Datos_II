@@ -1,3 +1,9 @@
+/**
+ * @file Client.h
+ * @author Sergio MB
+ * @brief Declaracion de la clase cliente, que permite la conexion por medio s=de sockets con el servidor.
+ */
+
 #include <iostream>
 #include <sys/types.h>
 #include <unistd.h>
@@ -11,6 +17,9 @@
 
 using json = nlohmann::json;
 
+/**
+ * @brief Clase que permite conectarse con el server por medio de los sockets.
+ */
 class Client {
 private:
     int sock;

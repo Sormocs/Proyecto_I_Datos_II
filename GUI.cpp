@@ -1,11 +1,24 @@
+/**
+ * @file GUI.cpp
+ * @author Sergio MB
+ * @brief Definicion de metodos de la clase GUI.
+ */
+
 #include "GUI.h"
 #include "TextBox.h"
 #include "Button.h"
 
 GUI *GUI::instance = nullptr;
 
+/**
+ * @brief Constructor de la clase GUI, existe para evitar la instanciacion
+ */
 GUI::GUI() {}
 
+/**
+ * @brief Retorna la instancia de GUI, ya que la calse es un singleton, solo hay una interfaz.
+ * @return
+ */
 GUI* GUI::getInstance() {
     if (instance == nullptr){
         instance = new GUI;
@@ -13,6 +26,11 @@ GUI* GUI::getInstance() {
     return instance;
 }
 
+/**
+ * @brief Metodo que se ejecuta como thread desde el main, ya que mantiene la ventana abierta y actualizando constantemente todos los componentes
+ * dentro de esta. Revisa eventos, crea componentes y llama a los botones y cuadros de texto para asignarles sus valores o que realicen los procesos
+ * que se soliciten segun los eventos que ocurran.
+ */
 void GUI::Run() {
     sf::RenderWindow window(sf::VideoMode(1550, 850), "AtomiC! IDE",sf::Style::Titlebar | sf::Style::Close);
     sf::Vector2i centerwin(0,0);
@@ -93,7 +111,6 @@ void GUI::Run() {
                 if (runBtn.Clicked(mouse[0],mouse[1])){
 
                     //CODE FOR THE RUN BUTTON
-                    codeA->GetCode()->CoutCode();
                     if (codeA->GetCode()->GetStart()->getVal()->getString() != ""){
 
                         next.SetEnabled(true);
@@ -181,12 +198,19 @@ void GUI::Run() {
     exit(0);
 }
 
+/**
+ * @brief Obtiene el visor de ram, funciona como puente para que el cliente lo acceda.
+ * @return
+ */
 RemV *GUI::GetRamV() {
 
     return ramView;
 
 }
-
+/**
+ * @brief Obtiene el log y la consola, funciona como puente para que el cliente lo acceda.
+ * @return
+ */
 LogCons *GUI::GetLogCons() {
     return lc;
 }

@@ -28,7 +28,6 @@ TextBox::TextBox(int fsize, sf::Color fontColor, bool sel, int Sizex, int Sizey,
     posy = Posy;
     selected = sel;
     bgcolor = Bgcolor;
-    fontcolor = fontColor;
 
     indx = posx + 7;
     indy = posy + 10;

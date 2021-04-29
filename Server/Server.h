@@ -1,3 +1,9 @@
+/**
+ * @file Server.h
+ * @author Sergio MB
+ * @brief Contiene declaracion de clase Server
+ */
+
 #include <iostream>
 #include <sys/types.h>
 #include <unistd.h>
@@ -12,6 +18,9 @@
 
 #pragma once
 
+/**
+ * Clase server que conecta con el IDE que seria el cliente.
+ */
 class Server {
 private:
     int listening;

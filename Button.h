@@ -1,7 +1,16 @@
+/**
+ * @file Button.h
+ * @author Sergio MB
+ * @brief Declaracion de la clase Button, que corresponde a los botones utilizados en el codigo.
+ */
+
 #include <SFML/Graphics.hpp>
 #pragma once
 
-
+/**
+ * @brief Declaracion de la clase boton, la cual define un area y un texto que cuando se da click en su posicion retorna true.
+ *  Puede activarse y desactivarse.
+ */
 class Button {
 
 private:
