@@ -12,7 +12,7 @@ using json = nlohmann::json;
 
 
 /**
- * Clase RemV que funciona para el RAM viewer.
+ * @brief Clase RemV que funciona para el RAM viewer.
  */
 class RemV {
 private:

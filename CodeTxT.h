@@ -5,6 +5,9 @@
 #include <iostream>
 #pragma once
 
+/**
+ * @brief Clase Line que almacena una línea de código C!.
+ */
 class Line{
 private:
     int x,y,lnum;
@@ -26,6 +29,9 @@ public:
     void SetStr(std::string);
 };
 
+/**
+ * @brief Clase CodeTxT, lista enlazada de líneas de código C!.
+ */
 class CodeTxT {
 
 private:

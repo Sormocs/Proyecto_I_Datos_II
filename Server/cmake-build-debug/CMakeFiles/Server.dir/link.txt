@@ -1,1 +1,0 @@
-/usr/bin/c++ -pthread -g CMakeFiles/Server.dir/main.cpp.o CMakeFiles/Server.dir/Server.cpp.o CMakeFiles/Server.dir/MemoryList.cpp.o CMakeFiles/Server.dir/MemoryManager.cpp.o CMakeFiles/Server.dir/CodeParser.cpp.o CMakeFiles/Server.dir/TextList.cpp.o CMakeFiles/Server.dir/Sjson.cpp.o -o Server 

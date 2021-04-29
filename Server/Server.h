@@ -19,7 +19,7 @@
 #pragma once
 
 /**
- * Clase server que conecta con el IDE que seria el cliente.
+ * @brief Clase server que conecta con el IDE que seria el cliente.
  */
 class Server {
 private:

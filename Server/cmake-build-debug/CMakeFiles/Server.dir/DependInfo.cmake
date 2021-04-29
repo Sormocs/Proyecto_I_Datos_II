@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/CodeParser.cpp.o"
-  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/MemoryList.cpp.o"
-  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/MemoryManager.cpp.o"
-  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Server.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/Server.cpp.o"
-  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Sjson.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/Sjson.cpp.o"
-  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/TextList.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/TextList.cpp.o"
-  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/main.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/main.cpp.o"
+  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/CodeParser.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/CodeParser.cpp.obj"
+  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryList.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/MemoryList.cpp.obj"
+  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryManager.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/MemoryManager.cpp.obj"
+  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Server.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/Server.cpp.obj"
+  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Sjson.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/Sjson.cpp.obj"
+  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/TextList.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/TextList.cpp.obj"
+  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/main.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/cmake-build-debug/CMakeFiles/Server.dir/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

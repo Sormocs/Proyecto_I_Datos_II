@@ -1,21 +1,23 @@
-//
-// Created by tiquillo on 12/4/21.
-//
-
+/**
+ * @file MemoryList.h
+ * @author Luis Delgado
+ * @brief Contiene declaracion de las clases de listas de memoria.
+ */
 #ifndef SERVER_MEMORYLIST_H
 #define SERVER_MEMORYLIST_H
 
 #include <sstream>
 #include <string>
 
-
+/**
+ * @brief Clase Node almacena los datos de cada variable creada.
+ */
 class Node {
 public:
     void* value;
     std::string varName;
     std::string varType;
     std::string parentClass;
-    std::string structCode;
     int references = 1;
     Node* next;
     Node* previous;
@@ -24,7 +26,9 @@ public:
     Node();
 };
 
-
+/**
+ * @brief Clase AvaiList almacena los nodos correspondientes a los 10 MB de memoria inicial.
+ */
 class AvaiList{
 protected:
 
@@ -46,9 +50,9 @@ public:
     int GetSize();
 };
 
-
-
-
+/**
+ * @brief Clase MemoryList almacena los nodos que tienen las variables actualmente en uso.
+ */
 class MemoryList : protected AvaiList {
 private:
     Node* SearchForNodeByName(std::string& varName, Node* node, int index = 0);

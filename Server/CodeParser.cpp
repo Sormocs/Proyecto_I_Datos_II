@@ -1,17 +1,25 @@
-//
-// Created by tiquillo on 31/3/21.
-//
-
+/**
+ * @file CodeParser.cpp
+ * @author Luis Delgado
+ * @brief Definicion de métodos de la clase CodeParser.
+ */
 #include "CodeParser.h"
 
 #include <utility>
 
 CodeParser* CodeParser::instance = nullptr;
 
+/**
+ * @brief Constructor del parser.
+ */
 CodeParser::CodeParser(MemoryManager* memoryManager) {
     this->memMan = memoryManager;
 }
 
+/**
+ * @brief Detecta operaciones aritmétricas y hace las llamadas respectivas para encontrar el valor.
+ * @return double
+ */
 double CodeParser::AritmetricDetector(std::string& codeFragment) {
     double number = 0;
 
@@ -24,6 +32,10 @@ double CodeParser::AritmetricDetector(std::string& codeFragment) {
     return number;
 }
 
+/**
+ * @brief Realiza sumas y restas anidadas, pero sin combinaciones entre otros tipos de operaciones aritmétricas.
+ * @return double
+ */
 double CodeParser::AddSubtract(std::string codeFragment) {
 
     double result = 0;
@@ -76,6 +88,10 @@ double CodeParser::AddSubtract(std::string codeFragment) {
     return result;
 }
 
+/**
+ * @brief Realiza multiplicaciones entre los números ingresados.
+ * @return double
+ */
 double CodeParser::Multiply(std::string codeFragment) {
     double result = 0;
     std::string numberStr;
@@ -116,6 +132,10 @@ double CodeParser::Multiply(std::string codeFragment) {
     return result;
 }
 
+/**
+ * @brief Realiza divisiones entre los números ingresados.
+ * @return double
+ */
 double CodeParser::Division(std::string codeFragment) {
     double result = 0;
     std::string numberStr;
@@ -156,6 +176,10 @@ double CodeParser::Division(std::string codeFragment) {
     return result;
 }
 
+/**
+ * @brief Extrae el valor numérico de una variable o de un número escrito como string.
+ * @return double
+ */
 double CodeParser::ExtractNumber(std::string numberStr) {
 
     int power = 0;                                  // power for number positions
@@ -213,6 +237,10 @@ double CodeParser::ExtractNumber(std::string numberStr) {
     return number;
 }
 
+/**
+ * @brief Realiza una potencia de los números ingresados.
+ * @return double
+ */
 double CodeParser::pow(float num, float power) {
 
     if (power < 0) return 1/negPow(num, power);     // calls the negative power function and gives the fraction of 1/power
@@ -224,16 +252,27 @@ double CodeParser::pow(float num, float power) {
     else return num * pow(num, power - 1);   // gives power by recursion
 }
 
+/**
+ * @brief Realiza una potencia negativa de los números ingresados.
+ * @return double
+ */
 double CodeParser::negPow(float num, float power) {
     if (power == -1) return num;                    // when power is -1, the negative power ended
 
     else return num * negPow(num, power + 1); // gives power by recursion
 }
 
+/**
+ * @brief Convierte un caracter a entero.
+ * @return int
+ */
 int CodeParser::ToInt(char character) {
     return (int) character - 48;                    // converts char to int, subtracting 48 because of ASCII conversion
 }
 
+/**
+ * @brief Invierte el orden de un string.
+ */
 void CodeParser::ReverseStr(std::string& str) {
     int lenght = str.length();
 
@@ -241,6 +280,10 @@ void CodeParser::ReverseStr(std::string& str) {
         std::swap(str[i], str[lenght - i - 1]); // swaps borders towards the middle
 }
 
+/**
+ * @brief Ubica la posición del punto en un string que representa un número de coma flotante. Si no hay punto, retorna false.
+ * @return bool
+ */
 bool CodeParser::DotPos(std::string fragment, int& pos) {
     for (int i = 0; i < fragment.length(); i++) {
 
@@ -252,6 +295,10 @@ bool CodeParser::DotPos(std::string fragment, int& pos) {
     return false;
 }
 
+/**
+ * @brief Revisa si el texto introducido contiene el caracter especificado. Incluye la posición como referencia.
+ * @return bool
+ */
 bool CodeParser::ContainsChar(std::string& fragment, char character, int &position) {
     /* Checks if a string contains a character and assigns the position by reference
      */
@@ -266,18 +313,27 @@ bool CodeParser::ContainsChar(std::string& fragment, char character, int &positi
     return false;
 }
 
+/**
+ * @brief Revisa si el texto introducido contiene el caracter especificado.
+ * @return bool
+ */
 bool CodeParser::ContainsChar(std::string& fragment, char character) {
-    /* Checks if a string contains a character
-     */
 
     for (char i : fragment) if (i == character) return true;
     return false;
 }
 
+/**
+ * @brief Elimina el primer signo de suma o resta que encuentre en el string.
+ */
 void CodeParser::DelAddSubSign(std::string& codeFragment, int& minusPos, int& plusPos, int& signPos) {
     if (GetAddSubSignPos(codeFragment, minusPos, plusPos, signPos)) codeFragment = codeFragment.substr(signPos+1);
 }
 
+/**
+ * @brief Revisa si el texto introducido contiene un signo de suma o resta y guarda la posición en variables pasadas por referencia.
+ * @return bool
+ */
 bool CodeParser::GetAddSubSignPos(std::string &codeFragment, int &minusPos, int &plusPos, int &signPos) {
     ContainsChar(codeFragment, '-', minusPos);
     ContainsChar(codeFragment, '+', plusPos);
@@ -295,14 +351,26 @@ bool CodeParser::GetAddSubSignPos(std::string &codeFragment, int &minusPos, int 
     return true;
 }
 
+/**
+ * @brief Revisa si el texto introducido contiene un de multiplicación y guarda la posición en uan varaible pasada por referencia.
+ * @return bool
+ */
 bool CodeParser::GetMultSignPos(std::string& codeFragment, int &timesPos) {
     return ContainsChar(codeFragment, '*', timesPos);
 }
 
+/**
+ * @brief Revisa si el texto introducido contiene un de división y guarda la posición en uan varaible pasada por referencia.
+ * @return bool
+ */
 bool CodeParser::GetDivSignPos(std::string &codeFragment, int &divPos) {
     return ContainsChar(codeFragment, '/', divPos);
 }
 
+/**
+ * @brief Revisa si el texto introducido contiene un string específico y guarda la posición del primer caracter en uan varaible pasada por referencia y el largo total del texto.
+ * @return bool
+ */
 bool CodeParser::ContainsStr(std::string &text, std::string fragment, int &position, int &lenght) {
 
     int fragIter = 0;                        // initializes fragment iterator
@@ -324,6 +392,11 @@ bool CodeParser::ContainsStr(std::string &text, std::string fragment, int &posit
     return false;
 }
 
+
+/**
+* @brief Revisa si el texto introducido contiene un string específico pasado por referencia.
+* @return bool
+*/
 bool CodeParser::ContainsStr(std::string &text, std::string fragment) {
     int lenght = NOT_STRING_POS_OR_LENGHT;
     int position = NOT_STRING_POS_OR_LENGHT;
@@ -331,11 +404,19 @@ bool CodeParser::ContainsStr(std::string &text, std::string fragment) {
     return ContainsStr(text, std::move(fragment), position, lenght);
 }
 
+/**
+ * @brief Revisa si el texto introducido contiene un string específico y guarda la posición del primer caracter en uan varaible pasada por referencia.
+ * @return bool
+ */
 bool CodeParser::ContainsStr(std::string &text, std::string fragment, int &position) {
     int lenght = NOT_STRING_POS_OR_LENGHT;
     return ContainsStr(text, std::move(fragment), position, lenght);
 }
 
+/**
+ * @brief Revisa si el texto introducido contiene una declaración de una variable o clase. En caso de haberla, hace las llamadas necesarias para guardar la variable en memoria.
+ * @return bool
+ */
 bool CodeParser::Declaration(std::string& line, std::string& parentClass) {
 //    std::string types[] = {INT, LONG, FLOAT, DOUBLE, CHAR, STRUCT};
     std::string asignation;
@@ -357,7 +438,10 @@ bool CodeParser::Declaration(std::string& line, std::string& parentClass) {
     return false;
 }
 
-
+/**
+ * @brief Revisa qué tipo de declaración está especificada en la línea en cuestión. Hace las llamadas necesarias para almacenar la variable en memoria.
+ * @return bool
+ */
 bool CodeParser::Assignation(std::string assignation, std::string& type, std::string parentClass, std::string structCode) {
     int position = NOT_STRING_POS_OR_LENGHT;
     std::string varName;
@@ -396,6 +480,9 @@ bool CodeParser::Assignation(std::string assignation, std::string& type, std::st
     } else return false;
 }
 
+/**
+ * @brief Consigue la posición del primer número en un string.
+ */
 void CodeParser::GetFirstNumPos(std::string &codeBlock, int &position) {
 
     for (int i = 0; i < codeBlock.length(); ++i) {
@@ -408,6 +495,10 @@ void CodeParser::GetFirstNumPos(std::string &codeBlock, int &position) {
     }
 }
 
+/**
+ * @brief Crea un puntero de tipo void con el valor de un número con el fin de almacenarlo en memoria.
+ * @return void*
+ */
 void* CodeParser::AssignNum(double num, std::string type) {
     if (type == INT) return (void*) new int ((int) num);
     else if (type == LONG) return (void*) new long ((long) num);
@@ -416,6 +507,9 @@ void* CodeParser::AssignNum(double num, std::string type) {
     else return new void*();
 }
 
+/**
+ * @brief Elimina todos los espacios que contiene un string pasado por referencia.
+ */
 void CodeParser::DeleteSpaces(std::string &text) {
     std::string newText = std::string();
 
@@ -426,6 +520,10 @@ void CodeParser::DeleteSpaces(std::string &text) {
     text = newText;
 }
 
+/**
+ * @brief Crea un puntero de tipo void con el valor de un caracter con el fin de almacenarlo en memoria.
+ * @return void*
+ */
 void *CodeParser::AssignChar(std::string fragment) {
 
     int position = NOT_STRING_POS_OR_LENGHT;
@@ -440,6 +538,10 @@ void *CodeParser::AssignChar(std::string fragment) {
     return (void*) new char ((char)fragment.at(0));
 }
 
+/**
+ * @brief Crea un puntero de tipo Node con el valor de un struct con el fin de almacenarlo en memoria.
+ * @return Node*
+ */
 Node *CodeParser::AssignStruct(std::string fragment) {
     int position = NOT_STRING_POS_OR_LENGHT;
     int lenght = NOT_STRING_POS_OR_LENGHT;
@@ -459,36 +561,19 @@ Node *CodeParser::AssignStruct(std::string fragment) {
     } else; //call debugger cause definition of struct is not concise
 }
 
-void CodeParser::SkipSpaces(std::string &text, int &position) {
-    position = 0;
-
-    for (char ch : text){
-
-        if (ch == ' ') position++;
-        else return;
-    }
-    position = NOT_STRING_POS_OR_LENGHT;
-}
-
+/**
+ * @brief Crea una instancia si no existe una y si existe una, la retorna. Esta es la función del Singleton.
+ * @return CodeParser*
+ */
 CodeParser* CodeParser::Instance() {
     if (instance == nullptr) instance = new CodeParser(MemoryManager::Instance());
     return instance;
 }
 
-std::string CodeParser::GetFullStruct(const std::string& structLine, const std::string& structName) {
-    std::string fullStruct = fullCode;
-    int position = NOT_STRING_POS_OR_LENGHT;
-    bool searching = true;
-
-    do {                // search for declaration of this struct
-        if (ContainsChar(fullStruct, '\n', position)){
-            if (ContainsStr(fullStruct, structLine)) searching = false;
-        }
-    } while (searching);
-
-
-}
-
+/**
+ * @brief Solicita el nombre del struct en el que se está trabajando actualmente.
+ * @return string
+ */
 std::string CodeParser::StructName() {
     std::string tempStr = fullCode;
     int line = 0;
@@ -530,6 +615,10 @@ std::string CodeParser::StructName() {
     else return tempStr;
 }
 
+/**
+ * @brief Revisa el ';' en cada línea de código.
+ * @return bool
+ */
 bool CodeParser::CheckSemicolon(std::string line) {
     DeleteSpaces(line);
     if (line.empty()) return true;
@@ -538,10 +627,9 @@ bool CodeParser::CheckSemicolon(std::string line) {
     else return false;
 }
 
-bool CodeParser::PartOfStruct(std::string& line) {
-    return false;
-}
-
+/**
+ * @brief Añade una línea al atributo código, con el fin de parsear el código.
+ */
 void CodeParser::AddLine(const std::string& line) {
     this->fullCode += line;
 }
@@ -552,6 +640,9 @@ void CodeParser::Debug(std::string msg) {
 
 }
 
+/**
+ * @brief Revisa independientemente cada línea de código.
+ */
 void CodeParser::CheckLine(std::string line, std::string parentClass) {
     lineNum++;
     if (!CheckSemicolon(line)) {
@@ -565,6 +656,9 @@ void CodeParser::CheckLine(std::string line, std::string parentClass) {
     }
 }
 
+/**
+ * @brief Revisa el código completo para leer todas las instrucciones.
+ */
 void CodeParser::Parse() {
     std::string tempCode = fullCode;
     int position = NOT_STRING_POS_OR_LENGHT;
@@ -576,6 +670,9 @@ void CodeParser::Parse() {
     }
 }
 
+/**
+ * @brief Averigua si el tipo enviado por referencia, corresponde a un tipo numérico.
+ */
 bool CodeParser::NumType(std::string &type) {
     std::string numTypes[] = {INT, LONG, FLOAT, DOUBLE};
     for (std::string numType : numTypes) {
@@ -584,13 +681,20 @@ bool CodeParser::NumType(std::string &type) {
     return false;
 }
 
+/**
+ * @brief Obtiene el texto guardado en el debug con los errores encontrados.
+ * @return string
+ */
 std::string CodeParser::GetDebug() {
     return debug;
 }
 
+/**
+ * @brief Revisa que se encuentre ante la salida de un struct. Si es así, cambia la clase de trabajo actal a Main, que corresponde a la clase principal.
+ * @return void*
+ */
 bool CodeParser::CheckEndOfStruct(std::string& line) {
     if (ContainsChar(line, '}')) {
         currentClass = MAIN_CLASS;
     }
 }
-

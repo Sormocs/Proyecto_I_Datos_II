@@ -1,5 +1,35 @@
-/snap/clion/151/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/sormocs/CLionProjects/Proyecto_I_Datos_II
--- Found SFML 2.5.1 in /usr/lib/x86_64-linux-gnu/cmake/SFML
+"C:\Program Files\JetBrains\CLion 2020.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" "D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II"
+-- The C compiler identification is MSVC 19.28.29913.0
+-- The CXX compiler identification is MSVC 19.28.29913.0
+-- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/bin/Hostx86/x86/cl.exe
+-- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/bin/Hostx86/x86/cl.exe - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/bin/Hostx86/x86/cl.exe
+-- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/bin/Hostx86/x86/cl.exe - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Warning at CMakeLists.txt:10 (find_package):
+  By not providing "FindSFML.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "SFML", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "SFML" (requested
+  version 2.5.1) with any of the following names:
+
+    SFMLConfig.cmake
+    sfml-config.cmake
+
+  Add the installation prefix of "SFML" to CMAKE_PREFIX_PATH or set
+  "SFML_DIR" to a directory containing one of the above files.  If "SFML"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+
+
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug
+-- Build files have been written to: D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/cmake-build-debug

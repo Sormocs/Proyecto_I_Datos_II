@@ -4,124 +4,126 @@
 	<Project>
 		<Option title="Server"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="gcc"/>
+		<Option compiler="msvc8"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
+				<Option working_dir="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Server">
-				<Option output="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
+				<Option output="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/cmake-build-debug/Server.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 Server"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 Server"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Server/fast">
-				<Option output="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
+				<Option output="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/cmake-build-debug/Server.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 Server/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 Server/fast"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.cpp">
+		<Unit filename="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/CodeParser.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h">
+		<Unit filename="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/CodeParser.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.cpp">
+		<Unit filename="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryList.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h">
+		<Unit filename="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryList.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.cpp">
+		<Unit filename="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryManager.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h">
+		<Unit filename="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryManager.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Server.cpp">
+		<Unit filename="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Server.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Server.h">
+		<Unit filename="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Server.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Sjson.cpp">
+		<Unit filename="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Sjson.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/Sjson.h">
+		<Unit filename="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Sjson.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/TextList.cpp">
+		<Unit filename="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/TextList.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/TextList.h">
+		<Unit filename="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/TextList.h">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/main.cpp">
+		<Unit filename="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/main.cpp">
 			<Option target="Server"/>
 		</Unit>
-		<Unit filename="/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Server/CMakeLists.txt">
+		<Unit filename="D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

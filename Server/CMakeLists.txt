@@ -4,4 +4,4 @@ project(Server)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS "-pthread")
 
-add_executable(Server main.cpp Server.cpp Server.h MemoryList.cpp MemoryList.h MemoryManager.cpp MemoryManager.h CodeParser.h CodeParser.cpp TextList.cpp TextList.h Sjson.cpp Sjson.h)
+add_executable(Server main.cpp Server.cpp Server.h MemoryList.cpp MemoryList.h MemoryManager.cpp MemoryManager.h CodeParser.h CodeParser.cpp Sjson.cpp Sjson.h)

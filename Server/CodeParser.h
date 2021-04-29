@@ -1,6 +1,8 @@
-//
-// Created by tiquillo on 31/3/21.
-//
+/**
+ * @file CodeParser.h
+ * @author Luis Delgado
+ * @brief Contiene declaracion de clase CodeParser
+ */
 
 #ifndef PROYECTO_I_DATOS_II_CODEPARSER_H
 #define PROYECTO_I_DATOS_II_CODEPARSER_H
@@ -19,10 +21,13 @@
 #include <iostream>
 
 #include "MemoryManager.h"
-#include "TextList.h"
 
 #define NOT_STRING_POS_OR_LENGHT (-00100000)
 #define NOT_VALID_OPERATION (-90108020703060405)
+
+/**
+ * @brief Clase CodeParser que separa el código para interpretarlo.
+ */
 
 class CodeParser {
 

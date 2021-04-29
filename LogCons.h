@@ -10,7 +10,7 @@
 #pragma once
 
 /**
- * Declaracion de la clase LogCons que funciona como Consola y Log.
+ * @brief Declaracion de la clase LogCons que funciona como Consola y Log.
  */
 class LogCons {
 private:
