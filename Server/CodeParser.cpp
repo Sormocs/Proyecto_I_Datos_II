@@ -420,8 +420,8 @@ bool CodeParser::ContainsStr(std::string &text, std::string fragment, int &posit
 bool CodeParser::Declaration(std::string& line, std::string& parentClass) {
 //    std::string types[] = {INT, LONG, FLOAT, DOUBLE, CHAR, STRUCT};
     std::string asignation;
-    int position = NOT_STRING_POS_OR_LENGHT;
-    int lenght = NOT_STRING_POS_OR_LENGHT;
+    int position = 0;
+    int lenght = 0;
 
     for (std::string type : VAR_TYPES) {                    // esto no incluye reference
 
@@ -434,6 +434,8 @@ bool CodeParser::Declaration(std::string& line, std::string& parentClass) {
         Debug("Introduced type in line " + std::to_string(lineNum) + " does not match any");
         return false;
     }
+
+    CheckEndOfStruct(line);
 
     return false;
 }
@@ -630,7 +632,8 @@ bool CodeParser::CheckSemicolon(std::string line) {
 /**
  * @brief Añade una línea al atributo código, con el fin de parsear el código.
  */
-void CodeParser::AddLine(const std::string& line) {
+void CodeParser::AddLine(std::string line) {
+    if (!ContainsChar(line, '\n')) line + "\n";
     this->fullCode += line;
 }
 
@@ -691,10 +694,12 @@ std::string CodeParser::GetDebug() {
 
 /**
  * @brief Revisa que se encuentre ante la salida de un struct. Si es así, cambia la clase de trabajo actal a Main, que corresponde a la clase principal.
- * @return void*
+ * @return bool
  */
 bool CodeParser::CheckEndOfStruct(std::string& line) {
     if (ContainsChar(line, '}')) {
         currentClass = MAIN_CLASS;
+        return true;
     }
+    return false;
 }

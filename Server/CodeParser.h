@@ -65,7 +65,6 @@ private:
 
     // syntax checker
     bool CheckSemicolon(std::string line);
-    bool PartOfStruct(std::string& line);
     bool CheckEndOfStruct(std::string& line);
 
     // variable declaration and value assignation
@@ -77,10 +76,8 @@ private:
     // text manipulation
     void DeleteSpaces(std::string& text);
     void ReverseStr(std::string& str);
-    void SkipSpaces(std::string& text, int& position);
 
     // struct type detection, manipulation and declaration
-    std::string GetFullStruct(const std::string& structLine, const std::string& structName);
     std::string StructName();
     Node* AssignStruct(std::string fragment);
 
@@ -96,7 +93,7 @@ public:
 
     static CodeParser* Instance();
 
-    void AddLine(const std::string& line);
+    void AddLine(std::string line);
 
     bool ContainsChar(std::string& fragment, char character, int& position);
     bool ContainsChar(std::string& fragment, char character);

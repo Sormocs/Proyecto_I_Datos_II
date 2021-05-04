@@ -156,28 +156,9 @@ CMakeFiles\Server.dir\CodeParser.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Server.dir\CodeParser.cpp.s /c "D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\CodeParser.cpp"
 <<
 
-CMakeFiles\Server.dir\TextList.cpp.obj: CMakeFiles\Server.dir\flags.make
-CMakeFiles\Server.dir\TextList.cpp.obj: ..\TextList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Server.dir/TextList.cpp.obj"
-	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Server.dir\TextList.cpp.obj /FdCMakeFiles\Server.dir\ /FS -c "D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\TextList.cpp"
-<<
-
-CMakeFiles\Server.dir\TextList.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Server.dir/TextList.cpp.i"
-	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\Server.dir\TextList.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\TextList.cpp"
-<<
-
-CMakeFiles\Server.dir\TextList.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Server.dir/TextList.cpp.s"
-	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Server.dir\TextList.cpp.s /c "D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\TextList.cpp"
-<<
-
 CMakeFiles\Server.dir\Sjson.cpp.obj: CMakeFiles\Server.dir\flags.make
 CMakeFiles\Server.dir\Sjson.cpp.obj: ..\Sjson.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Server.dir/Sjson.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Server.dir/Sjson.cpp.obj"
 	C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Server.dir\Sjson.cpp.obj /FdCMakeFiles\Server.dir\ /FS -c "D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\Sjson.cpp"
 <<
@@ -201,7 +182,6 @@ Server_OBJECTS = \
 "CMakeFiles\Server.dir\MemoryList.cpp.obj" \
 "CMakeFiles\Server.dir\MemoryManager.cpp.obj" \
 "CMakeFiles\Server.dir\CodeParser.cpp.obj" \
-"CMakeFiles\Server.dir\TextList.cpp.obj" \
 "CMakeFiles\Server.dir\Sjson.cpp.obj"
 
 # External object files for target Server
@@ -212,11 +192,10 @@ Server.exe: CMakeFiles\Server.dir\Server.cpp.obj
 Server.exe: CMakeFiles\Server.dir\MemoryList.cpp.obj
 Server.exe: CMakeFiles\Server.dir\MemoryManager.cpp.obj
 Server.exe: CMakeFiles\Server.dir\CodeParser.cpp.obj
-Server.exe: CMakeFiles\Server.dir\TextList.cpp.obj
 Server.exe: CMakeFiles\Server.dir\Sjson.cpp.obj
 Server.exe: CMakeFiles\Server.dir\build.make
 Server.exe: CMakeFiles\Server.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Server.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Server.exe"
 	"C:\Program Files\JetBrains\CLion 2020.3.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\Server.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~3\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\Server.dir\objects1.rsp @<<
  /out:Server.exe /implib:Server.lib /pdb:"D:\OneDrive - Estudiantes ITCR\TEC\2021 I\Algoritmos y Estructuras de Datos II\Proyecto_I_Datos_II\Server\cmake-build-debug\Server.pdb" /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

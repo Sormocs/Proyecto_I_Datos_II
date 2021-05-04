@@ -4,7 +4,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Server.dir/MemoryManager.cpp.obj"
   "CMakeFiles/Server.dir/Server.cpp.obj"
   "CMakeFiles/Server.dir/Sjson.cpp.obj"
-  "CMakeFiles/Server.dir/TextList.cpp.obj"
   "CMakeFiles/Server.dir/main.cpp.obj"
   "Server.exe"
   "Server.exe.manifest"

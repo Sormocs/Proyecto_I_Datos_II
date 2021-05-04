@@ -262,33 +262,6 @@ Sjson.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Server.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Server.dir\Sjson.cpp.s
 .PHONY : Sjson.cpp.s
 
-TextList.obj: TextList.cpp.obj
-
-.PHONY : TextList.obj
-
-# target to build an object file
-TextList.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Server.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Server.dir\TextList.cpp.obj
-.PHONY : TextList.cpp.obj
-
-TextList.i: TextList.cpp.i
-
-.PHONY : TextList.i
-
-# target to preprocess a source file
-TextList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Server.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Server.dir\TextList.cpp.i
-.PHONY : TextList.cpp.i
-
-TextList.s: TextList.cpp.s
-
-.PHONY : TextList.s
-
-# target to generate assembly for a file
-TextList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Server.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Server.dir\TextList.cpp.s
-.PHONY : TextList.cpp.s
-
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -340,9 +313,6 @@ help:
 	@echo ... Sjson.obj
 	@echo ... Sjson.i
 	@echo ... Sjson.s
-	@echo ... TextList.obj
-	@echo ... TextList.i
-	@echo ... TextList.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
