@@ -1,13 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Server.dir/CodeParser.cpp.obj"
-  "CMakeFiles/Server.dir/MemoryList.cpp.obj"
-  "CMakeFiles/Server.dir/MemoryManager.cpp.obj"
-  "CMakeFiles/Server.dir/Server.cpp.obj"
-  "CMakeFiles/Server.dir/Sjson.cpp.obj"
-  "CMakeFiles/Server.dir/main.cpp.obj"
-  "Server.exe"
-  "Server.exe.manifest"
-  "Server.lib"
+  "CMakeFiles/Server.dir/CodeParser.cpp.o"
+  "CMakeFiles/Server.dir/MemoryList.cpp.o"
+  "CMakeFiles/Server.dir/MemoryManager.cpp.o"
+  "CMakeFiles/Server.dir/Server.cpp.o"
+  "CMakeFiles/Server.dir/Sjson.cpp.o"
+  "CMakeFiles/Server.dir/main.cpp.o"
+  "Server"
   "Server.pdb"
 )
 

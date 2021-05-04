@@ -93,7 +93,7 @@ public:
 
     static CodeParser* Instance();
 
-    void AddLine(std::string line);
+    void AddLine(const std::string& line);
 
     bool ContainsChar(std::string& fragment, char character, int& position);
     bool ContainsChar(std::string& fragment, char character);
@@ -103,7 +103,7 @@ public:
     bool ContainsStr(std::string& text, std::string fragment);
 
     bool Declaration(std::string& line, std::string& parentClass);
-    void CheckLine(std::string line, std::string parentClass = MAIN_CLASS);
+    bool CheckLine(std::string line, std::string parentClass = MAIN_CLASS);
     void Parse();
 
     std::string GetDebug();

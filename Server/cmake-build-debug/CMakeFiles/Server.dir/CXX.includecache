@@ -6,53 +6,43 @@
 
 #IncludeRegexTransform: 
 
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/CodeParser.cpp
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.cpp
 CodeParser.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/CodeParser.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
 utility
 -
 
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/CodeParser.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
 string
 -
 iostream
 -
 MemoryManager.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryManager.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
 
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryList.cpp
-MemoryList.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryList.h
-
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryList.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
 sstream
 -
 string
 -
 
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryManager.cpp
-iostream
--
-MemoryManager.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryManager.h
-
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryManager.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
 MemoryList.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryList.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryList.h
 sstream
 -
 
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Server.cpp
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.cpp
 iostream
 -
 string
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/string
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/string
 Server.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Server.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.h
 stdio.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/stdio.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/stdio.h
 
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Server.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.h
 iostream
 -
 sys/types.h
@@ -70,21 +60,17 @@ string.h
 string
 -
 CodeParser.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/CodeParser.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
 Sjson.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Sjson.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Sjson.h
 
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Sjson.cpp
-Sjson.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Sjson.h
-
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Sjson.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Sjson.h
 json.hpp
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/json.hpp
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/json.hpp
 MemoryManager.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryManager.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
 
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/json.hpp
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/json.hpp
 algorithm
 -
 cstddef
@@ -408,17 +394,17 @@ utility
 vector
 -
 
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/main.cpp
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/main.cpp
 iostream
 -
 Server.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Server.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Server.h
 MemoryManager.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/MemoryManager.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/MemoryManager.h
 thread
 -
 CodeParser.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/CodeParser.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/CodeParser.h
 Sjson.h
-D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Server/Sjson.h
+/home/tiquillo/CLionProjects/Proyecto_I_Datos_II/Server/Sjson.h
 

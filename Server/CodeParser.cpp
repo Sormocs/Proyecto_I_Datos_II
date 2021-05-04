@@ -632,9 +632,9 @@ bool CodeParser::CheckSemicolon(std::string line) {
 /**
  * @brief Añade una línea al atributo código, con el fin de parsear el código.
  */
-void CodeParser::AddLine(std::string line) {
-    if (!ContainsChar(line, '\n')) line + "\n";
+void CodeParser::AddLine(const std::string& line) {
     this->fullCode += line;
+    lines++;
 }
 
 void CodeParser::Debug(std::string msg) {
@@ -646,16 +646,16 @@ void CodeParser::Debug(std::string msg) {
 /**
  * @brief Revisa independientemente cada línea de código.
  */
-void CodeParser::CheckLine(std::string line, std::string parentClass) {
+bool CodeParser::CheckLine(std::string line, std::string parentClass) {
     lineNum++;
     if (!CheckSemicolon(line)) {
         Debug("Add a ';' to line " + std::to_string(lineNum) + ".");
-        return;
+        return false;
     }
-    else if (Declaration(line, parentClass)) return;
+    else if (Declaration(line, parentClass)) return true;
     else {
         Debug("Error in line " + std::to_string(lineNum) + ". If not described before, its unknown");
-        return;
+        return false;
     }
 }
 
@@ -667,7 +667,7 @@ void CodeParser::Parse() {
     int position = NOT_STRING_POS_OR_LENGHT;
     for (int i = 0; i < lines; ++i) {
         if (ContainsChar(tempCode, '\n', position)) {
-            CheckLine(tempCode.substr(0, position));
+            if(!CheckLine(tempCode.substr(0, position))) return;
             tempCode = tempCode.substr(position);
         }
     }
@@ -678,7 +678,7 @@ void CodeParser::Parse() {
  */
 bool CodeParser::NumType(std::string &type) {
     std::string numTypes[] = {INT, LONG, FLOAT, DOUBLE};
-    for (std::string numType : numTypes) {
+    for (const std::string& numType : numTypes) {
         if (numType == type) return true;
     }
     return false;
