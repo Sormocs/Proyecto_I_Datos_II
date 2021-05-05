@@ -4,16 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Button.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/Button.cpp.obj"
-  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/Client.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/Client.cpp.obj"
-  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/CodeTxT.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/CodeTxT.cpp.obj"
-  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/GUI.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/GUI.cpp.obj"
-  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/LogCons.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/LogCons.cpp.obj"
-  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/RemV.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/RemV.cpp.obj"
-  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/TextBox.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/TextBox.cpp.obj"
-  "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/main.cpp" "D:/OneDrive - Estudiantes ITCR/TEC/2021 I/Algoritmos y Estructuras de Datos II/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/main.cpp.obj"
+  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Button.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/Button.cpp.o"
+  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/Client.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/Client.cpp.o"
+  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o"
+  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/GUI.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/GUI.cpp.o"
+  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/LogCons.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/LogCons.cpp.o"
+  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/RemV.cpp.o"
+  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/TextBox.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/TextBox.cpp.o"
+  "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/main.cpp" "/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "MSVC")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

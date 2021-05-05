@@ -96,6 +96,14 @@ void GUI::Run() {
     num.setColor(sf::Color(255,255,255,255));
     num.setPosition(40*0.333,6);
 
+    //IMAGES
+    sf::Texture image;
+    image.loadFromFile("../Imagenes/ram.png");
+    sf::Sprite img;
+    img.setTexture(image);
+    img.setPosition(sf::Vector2f(1010+540*0.333-34.f,3.f));
+
+
 
     while (window.isOpen())
     {
@@ -130,8 +138,18 @@ void GUI::Run() {
                         lc->AddLog("Sent");
                         lc->Switch();
                     }
-                } else if (console.Clicked(mouse[0],mouse[1]) or log.Clicked(mouse[0],mouse[1])) {
+                } else if (console.Clicked(mouse[0],mouse[1])) {
+
                     lc->Switch();
+                    console.SetEnabled(false);
+                    log.SetEnabled(true);
+
+                } else if(log.Clicked(mouse[0],mouse[1])){
+
+                    lc->Switch();
+                    console.SetEnabled(true);
+                    log.SetEnabled(false);
+
                 } else if (clearlog.Clicked(mouse[0],mouse[1])){
                     lc->Reset();
                 } else if (stop.Clicked(mouse[0],mouse[1])){
@@ -192,6 +210,7 @@ void GUI::Run() {
         console.Draw(winptr);
         log.Draw(winptr);
         clearlog.Draw(winptr);
+        window.draw(img);
 
         window.display();
     }
