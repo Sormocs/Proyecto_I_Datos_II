@@ -654,7 +654,7 @@ bool CodeParser::CheckLine(std::string line, std::string parentClass) {
         Debug("Add a ';' to line " + std::to_string(lineNum) + ".");
         return false;
     }
-    else if (Cout(line, parentClass)) return true;
+    else if (Cout(line)) return true;
 
     else if (Declaration(line, parentClass)) return true;
 
@@ -709,6 +709,49 @@ bool CodeParser::CheckEndOfStruct(std::string& line) {
     return false;
 }
 
-bool CodeParser::Cout(std::string line, std::string parentClass) {
+bool CodeParser::Cout(std::string line) {
+    DeleteSpaces(line);
+    int position = NOT_STRING_POS_OR_LENGHT;
+    if (ContainsStr(line, "print(", position)){
+        line = line.substr(6);
+        if (ContainsChar(line, ')', position)) {
+            line = line.substr(0, position);
+            line = ValToStr(line);
+            console += line + "\n";
+            std::cout << line << std::endl;
+            return true;
+        }
+        Debug("The parenthesis is left in line " + std::to_string(lineNum) + ".");
+    }
     return false;
+}
+
+void CodeParser::Restart() {
+    fullCode = std::string();
+    console = std::string();
+    debug = std::string();
+    lineNum = 0;
+    lines = 0;
+
+    memMan->Restart();
+}
+
+std::string CodeParser::ValToStr(std::string &varName) {
+
+    if (memMan->IsVariable(varName)) {
+        Node *temp = MemoryManager::Instance()->GetList()->GetNodeOfRef(varName);
+        std::string type = temp->varType;
+        if (type == INT) return std::to_string(*(int *) temp->value);
+        else if (type == LONG) return std::to_string(*(long *) temp->value);
+        else if (type == FLOAT) return std::to_string(*(float *) temp->value);
+        else if (type == DOUBLE) return std::to_string(*(double *) temp->value);
+        else if (type == CHAR) return std::to_string(*(char *) temp->value);
+        else if (type == STRUCT) return *(std::string *) temp->value;
+        else {
+            Debug("Unknown number when asking to print " + varName + ".");
+            return std::string();
+        }
+    } else {
+        return varName;
+    }
 }

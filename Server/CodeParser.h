@@ -33,11 +33,12 @@ class CodeParser {
 
 private:
     // normal attributtes
+    std::string console = std::string();
+    std::string debug = std::string();
     MemoryManager* memMan;
     std::string fullCode;
-    std::string debug = std::string();
-    int lines = 0;
     int lineNum = 0;
+    int lines = 0;
 
     // struct-related
     std::string currentClass = MAIN_CLASS;
@@ -48,13 +49,14 @@ private:
     double Division(std::string codeFragment);
 
     // arithmetic logic
-    double AritmetricDetector(std::string& codeFragment);
-    bool DotPos(std::string fragment, int& pos);
-    static double pow(float num, float power);
-    static double negPow(float num, float power);
-    int ToInt(char character);
     void GetFirstNumPos(std::string& codeBlock, int& position);
+    double AritmetricDetector(std::string& codeFragment);
+    static double negPow(float num, float power);
+    bool DotPos(std::string fragment, int& pos);
+    double ExtractNumber(std::string numberStr);
+    static double pow(float num, float power);
     bool NumType(std::string& type);
+    int ToInt(char character);
 
     // arithmetic sign
     void DelAddSubSign(std::string& codeFragment, int& minusPos, int& plusPos, int& signPos);
@@ -80,18 +82,20 @@ private:
     std::string StructName();
     Node* AssignStruct(std::string fragment);
 
-    // debugger call
+    // debugger and console call
     void Debug(std::string);
+    bool Cout(std::string line);
+
+    // data management
+    std::string ValToStr(std::string& varName);
 
 protected:
     static CodeParser* instance;
     explicit CodeParser(MemoryManager* memoryManager);
 
 public:
-    std::string console = std::string();
 
     CodeParser() = delete;
-    double ExtractNumber(std::string numberStr);
 
     static CodeParser* Instance();
 
@@ -107,9 +111,10 @@ public:
     bool Declaration(std::string& line, std::string& parentClass);
     bool CheckLine(std::string line, std::string parentClass = MAIN_CLASS);
     void Parse();
-    bool Cout(std::string line, std::string parentClass);
 
     std::string GetDebug();
+
+    void Restart();
 };
 
 
