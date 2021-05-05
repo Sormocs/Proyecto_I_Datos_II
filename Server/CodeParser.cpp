@@ -46,8 +46,6 @@ double CodeParser::AddSubtract(std::string codeFragment) {
     int plusPos = NOT_STRING_POS_OR_LENGHT;
     int minusPos = NOT_STRING_POS_OR_LENGHT;
 
-    std::cout << "First code fragment: " << codeFragment << std::endl;
-
     if (ContainsChar(codeFragment, '+', plusPos) or ContainsChar(codeFragment, '-', minusPos)) {
 
         GetAddSubSignPos(codeFragment, minusPos, plusPos, signPos);
@@ -188,6 +186,9 @@ double CodeParser::ExtractNumber(std::string numberStr) {
     bool isFloat = DotPos(numberStr, dotPos);    // isFloat says if number is float or not
     std::string num;
 
+    DeleteSpaces(numberStr);
+    if (numberStr.at(numberStr.length() -1) == ';') numberStr = numberStr.substr(0, numberStr.length() -1);
+
     if (MemoryManager::Instance()->IsVariable(numberStr)) {
         Node* temp = MemoryManager::Instance()->GetList()->GetNodeOfRef(numberStr);
         temp->references--;
@@ -197,40 +198,41 @@ double CodeParser::ExtractNumber(std::string numberStr) {
         else if (temp->varType == DOUBLE) return MemoryManager::Instance()->GetValOfDouble(numberStr);
         else Debug("Error in line " + std::to_string(lineNum) + ". You cannot add " + temp->varType + " to a number.");
 
-    }
+    } else {
 
-    // extrae el número si es entero
-    if (!isFloat) {
-        ReverseStr(numberStr);                   // Reverses the number for correct conversion
+        // extrae el número si es entero
+        if (!isFloat) {
+            ReverseStr(numberStr);                   // Reverses the number for correct conversion
 
-        for (char i : numberStr){
+            for (char i : numberStr){
+                if (isdigit(i)) {
+                    number += ToInt(i)*pow(10, power); // Adds the number to the float type
+                    power++;
+                }
+            }
+            return number;
+        } else Debug("Error in line " + std::to_string(lineNum) + ". " + numberStr + " does not match any value or variable.");
+
+        // extrae unidades
+        num = numberStr.substr(0, dotPos);          // Saves a temp with string before the dot
+        ReverseStr(num);                             // Reverses the number for correct conversion
+
+        for (char i : num){
             if (isdigit(i)) {
-                number += ToInt(i)*pow(10, power); // Adds the number to the float type
+                number += ToInt(i)*pow(10, power);  // Adds the number to the float type
                 power++;
             }
         }
-        return number;
-    } else Debug("Error in line " + std::to_string(lineNum) + ". " + numberStr + " does not match any value or variable.");
 
-    // extrae unidades
-    num = numberStr.substr(0, dotPos);          // Saves a temp with string before the dot
-    ReverseStr(num);                             // Reverses the number for correct conversion
+        // extrae fraccionales
+        num = numberStr.substr(dotPos);                 // Saves a temp with string before the dot
+        power = -1;                                     // Fractions start with negative power
 
-    for (char i : num){
-        if (isdigit(i)) {
-            number += ToInt(i)*pow(10, power);  // Adds the number to the float type
-            power++;
-        }
-    }
-
-    // extrae fraccionales
-    num = numberStr.substr(dotPos);                 // Saves a temp with string before the dot
-    power = -1;                                     // Fractions start with negative power
-
-    for (char i : num){
-        if (isdigit(i)) {
-            number += ToInt(i)*pow(10, power); // Adds the number to the float type
-            power--;
+        for (char i : num){
+            if (isdigit(i)) {
+                number += ToInt(i)*pow(10, power); // Adds the number to the float type
+                power--;
+            }
         }
     }
 
@@ -652,7 +654,10 @@ bool CodeParser::CheckLine(std::string line, std::string parentClass) {
         Debug("Add a ';' to line " + std::to_string(lineNum) + ".");
         return false;
     }
+    else if (Cout(line, parentClass)) return true;
+
     else if (Declaration(line, parentClass)) return true;
+
     else {
         Debug("Error in line " + std::to_string(lineNum) + ". If not described before, its unknown");
         return false;
@@ -668,7 +673,7 @@ void CodeParser::Parse() {
     for (int i = 0; i < lines; ++i) {
         if (ContainsChar(tempCode, '\n', position)) {
             if(!CheckLine(tempCode.substr(0, position))) return;
-            tempCode = tempCode.substr(position);
+            tempCode = tempCode.substr(position + 1);
         }
     }
 }
@@ -701,5 +706,9 @@ bool CodeParser::CheckEndOfStruct(std::string& line) {
         currentClass = MAIN_CLASS;
         return true;
     }
+    return false;
+}
+
+bool CodeParser::Cout(std::string line, std::string parentClass) {
     return false;
 }

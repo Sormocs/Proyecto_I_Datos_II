@@ -49,7 +49,6 @@ private:
 
     // arithmetic logic
     double AritmetricDetector(std::string& codeFragment);
-    double ExtractNumber(std::string numberStr);
     bool DotPos(std::string fragment, int& pos);
     static double pow(float num, float power);
     static double negPow(float num, float power);
@@ -89,7 +88,10 @@ protected:
     explicit CodeParser(MemoryManager* memoryManager);
 
 public:
+    std::string console = std::string();
+
     CodeParser() = delete;
+    double ExtractNumber(std::string numberStr);
 
     static CodeParser* Instance();
 
@@ -105,6 +107,7 @@ public:
     bool Declaration(std::string& line, std::string& parentClass);
     bool CheckLine(std::string line, std::string parentClass = MAIN_CLASS);
     void Parse();
+    bool Cout(std::string line, std::string parentClass);
 
     std::string GetDebug();
 };
