@@ -86,20 +86,23 @@ void Server::Start() {
 
         std::string received = std::string(buf,bytesReceived);
         if (received == "FINISHED"){
-            std::cout << "Finish received" << std::endl;
+
             Sjson::getInstance()->Reset();
             MemoryManager::Instance()->Restart();
+
+        } else if (received.substr(0, strlen("FULL")) == "FULL"){
+
+            std::string code = received.substr(strlen("FULL"),received.length()-strlen("FULL"));
+            CodeParser::Instance()->AddLine(code);
+
         } else {
-            //std::cout << received << std::endl;
             CodeParser::Instance()->CheckLine(received);
             if (CodeParser::Instance()->GetDebug() != "") Send("ERROR"+CodeParser::Instance()->GetDebug());
             else {
-                std::cout << "entered?" << std::endl;
                 Sjson::getInstance()->ObtainVals();
                 std::string jstr = "JSON" + Sjson::getInstance()->GetObj().dump();
                 this->Send(jstr.c_str());
                 Sjson::getInstance()->Reset();
-                std::cout << "Json sent?" << std::endl;
             }
         }
     }

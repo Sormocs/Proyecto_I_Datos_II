@@ -1,3 +1,3 @@
-/home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir

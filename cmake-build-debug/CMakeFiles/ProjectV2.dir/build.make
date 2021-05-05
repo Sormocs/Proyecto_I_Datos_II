@@ -53,19 +53,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/tiquillo/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.7142.21/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/151/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/tiquillo/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/211.7142.21/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/151/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II
+CMAKE_SOURCE_DIR = /home/sormocs/CLionProjects/Proyecto_I_Datos_II
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug
+CMAKE_BINARY_DIR = /home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ProjectV2.dir/depend.make
@@ -78,107 +78,107 @@ include CMakeFiles/ProjectV2.dir/flags.make
 
 CMakeFiles/ProjectV2.dir/main.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
 CMakeFiles/ProjectV2.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ProjectV2.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/main.cpp.o -c /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ProjectV2.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/main.cpp.o -c /home/sormocs/CLionProjects/Proyecto_I_Datos_II/main.cpp
 
 CMakeFiles/ProjectV2.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectV2.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/main.cpp > CMakeFiles/ProjectV2.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs/CLionProjects/Proyecto_I_Datos_II/main.cpp > CMakeFiles/ProjectV2.dir/main.cpp.i
 
 CMakeFiles/ProjectV2.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/main.cpp -o CMakeFiles/ProjectV2.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs/CLionProjects/Proyecto_I_Datos_II/main.cpp -o CMakeFiles/ProjectV2.dir/main.cpp.s
 
 CMakeFiles/ProjectV2.dir/TextBox.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
 CMakeFiles/ProjectV2.dir/TextBox.cpp.o: ../TextBox.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ProjectV2.dir/TextBox.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/TextBox.cpp.o -c /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/TextBox.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ProjectV2.dir/TextBox.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/TextBox.cpp.o -c /home/sormocs/CLionProjects/Proyecto_I_Datos_II/TextBox.cpp
 
 CMakeFiles/ProjectV2.dir/TextBox.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectV2.dir/TextBox.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/TextBox.cpp > CMakeFiles/ProjectV2.dir/TextBox.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs/CLionProjects/Proyecto_I_Datos_II/TextBox.cpp > CMakeFiles/ProjectV2.dir/TextBox.cpp.i
 
 CMakeFiles/ProjectV2.dir/TextBox.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/TextBox.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/TextBox.cpp -o CMakeFiles/ProjectV2.dir/TextBox.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs/CLionProjects/Proyecto_I_Datos_II/TextBox.cpp -o CMakeFiles/ProjectV2.dir/TextBox.cpp.s
 
 CMakeFiles/ProjectV2.dir/GUI.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
 CMakeFiles/ProjectV2.dir/GUI.cpp.o: ../GUI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ProjectV2.dir/GUI.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/GUI.cpp.o -c /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/GUI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ProjectV2.dir/GUI.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/GUI.cpp.o -c /home/sormocs/CLionProjects/Proyecto_I_Datos_II/GUI.cpp
 
 CMakeFiles/ProjectV2.dir/GUI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectV2.dir/GUI.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/GUI.cpp > CMakeFiles/ProjectV2.dir/GUI.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs/CLionProjects/Proyecto_I_Datos_II/GUI.cpp > CMakeFiles/ProjectV2.dir/GUI.cpp.i
 
 CMakeFiles/ProjectV2.dir/GUI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/GUI.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/GUI.cpp -o CMakeFiles/ProjectV2.dir/GUI.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs/CLionProjects/Proyecto_I_Datos_II/GUI.cpp -o CMakeFiles/ProjectV2.dir/GUI.cpp.s
 
 CMakeFiles/ProjectV2.dir/Client.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
 CMakeFiles/ProjectV2.dir/Client.cpp.o: ../Client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ProjectV2.dir/Client.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/Client.cpp.o -c /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/Client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ProjectV2.dir/Client.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/Client.cpp.o -c /home/sormocs/CLionProjects/Proyecto_I_Datos_II/Client.cpp
 
 CMakeFiles/ProjectV2.dir/Client.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectV2.dir/Client.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/Client.cpp > CMakeFiles/ProjectV2.dir/Client.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs/CLionProjects/Proyecto_I_Datos_II/Client.cpp > CMakeFiles/ProjectV2.dir/Client.cpp.i
 
 CMakeFiles/ProjectV2.dir/Client.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/Client.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/Client.cpp -o CMakeFiles/ProjectV2.dir/Client.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs/CLionProjects/Proyecto_I_Datos_II/Client.cpp -o CMakeFiles/ProjectV2.dir/Client.cpp.s
 
 CMakeFiles/ProjectV2.dir/Button.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
 CMakeFiles/ProjectV2.dir/Button.cpp.o: ../Button.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ProjectV2.dir/Button.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/Button.cpp.o -c /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/Button.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ProjectV2.dir/Button.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/Button.cpp.o -c /home/sormocs/CLionProjects/Proyecto_I_Datos_II/Button.cpp
 
 CMakeFiles/ProjectV2.dir/Button.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectV2.dir/Button.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/Button.cpp > CMakeFiles/ProjectV2.dir/Button.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs/CLionProjects/Proyecto_I_Datos_II/Button.cpp > CMakeFiles/ProjectV2.dir/Button.cpp.i
 
 CMakeFiles/ProjectV2.dir/Button.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/Button.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/Button.cpp -o CMakeFiles/ProjectV2.dir/Button.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs/CLionProjects/Proyecto_I_Datos_II/Button.cpp -o CMakeFiles/ProjectV2.dir/Button.cpp.s
 
 CMakeFiles/ProjectV2.dir/RemV.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
 CMakeFiles/ProjectV2.dir/RemV.cpp.o: ../RemV.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ProjectV2.dir/RemV.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/RemV.cpp.o -c /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/RemV.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ProjectV2.dir/RemV.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/RemV.cpp.o -c /home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.cpp
 
 CMakeFiles/ProjectV2.dir/RemV.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectV2.dir/RemV.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/RemV.cpp > CMakeFiles/ProjectV2.dir/RemV.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.cpp > CMakeFiles/ProjectV2.dir/RemV.cpp.i
 
 CMakeFiles/ProjectV2.dir/RemV.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/RemV.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/RemV.cpp -o CMakeFiles/ProjectV2.dir/RemV.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs/CLionProjects/Proyecto_I_Datos_II/RemV.cpp -o CMakeFiles/ProjectV2.dir/RemV.cpp.s
 
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o: ../CodeTxT.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o -c /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/CodeTxT.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/CodeTxT.cpp.o -c /home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.cpp
 
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectV2.dir/CodeTxT.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/CodeTxT.cpp > CMakeFiles/ProjectV2.dir/CodeTxT.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.cpp > CMakeFiles/ProjectV2.dir/CodeTxT.cpp.i
 
 CMakeFiles/ProjectV2.dir/CodeTxT.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/CodeTxT.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/CodeTxT.cpp -o CMakeFiles/ProjectV2.dir/CodeTxT.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs/CLionProjects/Proyecto_I_Datos_II/CodeTxT.cpp -o CMakeFiles/ProjectV2.dir/CodeTxT.cpp.s
 
 CMakeFiles/ProjectV2.dir/LogCons.cpp.o: CMakeFiles/ProjectV2.dir/flags.make
 CMakeFiles/ProjectV2.dir/LogCons.cpp.o: ../LogCons.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ProjectV2.dir/LogCons.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/LogCons.cpp.o -c /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/LogCons.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ProjectV2.dir/LogCons.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProjectV2.dir/LogCons.cpp.o -c /home/sormocs/CLionProjects/Proyecto_I_Datos_II/LogCons.cpp
 
 CMakeFiles/ProjectV2.dir/LogCons.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProjectV2.dir/LogCons.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/LogCons.cpp > CMakeFiles/ProjectV2.dir/LogCons.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sormocs/CLionProjects/Proyecto_I_Datos_II/LogCons.cpp > CMakeFiles/ProjectV2.dir/LogCons.cpp.i
 
 CMakeFiles/ProjectV2.dir/LogCons.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProjectV2.dir/LogCons.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/LogCons.cpp -o CMakeFiles/ProjectV2.dir/LogCons.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sormocs/CLionProjects/Proyecto_I_Datos_II/LogCons.cpp -o CMakeFiles/ProjectV2.dir/LogCons.cpp.s
 
 # Object files for target ProjectV2
 ProjectV2_OBJECTS = \
@@ -207,7 +207,7 @@ ProjectV2: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
 ProjectV2: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 ProjectV2: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 ProjectV2: CMakeFiles/ProjectV2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ProjectV2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ProjectV2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ProjectV2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -220,6 +220,6 @@ CMakeFiles/ProjectV2.dir/clean:
 .PHONY : CMakeFiles/ProjectV2.dir/clean
 
 CMakeFiles/ProjectV2.dir/depend:
-	cd /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug /home/tiquillo/CLionProjects/a/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sormocs/CLionProjects/Proyecto_I_Datos_II /home/sormocs/CLionProjects/Proyecto_I_Datos_II /home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug /home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug /home/sormocs/CLionProjects/Proyecto_I_Datos_II/cmake-build-debug/CMakeFiles/ProjectV2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ProjectV2.dir/depend
 

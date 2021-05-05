@@ -37,4 +37,5 @@ public:
     void AddCons(std::string);
     void AddLog(std::string);
     void Reset();
+    bool IsCons();
 };

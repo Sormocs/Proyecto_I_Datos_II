@@ -46,6 +46,7 @@ void GUI::Run() {
     Button runBtn = Button(50,6,155,30,26,"Run C!ode",sf::Color(0,128,128,255));
 
     Button console = Button(1392,624,155,30,26,"Console",sf::Color(0,128,128,255));
+    console.SetEnabled(false);
 
     Button clearlog = Button(1392,587,155,30,26,"Clear",sf::Color(0,128,128,255));
 
@@ -70,9 +71,6 @@ void GUI::Run() {
     rect1.setPosition(0,0);
     rect1.setFillColor(sf::Color(96,96,96,255));
 
-//    sf::RectangleShape RAMViewer(sf::Vector2f(400, 550));
-//    RAMViewer.setPosition(1190, 40);
-//    RAMViewer.setFillColor(sf::Color(0, 102, 102, 255));
 
     sf::RectangleShape lineSpace(sf::Vector2f(40,550));
     lineSpace.setPosition(0,40);
@@ -127,7 +125,18 @@ void GUI::Run() {
                         runBtn.SetEnabled(false);
 
                         lc->Reset();
+                        console.SetEnabled(true);
+                        log.SetEnabled(false);
                         lc->AddLog("Sending...");
+
+                        Line* temp = codeA->GetCode()->GetStart()->getNext();
+                        while (temp != nullptr){
+                            
+                            Client::getInstance()->Send("FULL"+temp->getVal()->getString());
+                            temp = temp->getNext();
+
+                        }
+
                         if (!codeA->GetCode()->SendTxT()){
                             next.SetEnabled(false);
                             stop.SetEnabled(false);
@@ -136,7 +145,12 @@ void GUI::Run() {
                             lc->AddLog("Finished");
                         }
                         lc->AddLog("Sent");
-                        lc->Switch();
+
+                        if (lc->IsCons()){
+                            lc->Switch();
+                            console.SetEnabled(false);
+                            log.SetEnabled(true);
+                        }
                     }
                 } else if (console.Clicked(mouse[0],mouse[1])) {
 
@@ -151,13 +165,17 @@ void GUI::Run() {
                     log.SetEnabled(false);
 
                 } else if (clearlog.Clicked(mouse[0],mouse[1])){
+
                     lc->Reset();
+
                 } else if (stop.Clicked(mouse[0],mouse[1])){
                     next.SetEnabled(false);
                     stop.SetEnabled(false);
                     clearlog.SetEnabled(true);
                     runBtn.SetEnabled(true);
+
                 } else if (next.Clicked(mouse[0],mouse[1])){
+
                     if (!codeA->GetCode()->SendTxT()){
                         next.SetEnabled(false);
                         stop.SetEnabled(false);

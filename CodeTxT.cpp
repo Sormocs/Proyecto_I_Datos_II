@@ -133,13 +133,11 @@ void CodeTxT::Move(std::string dir) {
         }
     }
 }
-using namespace std::literals::chrono_literals;
 bool CodeTxT::SendTxT() {
 
     if (tosend == end){
         std::string tosendstr = tosend->getVal()->getString();
         Client::getInstance()->Send(tosendstr);
-        std::this_thread::sleep_for(0.5s);
         Client::getInstance()->Send("FINISHED");
         tosend = start;
         return false;

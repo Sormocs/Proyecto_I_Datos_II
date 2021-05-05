@@ -94,15 +94,14 @@ void LogCons::Draw(sf::RenderWindow *win) {
 void LogCons::Switch() {
     if (isCons){
         title = "Log";
-        sftitle.setString(title);
         isCons = false;
         current = logTxT;
     } else {
         title = "Console";
-        sftitle.setString(title);
         isCons = true;
         current = consTxT;
     }
+    sftitle.setString(title);
 }
 
 /**
@@ -148,5 +147,11 @@ void LogCons::Reset(){
     consTxT->SetPosX(15);
     consTxT->SetPosY(posy + 45);
     consTxT->Insert("Console Output:");
+
+}
+
+bool LogCons::IsCons() {
+
+    return isCons;
 
 }

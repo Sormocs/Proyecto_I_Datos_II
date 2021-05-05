@@ -83,7 +83,9 @@ void Client::Start() {
  * @brief Metodo para enviar mensajes al servidor. Recibe un string que es el mensaje que se desea enviar.
  * @param msg
  */
+using namespace std::literals::chrono_literals;
 void Client::Send(std::string msg) {
+    std::this_thread::sleep_for(0.25s);
     int sendRes = send(sock, msg.c_str(), msg.length(), 0);
     if (sendRes == -1) {
         std::cout << "Send message failed" << std::endl;
