@@ -61,7 +61,12 @@ void Client::Start() {
                 std::string error = received.substr(strlen("ERROR"),received.length()-strlen("ERROR"));
                 gui->GetLogCons()->AddLog(error);
 
-            } else if (received.substr(0, strlen("JSON")) == "JSON" ){
+            } else if(received.substr(0, strlen("CONS")) == "CONS"){
+
+                std::string cout = received.substr(strlen("CONS"),received.length()-strlen("CONS"));
+                gui->GetLogCons()->AddCons(cout);
+
+            } else if(received.substr(0, strlen("JSON")) == "JSON" ){
 
                 std::string toparse = received.substr(strlen("JSON"),received.length()-strlen("JSON"));
                 json js = json::parse(toparse);

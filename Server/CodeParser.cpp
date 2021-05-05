@@ -718,7 +718,7 @@ bool CodeParser::Cout(std::string line) {
         if (ContainsChar(line, ')', position)) {
             line = line.substr(0, position);
             line = ValToStr(line);
-            console += line + "\n";
+            console = line;
             std::cout << line << std::endl;
             return true;
         }
@@ -756,3 +756,8 @@ std::string CodeParser::ValToStr(std::string &varName) {
         return varName;
     }
 }
+
+std::string CodeParser::GetConsole() {
+    return console;
+}
+

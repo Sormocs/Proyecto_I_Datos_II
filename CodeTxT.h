@@ -55,6 +55,7 @@ public:
     bool SendTxT();
     void SetFsize(int fsize);
     void SetStart(Line* start);
+    void ResetToSend();
 
 };
 

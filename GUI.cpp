@@ -101,7 +101,7 @@ void GUI::Run() {
     img.setTexture(image);
     img.setPosition(sf::Vector2f(1010+540*0.333-34.f,3.f));
 
-
+    bool isRunning = false;
 
     while (window.isOpen())
     {
@@ -113,10 +113,13 @@ void GUI::Run() {
             if (event.type == sf::Event::MouseButtonReleased){
                 mouse[0] = sf::Mouse::getPosition(window).x;
                 mouse[1] = sf::Mouse::getPosition(window).y;
-                codeA->CheckClick(mouse[0],mouse[1]);
+                if (!isRunning) codeA->CheckClick(mouse[0],mouse[1]);
                 if (runBtn.Clicked(mouse[0],mouse[1])){
 
                     //CODE FOR THE RUN BUTTON
+                    codeA->CheckClick(0,0);
+                    isRunning = true;
+                    remv->Reset();
                     if (codeA->GetCode()->GetStart()->getVal()->getString() != ""){
 
                         next.SetEnabled(true);
@@ -143,6 +146,7 @@ void GUI::Run() {
                             clearlog.SetEnabled(true);
                             runBtn.SetEnabled(true);
                             lc->AddLog("Finished");
+                            isRunning = false;
                         }
                         lc->AddLog("Sent");
 
@@ -173,6 +177,9 @@ void GUI::Run() {
                     stop.SetEnabled(false);
                     clearlog.SetEnabled(true);
                     runBtn.SetEnabled(true);
+                    isRunning = false;
+                    Client::getInstance()->Send("STOP");
+                    codeA->GetCode()->ResetToSend();
 
                 } else if (next.Clicked(mouse[0],mouse[1])){
 
@@ -182,6 +189,7 @@ void GUI::Run() {
                         clearlog.SetEnabled(true);
                         runBtn.SetEnabled(true);
                         lc->AddLog("Finished");
+                        isRunning = false;
                     }
                     lc->AddLog("Sent");
                 }

@@ -110,8 +110,8 @@ void LogCons::Switch() {
  */
 void LogCons::AddCons(std::string msg) {
 
-    cons = msg;
-    cons += "\n";
+    cons = msg + "\n";
+    consTxT->SetPosY(consTxT->GetY()+24);
     consTxT->Insert(cons);
 
 }
@@ -122,8 +122,7 @@ void LogCons::AddCons(std::string msg) {
  */
 void LogCons::AddLog(std::string msg) {
 
-    log = msg;
-    log += "\n";
+    log = msg + "\n";
     logTxT->SetPosY(logTxT->GetY()+24);
     logTxT->Insert(log);
 

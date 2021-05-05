@@ -90,6 +90,11 @@ void Server::Start() {
             Sjson::getInstance()->Reset();
             MemoryManager::Instance()->Restart();
 
+        } else if (received == "STOP") {
+
+            CodeParser::Instance()->Restart();
+            Sjson::getInstance()->Reset();
+
         } else if (received.substr(0, strlen("FULL")) == "FULL"){
 
             std::string code = received.substr(strlen("FULL"),received.length()-strlen("FULL"));
@@ -97,8 +102,12 @@ void Server::Start() {
 
         } else {
             CodeParser::Instance()->CheckLine(received);
-            if (CodeParser::Instance()->GetDebug() != "") Send("ERROR"+CodeParser::Instance()->GetDebug());
-            else {
+            if (CodeParser::Instance()->GetConsole() != "") Send("CONS"+CodeParser::Instance()->GetConsole());
+            if (CodeParser::Instance()->GetDebug() != "") {
+                Send("ERROR"+CodeParser::Instance()->GetDebug());
+                CodeParser::Instance()->Restart();
+                //
+            } else {
                 Sjson::getInstance()->ObtainVals();
                 std::string jstr = "JSON" + Sjson::getInstance()->GetObj().dump();
                 this->Send(jstr.c_str());
@@ -114,6 +123,8 @@ void Server::Start() {
  * @brief Envia el parametro que recibe como mensaje al cliente por medio de los sockets.
  * @param msg
  */
+using namespace std::literals::chrono_literals;
 void Server::Send(std::string msg) {
+    std::this_thread::sleep_for(0.25s);
     send(clientSocket, msg.c_str(), strlen(msg.c_str()) , 0);
 }

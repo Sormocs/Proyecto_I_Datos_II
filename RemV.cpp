@@ -64,7 +64,8 @@ void RemV::Build() {
     CodeTxT *tempV2 = new CodeTxT;
     val = tempV2;
     val->SetPosX(col1.getPosition().x + 5);
-    val->SetPosY(posy + 29);
+    val->SetPosY(posy + 32);
+    val->SetFsize(16);
 
     CodeTxT *tempV3 = new CodeTxT;
     addr = tempV3;
@@ -183,8 +184,9 @@ void RemV::Reset() {
 
     type->SetPosX(posx + 5);
     type->SetPosY(posy + 29);
+
     val->SetPosX(col1.getPosition().x + 5);
-    val->SetPosY(posy + 29);
+    val->SetPosY(posy + 30);
 
     addr->SetPosX(col2.getPosition().x + 5);
     addr->SetPosY(posy + 30);

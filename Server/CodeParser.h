@@ -113,6 +113,7 @@ public:
     void Parse();
 
     std::string GetDebug();
+    std::string GetConsole();
 
     void Restart();
 };
