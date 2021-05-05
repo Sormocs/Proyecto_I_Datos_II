@@ -72,6 +72,7 @@ private:
     bool Assignation(std::string assignation, std::string& type, std::string parentClass, std::string structCode = EMPTY_STRING);
     void* AssignNum(double num, std::string type);
     void* AssignChar(std::string fragment);
+    bool Declaration(std::string& line, std::string& parentClass);
 
 
     // text manipulation
@@ -108,7 +109,6 @@ public:
     bool ContainsStr(std::string& text, std::string fragment, int& position);
     bool ContainsStr(std::string& text, std::string fragment);
 
-    bool Declaration(std::string& line, std::string& parentClass);
     bool CheckLine(std::string line, std::string parentClass = MAIN_CLASS);
     void Parse();
 

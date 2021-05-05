@@ -582,19 +582,19 @@ std::string CodeParser::StructName() {
     std::string tempStr = fullCode;
     int line = 0;
     int pos = NOT_STRING_POS_OR_LENGHT;
-    while (line != lineNum){
+    do{
         if (ContainsChar(tempStr, '\n', pos)){
-            tempStr = tempStr.substr(pos);
+            tempStr = tempStr.substr(pos + 1);
             line++;
         } else {
             Debug("You declared a struct with no name. Struct begins at line" + std::to_string(lineNum) + ".");
             return std::string();
         }
-    }
+    } while (line != lineNum);
     bool exit = false;
     while (!exit){
         if (ContainsChar(tempStr, '}', pos)){
-            tempStr = tempStr.substr(pos);
+            tempStr = tempStr.substr(pos + 1);
             if (ContainsChar(tempStr, '\n', pos)) {
                 tempStr = tempStr.substr(0, pos);
                 if (ContainsChar(tempStr, ';', pos)){
@@ -614,6 +614,7 @@ std::string CodeParser::StructName() {
             }
         }
     }
+    DeleteSpaces(tempStr);
 
     if (pos == NOT_STRING_POS_OR_LENGHT) return std::string ();
     else return tempStr;

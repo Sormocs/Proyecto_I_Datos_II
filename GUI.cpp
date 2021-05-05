@@ -132,7 +132,7 @@ void GUI::Run() {
                         Line* temp = codeA->GetCode()->GetStart()->getNext();
                         while (temp != nullptr){
                             
-                            Client::getInstance()->Send("FULL"+temp->getVal()->getString());
+                            Client::getInstance()->Send("FULL"+temp->getVal()->getString() + "\n");
                             temp = temp->getNext();
 
                         }
