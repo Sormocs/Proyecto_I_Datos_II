@@ -55,8 +55,8 @@ MemoryManager* MemoryManager::Instance() {
 /**
  * @brief Añade una variable a la memoria en uso y en su proceso, solicita un nodo disponible a la lista con memoria libre.
  */
-void MemoryManager::Add(void *value, std::string varName, std::string varType, std::string& parentClass, std::string& structCode) {
-    usedMem->AddFront(XMB->GetDeleteFirst(), value, varName, varType, parentClass, structCode);
+void MemoryManager::Add(void *value, std::string varName, std::string varType, std::string& parentClass) {
+    usedMem->AddFront(XMB->GetDeleteFirst(), value, varName, varType, parentClass);
 }
 
 /**

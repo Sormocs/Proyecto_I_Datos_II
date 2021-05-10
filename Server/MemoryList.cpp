@@ -169,7 +169,7 @@ void *MemoryList::GetValOf(std::string varName) {
 /**
  * @brief Añade un nodo a la lista con los valores de la variable que va a guardar.
  */
-void MemoryList::AddFront(Node *newFirst, void *value, std::string& varName, std::string& varType, std::string& parentClass, std::string& structCode) {
+void MemoryList::AddFront(Node *newFirst, void *value, std::string& varName, std::string& varType, std::string& parentClass) {
     newFirst->value = value;
     newFirst->varName = varName;
     newFirst->varType = varType;

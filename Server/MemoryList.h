@@ -62,7 +62,7 @@ public:
 
     Node* GetDelFirst();
 
-    void AddFront(Node* newFirst, void* value, std::string& varName, std::string& varType, std::string& parentClass, std::string& structCode);
+    void AddFront(Node* newFirst, void* value, std::string& varName, std::string& varType, std::string& parentClass);
 
     void ChangeValOf(std::string valName, void* newValue);
 

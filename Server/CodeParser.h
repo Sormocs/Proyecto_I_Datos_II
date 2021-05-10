@@ -72,7 +72,7 @@ private:
     bool CheckEndOfStruct(std::string& line);
 
     // variable declaration and value assignation
-    bool Assignation(std::string assignation, std::string& type, std::string parentClass, std::string structCode = EMPTY_STRING);
+    bool Assignation(std::string assignation, std::string& type, std::string parentClass);
     void* AssignNum(double num, std::string type);
     void* AssignChar(std::string fragment);
     bool Declaration(std::string& line, std::string& parentClass);

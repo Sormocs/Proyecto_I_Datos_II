@@ -453,7 +453,7 @@ bool CodeParser::Declaration(std::string& line, std::string& parentClass) {
  * @brief Revisa qué tipo de declaración está especificada en la línea en cuestión. Hace las llamadas necesarias para almacenar la variable en memoria.
  * @return bool
  */
-bool CodeParser::Assignation(std::string assignation, std::string& type, std::string parentClass, std::string structCode) {
+bool CodeParser::Assignation(std::string assignation, std::string& type, std::string parentClass) {
     int position = NOT_STRING_POS_OR_LENGHT;
     std::string varName;
     if (ContainsChar(assignation, '=', position)) {      // revisa que '=' esté en la cadena. Si no esta, no es una asignacion numérica o de char.
@@ -465,14 +465,14 @@ bool CodeParser::Assignation(std::string assignation, std::string& type, std::st
 
             std::string strToDetectAritmetricOperators = assignation.substr(position + 1);
 
-            memMan->Add(AssignNum(AritmetricDetector(strToDetectAritmetricOperators), type), varName, type, parentClass, structCode);
+            memMan->Add(AssignNum(AritmetricDetector(strToDetectAritmetricOperators), type), varName, type, parentClass);
 
-        } else if (type == CHAR){
+        } else if (type == CHAR) {
             varName = assignation.substr(0, position);
             DeleteSpaces(varName);
 
             std::string str = assignation.substr(position + 1);
-            memMan->Add(AssignChar(str), varName, CHAR, parentClass, structCode);
+            memMan->Add(AssignChar(str), varName, CHAR, parentClass);
 
         }
 
@@ -481,12 +481,12 @@ bool CodeParser::Assignation(std::string assignation, std::string& type, std::st
     } else if (ContainsChar(assignation, '{', position)){
         if (type == STRUCT) {
             if (parentClass != MAIN_CLASS) {
-                Debug("Cascade struct declaration is not allowed."); // call debugger because of chain struct declaration
+                Debug("Cascade struct declaration is not allowed."); // calls debugger because of chain struct declaration
                 return false;
             }
-            memMan->Add((void*) new std::string("<" + StructName() + " struct type>"), StructName(), STRUCT, parentClass, structCode);
+            memMan->Add((void*) new std::string("<" + StructName() + " struct type>"), StructName(), STRUCT, parentClass);
             currentClass = StructName();
-        }
+        } return true;
 
     } else return false;
 }
@@ -537,16 +537,24 @@ void CodeParser::DeleteSpaces(std::string &text) {
  */
 void *CodeParser::AssignChar(std::string fragment) {
 
-    int position = NOT_STRING_POS_OR_LENGHT;
+    if (isNum(fragment)) {
+        Debug("Char type only allows character values.");
+        return (void*) new char*();
+    } else {
 
-    ContainsChar(fragment, '\'', position);
-    fragment = fragment.substr(position + 1);
-    ContainsChar(fragment, '\'', position);
-    fragment = fragment.substr(0, position);
+        int position = NOT_STRING_POS_OR_LENGHT;
 
-    if (fragment.length() != 1) Debug("Char is a character, it is not a chain of characters."); // CALLS DEBUGGER
+        ContainsChar(fragment, '\'', position);
+        fragment = fragment.substr(position + 1);
+        ContainsChar(fragment, '\'', position);
+        fragment = fragment.substr(0, position);
 
-    return (void*) new char ((char)fragment.at(0));
+        if (fragment.length() != 1) {
+            Debug("Char is a character, it is not a chain of characters."); // CALLS DEBUGGER
+            return (void *) new char*();
+
+        } else return (void *) new char(fragment.at(0));
+    }
 }
 
 /**

@@ -24,7 +24,7 @@ public:
     MemoryManager();
     static MemoryManager* Instance();
 
-    void Add(void* value, std::string varName, std::string varType, std::string& parentClass, std::string& structCode);
+    void Add(void* value, std::string varName, std::string varType, std::string& parentClass);
 
     bool IsVariable(const std::string& name);
 
