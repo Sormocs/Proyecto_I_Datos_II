@@ -23,7 +23,7 @@
 #include "MemoryManager.h"
 
 #define NOT_STRING_POS_OR_LENGHT (-00100000)
-#define NOT_VALID_OPERATION (-90108020703060405)
+#define NOT_VALID_OPERATION (-901082)
 
 /**
  * @brief Clase CodeParser que separa el código para interpretarlo.
@@ -53,8 +53,11 @@ private:
     double AritmetricDetector(std::string& codeFragment);
     static double negPow(float num, float power);
     bool DotPos(std::string fragment, int& pos);
-    double ExtractNumber(std::string numberStr);
     static double pow(float num, float power);
+
+    // Number management
+    // #########################################################################################################
+    bool isNum(const std::string& text);
     bool NumType(std::string& type);
     int ToInt(char character);
 
@@ -95,7 +98,7 @@ protected:
     explicit CodeParser(MemoryManager* memoryManager);
 
 public:
-
+    double ExtractNumber(std::string numberStr);
     CodeParser() = delete;
 
     static CodeParser* Instance();

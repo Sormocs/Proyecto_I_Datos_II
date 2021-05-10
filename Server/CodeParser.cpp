@@ -180,25 +180,19 @@ double CodeParser::Division(std::string codeFragment) {
  */
 double CodeParser::ExtractNumber(std::string numberStr) {
 
-    int power = 0;                                  // power for number positions
-    int dotPos;                                     // position of the dot char
-    double number = 0;                               // the number converted on float type
-    bool isFloat = DotPos(numberStr, dotPos);    // isFloat says if number is float or not
-    std::string num;
+    DeleteSpaces(numberStr);                          // deletes blank spaces in string
 
-    DeleteSpaces(numberStr);
-    if (numberStr.at(numberStr.length() -1) == ';') numberStr = numberStr.substr(0, numberStr.length() -1);
+    if (numberStr.at(numberStr.length() -1) == ';') { // if string contains ;, delete it.
+        numberStr = numberStr.substr(0, numberStr.length() -1);
+    }
 
-    if (MemoryManager::Instance()->IsVariable(numberStr)) {
-        Node* temp = MemoryManager::Instance()->GetList()->GetNodeOfRef(numberStr);
-        temp->references--;
-        if (temp->varType == INT) return (double) MemoryManager::Instance()->GetValOfInt(numberStr);
-        else if (temp->varType == LONG) return (double) MemoryManager::Instance()->GetValOfLong(numberStr);
-        else if (temp->varType == FLOAT) return (double) MemoryManager::Instance()->GetValOfFloat(numberStr);
-        else if (temp->varType == DOUBLE) return MemoryManager::Instance()->GetValOfDouble(numberStr);
-        else Debug("Error in line " + std::to_string(lineNum) + ". You cannot add " + temp->varType + " to a number.");
+    if (isNum(numberStr)){
 
-    } else {
+        int power = 0;                                  // power for number positions
+        int dotPos;                                     // position of the dot char
+        double number = 0;                               // the number converted on float type
+        bool isFloat = DotPos(numberStr, dotPos);    // isFloat says if number is float or not
+        std::string num;
 
         // extrae el número si es entero
         if (!isFloat) {
@@ -234,9 +228,18 @@ double CodeParser::ExtractNumber(std::string numberStr) {
                 power--;
             }
         }
-    }
+        return number;
 
-    return number;
+    } else if (MemoryManager::Instance()->IsVariable(numberStr)) {
+        Node* temp = MemoryManager::Instance()->GetList()->GetNodeOfRef(numberStr);
+        temp->references--;
+        if (temp->varType == INT) return (double) MemoryManager::Instance()->GetValOfInt(numberStr);
+        else if (temp->varType == LONG) return (double) MemoryManager::Instance()->GetValOfLong(numberStr);
+        else if (temp->varType == FLOAT) return (double) MemoryManager::Instance()->GetValOfFloat(numberStr);
+        else if (temp->varType == DOUBLE) return MemoryManager::Instance()->GetValOfDouble(numberStr);
+        else Debug("Error in line " + std::to_string(lineNum) + ". You cannot add " + temp->varType + " to a number.");
+
+    } else return NOT_VALID_OPERATION;
 }
 
 /**
@@ -759,5 +762,22 @@ std::string CodeParser::ValToStr(std::string &varName) {
 
 std::string CodeParser::GetConsole() {
     return console;
+}
+
+bool CodeParser::isNum(const std::string& text) {
+
+    bool alreadyCommaOrDot = false;
+
+    for (char c : text) {
+
+        if ((c == ',' or c == '.') and !alreadyCommaOrDot) { // if it's not a comma nor dot or there is already a comma or dot, it is not a number.
+            alreadyCommaOrDot = true;
+
+        } else if (isdigit(c)) { // if it is a digit, it is a number yet.
+            continue;
+
+        }else return false;
+    }
+    return true;
 }
 
