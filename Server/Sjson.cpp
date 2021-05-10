@@ -86,6 +86,6 @@ Sjson *Sjson::getInstance() {
  * @brief Vacia el objeto json y resetea la cuenta del numero.
  */
 void Sjson::Reset() {
-    obj.empty();
+    obj.clear();
     num = 0;
 }

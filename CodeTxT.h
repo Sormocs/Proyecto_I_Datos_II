@@ -35,7 +35,7 @@ public:
 class CodeTxT {
 
 private:
-    int lineNum, posx, posy, fsize;
+    int lineNum, posx, posy, fsize, ylimit, ystart;
     Line *start = nullptr;
     Line *end = nullptr;
     Line* tosend = nullptr;
@@ -56,6 +56,8 @@ public:
     void SetFsize(int fsize);
     void SetStart(Line* start);
     void ResetToSend();
+    void SetLimit(int ystart, int yend);
+    void CheckPosition();
 
 };
 

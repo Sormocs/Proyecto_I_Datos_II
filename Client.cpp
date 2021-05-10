@@ -60,6 +60,7 @@ void Client::Start() {
 
                 std::string error = received.substr(strlen("ERROR"),received.length()-strlen("ERROR"));
                 gui->GetLogCons()->AddLog(error);
+                gui->Stop();
 
             } else if(received.substr(0, strlen("CONS")) == "CONS"){
 
@@ -90,7 +91,7 @@ void Client::Start() {
  */
 using namespace std::literals::chrono_literals;
 void Client::Send(std::string msg) {
-    std::this_thread::sleep_for(0.25s);
+    std::this_thread::sleep_for(0.15s);
     int sendRes = send(sock, msg.c_str(), msg.length(), 0);
     if (sendRes == -1) {
         std::cout << "Send message failed" << std::endl;

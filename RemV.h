@@ -18,7 +18,7 @@ class RemV {
 private:
 
     int posx,posy,width,height;
-    bool drawt = false;
+    bool drawt = false, isLimit = false;
     sf::Color color;
     sf::RectangleShape area;
     sf::RectangleShape col1;
@@ -42,6 +42,7 @@ public:
     void SetJson(json js);
     void Reset();
     void SetDrawt(bool flag);
+    bool GetLimit();
 
 };
 

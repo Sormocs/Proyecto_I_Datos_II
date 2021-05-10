@@ -38,5 +38,5 @@ void MemoryTests(){
 //    std::cout << MemoryManager::Instance()->GetValOfInt("linea") << std::endl;
 //    std::cout << MemoryManager::Instance()->GetValOfDouble("fg") << std::endl;
 //    std::cout << MemoryManager::Instance()->GetValOfStruct("claseA") << std::endl;
-    std::cout << CodeParser::Instance()->ExtractNumber(" 123,43 + var;") << std::endl;
+//    std::cout << CodeParser::Instance()->ExtractNumber(" 123,43 + var;") << std::endl;
 }

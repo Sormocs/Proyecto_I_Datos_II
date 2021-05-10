@@ -60,23 +60,27 @@ void RemV::Build() {
     type = tempV;
     type->SetPosX(posx + 5);
     type->SetPosY(posy + 29);
+    type->SetLimit(posy,posy+height);
 
     CodeTxT *tempV2 = new CodeTxT;
     val = tempV2;
     val->SetPosX(col1.getPosition().x + 5);
     val->SetPosY(posy + 32);
     val->SetFsize(16);
+    val->SetLimit(posy,posy+height);
 
     CodeTxT *tempV3 = new CodeTxT;
     addr = tempV3;
     addr->SetPosX(col2.getPosition().x + 5);
     addr->SetPosY(posy + 32);
     addr->SetFsize(16);
+    addr->SetLimit(posy,posy+height);
 
     CodeTxT *tempV4 = new CodeTxT;
     refs = tempV4;
     refs->SetPosX(col3.getPosition().x + 5);
     refs->SetPosY(posy + 29);
+    refs->SetLimit(posy,posy+height);
 
     font.loadFromFile("../Fonts/consolas.ttf");
 
@@ -150,25 +154,27 @@ void RemV::SetJson(json js) {
  */
 void RemV::BuildText() {
 
-    int num = 0;
-    while (num != j.size()){
-        std::string jtype = j["num"+std::to_string(num)]["type"];
-        std::string jval = j["num"+std::to_string(num)]["value"];
-        std::string jaddr = j["num"+std::to_string(num)]["address"];
-        std::string jrefs  = j["num"+std::to_string(num)]["refs"];
+    if (j != "") {
+        int num = 0;
+        while (num != j.size()) {
+            std::string jtype = j["num" + std::to_string(num)]["type"];
+            std::string jval = j["num" + std::to_string(num)]["value"];
+            std::string jaddr = j["num" + std::to_string(num)]["address"];
+            std::string jrefs = j["num" + std::to_string(num)]["refs"];
 
-        type->Insert(jtype);
-        val->Insert(jval);
-        addr->Insert(jaddr);
-        refs->Insert(jrefs);
+            type->Insert(jtype);
+            val->Insert(jval);
+            addr->Insert(jaddr);
+            refs->Insert(jrefs);
 
-        type->SetPosY(type->GetY()+24);
-        val->SetPosY(val->GetY()+24);
-        addr->SetPosY(addr->GetY()+24);
-        refs->SetPosY(refs->GetY()+24);
-        num++;
+            type->SetPosY(type->GetY() + 24);
+            val->SetPosY(val->GetY() + 24);
+            addr->SetPosY(addr->GetY() + 24);
+            refs->SetPosY(refs->GetY() + 24);
+            num++;
+        }
+        drawt = true;
     }
-    drawt = true;
 
 }
 
@@ -177,23 +183,34 @@ void RemV::BuildText() {
  */
 void RemV::Reset() {
 
-    type->SetStart(nullptr);
+//    type->SetStart(nullptr);
     val->SetStart(nullptr);
     addr->SetStart(nullptr);
     refs->SetStart(nullptr);
 
+    CodeTxT *prevtype = type;
+    free(prevtype);
+    CodeTxT *tempt = new CodeTxT;
+    type = tempt;
     type->SetPosX(posx + 5);
     type->SetPosY(posy + 29);
+    type->Insert("");
+    type->SetLimit(posy,posy+height);
 
     val->SetPosX(col1.getPosition().x + 5);
     val->SetPosY(posy + 30);
+    type->Insert("");
 
     addr->SetPosX(col2.getPosition().x + 5);
     addr->SetPosY(posy + 30);
+    addr->Insert("");
 
     refs->SetPosX(col3.getPosition().x + 5);
     refs->SetPosY(posy + 29);
+    refs->Insert("");
 
+    isLimit = false;
+    std::cout << "RemV json: "<< j << std::endl;
 
 }
 
@@ -205,4 +222,8 @@ void RemV::SetDrawt(bool flag) {
 
     drawt = flag;
 
+}
+
+bool RemV::GetLimit() {
+    return isLimit;
 }

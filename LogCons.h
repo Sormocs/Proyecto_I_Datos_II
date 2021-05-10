@@ -27,7 +27,7 @@ private:
     sf::Color boxcol;
     sf::Color txtCol;
     sf::Font font;
-    bool isCons;
+    bool isCons, isLimit = false;
 
 public:
     LogCons(int, int, int, int);
@@ -38,4 +38,6 @@ public:
     void AddLog(std::string);
     void Reset();
     bool IsCons();
+    bool IsLimit();
+    CodeTxT* GetCurrent();
 };

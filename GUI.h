@@ -7,6 +7,8 @@
 #include <SFML/Graphics.hpp>
 #include "RemV.h"
 #include "LogCons.h"
+#include "TextBox.h"
+#include "Button.h"
 #pragma once
 
 /**
@@ -20,11 +22,18 @@ private:
     static GUI *instance;
     RemV* ramView;
     LogCons* lc;
+    bool isRunning = false;
+    TextBox* codeA;
+    Button* next;
+    Button* stop;
+    Button* clearlog;
+    Button* runBtn;
 
 public:
     static GUI* getInstance();
     void Run();
     RemV* GetRamV();
     LogCons* GetLogCons();
+    void Stop();
 
 };

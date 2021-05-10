@@ -214,6 +214,7 @@ void CodeTxT::Move(std::string dir) {
             temp = temp->getNext();
         }
     }
+    CheckPosition();
 }
 
 /**
@@ -258,4 +259,28 @@ void CodeTxT::SetStart(Line* newstart) {
  */
 void CodeTxT::ResetToSend() {
     tosend = start;
+}
+
+/**
+ * @brief Hace transparentes las lineas que no se encuentren dentro del area.
+ */
+void CodeTxT::CheckPosition() {
+
+    Line *temp = start;
+    while (temp != nullptr){
+        if (temp->getVal()->getPosition().y > ylimit or temp->getVal()->getPosition().y < ystart) temp->getVal()->setColor(sf::Color(255,255,255,0));
+        else temp->getVal()->setColor(sf::Color(255,255,255,255));
+        temp = temp->getNext();
+    }
+
+}
+
+/**
+ * @brief Asigna un valor para delimitar el eje y del texto.
+ * @param y
+ */
+void CodeTxT::SetLimit(int ys, int yend) {
+    ystart = ys;
+    ylimit = yend;
+
 }

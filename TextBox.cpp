@@ -67,6 +67,7 @@ void TextBox::Build() {
     code->SetPosX(posx + 5);
     code->SetPosY(posy + 5);
     code->Insert("");
+    code->SetLimit(posy,ylimit);
     current = code->GetStart();
     currLine = current->getLine();
 
@@ -74,6 +75,7 @@ void TextBox::Build() {
     lineC = count;
     lineC->SetPosY(posy + 5);
     lineC->SetPosX(40*0.333);
+    lineC->SetLimit(posy,ylimit);
     lineC->Insert(std::to_string(currLine));
 
 }

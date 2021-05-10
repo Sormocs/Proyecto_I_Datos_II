@@ -5,8 +5,6 @@
  */
 
 #include "GUI.h"
-#include "TextBox.h"
-#include "Button.h"
 
 GUI *GUI::instance = nullptr;
 
@@ -39,23 +37,41 @@ void GUI::Run() {
     sf::RenderWindow* winptr = &window;
 
     // (int fsize, sf::Color fontcolor, bool sel, int sizex, int sizey, int posx, int posy, sf::Color Bgcolor)
-    TextBox *codeA = new TextBox(18,sf::Color::White,true,1002,546,44,44,sf::Color(128,128,128,255));
+    TextBox *tempA = new TextBox(18,sf::Color::White,true,1002,546,44,44,sf::Color(128,128,128,255));
+    codeA = tempA;
 
     //BUTTONS:
     //Button(int Posx, int Posy, int Width, int Height,int Fsize ,std::string Text, sf::Color Color)
-    Button runBtn = Button(50,6,155,30,26,"Run C!ode",sf::Color(0,128,128,255));
+    sf::Color color = sf::Color(0,128,128,255);
 
-    Button console = Button(1392,624,155,30,26,"Console",sf::Color(0,128,128,255));
+    Button* temprunBtn = new Button(50,6,155,30,26,"Run C!ode",color);
+    runBtn = temprunBtn;
+
+    Button console = Button(1392,624,155,30,26,"Console",color);
     console.SetEnabled(false);
 
-    Button clearlog = Button(1392,587,155,30,26,"Clear",sf::Color(0,128,128,255));
+    Button* tempclear = new Button(1392,587,155,30,26,"Clear",color);
+    clearlog = tempclear;
 
-    Button log = Button(1392,661,155,30,26,"Open Log",sf::Color(0,128,128,255));
+    Button log = Button(1392,661,155,30,26,"Open Log",color);
 
-    Button next = Button(210,6,155,30,26,"Next",sf::Color(0,128,128,255));
-    next.SetEnabled(false);
-    Button stop = Button(370,6,155,30,26,"Stop",sf::Color(0,128,128,255));
-    stop.SetEnabled(false);
+    Button* tempnext = new Button(210,6,155,30,26,"Next",color);
+    next = tempnext;
+    next->SetEnabled(false);
+
+    Button* tempstop = new Button(370,6,155,30,26,"Stop",color);
+    stop = tempstop;
+    stop->SetEnabled(false);
+
+    Button r_up = Button(1355,6,90,30,26,"UP",color);
+    r_up.SetEnabled(false);
+    Button r_down = Button(1450,6,90,30,26,"Down",color);
+    r_down.SetEnabled(false);
+
+    Button lc_up = Button(1456,776,90,30,26,"UP",color);
+    lc_up.SetEnabled(false);
+    Button lc_down = Button(1456,816,90,30,26,"Down",color);
+    lc_down.SetEnabled(false);
 
     //LOG&CONSOLE:
     LogCons *tlc = new LogCons(0,580,1550,270);
@@ -85,7 +101,7 @@ void GUI::Run() {
     ram.setFont(font);
     ram.setCharacterSize(24);
     ram.setColor(sf::Color(255,255,255,255));
-    ram.setPosition(1010+540*0.333,6);
+    ram.setPosition(1010+540*0.333-40,6);
 
     sf::Text num;
     num.setString("#");
@@ -99,12 +115,21 @@ void GUI::Run() {
     image.loadFromFile("../Imagenes/ram.png");
     sf::Sprite img;
     img.setTexture(image);
-    img.setPosition(sf::Vector2f(1010+540*0.333-34.f,3.f));
+    img.setPosition(sf::Vector2f(1010+540*0.333-74.f,3.f));
 
-    bool isRunning = false;
 
-    while (window.isOpen())
-    {
+    while (window.isOpen()) {
+
+    if (ramView->GetLimit()) {
+        r_up.SetEnabled(true);
+        r_down.SetEnabled(true);
+    }
+
+    if (lc->IsLimit()) {
+        lc_up.SetEnabled(true);
+        lc_down.SetEnabled(true);
+    }
+
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -114,7 +139,7 @@ void GUI::Run() {
                 mouse[0] = sf::Mouse::getPosition(window).x;
                 mouse[1] = sf::Mouse::getPosition(window).y;
                 if (!isRunning) codeA->CheckClick(mouse[0],mouse[1]);
-                if (runBtn.Clicked(mouse[0],mouse[1])){
+                if (runBtn->Clicked(mouse[0],mouse[1])){
 
                     //CODE FOR THE RUN BUTTON
                     codeA->CheckClick(0,0);
@@ -122,10 +147,10 @@ void GUI::Run() {
                     remv->Reset();
                     if (codeA->GetCode()->GetStart()->getVal()->getString() != ""){
 
-                        next.SetEnabled(true);
-                        stop.SetEnabled(true);
-                        clearlog.SetEnabled(false);
-                        runBtn.SetEnabled(false);
+                        next->SetEnabled(true);
+                        stop->SetEnabled(true);
+                        clearlog->SetEnabled(false);
+                        runBtn->SetEnabled(false);
 
                         lc->Reset();
                         console.SetEnabled(true);
@@ -141,10 +166,10 @@ void GUI::Run() {
                         }
 
                         if (!codeA->GetCode()->SendTxT()){
-                            next.SetEnabled(false);
-                            stop.SetEnabled(false);
-                            clearlog.SetEnabled(true);
-                            runBtn.SetEnabled(true);
+                            next->SetEnabled(false);
+                            stop->SetEnabled(false);
+                            clearlog->SetEnabled(true);
+                            runBtn->SetEnabled(true);
                             lc->AddLog("Finished");
                             isRunning = false;
                         }
@@ -168,42 +193,51 @@ void GUI::Run() {
                     console.SetEnabled(true);
                     log.SetEnabled(false);
 
-                } else if (clearlog.Clicked(mouse[0],mouse[1])){
+                } else if (clearlog->Clicked(mouse[0],mouse[1])){
 
                     lc->Reset();
+                    lc_up.SetEnabled(false);
+                    lc_down.SetEnabled(false);
 
-                } else if (stop.Clicked(mouse[0],mouse[1])){
-                    next.SetEnabled(false);
-                    stop.SetEnabled(false);
-                    clearlog.SetEnabled(true);
-                    runBtn.SetEnabled(true);
-                    isRunning = false;
+                } else if (stop->Clicked(mouse[0],mouse[1])){
+
+                    Stop();
                     Client::getInstance()->Send("STOP");
-                    codeA->GetCode()->ResetToSend();
 
-                } else if (next.Clicked(mouse[0],mouse[1])){
+                } else if (next->Clicked(mouse[0],mouse[1])){
 
                     if (!codeA->GetCode()->SendTxT()){
-                        next.SetEnabled(false);
-                        stop.SetEnabled(false);
-                        clearlog.SetEnabled(true);
-                        runBtn.SetEnabled(true);
+                        next->SetEnabled(false);
+                        stop->SetEnabled(false);
+                        clearlog->SetEnabled(true);
+                        runBtn->SetEnabled(true);
                         lc->AddLog("Finished");
                         isRunning = false;
                     }
                     lc->AddLog("Sent");
+                } else if (lc_up.Clicked(mouse[0],mouse[1])){
+
+                    lc->GetCurrent()->Move("up");
+
+                } else if (lc_down.Clicked(mouse[0],mouse[1])){
+
+                    lc->GetCurrent()->Move("DOWN");
+
                 }
             }
 
             if (event.type == sf::Event::MouseMoved){
+                runBtn->MouseOver(mouse[0],mouse[1]);
                 mouse[0] = sf::Mouse::getPosition(window).x;
                 mouse[1] = sf::Mouse::getPosition(window).y;
-                runBtn.MouseOver(mouse[0],mouse[1]);
-                next.MouseOver(mouse[0],mouse[1]);
-                stop.MouseOver(mouse[0],mouse[1]);
+                next->MouseOver(mouse[0],mouse[1]);
+                stop->MouseOver(mouse[0],mouse[1]);
                 console.MouseOver(mouse[0],mouse[1]);
                 log.MouseOver(mouse[0],mouse[1]);
-                clearlog.MouseOver(mouse[0],mouse[1]);
+                clearlog->MouseOver(mouse[0],mouse[1]);
+                lc_up.MouseOver(mouse[0],mouse[1]);
+                lc_down.MouseOver(mouse[0],mouse[1]);
+
             }
 
             if (event.type == event.TextEntered) {
@@ -226,17 +260,22 @@ void GUI::Run() {
         window.draw(rect1);
         ramView->Draw(winptr);
         window.draw(lineSpace);
-        runBtn.Draw(winptr);
-        next.Draw(winptr);
-        stop.Draw(winptr);
+        runBtn->Draw(winptr);
+        next->Draw(winptr);
+        stop->Draw(winptr);
         codeA->DrawLines(winptr);
         window.draw(ram);
         window.draw(num);
         lc->Draw(winptr);
         console.Draw(winptr);
         log.Draw(winptr);
-        clearlog.Draw(winptr);
+        clearlog->Draw(winptr);
         window.draw(img);
+
+        r_up.Draw(winptr);
+        r_down.Draw(winptr);
+        lc_up.Draw(winptr);
+        lc_down.Draw(winptr);
 
         window.display();
     }
@@ -258,4 +297,15 @@ RemV *GUI::GetRamV() {
  */
 LogCons *GUI::GetLogCons() {
     return lc;
+}
+
+void GUI::Stop() {
+
+    next->SetEnabled(false);
+    stop->SetEnabled(false);
+    clearlog->SetEnabled(true);
+    runBtn->SetEnabled(true);
+    isRunning = false;
+    codeA->GetCode()->ResetToSend();
+
 }

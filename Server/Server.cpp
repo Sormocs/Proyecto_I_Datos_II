@@ -88,7 +88,7 @@ void Server::Start() {
         if (received == "FINISHED"){
 
             Sjson::getInstance()->Reset();
-            MemoryManager::Instance()->Restart();
+            CodeParser::Instance()->Restart();
 
         } else if (received == "STOP") {
 
@@ -106,6 +106,7 @@ void Server::Start() {
             if (CodeParser::Instance()->GetDebug() != "") {
                 Send("ERROR"+CodeParser::Instance()->GetDebug());
                 CodeParser::Instance()->Restart();
+                Sjson::getInstance()->Reset();
                 //
             } else {
                 Sjson::getInstance()->ObtainVals();
