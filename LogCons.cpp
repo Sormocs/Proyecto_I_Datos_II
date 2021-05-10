@@ -55,6 +55,7 @@ void LogCons::Build() {
     logTxT->SetPosX(15);
     logTxT->SetPosY(posy + 45);
     logTxT->Insert("Welcome to C!");
+    logTxT->SetLimit(posy,posy+height);
 
     current = logTxT;
 
@@ -63,6 +64,7 @@ void LogCons::Build() {
     consTxT->SetPosX(15);
     consTxT->SetPosY(posy + 45);
     consTxT->Insert("Console Output:");
+    consTxT->SetLimit(posy,posy+height);
 
 }
 /**
@@ -75,11 +77,7 @@ void LogCons::Draw(sf::RenderWindow *win) {
     win->draw(sftitle);
     win->draw(l);
 
-    if (isCons){
-        //win->draw(consTxt);
-    } else {
-        //win->draw(logTxt);
-    }
+
     Line *temp = current->GetStart();
     while (temp != nullptr){
         sf::Text *todraw = temp->getVal();
@@ -102,6 +100,8 @@ void LogCons::Switch() {
         current = consTxT;
     }
     sftitle.setString(title);
+    if (current->GetEnd()->getVal()->getPosition().y > posy+height or current->GetEnd()->getVal()->getPosition().y < posy) isLimit = true;
+    else isLimit = false;
 }
 
 /**
@@ -113,6 +113,7 @@ void LogCons::AddCons(std::string msg) {
     cons = msg + "\n";
     consTxT->SetPosY(consTxT->GetY()+24);
     consTxT->Insert(cons);
+    if (consTxT->GetY()+24 > posy+height) isLimit = true;
 
 }
 
@@ -125,6 +126,7 @@ void LogCons::AddLog(std::string msg) {
     log = msg + "\n";
     logTxT->SetPosY(logTxT->GetY()+24);
     logTxT->Insert(log);
+    if (logTxT->GetY()+24 > posy+height) isLimit = true;
 
 }
 
@@ -138,6 +140,7 @@ void LogCons::Reset(){
     logTxT->SetPosX(15);
     logTxT->SetPosY(posy + 45);
     logTxT->Insert("Run C!");
+    logTxT->SetLimit(posy,posy+height);
 
     current = logTxT;
 
@@ -146,6 +149,9 @@ void LogCons::Reset(){
     consTxT->SetPosX(15);
     consTxT->SetPosY(posy + 45);
     consTxT->Insert("Console Output:");
+    consTxT->SetLimit(posy,posy+height);
+
+    isLimit = false;
 
 }
 
@@ -153,4 +159,12 @@ bool LogCons::IsCons() {
 
     return isCons;
 
+}
+
+bool LogCons::IsLimit() {
+    return isLimit;
+}
+
+CodeTxT *LogCons::GetCurrent() {
+    return current;
 }
