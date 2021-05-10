@@ -761,7 +761,7 @@ std::string CodeParser::ValToStr(std::string &varName) {
         else if (type == LONG) return std::to_string(*(long *) temp->value);
         else if (type == FLOAT) return std::to_string(*(float *) temp->value);
         else if (type == DOUBLE) return std::to_string(*(double *) temp->value);
-        else if (type == CHAR) return std::to_string(*(char *) temp->value);
+        else if (type == CHAR) return std::string() + *(char *) temp->value;
         else if (type == STRUCT) return *(std::string *) temp->value;
         else {
             Debug("Unknown number when asking to print " + varName + ".");

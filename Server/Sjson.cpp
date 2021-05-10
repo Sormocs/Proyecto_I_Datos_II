@@ -58,7 +58,7 @@ void Sjson::ObtainVals() {
         std::string val = " ";
         if (memL->Get(i)->varType == "int") val = std::to_string(*(int*)memL->Get(i)->value);
         else if (memL->Get(i)->varType == "long") val = std::to_string(*(long*)memL->Get(i)->value);
-        else if (memL->Get(i)->varType == "char") val = std::to_string(*(char*)memL->Get(i)->value);
+        else if (memL->Get(i)->varType == "char") val = std::string() + *(char*)memL->Get(i)->value;
         else if (memL->Get(i)->varType == "double") val = std::to_string(*(double*)memL->Get(i)->value);
         else if (memL->Get(i)->varType == "float") val = std::to_string(*(float*)memL->Get(i)->value);
         else if (memL->Get(i)->varType == "struct") val = *(std::string*)memL->Get(i)->value;
