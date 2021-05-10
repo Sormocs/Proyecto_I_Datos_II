@@ -205,30 +205,31 @@ double CodeParser::ExtractNumber(std::string numberStr) {
                 }
             }
             return number;
-        } else Debug("Error in line " + std::to_string(lineNum) + ". " + numberStr + " does not match any value or variable.");
+        } else {
 
-        // extrae unidades
-        num = numberStr.substr(0, dotPos);          // Saves a temp with string before the dot
-        ReverseStr(num);                             // Reverses the number for correct conversion
+            // extrae unidades
+            num = numberStr.substr(0, dotPos);          // Saves a temp with string before the dot
+            ReverseStr(num);                             // Reverses the number for correct conversion
 
-        for (char i : num){
-            if (isdigit(i)) {
-                number += ToInt(i)*pow(10, power);  // Adds the number to the float type
-                power++;
+            for (char i : num) {
+                if (isdigit(i)) {
+                    number += ToInt(i) * pow(10, power);  // Adds the number to the float type
+                    power++;
+                }
             }
-        }
 
-        // extrae fraccionales
-        num = numberStr.substr(dotPos);                 // Saves a temp with string before the dot
-        power = -1;                                     // Fractions start with negative power
+            // extrae fraccionales
+            num = numberStr.substr(dotPos);                 // Saves a temp with string before the dot
+            power = -1;                                     // Fractions start with negative power
 
-        for (char i : num){
-            if (isdigit(i)) {
-                number += ToInt(i)*pow(10, power); // Adds the number to the float type
-                power--;
+            for (char i : num) {
+                if (isdigit(i)) {
+                    number += ToInt(i) * pow(10, power); // Adds the number to the float type
+                    power--;
+                }
             }
+            return number;
         }
-        return number;
 
     } else if (MemoryManager::Instance()->IsVariable(numberStr)) {
         Node* temp = MemoryManager::Instance()->GetList()->GetNodeOfRef(numberStr);
@@ -239,7 +240,10 @@ double CodeParser::ExtractNumber(std::string numberStr) {
         else if (temp->varType == DOUBLE) return MemoryManager::Instance()->GetValOfDouble(numberStr);
         else Debug("Error in line " + std::to_string(lineNum) + ". You cannot add " + temp->varType + " to a number.");
 
-    } else return NOT_VALID_OPERATION;
+    } else {
+        Debug("Error in line " + std::to_string(lineNum) + ". " + numberStr + " does not match any value or variable.");
+        return NOT_VALID_OPERATION;
+    }
 }
 
 /**
