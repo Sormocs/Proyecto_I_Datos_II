@@ -56,7 +56,7 @@ private:
     static double pow(float num, float power);
 
     // Number management
-    // #########################################################################################################
+    double ExtractNumber(std::string numberStr);
     bool isNum(const std::string& text);
     bool NumType(std::string& type);
     int ToInt(char character);
@@ -98,7 +98,6 @@ protected:
     explicit CodeParser(MemoryManager* memoryManager);
 
 public:
-    double ExtractNumber(std::string numberStr);
     CodeParser() = delete;
 
     static CodeParser* Instance();
