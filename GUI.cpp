@@ -48,12 +48,12 @@ void GUI::Run() {
     runBtn = temprunBtn;
 
     Button console = Button(1392,624,155,30,26,"Console",color);
-    console.SetEnabled(false);
 
     Button* tempclear = new Button(1392,587,155,30,26,"Clear",color);
     clearlog = tempclear;
 
     Button log = Button(1392,661,155,30,26,"Open Log",color);
+    log.SetEnabled(false);
 
     Button* tempnext = new Button(210,6,155,30,26,"Next",color);
     next = tempnext;
@@ -142,10 +142,11 @@ void GUI::Run() {
                 if (runBtn->Clicked(mouse[0],mouse[1])){
 
                     //CODE FOR THE RUN BUTTON
-                    codeA->CheckClick(0,0);
-                    isRunning = true;
-                    remv->Reset();
+
                     if (codeA->GetCode()->GetStart()->getVal()->getString() != ""){
+                        codeA->CheckClick(0,0);
+                        isRunning = true;
+                        remv->Reset();
 
                         next->SetEnabled(true);
                         stop->SetEnabled(true);

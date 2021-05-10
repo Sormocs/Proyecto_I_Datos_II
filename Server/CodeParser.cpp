@@ -484,7 +484,7 @@ bool CodeParser::Assignation(std::string assignation, std::string& type, std::st
                 Debug("Cascade struct declaration is not allowed."); // calls debugger because of chain struct declaration
                 return false;
             }
-            memMan->Add((void*) new std::string("<" + StructName() + " struct>"), StructName(), STRUCT, parentClass);
+            memMan->Add((void*) new std::string("<struct type>"), StructName(), STRUCT, parentClass);
             currentClass = StructName();
         } return true;
 
