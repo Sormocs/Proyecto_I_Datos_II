@@ -43,6 +43,7 @@ public:
     void Reset();
     void SetDrawt(bool flag);
     bool GetLimit();
+    void Move(std::string dir);
 
 };
 

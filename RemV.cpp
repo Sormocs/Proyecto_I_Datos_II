@@ -194,20 +194,20 @@ void RemV::Reset() {
     type = tempt;
     type->SetPosX(posx + 5);
     type->SetPosY(posy + 29);
-    type->Insert("");
+    //type->Insert("");
     type->SetLimit(posy,posy+height);
 
     val->SetPosX(col1.getPosition().x + 5);
     val->SetPosY(posy + 30);
-    type->Insert("");
+    //val->Insert("");
 
     addr->SetPosX(col2.getPosition().x + 5);
     addr->SetPosY(posy + 30);
-    addr->Insert("");
+    //addr->Insert("");
 
     refs->SetPosX(col3.getPosition().x + 5);
     refs->SetPosY(posy + 29);
-    refs->Insert("");
+    //refs->Insert("");
 
     isLimit = false;
     std::cout << "RemV json: "<< j << std::endl;
@@ -226,4 +226,14 @@ void RemV::SetDrawt(bool flag) {
 
 bool RemV::GetLimit() {
     return isLimit;
+}
+
+void RemV::Move(std::string dir) {
+
+    type->Move(dir);
+    addr->Move(dir);
+    val->Move(dir);
+    refs->Move(dir);
+
+
 }
